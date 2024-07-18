@@ -41,6 +41,21 @@
             width: 100%;
             max-width: 400px;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #6200ee;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #3700b3;
+        }
     </style>
     <script>
         function getQueryParam(param) {
@@ -55,12 +70,29 @@
                 var formattedWords = word.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
                 }).join(', ');
-                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
+                document.getElementById('audio-source').src = 'https://pronunciacion-fak.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 document.getElementById('audio-player').load();
                 document.getElementById('audio-player').play();
             } else {
                 document.getElementById('word-display').innerText = 'No words specified';
+            }
+        }
+
+        function shareAudio() {
+            var word = getQueryParam('word');
+            var url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'FAK! Inglés para españoles',
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
+                    url: url
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch(console.error);
+            } else {
+                // Fallback para navegadores que no soportan Web Share API
+                prompt('Copia y comparte este enlace:', url);
             }
         }
     </script>
@@ -74,6 +106,10 @@
                 <source id="audio-source" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="shareAudio()">Compartir Audio</button>
+            <button class="button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
     </div>
 </body>
