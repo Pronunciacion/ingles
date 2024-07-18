@@ -45,7 +45,6 @@
             margin-top: 20px;
         }
         .button {
-            background-color: #029061;
             color: #ffffff;
             border: none;
             padding: 10px 20px;
@@ -53,8 +52,17 @@
             cursor: pointer;
             margin: 5px;
         }
-        .button:hover {
+        .share-button {
             background-color: #3700b3;
+        }
+        .share-button:hover {
+            background-color: #290e7a;
+        }
+        .buy-button {
+            background-color: #029061;
+        }
+        .buy-button:hover {
+            background-color: #02734b;
         }
     </style>
     <script>
@@ -70,7 +78,7 @@
                 var formattedWords = word.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
                 }).join(', ');
-                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
+                document.getElementById('audio-source').src = 'https://pronunciacion-fak.github.io/pronunciacion/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
@@ -105,14 +113,14 @@
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
-            <audio id="audio-player" controls>
+            <audio id="audio-player" controls autoplay>
                 <source id="audio-source" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
         </div>
         <div class="button-container">
-            <button class="button" onclick="shareAudio()">Compartir Audio</button>
-            <button class="button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
+            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
     </div>
 </body>
