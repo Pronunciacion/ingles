@@ -55,7 +55,7 @@
                 var formattedWords = word.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
                 }).join(', ');
-                document.getElementById('audio-source').src = 'https://pronunciacion-fak.github.io/FAK/audios/' + fileName + '.mp3';
+                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 document.getElementById('audio-player').load();
                 document.getElementById('audio-player').play();
