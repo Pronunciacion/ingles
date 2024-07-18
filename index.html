@@ -72,8 +72,11 @@
                 }).join(', ');
                 document.getElementById('audio-source').src = 'https://pronunciacion-fak.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
-                document.getElementById('audio-player').load();
-                document.getElementById('audio-player').play();
+                var audioPlayer = document.getElementById('audio-player');
+                audioPlayer.load();
+                audioPlayer.play().catch(function(error) {
+                    console.log('Autoplay was prevented: ', error);
+                });
             } else {
                 document.getElementById('word-display').innerText = 'No words specified';
             }
@@ -102,7 +105,7 @@
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
-            <audio id="audio-player" controls autoplay>
+            <audio id="audio-player" controls>
                 <source id="audio-source" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
