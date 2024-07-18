@@ -54,9 +54,10 @@
                 var formattedWords = word.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
                 }).join(', ');
-                document.getElementById('audio-source').src = 'https://javierclt.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('audio-player').load();
+                document.getElementById('audio-source').src = 'https://pronunciacion-fak.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
+                document.getElementById('audio-player').load();
+                document.getElementById('audio-player').play();
             } else {
                 document.getElementById('word-display').innerText = 'No words specified';
             }
@@ -68,7 +69,7 @@
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
-            <audio id="audio-player" controls>
+            <audio id="audio-player" controls autoplay>
                 <source id="audio-source" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
