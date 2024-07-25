@@ -78,7 +78,7 @@
                 var fileName = word;
                 var formattedWords = word.split('_').join(', ').split('.').join(' ');
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
+                document.getElementById('word-display').innerText = formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
                 audioPlayer.play().catch(function(error) {
