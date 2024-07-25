@@ -76,9 +76,7 @@
             var word = getQueryParam('word');
             if (word) {
                 var fileName = word;
-                var formattedWords = word.split('_').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(', ');
+                var formattedWords = word.split('_').join(', ').split('.').join(' ');
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
@@ -97,7 +95,7 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'FAK! Inglés para españoles',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.split('_').join(', ').split('.').join(' '),
                     url: url
                 }).then(() => {
                     console.log('Thanks for sharing!');
