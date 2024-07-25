@@ -69,14 +69,13 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        #reader {
-            width: 300px;
-            height: 300px;
-            margin: 20px auto;
-            border: 2px solid #ffffff;
+        .camera-button {
+            background-color: #d32f2f;
+        }
+        .camera-button:hover {
+            background-color: #9a0007;
         }
     </style>
-    <script src="https://unpkg.com/html5-qrcode@2.0.9/html5-qrcode.min.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -117,18 +116,27 @@
             }
         }
 
+        function openCamera() {
+            if (/Android/i.test(navigator.userAgent)) {
+                window.location.href = "intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end";
+            } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                window.location.href = "camera://";
+            } else {
+                alert("QR scanning is only supported on mobile devices.");
+            }
+        }
+
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             loadAudio();
-    
-            const html5QrCode = new Html5Qrcode("reader");
-            const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-                console.log(`Code matched = ${decodedText}`, decodedResult);
-                // Handle the scanned code as you like, for example:
-                window.location.href = decodedText;
-            };
-            const config = { fps: 10, qrbox: { width: 250, height: 250 } };
-
-            html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+            if (isMobile()) {
+                document.getElementById('camera-button').style.display = 'inline-block';
+            } else {
+                document.getElementById('camera-button').style.display = 'none';
+            }
         });
     </script>
 </head>
@@ -145,8 +153,8 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button id="camera-button" class="button camera-button" onclick="openCamera()">Escanear otro QR</button>
         </div>
-        <div id="reader"></div>
     </div>
 </body>
 </html>
