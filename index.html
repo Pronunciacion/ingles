@@ -74,8 +74,8 @@
         }
         #reader {
             width: 300px;
-            margin: auto;
-            display: none;
+            margin: 20px auto;
+            display: block;
         }
     </style>
     <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
@@ -128,7 +128,8 @@
             console.warn(`QR error = ${error}`);
         }
 
-        function startQRScanner() {
+        window.onload = function() {
+            loadAudio();
             const html5QrCode = new Html5Qrcode("reader");
             html5QrCode.start(
                 { facingMode: "environment" },
@@ -141,11 +142,10 @@
             ).catch(err => {
                 console.error(`Unable to start scanning: ${err}`);
             });
-            document.getElementById('reader').style.display = 'block';
-        }
+        };
     </script>
 </head>
-<body onload="loadAudio()">
+<body>
     <div class="container">
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
@@ -158,7 +158,6 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button qr-button" onclick="startQRScanner()">Escanear QR</button>
         </div>
     </div>
     <div id="reader"></div>
