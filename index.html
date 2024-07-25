@@ -68,9 +68,14 @@
         }
         #qr-reader {
             margin-top: 20px;
-            display: none;
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            border: 2px solid #ffffff;
+            border-radius: 8px;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.3.1/dist/dbr.js"></script>
     <script>
         function getQueryParam(param) {
@@ -116,17 +121,19 @@
 
         function setupQrScanner() {
             if (/Mobi|Android/i.test(navigator.userAgent)) {
-                let scanner = new Dynamsoft.BarcodeReader();
-                scanner.onFrameRead = results => {
-                    for (let result of results) {
-                        console.log(result.barcodeText);
-                        alert("QR Code Detected: " + result.barcodeText);
-                        // Process the QR code result here, e.g., navigate to the URL
-                        window.location.href = result.barcodeText;
-                    }
-                };
-                scanner.open().catch(function(error) {
-                    console.log('Failed to open QR scanner: ', error);
+                const qrReader = new Html5Qrcode("qr-reader");
+                qrReader.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, (decodedText, decodedResult) => {
+                    console.log(decodedText);
+                    alert("QR Code Detected: " + decodedText);
+                    // Process the QR code result here, e.g., navigate to the URL
+                    window.location.href = decodedText;
+                    qrReader.stop().then(() => {
+                        console.log('QR Code reader stopped.');
+                    }).catch(err => {
+                        console.log('Error stopping QR Code reader:', err);
+                    });
+                }).catch(err => {
+                    console.log('Error starting QR Code reader:', err);
                 });
             }
         }
@@ -152,7 +159,7 @@
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
         <div id="qr-reader">
-            <!-- The QR scanner will be displayed here -->
+            <!-- QR Scanner viewfinder will be displayed here -->
         </div>
     </div>
 </body>
