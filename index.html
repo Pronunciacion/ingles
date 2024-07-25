@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
         .container {
             text-align: center;
@@ -65,7 +66,19 @@
         .buy-button:hover {
             background-color: #02734b;
         }
+        .qr-button {
+            background-color: #ff5722;
+        }
+        .qr-button:hover {
+            background-color: #e64a19;
+        }
+        #reader {
+            width: 300px;
+            margin: auto;
+            display: none;
+        }
     </style>
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -105,12 +118,37 @@
                 prompt('Copia y comparte este enlace:', url);
             }
         }
+
+        function onScanSuccess(decodedText, decodedResult) {
+            console.log(`Code matched = ${decodedText}`, decodedResult);
+            window.location.search = `?word=${decodedText}`;
+        }
+
+        function onScanFailure(error) {
+            console.warn(`QR error = ${error}`);
+        }
+
+        function startQRScanner() {
+            const html5QrCode = new Html5Qrcode("reader");
+            html5QrCode.start(
+                { facingMode: "environment" },
+                {
+                    fps: 10,
+                    qrbox: { width: 250, height: 250 }
+                },
+                onScanSuccess,
+                onScanFailure
+            ).catch(err => {
+                console.error(`Unable to start scanning: ${err}`);
+            });
+            document.getElementById('reader').style.display = 'block';
+        }
     </script>
 </head>
 <body onload="loadAudio()">
     <div class="container">
         <h1>FAK! Inglés para españoles</h1>
-        <h2 id="word-display"></h2>
+        <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
             <audio id="audio-player" controls autoplay>
                 <source id="audio-source" type="audio/mpeg">
@@ -120,7 +158,9 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button class="button qr-button" onclick="startQRScanner()">Escanear QR</button>
         </div>
     </div>
+    <div id="reader"></div>
 </body>
 </html>
