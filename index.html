@@ -69,11 +69,18 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        .camera-button {
+        .qr-button {
             background-color: #d32f2f;
         }
-        .camera-button:hover {
+        .qr-button:hover {
             background-color: #9a0007;
+        }
+        #qr-instructions {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333333;
+            border-radius: 5px;
         }
     </style>
     <script>
@@ -88,7 +95,7 @@
                 var fileName = word;
                 var formattedWords = word.split('_').join(', ').split('.').join(' ');
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = formattedWords;
+                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
                 audioPlayer.play().catch(function(error) {
@@ -116,11 +123,11 @@
             }
         }
 
-        function openCamera() {
-            if (/Android/i.test(navigator.userAgent)) {
+        function handleQRScan() {
+            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                document.getElementById('qr-instructions').style.display = 'block';
+            } else if (/Android/i.test(navigator.userAgent)) {
                 window.location.href = "intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end";
-            } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                window.location.href = "camera://";
             } else {
                 alert("QR scanning is only supported on mobile devices.");
             }
@@ -133,9 +140,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadAudio();
             if (isMobile()) {
-                document.getElementById('camera-button').style.display = 'inline-block';
+                document.getElementById('qr-button').style.display = 'inline-block';
             } else {
-                document.getElementById('camera-button').style.display = 'none';
+                document.getElementById('qr-button').style.display = 'none';
             }
         });
     </script>
@@ -153,7 +160,15 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button id="camera-button" class="button camera-button" onclick="openCamera()">Escanear otro QR</button>
+            <button id="qr-button" class="button qr-button" onclick="handleQRScan()">Escanear QR</button>
+        </div>
+        <div id="qr-instructions">
+            <p>Para escanear un código QR en iOS:</p>
+            <ol>
+                <li>Abre la app Cámara</li>
+                <li>Apunta la cámara al código QR</li>
+                <li>Toca la notificación que aparece</li>
+            </ol>
         </div>
     </div>
 </body>
