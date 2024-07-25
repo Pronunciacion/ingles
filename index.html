@@ -14,8 +14,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             flex-direction: column;
+            height: 100vh;
         }
         .container {
             text-align: center;
@@ -23,7 +23,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            margin-bottom: 20px;
         }
         h1 {
             margin-bottom: 10px;
@@ -67,14 +66,12 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        #reader {
-            width: 250px;
-            height: 250px;
-            margin: 20px auto;
-            border: 2px solid #ffffff;
+        #qr-reader {
+            margin-top: 20px;
+            display: none;
         }
     </style>
-    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.3.1/dist/dbr.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -85,7 +82,9 @@
             var word = getQueryParam('word');
             if (word) {
                 var fileName = word;
-                var formattedWords = word.split('_').join(', ').split('.').join(' ');
+                var formattedWords = word.split('_').map(function(w) {
+                    return w.charAt(0).toUpperCase() + w.slice(1);
+                }).join(', ');
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
@@ -104,7 +103,7 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'FAK! Inglés para españoles',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.split('_').join(', ').split('.').join(' '),
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
                     url: url
                 }).then(() => {
                     console.log('Thanks for sharing!');
@@ -115,30 +114,27 @@
             }
         }
 
-        function onScanSuccess(decodedText, decodedResult) {
-            console.log(`Code matched = ${decodedText}`, decodedResult);
-            // Optional: Do something with the scanned QR code data
+        function setupQrScanner() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                let scanner = new Dynamsoft.BarcodeReader();
+                scanner.onFrameRead = results => {
+                    for (let result of results) {
+                        console.log(result.barcodeText);
+                        alert("QR Code Detected: " + result.barcodeText);
+                        // Process the QR code result here, e.g., navigate to the URL
+                        window.location.href = result.barcodeText;
+                    }
+                };
+                scanner.open().catch(function(error) {
+                    console.log('Failed to open QR scanner: ', error);
+                });
+            }
         }
 
-        function onScanFailure(error) {
-            console.warn(`Code scan error = ${error}`);
-        }
-
-        window.addEventListener('load', () => {
+        window.onload = function() {
             loadAudio();
-            var html5QrCode = new Html5Qrcode("reader");
-            html5QrCode.start(
-                { facingMode: "environment" },
-                {
-                    fps: 10,
-                    qrbox: 250
-                },
-                onScanSuccess,
-                onScanFailure
-            ).catch((err) => {
-                console.error(`Unable to start scanning, error: ${err}`);
-            });
-        });
+            setupQrScanner();
+        }
     </script>
 </head>
 <body>
@@ -155,7 +151,9 @@
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
-        <div id="reader"></div>
+        <div id="qr-reader">
+            <!-- The QR scanner will be displayed here -->
+        </div>
     </div>
 </body>
 </html>
