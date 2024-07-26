@@ -14,7 +14,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            flex-direction: column;
+            height: 100vh;
         }
         .container {
             text-align: center;
@@ -22,8 +23,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            max-width: 90%;
-            width: 400px;
         }
         h1 {
             margin-bottom: 10px;
@@ -34,6 +33,10 @@
         }
         .audio-container {
             margin-top: 20px;
+        }
+        .audio-container p {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
         audio {
             width: 100%;
@@ -63,16 +66,12 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        .qr-button {
-            background-color: #ffffff;
-            color: #000000;
+        #qr-reader {
             margin-top: 20px;
-            border: 1px solid #000000;
-        }
-        .qr-button:hover {
-            background-color: #f0f0f0;
+            display: none;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.3.1/dist/dbr.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -83,18 +82,11 @@
             var word = getQueryParam('word');
             if (word) {
                 var fileName = word;
-                var formattedWords;
-                if (word.includes('.')) {
-                    formattedWords = word.split('.').map(function(w) {
-                        return w.charAt(0).toUpperCase() + w.slice(1);
-                    }).join(' ');
-                } else {
-                    formattedWords = word.split('_').map(function(w) {
-                        return w.charAt(0).toUpperCase() + w.slice(1);
-                    }).join(', ');
-                }
+                var formattedWords = word.split('_').map(function(w) {
+                    return w.charAt(0).toUpperCase() + w.slice(1);
+                }).join(', ');
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = formattedWords;
+                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
                 audioPlayer.play().catch(function(error) {
@@ -111,35 +103,37 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'FAK! Inglés para españoles',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
                     url: url
                 }).then(() => {
                     console.log('Thanks for sharing!');
                 }).catch(console.error);
             } else {
+                // Fallback para navegadores que no soportan Web Share API
                 prompt('Copia y comparte este enlace:', url);
             }
         }
 
-        function openQRScanner() {
-            if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-                navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-                    .then(function(stream) {
-                        // Camera access granted, now you can use it
-                        stream.getTracks().forEach(track => track.stop());
-                        alert("Cámara abierta. Por favor, usa la función de escaneo QR de tu dispositivo.");
-                    })
-                    .catch(function(error) {
-                        console.error("Error accessing the camera", error);
-                        alert("No se pudo acceder a la cámara. Por favor, asegúrate de que tu dispositivo tiene una cámara y has concedido los permisos necesarios.");
-                    });
-            } else {
-                alert("Tu navegador no soporta el acceso a la cámara. Por favor, intenta con un navegador más reciente.");
+        function setupQrScanner() {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                let scanner = new Dynamsoft.BarcodeReader();
+                scanner.onFrameRead = results => {
+                    for (let result of results) {
+                        console.log(result.barcodeText);
+                        alert("QR Code Detected: " + result.barcodeText);
+                        // Process the QR code result here, e.g., navigate to the URL
+                        window.location.href = result.barcodeText;
+                    }
+                };
+                scanner.open().catch(function(error) {
+                    console.log('Failed to open QR scanner: ', error);
+                });
             }
         }
 
         window.onload = function() {
             loadAudio();
+            setupQrScanner();
         }
     </script>
 </head>
@@ -157,7 +151,9 @@
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
-        <button class="button qr-button" onclick="openQRScanner()">Escanear otro QR</button>
+        <div id="qr-reader">
+            <!-- The QR scanner will be displayed here -->
+        </div>
     </div>
 </body>
 </html>
