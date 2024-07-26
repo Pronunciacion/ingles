@@ -84,23 +84,32 @@
         }
 
         function loadAudio() {
-            var word = getQueryParam('word');
-            if (word) {
-                var fileName = word;
-                var formattedWords = word.split('_').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(', ');
-                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = formattedWords;
-                var audioPlayer = document.getElementById('audio-player');
-                audioPlayer.load();
-                audioPlayer.play().catch(function(error) {
-                    console.log('Autoplay was prevented: ', error);
-                });
-            } else {
-                document.getElementById('word-display').innerText = 'No words specified';
-            }
+    var word = getQueryParam('word');
+    if (word) {
+        var fileName = word;
+        var formattedWords;
+        if (word.includes('.')) {
+            // If the word contains periods, replace them with spaces
+            formattedWords = word.split('.').map(function(w) {
+                return w.charAt(0).toUpperCase() + w.slice(1);
+            }).join(' ');
+        } else {
+            // If the word contains underscores, replace them with commas and spaces
+            formattedWords = word.split('_').map(function(w) {
+                return w.charAt(0).toUpperCase() + w.slice(1);
+            }).join(', ');
         }
+        document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
+        document.getElementById('word-display').innerText = formattedWords;
+        var audioPlayer = document.getElementById('audio-player');
+        audioPlayer.load();
+        audioPlayer.play().catch(function(error) {
+            console.log('Autoplay was prevented: ', error);
+        });
+    } else {
+        document.getElementById('word-display').innerText = 'No words specified';
+    }
+}
 
         function shareAudio() {
             var word = getQueryParam('word');
