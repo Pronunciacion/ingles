@@ -72,14 +72,7 @@
         .qr-button:hover {
             background-color: #d84315;
         }
-        #qr-reader {
-            margin-top: 20px;
-            width: 300px;
-            height: 300px;
-            display: none;
-        }
     </style>
-    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -122,23 +115,14 @@
             }
         }
 
-        function setupQrScanner() {
-            const qrScanner = new Html5Qrcode("qr-reader");
-            const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
-
-            qrScanner.start({ facingMode: "environment" }, qrConfig, qrCodeMessage => {
-                console.log(`QR Code detected: ${qrCodeMessage}`);
-                alert("QR Code Detected: " + qrCodeMessage);
-                window.location.href = qrCodeMessage;
-            }).catch(err => {
-                console.log("Unable to start the QR code scanner.", err);
-            });
-
-            document.getElementById('qr-reader').style.display = 'block';
-        }
-
-        function openQrScanner() {
-            setupQrScanner();
+        function openCamera() {
+            if (/Android/i.test(navigator.userAgent)) {
+                window.location.href = 'intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;end';
+            } else if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                window.location.href = 'camera://';
+            } else {
+                alert('QR scanning is not supported on this device.');
+            }
         }
 
         window.onload = function() {
@@ -159,9 +143,8 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button qr-button" onclick="openQrScanner()">Open QR Scanner</button>
+            <button class="button qr-button" onclick="openCamera()">Open Camera for QR</button>
         </div>
-        <div id="qr-reader"></div>
     </div>
 </body>
 </html>
