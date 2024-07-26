@@ -69,14 +69,19 @@
         #qr-reader {
             margin-top: 20px;
             width: 100%;
-            max-width: 400px;
+            max-width: 300px;
+            height: 300px;
             display: block;
             border: 2px solid #ffffff;
             border-radius: 8px;
+            overflow: hidden;
+        }
+        #qr-reader-results {
+            margin-top: 10px;
+            color: #bbbbbb;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.3.1/dist/dbr.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -84,32 +89,32 @@
         }
 
         function loadAudio() {
-    var word = getQueryParam('word');
-    if (word) {
-        var fileName = word;
-        var formattedWords;
-        if (word.includes('.')) {
-            // If the word contains periods, replace them with spaces
-            formattedWords = word.split('.').map(function(w) {
-                return w.charAt(0).toUpperCase() + w.slice(1);
-            }).join(' ');
-        } else {
-            // If the word contains underscores, replace them with commas and spaces
-            formattedWords = word.split('_').map(function(w) {
-                return w.charAt(0).toUpperCase() + w.slice(1);
-            }).join(', ');
+            var word = getQueryParam('word');
+            if (word) {
+                var fileName = word;
+                var formattedWords;
+                if (word.includes('.')) {
+                    // If the word contains periods, replace them with spaces
+                    formattedWords = word.split('.').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(' ');
+                } else {
+                    // If the word contains underscores, replace them with commas and spaces
+                    formattedWords = word.split('_').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(', ');
+                }
+                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
+                document.getElementById('word-display').innerText = formattedWords;
+                var audioPlayer = document.getElementById('audio-player');
+                audioPlayer.load();
+                audioPlayer.play().catch(function(error) {
+                    console.log('Autoplay was prevented: ', error);
+                });
+            } else {
+                document.getElementById('word-display').innerText = 'No words specified';
+            }
         }
-        document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-        document.getElementById('word-display').innerText = formattedWords;
-        var audioPlayer = document.getElementById('audio-player');
-        audioPlayer.load();
-        audioPlayer.play().catch(function(error) {
-            console.log('Autoplay was prevented: ', error);
-        });
-    } else {
-        document.getElementById('word-display').innerText = 'No words specified';
-    }
-}
 
         function shareAudio() {
             var word = getQueryParam('word');
@@ -117,39 +122,60 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'FAK! Inglés para españoles',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
                     url: url
                 }).then(() => {
                     console.log('Thanks for sharing!');
                 }).catch(console.error);
             } else {
-                // Fallback para navegadores que no soportan Web Share API
+                // Fallback for browsers that don't support Web Share API
                 prompt('Copia y comparte este enlace:', url);
             }
         }
 
+        let html5QrCode;
+
         function setupQrScanner() {
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
-                const qrReader = new Html5Qrcode("qr-reader");
-                qrReader.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, (decodedText, decodedResult) => {
-                    console.log(decodedText);
-                    alert("QR Code Detected: " + decodedText);
-                    // Process the QR code result here, e.g., navigate to the URL
-                    window.location.href = decodedText;
-                    qrReader.stop().then(() => {
-                        console.log('QR Code reader stopped.');
-                    }).catch(err => {
-                        console.log('Error stopping QR Code reader:', err);
-                    });
-                }).catch(err => {
-                    console.log('Error starting QR Code reader:', err);
-                });
+            const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
+            
+            html5QrCode = new Html5Qrcode("qr-reader");
+            html5QrCode.start(
+                { facingMode: "environment" },
+                qrConfig,
+                onScanSuccess,
+                onScanFailure
+            )
+            .catch((err) => {
+                console.log("Error starting QR Code scanner: ", err);
+            });
+        }
+
+        function onScanSuccess(decodedText, decodedResult) {
+            console.log("QR Code detected: ", decodedText);
+            document.getElementById('qr-reader-results').innerText = "Detected: " + decodedText;
+            
+            // Process the QR code result, e.g., navigate to the URL
+            if (decodedText.startsWith("http")) {
+                window.location.href = decodedText;
             }
+        }
+
+        function onScanFailure(error) {
+            // Handle scan failure if needed
+            // console.warn(`QR error = ${error}`);
         }
 
         window.onload = function() {
             loadAudio();
             setupQrScanner();
+        }
+
+        window.onbeforeunload = function() {
+            if (html5QrCode) {
+                html5QrCode.stop().catch(error => {
+                    console.log("Error stopping QR Code scanner:", error);
+                });
+            }
         }
     </script>
 </head>
@@ -167,9 +193,8 @@
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
         </div>
-        <div id="qr-reader">
-            <!-- QR Scanner viewfinder will be displayed here -->
-        </div>
+        <div id="qr-reader"></div>
+        <div id="qr-reader-results"></div>
     </div>
 </body>
 </html>
