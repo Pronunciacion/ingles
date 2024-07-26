@@ -64,10 +64,13 @@
             background-color: #02734b;
         }
         .camera-button {
-            background-color: #4CAF50;
+            background-color: #ffffff;
+            color: #000000;
+            margin-top: 20px;
+            border: 1px solid #000000;
         }
         .camera-button:hover {
-            background-color: #45a049;
+            background-color: #f0f0f0;
         }
     </style>
     <script>
@@ -119,7 +122,6 @@
         }
 
         function openCamera() {
-            // This will open the device's camera app
             var input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
@@ -145,8 +147,8 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button camera-button" onclick="openCamera()">Abrir Cámara</button>
         </div>
+        <button class="button camera-button" onclick="openCamera()">Escanear otro QR</button>
     </div>
 </body>
 </html>
