@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .container {
             text-align: center;
@@ -22,6 +22,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 400px;
         }
         h1 {
             margin-bottom: 10px;
@@ -32,10 +34,6 @@
         }
         .audio-container {
             margin-top: 20px;
-        }
-        .audio-container p {
-            font-size: 18px;
-            margin-bottom: 10px;
         }
         audio {
             width: 100%;
@@ -65,12 +63,6 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        .qr-button {
-            background-color: #f44336;
-        }
-        .qr-button:hover {
-            background-color: #d32f2f;
-        }
     </style>
     <script>
         function getQueryParam(param) {
@@ -82,11 +74,18 @@
             var word = getQueryParam('word');
             if (word) {
                 var fileName = word;
-                var formattedWords = word.split('.').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(' ');
+                var formattedWords;
+                if (word.includes('.')) {
+                    formattedWords = word.split('.').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(' ');
+                } else {
+                    formattedWords = word.split('_').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(', ');
+                }
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
+                document.getElementById('word-display').innerText = formattedWords;
                 var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
                 audioPlayer.play().catch(function(error) {
@@ -103,23 +102,22 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'FAK! Inglés para españoles',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', '),
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
                     url: url
                 }).then(() => {
                     console.log('Thanks for sharing!');
                 }).catch(console.error);
             } else {
-                // Fallback para navegadores que no soportan Web Share API
                 prompt('Copia y comparte este enlace:', url);
             }
         }
 
-        function openCameraForQR() {
-            alert('To scan a new QR code, please open your camera app manually.');
+        window.onload = function() {
+            loadAudio();
         }
     </script>
 </head>
-<body onload="loadAudio()">
+<body>
     <div class="container">
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
@@ -132,7 +130,6 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button qr-button" onclick="openCameraForQR()">Open Camera for QR</button>
         </div>
     </div>
 </body>
