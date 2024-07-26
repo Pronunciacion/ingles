@@ -128,6 +128,8 @@
                 }).catch(err => {
                     console.log("Unable to start the QR code scanner.", err);
                 });
+
+                document.getElementById('qr-reader').style.display = 'block';
             }
         }
 
