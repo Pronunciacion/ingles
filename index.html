@@ -66,6 +66,12 @@
         .buy-button:hover {
             background-color: #02734b;
         }
+        .qr-button {
+            background-color: #ff5722;
+        }
+        .qr-button:hover {
+            background-color: #d84315;
+        }
         #qr-reader {
             margin-top: 20px;
             width: 300px;
@@ -117,25 +123,26 @@
         }
 
         function setupQrScanner() {
-            if (/Mobi|Android/i.test(navigator.userAgent)) {
-                const qrScanner = new Html5Qrcode("qr-reader");
-                const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
+            const qrScanner = new Html5Qrcode("qr-reader");
+            const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
 
-                qrScanner.start({ facingMode: "environment" }, qrConfig, qrCodeMessage => {
-                    console.log(`QR Code detected: ${qrCodeMessage}`);
-                    alert("QR Code Detected: " + qrCodeMessage);
-                    window.location.href = qrCodeMessage;
-                }).catch(err => {
-                    console.log("Unable to start the QR code scanner.", err);
-                });
+            qrScanner.start({ facingMode: "environment" }, qrConfig, qrCodeMessage => {
+                console.log(`QR Code detected: ${qrCodeMessage}`);
+                alert("QR Code Detected: " + qrCodeMessage);
+                window.location.href = qrCodeMessage;
+            }).catch(err => {
+                console.log("Unable to start the QR code scanner.", err);
+            });
 
-                document.getElementById('qr-reader').style.display = 'block';
-            }
+            document.getElementById('qr-reader').style.display = 'block';
+        }
+
+        function openQrScanner() {
+            setupQrScanner();
         }
 
         window.onload = function() {
             loadAudio();
-            setupQrScanner();
         }
     </script>
 </head>
@@ -152,6 +159,7 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button class="button qr-button" onclick="openQrScanner()">Open QR Scanner</button>
         </div>
         <div id="qr-reader"></div>
     </div>
