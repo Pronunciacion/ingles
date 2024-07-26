@@ -35,10 +35,6 @@
         .audio-container {
             margin-top: 20px;
         }
-        .audio-container p {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
         audio {
             width: 100%;
             max-width: 400px;
@@ -67,31 +63,13 @@
         .buy-button:hover {
             background-color: #02734b;
         }
-        #qr-reader {
-            margin-top: 20px;
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            display: none;
-            border: 2px solid #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        #qr-reader-results {
-            margin-top: 10px;
-            color: #bbbbbb;
-        }
-        #qr-reader-error {
-            color: #ff6b6b;
-            margin-top: 10px;
-        }
-        #start-scanner-btn {
+        .camera-button {
             background-color: #4CAF50;
-            display: none;
-            margin-top: 10px;
+        }
+        .camera-button:hover {
+            background-color: #45a049;
         }
     </style>
-    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
     <script>
         function getQueryParam(param) {
             var urlParams = new URLSearchParams(window.location.search);
@@ -140,62 +118,17 @@
             }
         }
 
-        let html5QrCode;
-
-        function setupQrScanner() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                document.getElementById('qr-reader').style.display = 'block';
-                document.getElementById('start-scanner-btn').style.display = 'inline-block';
-            }
-        }
-
-        function startScanner() {
-            const qrConfig = { fps: 10, qrbox: { width: 250, height: 250 } };
-            
-            html5QrCode = new Html5Qrcode("qr-reader");
-            html5QrCode.start(
-                { facingMode: "environment" },
-                qrConfig,
-                onScanSuccess,
-                onScanFailure
-            )
-            .then(() => {
-                document.getElementById('qr-reader-error').style.display = 'none';
-                document.getElementById('start-scanner-btn').style.display = 'none';
-            })
-            .catch((err) => {
-                console.log("Error starting QR Code scanner: ", err);
-                document.getElementById('qr-reader-error').innerText = "Error al iniciar el escáner. Por favor, asegúrate de que has dado permiso para usar la cámara.";
-                document.getElementById('qr-reader-error').style.display = 'block';
-                document.getElementById('start-scanner-btn').style.display = 'inline-block';
-            });
-        }
-
-        function onScanSuccess(decodedText, decodedResult) {
-            console.log("QR Code detected: ", decodedText);
-            document.getElementById('qr-reader-results').innerText = "Detectado: " + decodedText;
-            
-            if (decodedText.startsWith("http")) {
-                window.location.href = decodedText;
-            }
-        }
-
-        function onScanFailure(error) {
-            // We can ignore failures as they happen frequently
-            // console.warn(`QR error = ${error}`);
+        function openCamera() {
+            // This will open the device's camera app
+            var input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.capture = 'camera';
+            input.click();
         }
 
         window.onload = function() {
             loadAudio();
-            setupQrScanner();
-        }
-
-        window.onbeforeunload = function() {
-            if (html5QrCode) {
-                html5QrCode.stop().catch(error => {
-                    console.log("Error stopping QR Code scanner:", error);
-                });
-            }
         }
     </script>
 </head>
@@ -212,11 +145,8 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button class="button camera-button" onclick="openCamera()">Abrir Cámara</button>
         </div>
-        <div id="qr-reader"></div>
-        <div id="qr-reader-results"></div>
-        <div id="qr-reader-error" style="display: none;"></div>
-        <button id="start-scanner-btn" class="button" onclick="startScanner()">Iniciar Escáner QR</button>
     </div>
 </body>
 </html>
