@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Conversation Prompt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            width: 600px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>English Conversation Prompt</h1>
+        <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
+        <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
+        <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
+        <p>3. If I use very simple language, please introduce more advanced vocabulary or idioms that could elevate my expression, and explain their meanings.</p>
+        <p>4. Occasionally ask me questions to encourage me to expand on my thoughts or to use specific grammatical structures.</p>
+        <p>5. At the end of our conversation, summarize 2-3 key areas for improvement and provide brief tips for each.</p>
+        <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
+        <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
+        <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
+    </div>
+</body>
+</html>
