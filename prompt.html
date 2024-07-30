@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Conversation Prompt</title>
+    <title>FAK! Inglés para españoles</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,17 +26,62 @@
             width: 600px;
         }
         h1 {
+            margin-bottom: 10px;
+        }
+        h2 {
             margin-bottom: 20px;
+            color: #bbbbbb;
         }
         p {
             text-align: left;
             margin-bottom: 10px;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            font-size: 1em;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .share-button {
+            background-color: #6200ee;
+        }
+        .share-button:hover {
+            background-color: #290e7a;
+        }
+        .buy-button {
+            background-color: #029061;
+        }
+        .buy-button:hover {
+            background-color: #02734b;
+        }
     </style>
+    <script>
+        function shareContent() {
+            var url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'FAK! Inglés para españoles',
+                    text: 'Check out this English conversation prompt!',
+                    url: url
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch(console.error);
+            } else {
+                prompt('Copy and share this link:', url);
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>English Conversation Prompt</h1>
+        <h1>FAK! Inglés para españoles</h1>
+        <h2>Prompt para practicar inglés con IA</h2>
         <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
         <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
         <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
@@ -46,6 +91,10 @@
         <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
         <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
         <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
+        <div class="button-container">
+            <button class="button share-button" onclick="shareContent()">Compartir</button>
+            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+        </div>
     </div>
 </body>
 </html>
