@@ -62,6 +62,7 @@
             align-items: center;
             justify-content: center;
             margin-right: 20px;
+            padding: 0;
         }
         .play-button:hover {
             background-color: #c85a3f;
@@ -219,6 +220,7 @@
             playButton = document.getElementById('play-button');
             progressBar = document.getElementById('progress');
             timeDisplay = document.getElementById('time-display');
+            updatePlayButton();
 
             playButton.addEventListener('click', togglePlay);
             audioPlayer.addEventListener('play', function() {
@@ -250,7 +252,9 @@
             <div class="custom-audio-player">
                 <div class="player-controls">
                     <button id="play-button" class="play-button">
-                        <div class="play-icon"></div>
+                        <svg class="play-pause-icon" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
                     </button>
                     <div class="progress-container">
                         <div class="progress-bar">
