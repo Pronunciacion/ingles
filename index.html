@@ -71,19 +71,11 @@
             height: 0;
             border-style: solid;
         }
-        .play-icon {
-            border-width: 15px 0 15px 26px;
-            border-color: transparent transparent transparent #ffffff;
-            margin-left: 5px;
-        }
-        .pause-icon {
-            border-width: 0 8px;
-            border-color: #ffffff;
-            border-style: double;
-            height: 30px;
-            width: 8px;
-            margin-right: 2px;
-        }
+        .play-pause-icon {
+    width: 24px;
+    height: 24px;
+    fill: #ffffff;
+}
         .progress-container {
             flex-grow: 1;
         }
@@ -183,8 +175,10 @@
         }
 
         function updatePlayButton() {
-            playButton.innerHTML = isPlaying ? '<div class="pause-icon"></div>' : '<div class="play-icon"></div>';
-        }
+    playButton.innerHTML = isPlaying
+        ? '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>'
+        : '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+}
 
         function updateProgress() {
             const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
