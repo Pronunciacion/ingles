@@ -6,9 +6,9 @@
     <title>FAK! Inglés para españoles</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,50 +18,129 @@
         }
         .container {
             text-align: center;
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             max-width: 90%;
             width: 400px;
         }
         h1 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            color: #e07a5f;
         }
         h2 {
-            margin-bottom: 20px;
-            color: #bbbbbb;
+            margin-bottom: 25px;
+            color: #3d405b;
         }
         .audio-container {
-            margin-top: 20px;
+            margin-top: 25px;
         }
-        audio {
+        .custom-audio-player {
             width: 100%;
             max-width: 400px;
+            background-color: #f2cc8f;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .player-controls {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background-color: #e07a5f;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        .play-button:hover {
+            background-color: #c85a3f;
+        }
+        .play-icon, .pause-icon {
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        .play-icon {
+            border-width: 15px 0 15px 26px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 5px;
+        }
+        .pause-icon {
+            border-width: 0 8px;
+            border-color: #ffffff;
+            border-style: double;
+            height: 30px;
+            width: 8px;
+            margin-right: 2px;
+        }
+        .progress-container {
+            flex-grow: 1;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e9c46a;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #e07a5f;
+            transition: width 0.1s linear;
+        }
+        .time-display {
+            font-size: 14px;
+            color: #3d405b;
+            margin-top: 5px;
+            text-align: right;
         }
         .button-container {
-            margin-top: 20px;
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .button {
             font-size: 1em;
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-radius: 8px;
             cursor: pointer;
-            margin: 5px;
+            transition: all 0.3s ease;
+            flex: 1 0 calc(50% - 10px);
+            max-width: 180px;
         }
         .share-button {
-            background-color: #6200ee;
+            background-color: #81b29a;
         }
         .share-button:hover {
-            background-color: #290e7a;
+            background-color: #61927a;
         }
         .buy-button {
-            background-color: #029061;
+            background-color: #e07a5f;
         }
         .buy-button:hover {
-            background-color: #02734b;
+            background-color: #c85a3f;
+        }
+        .review-button {
+            background-color: #3d405b;
+        }
+        .review-button:hover {
+            background-color: #2d303b;
         }
     </style>
     <script>
@@ -69,6 +148,9 @@
             var urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
+
+        let audioPlayer, playButton, progressBar, timeDisplay;
+        let isPlaying = false;
 
         function loadAudio() {
             var word = getQueryParam('word');
@@ -86,14 +168,40 @@
                 }
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = formattedWords;
-                var audioPlayer = document.getElementById('audio-player');
                 audioPlayer.load();
-                audioPlayer.play().catch(function(error) {
-                    console.log('Autoplay was prevented: ', error);
-                });
             } else {
                 document.getElementById('word-display').innerText = 'No words specified';
             }
+        }
+
+        function togglePlay() {
+            if (isPlaying) {
+                audioPlayer.pause();
+            } else {
+                audioPlayer.play();
+            }
+        }
+
+        function updatePlayButton() {
+            playButton.innerHTML = isPlaying ? '<div class="pause-icon"></div>' : '<div class="play-icon"></div>';
+        }
+
+        function updateProgress() {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            updateTimeDisplay();
+        }
+
+        function updateTimeDisplay() {
+            const currentTime = formatTime(audioPlayer.currentTime);
+            const duration = formatTime(audioPlayer.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
         }
 
         function shareAudio() {
@@ -113,6 +221,29 @@
         }
 
         window.onload = function() {
+            audioPlayer = document.getElementById('audio-player');
+            playButton = document.getElementById('play-button');
+            progressBar = document.getElementById('progress');
+            timeDisplay = document.getElementById('time-display');
+
+            playButton.addEventListener('click', togglePlay);
+            audioPlayer.addEventListener('play', function() {
+                isPlaying = true;
+                updatePlayButton();
+            });
+            audioPlayer.addEventListener('pause', function() {
+                isPlaying = false;
+                updatePlayButton();
+            });
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+            audioPlayer.addEventListener('loadedmetadata', updateTimeDisplay);
+            audioPlayer.addEventListener('ended', function() {
+                isPlaying = false;
+                updatePlayButton();
+                progressBar.style.width = '0%';
+                updateTimeDisplay();
+            });
+
             loadAudio();
         }
     </script>
@@ -122,7 +253,20 @@
         <h1>FAK! Inglés para españoles</h1>
         <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
-            <audio id="audio-player" controls autoplay>
+            <div class="custom-audio-player">
+                <div class="player-controls">
+                    <button id="play-button" class="play-button">
+                        <div class="play-icon"></div>
+                    </button>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        <div id="time-display" class="time-display">0:00 / 0:00</div>
+                    </div>
+                </div>
+            </div>
+            <audio id="audio-player">
                 <source id="audio-source" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
@@ -130,6 +274,7 @@
         <div class="button-container">
             <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
             <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <button class="button review-button" onclick="window.location.href='https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7'">Escribe reseña en Amazon</button>
         </div>
     </div>
 </body>
