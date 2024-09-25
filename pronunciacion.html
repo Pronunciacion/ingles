@@ -154,7 +154,7 @@
                 const formattedWords = audioFileName.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
                 }).join(', ');
-                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
+                document.getElementById('word-display').innerText = formattedWords;
                 document.getElementById('audio-source').src = 'https://librodeingles.com/audios/' + audioFileName + '.mp3';
                 audioPlayer.load();
             } else {
