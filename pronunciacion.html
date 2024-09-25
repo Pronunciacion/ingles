@@ -149,7 +149,7 @@
         let isPlaying = false;
 
         function loadAudio() {
-            var word = getQueryParam('word');
+            var word = getAudioFileFromQuery();
             if (word) {
                 var fileName = word;
                 var formattedWords;
