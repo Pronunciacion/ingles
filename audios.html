@@ -78,19 +78,34 @@
             { 
                 name: 'focus', 
                 displayName: 'Focus, español vs inglés', 
-                url: 'https://librodeingles.com/pronunciacion.html?word=focus' 
+                url: 'https://librodeingles.com/audios/focus.mp3' 
             },
             { 
                 name: 'pick.it.up', 
                 displayName: 'Pick it up, español vs inglés', 
-                url: 'https://librodeingles.com/pronunciacion.html?word=pick.it.up' 
+                url: 'https://librodeingles.com/audios/pick.it.up.mp3' 
             },
             { 
                 name: 'sonido.th.entre.dientes', 
                 displayName: 'Sonido th entre dientes', 
-                url: 'https://librodeingles.com/pronunciacion.html?word=sonido.%27th%27.Entre.Dientes' 
+                url: 'https://librodeingles.com/audios/sonido.th.entre.dientes.mp3' 
             }
         ];
+
+        // Function to load and play the selected audio
+        function loadAudio(audioUrl, displayName) {
+            const audioPlayer = document.getElementById('audio-player');
+            const audioSource = document.getElementById('audio-source');
+            const currentAudioTitle = document.getElementById('current-audio-title');
+
+            // Update the audio source and play
+            audioSource.src = audioUrl;
+            audioPlayer.load();
+            audioPlayer.play();
+
+            // Update the title of the current audio
+            currentAudioTitle.innerText = displayName;
+        }
 
         // Function to create the list of example audios
         function loadAudioList() {
@@ -99,9 +114,13 @@
                 const listItem = document.createElement('li');
                 const audioLink = document.createElement('a');
 
-                // Set the link text and URL
-                audioLink.href = audio.url;
+                // Set the link text and add an event listener to play the audio
+                audioLink.href = "#";  // Prevent page navigation
                 audioLink.innerText = audio.displayName;
+                audioLink.onclick = function() {
+                    loadAudio(audio.url, audio.displayName);
+                    return false;  // Prevent default link behavior
+                };
 
                 listItem.appendChild(audioLink);
                 audioListElement.appendChild(listItem);
@@ -127,12 +146,21 @@
 
     <!-- Page Content -->
     <div class="content">
-        <h1>Elige un ejemplo para escuchar su pronunciación</h1>
+        <h1>Elige una de las opciones para escuchar la pronunciación</h1>
 
         <!-- Audio List -->
         <ul id="audio-list" class="audio-list">
             <!-- The list of audios will be dynamically generated here -->
         </ul>
+
+        <!-- Audio Player Section -->
+        <div class="audio-player-container">
+            <h2 id="current-audio-title">Selecciona una palabra</h2>
+            <audio id="audio-player" controls>
+                <source id="audio-source" src="" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
 
         <!-- Message to encourage buying the book -->
         <div class="message">
@@ -142,3 +170,4 @@
 
 </body>
 </html>
+
