@@ -8,6 +8,7 @@
         body, html {
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .navbar {
             width: 100%;
@@ -34,7 +35,6 @@
         .content {
             padding-top: 80px; /* Make sure content doesn't overlap with navbar */
             text-align: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
         }
@@ -61,10 +61,55 @@
         }
         .audio-player-container {
             margin-top: 30px;
+            background-color: #f2cc8f;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: center;
         }
-        audio {
+        .custom-audio-player {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background-color: #e07a5f;
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+        }
+        .play-button:hover {
+            background-color: #c85a3f;
+        }
+        .progress-bar {
             width: 100%;
-            max-width: 400px;
+            height: 10px;
+            background-color: #e9c46a;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-grow: 1;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #e07a5f;
+            transition: width 0.1s linear;
+        }
+        .time-display {
+            font-size: 14px;
+            color: #3d405b;
+            text-align: right;
         }
         .message {
             margin-top: 30px;
@@ -86,9 +131,9 @@
                 url: 'https://librodeingles.com/audios/pick.it.up.mp3' 
             },
             { 
-                name: 'Acentos: americano, británico, australiano, irlandés, español', 
-                displayName: 'Acentos: americano, británico, australiano, irlandés, español', 
-                url: 'https://librodeingles.com/pronunciacion.html?word=American_British_Australian_Irish_Spanish' 
+                name: 'sonido.th.entre.dientes', 
+                displayName: 'Sonido th entre dientes', 
+                url: 'https://librodeingles.com/audios/sonido.th.entre.dientes.mp3' 
             }
         ];
 
@@ -156,6 +201,15 @@
         <!-- Audio Player Section -->
         <div class="audio-player-container">
             <h2 id="current-audio-title">Selecciona una palabra</h2>
+            <div class="custom-audio-player">
+                <button id="play-button" class="play-button" onclick="document.getElementById('audio-player').play();">▶️</button>
+                <div class="progress-bar">
+                    <div id="progress" class="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="time-display">0:00 / 0:00</span>
+                </div>
+            </div>
             <audio id="audio-player" controls>
                 <source id="audio-source" src="" type="audio/mpeg">
                 Tu navegador no soporta el elemento de audio.
@@ -170,4 +224,3 @@
 
 </body>
 </html>
-
