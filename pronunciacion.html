@@ -149,26 +149,28 @@
         let isPlaying = false;
 
         function loadAudio() {
-            var word = getAudioFileFromQuery();
-            if (word) {
-                var fileName = word;
-                var formattedWords;
-                if (word.includes('.')) {
-                    formattedWords = word.split('.').map(function(w) {
-                        return w.charAt(0).toUpperCase() + w.slice(1);
-                    }).join(' ');
-                } else {
-                    formattedWords = word.split('_').map(function(w) {
-                        return w.charAt(0).toUpperCase() + w.slice(1);
-                    }).join(', ');
-                }
-                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/ingles/audios/' + fileName + '.mp3';
-                document.getElementById('word-display').innerText = formattedWords;
-                audioPlayer.load();
-            } else {
-                document.getElementById('word-display').innerText = 'No words specified';
-            }
-        }
+    var word = getAudioFileFromQuery();
+    if (word) {
+        var fileName = word;
+        var formattedWords;
+
+        // First replace periods with spaces
+        formattedWords = word.split('.').map(function(w) {
+            return w.charAt(0).toUpperCase() + w.slice(1);
+        }).join(' ');
+
+        // Then replace underscores with ", " (comma and space)
+        formattedWords = formattedWords.split('_').join(', ');
+
+        // Set the audio source and display the formatted words
+        document.getElementById('audio-source').src = 'https://pronunciacion.github.io/ingles/audios/' + fileName + '.mp3';
+        document.getElementById('word-display').innerText = formattedWords;
+        audioPlayer.load();
+    } else {
+        document.getElementById('word-display').innerText = 'No words specified';
+    }
+}
+
 
         function togglePlay() {
             if (isPlaying) {
