@@ -1,274 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pronunciación Inglés</title>
+    <title>Pronunciación</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 400px;
-        }
-        h1 {
-            margin-bottom: 15px;
-            color: #e07a5f;
-            font-size: 1.5em;
-        }
-        h2 {
-            margin-bottom: 25px;
-            color: #3d405b;
-            font-size: 2em;
-        }
-        .audio-container {
-            margin-top: 25px;
-        }
-        .custom-audio-player {
-            width: 100%;
-            max-width: 400px;
-            background-color: #f2cc8f;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .player-controls {
-            display: flex;
-            align-items: center;
             padding: 20px;
+            text-align: center;
         }
-        .play-button {
-            width: 60px;
-            height: 60px;
-            background-color: #e07a5f;
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 32px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            padding: 0;
-        }
-        .play-button:hover {
-            background-color: #c85a3f;
-        }
-        .play-icon, .pause-icon {
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-        .play-pause-icon {
-    width: 32px;
-    height: 32px;
-    fill: #ffffff;
-}
-        .progress-container {
-            flex-grow: 1;
-        }
-        .progress-bar {
+        .navbar {
             width: 100%;
-            height: 10px;
-            background-color: #e9c46a;
+            background-color: #3d405b;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #f4f1de;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
             border-radius: 5px;
-            overflow: hidden;
+            transition: background-color 0.3s ease;
         }
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #e07a5f;
-            transition: width 0.1s linear;
-        }
-        .time-display {
-            font-size: 14px;
-            color: #3d405b;
-            margin-top: 5px;
-            text-align: right;
-        }
-        .button-container {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .button {
-            font-size: 1em;
-            color: #ffffff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
-        }
-        .share-button {
+        .navbar a:hover {
             background-color: #81b29a;
         }
-        .share-button:hover {
-            background-color: #61927a;
+        h1 {
+            color: #e07a5f;
         }
-        .buy-button {
-            background-color: #e07a5f;
+        .audio-list {
+            list-style-type: none;
+            padding: 0;
         }
-        .buy-button:hover {
-            background-color: #c85a3f;
+        .audio-list li {
+            margin: 10px 0;
         }
-        .review-button {
-            background-color: #3d405b;
+        .audio-list a {
+            text-decoration: none;
+            color: #3d405b;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
         }
-        .review-button:hover {
-            background-color: #2d303b;
+        .audio-list a:hover {
+            color: #e07a5f;
         }
     </style>
     <script>
-        // This function extracts the "word" query parameter from the URL
-        function getAudioFileFromQuery() {
-            var urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('word');
+        // Define an array with your audio filenames (without the .mp3 extension)
+        const audioFiles = [
+            'bird_bear_beer_beard',
+            'cat_dog_fish',
+            'apple_orange_banana' // Add more file names as needed
+        ];
+
+        // Function to create a list of audios
+        function loadAudioList() {
+            const audioListElement = document.getElementById('audio-list');
+            audioFiles.forEach(function(audioFile) {
+                const listItem = document.createElement('li');
+                const audioLink = document.createElement('a');
+
+                // Set the link to point to the audio's dynamic URL
+                audioLink.href = `https://librodeingles.com/pronunciacion.html?word=${audioFile}`;
+                audioLink.innerText = audioFile.replace(/_/g, ', ').replace(/\./g, ' ').toUpperCase();
+
+                listItem.appendChild(audioLink);
+                audioListElement.appendChild(listItem);
+            });
         }
 
-        let audioPlayer, playButton, progressBar, timeDisplay;
-        let isPlaying = false;
-
-        function loadAudio() {
-            const audioFileName = getAudioFileFromQuery();  // Get the audio file name from the query parameter
-            if (audioFileName) {
-                const formattedWords = audioFileName.split('_').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(', ');
-                document.getElementById('word-display').innerText = 'Palabras: ' + formattedWords;
-                document.getElementById('audio-source').src = 'https://librodeingles.com/audios/' + audioFileName + '.mp3';
-                audioPlayer.load();
-            } else {
-                document.getElementById('word-display').innerText = 'No words specified';
-            }
-        }
-
-        function togglePlay() {
-            if (isPlaying) {
-                audioPlayer.pause();
-            } else {
-                audioPlayer.play();
-            }
-        }
-
-        function updatePlayButton() {
-            playButton.innerHTML = isPlaying
-                ? '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>'
-                : '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-        }
-
-        function updateProgress() {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-            progressBar.style.width = `${progress}%`;
-            updateTimeDisplay();
-        }
-
-        function updateTimeDisplay() {
-            const currentTime = formatTime(audioPlayer.currentTime);
-            const duration = formatTime(audioPlayer.duration);
-            timeDisplay.textContent = `${currentTime} / ${duration}`;
-        }
-
-        function formatTime(time) {
-            const minutes = Math.floor(time / 60);
-            const seconds = Math.floor(time % 60);
-            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        function shareAudio() {
-            var word = getQueryParam('word');
-            var url = window.location.href;
+        // Function to handle page sharing
+        function sharePage() {
             if (navigator.share) {
                 navigator.share({
                     title: 'No vas a aprender inglés en 30 días',
-                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
-                    url: url
+                    text: 'Escucha la pronunciación de estas palabras en librodeingles.com',
+                    url: window.location.href
                 }).then(() => {
-                    console.log('Thanks for sharing!');
+                    console.log('¡Gracias por compartir!');
                 }).catch(console.error);
             } else {
-                prompt('Copia y comparte este enlace:', url);
+                alert('Tu navegador no soporta la funcionalidad de compartir.');
             }
         }
-        
+
         window.onload = function() {
-            audioPlayer = document.getElementById('audio-player');
-            playButton = document.getElementById('play-button');
-            progressBar = document.getElementById('progress');
-            timeDisplay = document.getElementById('time-display');
-            updatePlayButton();
-
-            playButton.addEventListener('click', togglePlay);
-            audioPlayer.addEventListener('play', function() {
-                isPlaying = true;
-                updatePlayButton();
-            });
-            audioPlayer.addEventListener('pause', function() {
-                isPlaying = false;
-                updatePlayButton();
-            });
-            audioPlayer.addEventListener('timeupdate', updateProgress);
-            audioPlayer.addEventListener('loadedmetadata', updateTimeDisplay);
-            audioPlayer.addEventListener('ended', function() {
-                isPlaying = false;
-                updatePlayButton();
-                progressBar.style.width = '0%';
-                updateTimeDisplay();
-            });
-
-            loadAudio();  // Load the correct audio file on page load
-        }
+            loadAudioList();  // Generate the audio list on page load
+        };
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>No vas a aprender inglés en 30 días</h1>
-        <h2 id="word-display">Palabras: </h2>
-        <div class="audio-container">
-            <div class="custom-audio-player">
-                <div class="player-controls">
-                    <button id="play-button" class="play-button">
-                        <svg class="play-pause-icon" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div id="progress" class="progress"></div>
-                        </div>
-                        <div id="time-display" class="time-display">0:00 / 0:00</div>
-                    </div>
-                </div>
-            </div>
-            <audio id="audio-player">
-                <source id="audio-source" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-        <div class="button-container">
-            <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
-            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button review-button" onclick="window.location.href='https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7'">Escribir reseña en Amazon</button>
-        </div>
+
+    <!-- Navbar with Buttons -->
+    <div class="navbar">
+        <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
+        <a href="https://librodeingles.com/pronunciacion.html">Audios</a>
+        <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
+        <a href="#" onclick="sharePage()">Compartir</a>
     </div>
+
+    <!-- Page Title -->
+    <h1>Lista de audios para practicar</h1>
+
+    <!-- Audio List -->
+    <ul id="audio-list" class="audio-list">
+        <!-- The list of audios will be dynamically generated here -->
+    </ul>
+
 </body>
 </html>
