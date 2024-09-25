@@ -9,6 +9,8 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
         }
         .navbar {
             width: 100%;
@@ -35,8 +37,7 @@
         .content {
             padding-top: 80px; /* Make sure content doesn't overlap with navbar */
             text-align: center;
-            background-color: #f4f1de;
-            color: #3d405b;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         h1 {
             color: #e07a5f;
@@ -59,20 +60,27 @@
         .audio-list a:hover {
             color: #e07a5f;
         }
-        .audio-player-container {
-            margin-top: 30px;
-            background-color: #f2cc8f;
-            padding: 20px;
-            border-radius: 12px;
-            max-width: 600px;
-            margin: 30px auto;
+        .container {
             text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+            margin: 40px auto;
         }
         .custom-audio-player {
+            width: 100%;
+            max-width: 400px;
+            background-color: #f2cc8f;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .player-controls {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
+            padding: 20px;
         }
         .play-button {
             width: 60px;
@@ -83,13 +91,18 @@
             color: white;
             font-size: 32px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
+            padding: 0;
         }
         .play-button:hover {
             background-color: #c85a3f;
+        }
+        .progress-container {
+            flex-grow: 1;
         }
         .progress-bar {
             width: 100%;
@@ -97,8 +110,6 @@
             background-color: #e9c46a;
             border-radius: 5px;
             overflow: hidden;
-            margin-right: 15px;
-            flex-grow: 1;
         }
         .progress {
             width: 0;
@@ -109,6 +120,7 @@
         .time-display {
             font-size: 14px;
             color: #3d405b;
+            margin-top: 5px;
             text-align: right;
         }
         .message {
@@ -137,14 +149,15 @@
             }
         ];
 
+        let audioPlayer, playButton, progressBar, timeDisplay;
+        let isPlaying = false;
+
         // Function to load and play the selected audio
         function loadAudio(audioUrl, displayName) {
-            const audioPlayer = document.getElementById('audio-player');
-            const audioSource = document.getElementById('audio-source');
             const currentAudioTitle = document.getElementById('current-audio-title');
-
+            
             // Update the audio source and play
-            audioSource.src = audioUrl;
+            document.getElementById('audio-source').src = audioUrl;
             audioPlayer.load();
             audioPlayer.play();
 
@@ -172,9 +185,68 @@
             });
         }
 
+        // Function to update the play button and manage progress
+        function updatePlayButton() {
+            playButton.innerHTML = isPlaying
+                ? '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>'
+                : '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+        }
+
+        function updateProgress() {
+            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            updateTimeDisplay();
+        }
+
+        function updateTimeDisplay() {
+            const currentTime = formatTime(audioPlayer.currentTime);
+            const duration = formatTime(audioPlayer.duration);
+            timeDisplay.textContent = `${currentTime} / ${duration}`;
+        }
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
         window.onload = function() {
+            audioPlayer = document.getElementById('audio-player');
+            playButton = document.getElementById('play-button');
+            progressBar = document.getElementById('progress');
+            timeDisplay = document.getElementById('time-display');
+            updatePlayButton();
+
+            playButton.addEventListener('click', function() {
+                togglePlay();
+            });
+            audioPlayer.addEventListener('play', function() {
+                isPlaying = true;
+                updatePlayButton();
+            });
+            audioPlayer.addEventListener('pause', function() {
+                isPlaying = false;
+                updatePlayButton();
+            });
+            audioPlayer.addEventListener('timeupdate', updateProgress);
+            audioPlayer.addEventListener('loadedmetadata', updateTimeDisplay);
+            audioPlayer.addEventListener('ended', function() {
+                isPlaying = false;
+                updatePlayButton();
+                progressBar.style.width = '0%';
+                updateTimeDisplay();
+            });
+
             loadAudioList();  // Generate the audio list on page load
         };
+
+        function togglePlay() {
+            if (isPlaying) {
+                audioPlayer.pause();
+            } else {
+                audioPlayer.play();
+            }
+        }
     </script>
 </head>
 <body>
@@ -199,20 +271,26 @@
         </ul>
 
         <!-- Audio Player Section -->
-        <div class="audio-player-container">
+        <div class="container">
             <h2 id="current-audio-title">Selecciona una palabra</h2>
             <div class="custom-audio-player">
-                <button id="play-button" class="play-button" onclick="document.getElementById('audio-player').play();">▶️</button>
-                <div class="progress-bar">
-                    <div id="progress" class="progress"></div>
-                </div>
-                <div class="time-display">
-                    <span id="time-display">0:00 / 0:00</span>
+                <div class="player-controls">
+                    <button id="play-button" class="play-button">
+                        <svg class="play-pause-icon" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </button>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div id="progress" class="progress"></div>
+                        </div>
+                        <div id="time-display" class="time-display">0:00 / 0:00</div>
+                    </div>
                 </div>
             </div>
-            <audio id="audio-player" controls>
-                <source id="audio-source" src="" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
+            <audio id="audio-player">
+                <source id="audio-source" type="audio/mpeg">
+                Your browser does not support the audio element.
             </audio>
         </div>
 
