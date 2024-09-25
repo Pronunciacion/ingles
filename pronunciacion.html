@@ -194,6 +194,22 @@
             return `${minutes}:${seconds.toString().padStart(2, '0')}`;
         }
 
+        function shareAudio() {
+            var word = getQueryParam('word');
+            var url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'No vas a aprender inglés en 30 días',
+                    text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
+                    url: url
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                }).catch(console.error);
+            } else {
+                prompt('Copia y comparte este enlace:', url);
+            }
+        }
+        
         window.onload = function() {
             audioPlayer = document.getElementById('audio-player');
             playButton = document.getElementById('play-button');
