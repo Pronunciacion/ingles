@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audios - No vas a aprender inglés en 30 días</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #3d405b;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #f4f1de;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #81b29a;
+        }
+        h1 {
+            color: #e07a5f;
+        }
+        .audio-list {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .audio-list li {
+            margin: 10px 0;
+        }
+        .audio-list a {
+            text-decoration: none;
+            color: #3d405b;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .audio-list a:hover {
+            color: #e07a5f;
+        }
+        .audio-player-container {
+            margin-top: 30px;
+        }
+        audio {
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+    <script>
+        // Manually maintain the list of audio filenames
+        const audioFiles = [
+            'bird_bear_beer_beard',
+            'cat_dog_fish',
+            'apple_orange_banana', // Add more filenames here
+        ];
+
+        // Function to format filenames for display
+        function formatAudioName(audioFile) {
+            return audioFile
+                .replace(/\./g, ' ')    // Replace periods with spaces
+                .replace(/_/g, ', ');   // Replace underscores with commas and space
+        }
+
+        // Function to create a list of audios and add click listeners to play audio
+        function loadAudioList() {
+            const audioListElement = document.getElementById('audio-list');
+            const audioPlayer = document.getElementById('audio-player');
+            const audioSource = document.getElementById('audio-source');
+            const currentAudioTitle = document.getElementById('current-audio-title');
+
+            audioFiles.forEach(function(audioFile) {
+                const listItem = document.createElement('li');
+                const audioLink = document.createElement('a');
+
+                // Set the link text to formatted audio name
+                audioLink.innerText = formatAudioName(audioFile);
+
+                // Add click listener to load and play audio in the player
+                audioLink.onclick = function() {
+                    audioSource.src = `https://librodeingles.com/audios/${audioFile}.mp3`;
+                    audioPlayer.load();
+                    audioPlayer.play();
+                    currentAudioTitle.innerText = formatAudioName(audioFile);  // Update the displayed title
+                    return false;  // Prevent page navigation
+                };
+
+                listItem.appendChild(audioLink);
+                audioListElement.appendChild(listItem);
+            });
+        }
+
+        window.onload = function() {
+            loadAudioList();  // Generate the audio list on page load
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Navbar with Buttons -->
+    <div class="navbar">
+        <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
+        <a href="https://librodeingles.com/audios.html">Audios</a>
+        <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
+        <a href="#" onclick="sharePage()">Compartir</a>
+    </div>
+
+    <!-- Page Title -->
+    <h1>Escoge una palabra para escuchar la pronunciación</h1>
+
+    <!-- Audio List -->
+    <ul id="audio-list" class="audio-list">
+        <!-- The list of audios will be dynamically generated here -->
+    </ul>
+
+    <!-- Audio Player Section -->
+    <div class="audio-player-container">
+        <h2 id="current-audio-title">Selecciona una palabra</h2>
+        <audio id="audio-player" controls>
+            <source id="audio-source" src="" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+</body>
+</html>
