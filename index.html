@@ -204,7 +204,7 @@
             var url = window.location.href;
             if (navigator.share) {
                 navigator.share({
-                    title: 'FAK! Inglés para españoles',
+                    title: 'No vas a aprender inglés en 30 días',
                     text: 'Escucha la pronunciación de estas palabras: ' + word.replace(/_/g, ', ').replace(/\./g, ' '),
                     url: url
                 }).then(() => {
@@ -246,7 +246,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>FAK! Inglés para españoles</h1>
+        <h1>No vas a aprender inglés en 30 días</h1>
         <h2 id="word-display">Palabras: </h2>
         <div class="audio-container">
             <div class="custom-audio-player">
