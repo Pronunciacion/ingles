@@ -66,45 +66,42 @@
             width: 100%;
             max-width: 400px;
         }
+        .message {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #3d405b;
+        }
     </style>
     <script>
-        // Manually maintain the list of audio filenames
-        const audioFiles = [
-            'bird_bear_beer_beard',
-            'cat_dog_fish',
-            'apple_orange_banana',
-            // Add more filenames here
+        // List of the 3 example audio filenames with corresponding display names
+        const exampleAudios = [
+            { 
+                name: 'focus', 
+                displayName: 'Focus, español vs inglés', 
+                url: 'https://librodeingles.com/pronunciacion.html?word=focus' 
+            },
+            { 
+                name: 'pick.it.up', 
+                displayName: 'Pick it up, español vs inglés', 
+                url: 'https://librodeingles.com/pronunciacion.html?word=pick.it.up' 
+            },
+            { 
+                name: 'sonido.th.entre.dientes', 
+                displayName: 'Sonido th entre dientes', 
+                url: 'https://librodeingles.com/pronunciacion.html?word=sonido.%27th%27.Entre.Dientes' 
+            }
         ];
 
-        // Function to format filenames for display
-        function formatAudioName(audioFile) {
-            return audioFile
-                .replace(/\./g, ' ')    // Replace periods with spaces
-                .replace(/_/g, ', ');   // Replace underscores with commas and space
-        }
-
-        // Function to create a list of audios and add click listeners to play audio
+        // Function to create the list of example audios
         function loadAudioList() {
             const audioListElement = document.getElementById('audio-list');
-            const audioPlayer = document.getElementById('audio-player');
-            const audioSource = document.getElementById('audio-source');
-            const currentAudioTitle = document.getElementById('current-audio-title');
-
-            audioFiles.forEach(function(audioFile) {
+            exampleAudios.forEach(function(audio) {
                 const listItem = document.createElement('li');
                 const audioLink = document.createElement('a');
 
-                // Set the link text to formatted audio name
-                audioLink.innerText = formatAudioName(audioFile);
-
-                // Add click listener to load and play audio in the player
-                audioLink.onclick = function() {
-                    audioSource.src = `https://librodeingles.com/audios/${audioFile}.mp3`;
-                    audioPlayer.load();
-                    audioPlayer.play();
-                    currentAudioTitle.innerText = formatAudioName(audioFile);  // Update the displayed title
-                    return false;  // Prevent page navigation
-                };
+                // Set the link text and URL
+                audioLink.href = audio.url;
+                audioLink.innerText = audio.displayName;
 
                 listItem.appendChild(audioLink);
                 audioListElement.appendChild(listItem);
@@ -128,20 +125,16 @@
 
     <!-- Page Content -->
     <div class="content">
-        <h1>Escoge una palabra para escuchar la pronunciación</h1>
+        <h1>Escucha estas pronunciaciones pronunciación</h1>
 
         <!-- Audio List -->
         <ul id="audio-list" class="audio-list">
             <!-- The list of audios will be dynamically generated here -->
         </ul>
 
-        <!-- Audio Player Section -->
-        <div class="audio-player-container">
-            <h2 id="current-audio-title">Selecciona una palabra</h2>
-            <audio id="audio-player" controls>
-                <source id="audio-source" src="" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
+        <!-- Message to encourage buying the book -->
+        <div class="message">
+            <p>Encuentra muchos más audios en el libro para que puedas perfeccionar tu pronunciación.</p>
         </div>
     </div>
 
