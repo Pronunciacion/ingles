@@ -5,7 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pronunciación de Palabras</title>
     <style>
-        /* Add your styles here (similar to your index page) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .navbar {
+            width: 100%;
+            background-color: #3d405b;
+            padding: 15px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #f4f1de;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #81b29a;
+        }
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .book-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2em;
+            color: #e07a5f;
+        }
+        p {
+            font-size: 1.2em;
+            color: #3d405b;
+        }
     </style>
     <script>
         // This function extracts the "word" query parameter from the URL
