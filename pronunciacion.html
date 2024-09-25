@@ -8,17 +8,17 @@
         /* Add your styles here (similar to your index page) */
     </style>
     <script>
-        // This function extracts the last part of the URL path (e.g., bird_bear_beer_beard)
-        function getAudioFileFromPath() {
-            const pathParts = window.location.pathname.split('/');
-            return pathParts[pathParts.length - 1];
+        // This function extracts the "word" query parameter from the URL
+        function getAudioFileFromQuery() {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('word');
         }
 
         let audioPlayer, playButton, progressBar, timeDisplay;
         let isPlaying = false;
 
         function loadAudio() {
-            const audioFileName = getAudioFileFromPath();  // Get the audio file name from URL
+            const audioFileName = getAudioFileFromQuery();  // Get the audio file name from the query parameter
             if (audioFileName) {
                 const formattedWords = audioFileName.split('_').map(function(w) {
                     return w.charAt(0).toUpperCase() + w.slice(1);
