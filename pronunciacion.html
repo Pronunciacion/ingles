@@ -149,13 +149,21 @@
         let isPlaying = false;
 
         function loadAudio() {
-            const audioFileName = getAudioFileFromQuery();  // Get the audio file name from the query parameter
-            if (audioFileName) {
-                const formattedWords = audioFileName.split('_').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(', ');
+            var word = getQueryParam('word');
+            if (word) {
+                var fileName = word;
+                var formattedWords;
+                if (word.includes('.')) {
+                    formattedWords = word.split('.').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(' ');
+                } else {
+                    formattedWords = word.split('_').map(function(w) {
+                        return w.charAt(0).toUpperCase() + w.slice(1);
+                    }).join(', ');
+                }
+                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/FAK/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = formattedWords;
-                document.getElementById('audio-source').src = 'https://librodeingles.com/audios/' + audioFileName + '.mp3';
                 audioPlayer.load();
             } else {
                 document.getElementById('word-display').innerText = 'No words specified';
