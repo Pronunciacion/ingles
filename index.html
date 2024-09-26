@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
+    <script>
+        // Device detection and redirection logic
+        function detectDevice() {
+            if (window.innerWidth <= 768) {
+                // Redirect to the mobile version of the website
+                window.location.href = "mobile.html"; // Replace with the correct mobile version URL
+            } else {
+                // Stay on the desktop version
+                window.location.href = "index.html"; // Or just continue with the desktop version
+            }
+        }
+
+        // Run the function as soon as the page loads
+        window.onload = detectDevice;
+    </script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
