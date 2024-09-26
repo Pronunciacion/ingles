@@ -171,7 +171,7 @@
         // Extract the "word" query parameter from the URL
         function getAudioFileFromQuery() {
             var urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('word');
+            return decodeURIComponent(urlParams.get('word'));
         }
 
         let audioPlayer, playButton, progressBar, timeDisplay;
@@ -183,13 +183,14 @@
                 var fileName = word;
                 var formattedWords;
 
-                // Replace periods with spaces and capitalize words
-                formattedWords = word.split('.').map(function(w) {
-                    return w.charAt(0).toUpperCase() + w.slice(1);
-                }).join(' ');
+                // Replace periods with spaces
+                formattedWords = word.split('.').join(' ');
 
                 // Replace underscores with ", " (comma and space)
                 formattedWords = formattedWords.split('_').join(', ');
+
+                // Optionally, capitalize the first letter of the entire string
+                formattedWords = formattedWords.charAt(0).toUpperCase() + formattedWords.slice(1);
 
                 // Set the audio source and display the formatted words
                 document.getElementById('audio-source').src = 'https://pronunciacion.github.io/ingles/audios/' + fileName + '.mp3';
@@ -284,7 +285,7 @@
         <div class="audio-container">
             <div class="custom-audio-player">
                 <div class="player-controls">
-                    <button id="play-button" class="play-button">
+                    <button id="play-button" class="play-button" aria-label="Reproducir">
                         <!-- Play Icon -->
                         <svg class="play-pause-icon" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
