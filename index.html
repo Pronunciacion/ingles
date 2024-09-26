@@ -5,6 +5,20 @@
     <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
+    <meta name="keywords" content="aprender ingles, libro de ingles, fluidez en ingles, ingles repido, pronunciacion, no vas a aprender ingles en 30 dias">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="No vas a aprender inglés en 30 días">
+    <meta property="og:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
+    <meta property="og:image" content="path_to_your_book_image.jpg">
+    <meta property="og:url" content="https://librodeingles.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="No vas a aprender inglés en 30 días">
+    <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
+    <meta name="twitter:image" content="path_to_your_book_image.jpg">
     <style>
         /* Reset and basic styles */
         * {
@@ -12,13 +26,15 @@
             margin: 0;
             padding: 0;
         }
+        html, body {
+            height: 100%; /* Ensure the body takes up the full viewport height */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
         /* Navbar */
         .navbar {
@@ -58,11 +74,15 @@
             width: 30px;
             height: 25px;
             cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1001;
         }
         .menu-icon div {
             width: 100%;
             height: 4px;
-            background-color: #f4f1de;
+            background-color: #3d405b;
             transition: all 0.3s ease;
         }
         /* Mobile Menu */
@@ -96,13 +116,18 @@
         .content {
             flex: 1;
             text-align: center;
-            padding: 50px 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .book-image {
             max-width: 300px;
             width: 100%;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         h1 {
             font-size: 2em;
@@ -112,39 +137,66 @@
         p {
             font-size: 1.2em;
             color: #3d405b;
+            margin-bottom: 20px;
+        }
+        .buy-button {
+            display: inline-block;
+            text-align: center;
+            background-color: #e07a5f;
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #c85a3f;
         }
         /* Footer */
         .footer {
             background-color: #3d405b;
             color: #f4f1de;
             text-align: center;
-            padding: 15px;
+            padding: 10px;
+            font-size: 0.9em;
         }
         /* Responsive Design */
         @media (max-width: 768px) {
-            /* Hide desktop menu and show hamburger icon */
-            .navbar .menu {
+            /* Hide desktop navbar on mobile */
+            .navbar {
                 display: none;
             }
+            /* Show hamburger menu icon on mobile */
             .menu-icon {
                 display: flex;
             }
-            /* Adjust logo */
-            .navbar .logo {
-                flex-grow: 0;
+            /* Adjust content padding */
+            .content {
+                padding: 20px;
             }
-            /* Mobile Menu Styles */
-            .mobile-menu {
-                display: block;
+            /* Adjust image size */
+            .book-image {
+                max-width: 200px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .buy-button {
+                font-size: 1em;
+                padding: 8px 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar (hidden on mobile) -->
     <div class="navbar">
-        
         <div class="menu">
             <a href="https://librodeingles.com">Inicio</a>
             <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
@@ -152,12 +204,6 @@
             <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
             <a href="/contact">Contacto</a>
             <a href="#" onclick="sharePage()">Compartir</a>
-        </div>
-        <!-- Hamburger Menu Icon -->
-        <div class="menu-icon" onclick="toggleMobileMenu()" aria-label="Menú" role="button" aria-expanded="false">
-            <div></div>
-            <div></div>
-            <div></div>
         </div>
     </div>
 
@@ -171,16 +217,24 @@
         <a href="#" onclick="sharePage()">Compartir</a>
     </div>
 
+    <!-- Hamburger Menu Icon (visible on mobile at bottom right) -->
+    <div class="menu-icon" onclick="toggleMobileMenu()" aria-label="Menú" role="button" aria-expanded="false">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
     <!-- Main Content -->
     <div class="content">
         <h1>No vas a aprender inglés en 30 días</h1>
         <img src="path_to_your_book_image.jpg" alt="Portada del libro" class="book-image">
+        <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="buy-button">Comprar el Libro</a>
         <p>Aprende inglés con un enfoque diferente y mejora tu fluidez rápidamente.</p>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        &copy; Todos los derechos reservados.
+        &copy; 2023 Libro de Inglés. Todos los derechos reservados.
     </div>
 
     <!-- Scripts -->
@@ -215,6 +269,14 @@
                 mobileMenu.classList.remove('open');
                 menuIcon.setAttribute('aria-expanded', 'false');
             });
+        });
+
+        // Close mobile menu when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (mobileMenu.classList.contains('open') && !mobileMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                mobileMenu.classList.remove('open');
+                menuIcon.setAttribute('aria-expanded', 'false');
+            }
         });
     </script>
 
