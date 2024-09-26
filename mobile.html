@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libro de Inglés - Mobile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-icon {
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #3d405b;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 100%;
+            height: 5px;
+            background-color: #f4f1de;
+            margin: 5px 0;
+        }
+
+        .menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            background-color: #3d405b;
+            border-radius: 8px;
+        }
+
+        .menu a {
+            display: block;
+            padding: 10px 15px;
+            color: #f4f1de;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .menu a:hover {
+            background-color: #81b29a;
+        }
+
+        .menu-open {
+            display: block;
+        }
+
+        .book-image {
+            max-width: 200px;
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .button {
+            display: block;
+            text-align: center;
+            background-color: #e07a5f;
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #c85a3f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="menu" id="menu">
+        <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
+        <a href="https://librodeingles.com/audios.html">Audios</a>
+        <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <!-- Main Content -->
+    <img src="path_to_your_book_image.jpg" alt="Portada del libro" class="book-image">
+
+    <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="button">Comprar el Libro</a>
+    <a href="#" class="button" onclick="sharePage()">Compartir</a>
+
+    <!-- Script for Share Button -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('menu-open');
+        }
+
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'No vas a aprender inglés en 30 días',
+                    text: 'Mejora tu pronunciación de una forma diferente',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('¡Gracias por compartir!');
+                }).catch(console.error);
+            } else {
+                alert('Tu navegador no soporta la funcionalidad de compartir.');
+            }
+        }
+    </script>
+
+</body>
+</html>
