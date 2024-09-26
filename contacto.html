@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto - Libro de Inglés</title>
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contacto - Aprende más sobre el autor de 'No vas a aprender inglés en 30 días' y conéctate en LinkedIn.">
+    <meta name="keywords" content="contacto, autor, libro de inglés, aprender inglés, LinkedIn">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contacto - Libro de Inglés">
+    <meta property="og:description" content="Conoce al autor de 'No vas a aprender inglés en 30 días' y descubre su historia.">
+    <meta property="og:image" content="path_to_your_book_image.jpg">
+    <meta property="og:url" content="https://librodeingles.com/contacto.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contacto - Libro de Inglés">
+    <meta name="twitter:description" content="Conoce al autor de 'No vas a aprender inglés en 30 días' y descubre su historia.">
+    <meta name="twitter:image" content="path_to_your_book_image.jpg">
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Basic styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f1de;
+            color: #3d405b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Navbar */
+        .navbar {
+            width: 100%;
+            background-color: #3d405b;
+            padding: 10px 20px;
+        }
+        .navbar .menu {
+            display: flex;
+            justify-content: center;
+        }
+        .navbar .menu a {
+            color: #f4f1de;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar .menu a:hover {
+            background-color: #81b29a;
+        }
+        /* Main Content */
+        .contact-content {
+            flex: 1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact-content h1 {
+            font-size: 2em;
+            color: #e07a5f;
+            margin-bottom: 20px;
+        }
+        .contact-content p {
+            font-size: 1.2em;
+            color: #3d405b;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        .linkedin-button {
+            display: inline-block;
+            background-color: #0077b5;
+            color: #ffffff;
+            font-size: 1.2em;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .linkedin-button:hover {
+            background-color: #005582;
+        }
+        .linkedin-button i {
+            margin-right: 8px;
+        }
+        /* Footer */
+        .footer {
+            background-color: #3d405b;
+            color: #f4f1de;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-content h1 {
+                font-size: 1.8em;
+            }
+            .contact-content p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+            .linkedin-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="menu">
+            <a href="https://librodeingles.com">Inicio</a>
+            <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
+            <a href="https://librodeingles.com/audios.html">Audios</a>
+            <a href="https://librodeingles.com/contacto.html">Contacto</a>
+            <a href="#" onclick="sharePage()">Compartir</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="contact-content">
+        <h1>Tu Nombre</h1>
+        <p>
+            <!-- Aquí puedes escribir tu breve historia -->
+            Soy un apasionado del aprendizaje de idiomas con años de experiencia enseñando inglés a estudiantes de todos los niveles. Escribí 'No vas a aprender inglés en 30 días' para ofrecer un enfoque realista y efectivo en el dominio del idioma.
+        </p>
+        <a href="https://www.linkedin.com/in/tu-perfil" class="linkedin-button" target="_blank">
+            <i class="fab fa-linkedin"></i> Conéctate en LinkedIn
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2023 Libro de Inglés. Todos los derechos reservados.
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function sharePage() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Contacto - Libro de Inglés',
+                    text: 'Conoce al autor de "No vas a aprender inglés en 30 días" y descubre su historia.',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('¡Gracias por compartir!');
+                }).catch(console.error);
+            } else {
+                alert('Tu navegador no soporta la funcionalidad de compartir.');
+            }
+        }
+    </script>
+
+</body>
+</html>
