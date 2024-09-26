@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- Viewport meta tag to ensure proper rendering and touch zooming -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
     <style>
@@ -93,6 +94,23 @@
         <img src="path_to_your_book_image.jpg" alt="Portada del libro" class="book-image">
         <p>Aprende inglés con un enfoque diferente y mejora tu fluidez rápidamente.</p>
     </div>
+
+    <!-- Device Detection Script -->
+    <script>
+        // Function to detect mobile devices
+        function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        // Check if the user wants to view the desktop site
+        var urlParams = new URLSearchParams(window.location.search);
+        var view = urlParams.get('view');
+
+        // Redirect to mobile.html if on a mobile device and not opting for desktop view
+        if (isMobileDevice() && view !== 'desktop') {
+            window.location.href = 'https://librodeingles.com/mobile.html';
+        }
+    </script>
 
     <!-- Script for Share Button -->
     <script>
