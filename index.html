@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
-    <meta name="keywords" content="aprender ingles, libro de ingles, fluidez en ingles, ingles repido, pronunciacion, no vas a aprender ingles en 30 dias">
+    <meta name="description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
+    <meta name="keywords" content="aprender inglés, libro de inglés, fluidez en inglés, inglés rápido, pronunciación, no vas a aprender inglés en 30 días">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="No vas a aprender inglés en 30 días">
-    <meta property="og:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
+    <meta property="og:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
     <meta property="og:image" content="path_to_your_book_image.jpg">
     <meta property="og:url" content="https://librodeingles.com">
     <meta property="og:type" content="website">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="No vas a aprender inglés en 30 días">
-    <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente con">
+    <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
     <meta name="twitter:image" content="path_to_your_book_image.jpg">
     <style>
         /* Reset and basic styles */
@@ -45,18 +45,14 @@
             padding: 10px 20px;
             position: relative;
         }
-        .navbar .logo {
-            color: #f4f1de;
-            font-size: 1.5em;
-            font-weight: bold;
-            flex-grow: 1;
-        }
         .navbar .menu {
             display: flex;
+            flex-grow: 1;
+            justify-content: center;
         }
         .navbar .menu a {
             color: #f4f1de;
-            margin-left: 15px;
+            margin: 0 10px;
             text-decoration: none;
             font-size: 1.1em;
             padding: 10px;
@@ -70,19 +66,23 @@
         .menu-icon {
             display: none; /* Hidden on desktop */
             flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 25px;
+            justify-content: space-around;
+            width: 40px; /* Increased size */
+            height: 35px; /* Increased size */
             cursor: pointer;
             position: fixed;
-            bottom: 20px;
+            bottom: 80px; /* Moved higher for better visibility */
             right: 20px;
             z-index: 1001;
+            background-color: #e07a5f;
+            border-radius: 8px;
+            padding: 10px;
         }
         .menu-icon div {
             width: 100%;
             height: 4px;
-            background-color: #3d405b;
+            background-color: #ffffff; /* Contrasting color for visibility */
+            border-radius: 2px; /* Rounded edges */
             transition: all 0.3s ease;
         }
         /* Mobile Menu */
@@ -150,6 +150,7 @@
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            margin-bottom: 20px;
         }
         .buy-button:hover {
             background-color: #c85a3f;
@@ -229,12 +230,12 @@
         <h1>No vas a aprender inglés en 30 días</h1>
         <img src="path_to_your_book_image.jpg" alt="Portada del libro" class="book-image">
         <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="buy-button">Comprar el Libro</a>
-        <p>Aprende inglés con un enfoque diferente y mejora tu fluidez rápidamente.</p>
+        <p>Mejora tu inglés con un enfoque diferente.</p>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-        &copy; 2023 Libro de Inglés. Todos los derechos reservados.
+        &copy; Todos los derechos reservados.
     </div>
 
     <!-- Scripts -->
@@ -252,7 +253,7 @@
             if (navigator.share) {
                 navigator.share({
                     title: 'No vas a aprender inglés en 30 días',
-                    text: 'Aprende inglés con un enfoque único y escucha las pronunciaciones en librodeingles.com',
+                    text: 'Mejora tu inglés con un enfoque diferente',
                     url: window.location.href
                 }).then(() => {
                     console.log('¡Gracias por compartir!');
