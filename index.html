@@ -250,7 +250,18 @@
     <!-- Main Content -->
     <div class="content">
         <h1>No vas a aprender inglés en 30 días</h1>
-        <img src="path_to_your_book_image.jpg" alt="Portada del libro" class="book-image">
+        <picture>
+      <source srcset="images/book-cover-600.avif" type="image/avif">
+      <source srcset="images/book-cover-600.webp" type="image/webp">
+      <img src="images/book-cover-600.jpg"
+         srcset="images/book-cover-300.jpg 300w,
+                 images/book-cover-600.jpg 600w,
+                 images/book-cover-1200.jpg 1200w"
+         sizes="(max-width: 600px) 80vw, 600px"
+         alt="Portada del libro 'No vas a aprender inglés en 30 días' mostrando un diseño moderno y atractivo"
+         class="book-image"
+         width="600" height="900"
+         loading="lazy">
         <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="buy-button">Comprar el Libro</a>
         <p>Mejora tu inglés con un enfoque diferente.</p>
     </div>
