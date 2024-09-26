@@ -2,39 +2,99 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport meta tag to ensure proper rendering and touch zooming -->
+    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
     <style>
+        /* Reset and basic styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
         }
+        /* Navbar */
         .navbar {
             width: 100%;
             background-color: #3d405b;
-            padding: 15px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            position: relative;
         }
-        .navbar a {
+        .navbar .logo {
             color: #f4f1de;
-            margin: 0 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            flex-grow: 1;
+        }
+        .navbar .menu {
+            display: flex;
+        }
+        .navbar .menu a {
+            color: #f4f1de;
+            margin-left: 15px;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             padding: 10px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-        .navbar a:hover {
+        .navbar .menu a:hover {
             background-color: #81b29a;
         }
+        /* Hamburger Menu Icon */
+        .menu-icon {
+            display: none; /* Hidden on desktop */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 100%;
+            height: 4px;
+            background-color: #f4f1de;
+            transition: all 0.3s ease;
+        }
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            background-color: #3d405b;
+            padding-top: 60px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: #f4f1de;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .mobile-menu a:hover {
+            background-color: #81b29a;
+        }
+        /* Main Content */
         .content {
+            flex: 1;
             text-align: center;
             padding: 50px 20px;
         }
@@ -47,44 +107,67 @@
         h1 {
             font-size: 2em;
             color: #e07a5f;
+            margin-bottom: 20px;
         }
         p {
             font-size: 1.2em;
             color: #3d405b;
         }
-
+        /* Footer */
+        .footer {
+            background-color: #3d405b;
+            color: #f4f1de;
+            text-align: center;
+            padding: 15px;
+        }
         /* Responsive Design */
         @media (max-width: 768px) {
-            .navbar {
+            /* Hide desktop menu and show hamburger icon */
+            .navbar .menu {
+                display: none;
+            }
+            .menu-icon {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
             }
-            .navbar a {
-                margin: 10px 0;
-                font-size: 1em;
+            /* Adjust logo */
+            .navbar .logo {
+                flex-grow: 0;
             }
-            .content {
-                padding: 30px 10px;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            p {
-                font-size: 1em;
+            /* Mobile Menu Styles */
+            .mobile-menu {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar with Buttons -->
+    <!-- Navbar -->
     <div class="navbar">
+        <div class="logo">Libro de Inglés</div>
+        <div class="menu">
+            <a href="https://librodeingles.com">Inicio</a>
+            <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
+            <a href="https://librodeingles.com/audios.html">Audios</a>
+            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
+            <a href="/contact">Contacto</a>
+            <a href="#" onclick="sharePage()">Compartir</a>
+        </div>
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMobileMenu()" aria-label="Menú" role="button">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
         <a href="https://librodeingles.com">Inicio</a>
         <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
         <a href="https://librodeingles.com/audios.html">Audios</a>
         <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
-        <a href="mailto:contacto@librodeingles.com">Contacto</a>
+        <a href="/contact">Contacto</a>
         <a href="#" onclick="sharePage()">Compartir</a>
     </div>
 
@@ -95,25 +178,18 @@
         <p>Aprende inglés con un enfoque diferente y mejora tu fluidez rápidamente.</p>
     </div>
 
-    <!-- Device Detection Script -->
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2023 Libro de Inglés. Todos los derechos reservados.
+    </div>
+
+    <!-- Scripts -->
     <script>
-        // Function to detect mobile devices
-        function isMobileDevice() {
-            return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('open');
         }
 
-        // Check if the user wants to view the desktop site
-        var urlParams = new URLSearchParams(window.location.search);
-        var view = urlParams.get('view');
-
-        // Redirect to mobile.html if on a mobile device and not opting for desktop view
-        if (isMobileDevice() && view !== 'desktop') {
-            window.location.href = 'https://librodeingles.com/mobile.html';
-        }
-    </script>
-
-    <!-- Script for Share Button -->
-    <script>
         function sharePage() {
             if (navigator.share) {
                 navigator.share({
