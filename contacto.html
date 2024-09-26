@@ -23,15 +23,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Basic styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
         }
         /* Navbar */
         .navbar {
@@ -58,29 +63,31 @@
         /* Main Content */
         .contact-content {
             flex: 1;
-            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 20px;
         }
         .contact-content h1 {
             font-size: 2em;
             color: #e07a5f;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .contact-content p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #3d405b;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.4;
         }
         .linkedin-button {
             display: inline-block;
             background-color: #0077b5;
             color: #ffffff;
-            font-size: 1.2em;
-            padding: 12px 24px;
+            font-size: 1.1em;
+            padding: 10px 20px;
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease;
@@ -102,15 +109,14 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .contact-content h1 {
-                font-size: 1.8em;
+                font-size: 1.5em;
             }
             .contact-content p {
                 font-size: 1em;
-                padding: 0 10px;
             }
             .linkedin-button {
                 font-size: 1em;
-                padding: 10px 20px;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -132,7 +138,6 @@
     <div class="contact-content">
         <h1>Javier Sanz</h1>
         <p>
-            <!-- Aquí puedes escribir tu breve historia -->
             ¡Hola! Los últimos once años de mi vida han sido un viaje cultural a través del mundo anglófono que me gustaría compartir contigo. Actualmente, llevo siete años residiendo en Estados Unidos, pero mi travesía también me ha llevado por Irlanda y el Reino Unido. Escribí 'No vas a aprender inglés en 30 días' para ofrecer un enfoque realista y efectivo en el dominio del inglés.
         </p>
         <a href="https://www.linkedin.com/in/javiersz/" class="linkedin-button" target="_blank">
