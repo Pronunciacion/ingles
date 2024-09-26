@@ -9,24 +9,24 @@
         /* Reset and basic styles */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%; /* Ensure html and body take up full height */
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f1de;
             color: #3d405b;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Prevent scrolling */
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh; /* Ensure the body takes up the full viewport height */
+            align-items: center;
+            overflow: hidden; /* Prevent scrolling */
         }
         /* Book title */
         h1 {
-            margin: 0;
-            padding: 20px;
+            margin-bottom: 20px;
             color: #e07a5f;
             font-size: 1.5em;
             text-align: center;
@@ -39,6 +39,9 @@
             max-width: 90%;
             width: 400px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         h2 {
             margin-bottom: 25px;
@@ -47,6 +50,7 @@
         }
         .audio-container {
             margin-top: 25px;
+            width: 100%;
         }
         .custom-audio-player {
             width: 100%;
@@ -277,37 +281,39 @@
     </script>
 </head>
 <body>
-    <!-- Book Title Moved Outside of Container -->
-    <h1>No vas a aprender inglés en 30 días</h1>
+    <div>
+        <!-- Book Title Moved Outside of Container -->
+        <h1>No vas a aprender inglés en 30 días</h1>
 
-    <div class="container">
-        <h2 id="word-display">Palabras: </h2>
-        <div class="audio-container">
-            <div class="custom-audio-player">
-                <div class="player-controls">
-                    <button id="play-button" class="play-button" aria-label="Reproducir">
-                        <!-- Play Icon -->
-                        <svg class="play-pause-icon" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div id="progress" class="progress"></div>
+        <div class="container">
+            <h2 id="word-display">Palabras: </h2>
+            <div class="audio-container">
+                <div class="custom-audio-player">
+                    <div class="player-controls">
+                        <button id="play-button" class="play-button" aria-label="Reproducir">
+                            <!-- Play Icon -->
+                            <svg class="play-pause-icon" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progress" class="progress"></div>
+                            </div>
+                            <div id="time-display" class="time-display">0:00 / 0:00</div>
                         </div>
-                        <div id="time-display" class="time-display">0:00 / 0:00</div>
                     </div>
                 </div>
+                <audio id="audio-player">
+                    <source id="audio-source" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
             </div>
-            <audio id="audio-player">
-                <source id="audio-source" type="audio/mpeg">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-        </div>
-        <div class="button-container">
-            <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
-            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button review-button" onclick="window.location.href='https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7'">Escribir reseña en Amazon</button>
+            <div class="button-container">
+                <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
+                <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+                <button class="button review-button" onclick="window.location.href='https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7'">Escribir reseña en Amazon</button>
+            </div>
         </div>
     </div>
 </body>
