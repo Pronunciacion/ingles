@@ -51,10 +51,20 @@
             text-align: center;
             margin-bottom: 25px;
         }
+        .content-box {
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #b22234; /* Add red border */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 600px;
+        }
         p {
             font-size: 1em;
             line-height: 1.6;
-            text-align: left;
             margin-bottom: 15px;
         }
         .cta-container {
@@ -158,15 +168,17 @@
 
     <div class="container">
         <h2>Prompt para practicar inglés con IA</h2>
-        <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
-        <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
-        <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
-        <p>3. If I use very simple language, please introduce more advanced vocabulary or idioms that could elevate my expression, and explain their meanings.</p>
-        <p>4. Occasionally ask me questions to encourage me to expand on my thoughts or to use specific grammatical structures.</p>
-        <p>5. At the end of our conversation, summarize 2-3 key areas for improvement and provide brief tips for each.</p>
-        <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
-        <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
-        <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
+        <div class="content-box">
+            <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
+            <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
+            <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
+            <p>3. If I use very simple language, please introduce more advanced vocabulary or idioms that could elevate my expression, and explain their meanings.</p>
+            <p>4. Occasionally ask me questions to encourage me to expand on my thoughts or to use specific grammatical structures.</p>
+            <p>5. At the end of our conversation, summarize 2-3 key areas for improvement and provide brief tips for each.</p>
+            <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
+            <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
+            <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
+        </div>
         
         <div class="cta-container">
             <button class="button secondary-cta" onclick="shareContent()">Compartir</button>
