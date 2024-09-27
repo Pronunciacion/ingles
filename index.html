@@ -12,34 +12,35 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #d1e2ff); /* Blue gradient background */
+            background: linear-gradient(to bottom, #ffffff, #d1e2ff);
             color: #3d405b;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            overflow: hidden;
         }
         .container {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
+            overflow-y: auto;
         }
         h1 {
             color: #b23a48;
-            font-size: 1.8em;
+            font-size: 1.5em;
             text-align: center;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
         .book-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px;
+            max-width: 100%;
         }
         .book-cover {
             max-width: 100%;
@@ -77,23 +78,21 @@
         }
         .features {
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            gap: 15px;
             margin-top: 20px;
-            flex-wrap: wrap;
+            width: 100%;
         }
         .feature {
             background-color: white;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin: 10px;
-            flex: 1 1 200px;
-            max-width: 250px;
             text-align: center;
         }
         .feature-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.5em;
+            margin-bottom: 5px;
             color: #464970;
         }
         footer {
@@ -107,8 +106,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         .contact-button {
             background-color: #b23a48;
@@ -121,20 +120,24 @@
         .contact-button:hover {
             background-color: #8b2a35;
         }
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
             .features {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: space-around;
             }
             .feature {
-                max-width: 100%;
+                flex: 1;
+                max-width: 30%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>No vas a aprender inglés en 30 días</h1>
+        <h1>NO VAS A APRENDER INGLÉS EN 30 DÍAS</h1>
         <div class="book-container">
             <img src="images/book-cover-600.jpg" alt="Portada del libro 'No vas a aprender inglés en 30 días'" class="book-cover">
         </div>
@@ -144,9 +147,9 @@
         </div>
         <div class="features">
             <div class="feature">
-                <div class="feature-icon">👍</div>
-                <h3>Confianza al Hablar</h3>
-                <p>Gana seguridad y consigue mejores trabajos</p>
+                <div class="feature-icon">🧠</div>
+                <h3>Método Cognitivo</h3>
+                <p>Aprende inglés de forma natural y efectiva</p>
             </div>
             <div class="feature">
                 <div class="feature-icon">🎧</div>
@@ -154,9 +157,9 @@
                 <p>Mejora tu pronunciación y comprensión auditiva</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">🧠</div>
-                <h3>Método Cognitivo</h3>
-                <p>Análisis del inglés para entenderlo mejor</p>
+                <div class="feature-icon">🌟</div>
+                <h3>Confianza al Hablar</h3>
+                <p>Gana seguridad en conversaciones reales</p>
             </div>
         </div>
     </div>
