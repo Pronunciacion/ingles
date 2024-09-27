@@ -12,59 +12,76 @@
     <title>Libro inglés - Prompt para IA</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #3d405b;
             margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #1e1e1e;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            max-width: 90%;
-            width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #ffffff, #d1e2ff);
         }
         h1 {
-            margin-bottom: 10px;
+            margin: 0 0 20px 0;
+            padding: 20px;
+            color: #b22234;
+            font-size: 1.5em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid #b22234;
         }
         h2 {
-            margin-bottom: 20px;
-            color: #bbbbbb;
+            margin-bottom: 25px;
+            color: #3d405b;
+            font-size: 1.5em;
         }
         p {
             text-align: left;
             margin-bottom: 10px;
+            color: #3d405b;
+            font-size: 0.9em;
         }
         .button-container {
             margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .button {
             font-size: 1em;
             color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            margin: 5px;
+            flex: 1 0 calc(50% - 10px);
+            max-width: 180px;
+            padding: 12px 20px;
+            border: none;
+            text-align: center;
         }
         .share-button {
-            background-color: #6200ee;
+            background-color: #3d405b;
         }
         .share-button:hover {
-            background-color: #290e7a;
+            background-color: #2c304a;
         }
         .buy-button {
-            background-color: #029061;
+            background-color: #b22234;
         }
         .buy-button:hover {
-            background-color: #02734b;
+            background-color: #9b1c2e;
         }
     </style>
     <script>
@@ -86,8 +103,9 @@
     <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
+    <h1>No vas a aprender inglés en 30 días</h1>
+    
     <div class="container">
-        <h1>No aprenderás inglés en 30 días</h1>
         <h2>Prompt para practicar inglés con IA</h2>
         <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
         <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
@@ -98,9 +116,10 @@
         <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
         <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
         <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
+        
         <div class="button-container">
             <button class="button share-button" onclick="shareContent()">Compartir</button>
-            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
+            <a class="button buy-button" href="https://www.amazon.com/dp/B08KH3ZQQ7" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
         </div>
     </div>
 </body>
