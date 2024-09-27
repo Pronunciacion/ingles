@@ -18,7 +18,6 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="No vas a aprender inglés en 30 días">
     <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
-    <meta name="twitter:image" content="path_to_your_book_image.jpg">
     <style>
         /* Reset and basic styles */
         * {
@@ -27,11 +26,11 @@
             padding: 0;
         }
         html, body {
-            height: 100%; /* Ensure the body takes up the full viewport height */
+            height: 100%;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f1de;
+            background: linear-gradient(to bottom, #f4f1de, #e0ecf8); /* Blue gradient background */
             color: #3d405b;
             display: flex;
             flex-direction: column;
@@ -57,14 +56,15 @@
             font-size: 1.1em;
             padding: 10px;
             border-radius: 5px;
+            background-color: #e07a5f;
             transition: background-color 0.3s ease;
         }
         .navbar .menu a:hover {
-            background-color: #81b29a;
+            background-color: #c85a3f;
         }
         /* Hamburger Menu Icon */
         .menu-icon {
-            display: none; /* Hidden on desktop */
+            display: none;
             flex-direction: column;
             justify-content: space-around;
             width: 50px;
@@ -82,7 +82,7 @@
         .menu-icon div {
             width: 100%;
             height: 5px;
-            background-color: #ffffff; /* Contrasting color for visibility */
+            background-color: #ffffff;
             border-radius: 2px;
             transition: all 0.3s ease;
         }
@@ -131,17 +131,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 2px solid #c85a3f;
-            border-radius: 12px;
-            max-width: 90%;
-            margin: auto;
-            background-color: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
         h1 {
             font-size: 2em;
             color: #e07a5f;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
         p {
             font-size: 1.2em;
@@ -284,7 +280,7 @@
 
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('open');
-            menuIcon.classList.toggle('open'); // Add this line to toggle the 'open' class
+            menuIcon.classList.toggle('open');
             const isOpen = mobileMenu.classList.contains('open');
             menuIcon.setAttribute('aria-expanded', isOpen);
         }
