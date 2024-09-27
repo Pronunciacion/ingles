@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <!-- Favicon -->
@@ -8,57 +8,66 @@
     
     <!-- Apple Touch Icon (for iOS devices) -->
     <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Libro inglés - Prompt para IA</title>
     <style>
+        /* General Reset and Basic Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%; /* Full viewport height */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
+            background: linear-gradient(to bottom, #ffffff, #d1e2ff);
             color: #3d405b;
-            margin: 0;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* No scrolling on desktop */
+        }
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            background-image: linear-gradient(to bottom, #ffffff, #d1e2ff);
-        }
-        h1 {
-            margin: 0 0 20px 0;
             padding: 20px;
-            color: #b22234;
-            font-size: 1.5em;
             text-align: center;
-            text-transform: uppercase;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 600px;
-            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
             border: 2px solid #b22234;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #b22234;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
         h2 {
-            margin-bottom: 25px;
             color: #3d405b;
             font-size: 1.5em;
+            margin-bottom: 25px;
         }
         p {
             text-align: left;
-            margin-bottom: 10px;
             color: #3d405b;
             font-size: 0.9em;
+            margin-bottom: 10px;
         }
         .button-container {
-            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
+            margin-top: 20px;
         }
         .button {
             font-size: 1em;
@@ -68,8 +77,8 @@
             flex: 1 0 calc(50% - 10px);
             max-width: 180px;
             padding: 12px 20px;
-            border: none;
             text-align: center;
+            border: none;
         }
         .share-button {
             background-color: #3d405b;
@@ -82,6 +91,51 @@
         }
         .buy-button:hover {
             background-color: #9b1c2e;
+        }
+        /* Footer */
+        footer {
+            background-color: #3d405b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            width: 100%;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-button {
+            background-color: #b22234;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #9b1c2e;
+        }
+        /* Responsive for Mobile */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            p {
+                font-size: 0.8em;
+            }
+            .button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
         }
     </style>
     <script>
@@ -103,8 +157,8 @@
     <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
-    <h1>No vas a aprender inglés en 30 días</h1>
-    
+    <h1>NO VAS A APRENDER INGLÉS EN 30 DÍAS</h1>
+
     <div class="container">
         <h2>Prompt para practicar inglés con IA</h2>
         <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
@@ -122,5 +176,12 @@
             <a class="button buy-button" href="https://www.amazon.com/dp/B08KH3ZQQ7" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© Todos los derechos reservados</p>
+            <a href="https://librodeingles.com/contacto.html" class="contact-button">Contacto</a>
+        </div>
+    </footer>
 </body>
 </html>
