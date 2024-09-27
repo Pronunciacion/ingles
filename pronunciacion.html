@@ -116,13 +116,15 @@
         .button {
             font-size: 1em;
             color: #ffffff;
-            border: none;
-            padding: 12px 20px;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
             flex: 1 0 calc(50% - 10px);
             max-width: 180px;
+            padding: 12px 20px;
+            text-decoration: none; /* Remove underline for anchor elements */
+            display: block;
+            text-align: center;
         }
         .share-button {
             background-color: #81b29a;
@@ -330,9 +332,9 @@
             </audio>
         </div>
         <div class="button-container">
-            <button class="button share-button" onclick="shareAudio()">Compartir Audio</button>
-            <button class="button buy-button" onclick="window.location.href='https://www.amazon.com/dp/B08KH3ZQQ7'">Comprar el Libro</button>
-            <button class="button review-button" onclick="window.location.href='https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7'">Escribir reseña en Amazon</button>
+            <a href="#" class="button share-button" onclick="shareAudio(); return false;">Compartir Audio</a>
+            <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="button buy-button" target="_blank">Comprar el Libro</a>
+            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
         </div>
     </div>
 </body>
