@@ -2,226 +2,126 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport meta tag for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
-    <meta name="keywords" content="aprender inglés, libro de inglés, fluidez en inglés, inglés rápido, pronunciación, no vas a aprender inglés en 30 días">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="No vas a aprender inglés en 30 días">
-    <meta property="og:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
-    <meta property="og:image" content="path_to_your_book_image.jpg">
-    <meta property="og:url" content="https://librodeingles.com">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="No vas a aprender inglés en 30 días">
-    <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
+    <title>No vas a aprender inglés en 30 días</title>
+    <!-- Keep your existing meta tags here -->
     <style>
-        /* Reset and basic styles */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        html, body {
-            height: 100%;
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #f4f1de, #e0ecf8); /* Blue gradient background */
+            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
             color: #3d405b;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
-        /* Navbar */
         .navbar {
-            width: 100%;
             background-color: #3d405b;
-            display: flex;
-            align-items: center;
             padding: 10px 20px;
-            position: relative;
         }
         .navbar .menu {
             display: flex;
-            flex-grow: 1;
             justify-content: center;
+            gap: 10px;
         }
         .navbar .menu a {
             color: #f4f1de;
-            margin: 0 10px;
             text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px;
+            font-size: 1em;
+            padding: 5px 10px;
             border-radius: 5px;
-            background-color: #e07a5f;
             transition: background-color 0.3s ease;
         }
         .navbar .menu a:hover {
-            background-color: #c85a3f;
-        }
-        /* Hamburger Menu Icon */
-        .menu-icon {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 1001;
             background-color: #e07a5f;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .menu-icon div {
-            width: 100%;
-            height: 5px;
-            background-color: #ffffff;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        /* Animation for menu icon when open */
-        .menu-icon.open div:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-        .menu-icon.open div:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-icon.open div:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 70%;
-            height: 100%;
-            background-color: #3d405b;
-            padding-top: 60px;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-        .mobile-menu a {
-            display: block;
-            padding: 15px 20px;
-            color: #f4f1de;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        .mobile-menu a:hover {
-            background-color: #81b29a;
-        }
-        /* Main Content */
         .content {
             flex: 1;
-            text-align: center;
-            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
         }
-        h1 {
+        .main-title {
             font-size: 2em;
-            color: #e07a5f;
+            color: #b23a48;
             margin-bottom: 20px;
             text-transform: uppercase;
-            font-weight: bold;
         }
-        p {
-            font-size: 1.2em;
+        .book-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .book-title {
+            font-size: 1.5em;
             color: #3d405b;
             margin-bottom: 20px;
         }
         .book-image {
             width: 100%;
-            height: auto;
             max-width: 300px;
-            display: block;
-            margin: 0 auto 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        .buy-button {
-            display: inline-block;
-            text-align: center;
-            background-color: #e07a5f;
-            color: #ffffff;
-            font-size: 1.2em;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+            height: auto;
             margin-bottom: 20px;
+            border-radius: 5px;
         }
-        .buy-button:hover {
-            background-color: #c85a3f;
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        /* Footer */
+        .primary-button {
+            background-color: #e07a5f;
+            color: white;
+        }
+        .secondary-button {
+            background-color: #81b29a;
+            color: white;
+        }
+        .review-button {
+            background-color: #f2cc8f;
+            color: #3d405b;
+        }
         .footer {
             background-color: #3d405b;
             color: #f4f1de;
             text-align: center;
             padding: 10px;
-            font-size: 0.9em;
+            margin-top: auto;
         }
-        /* Responsive Design */
         @media (max-width: 768px) {
-            /* Hide desktop navbar on mobile */
-            .navbar {
-                display: none;
+            .navbar .menu {
+                flex-direction: column;
+                align-items: center;
             }
-            /* Show hamburger menu icon on mobile */
-            .menu-icon {
-                display: flex;
-            }
-            /* Adjust content padding */
-            .content {
-                padding: 20px;
-            }
-            /* Adjust image size */
-            .book-image {
-                max-width: 200px;
-            }
-            h1 {
+            .main-title {
                 font-size: 1.5em;
             }
-            p {
-                font-size: 1em;
+            .book-title {
+                font-size: 1.2em;
             }
-            .buy-button {
-                font-size: 1em;
-                padding: 8px 16px;
+            .button {
+                width: 100%;
+                margin: 5px 0;
             }
-        }
-        /* Optional: Close button for mobile menu */
-        .mobile-menu .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2em;
-            color: #f4f1de;
-            cursor: pointer;
         }
     </style>
-    <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
-
-    <!-- Navbar (hidden on mobile) -->
-    <div class="navbar">
+    <nav class="navbar">
         <div class="menu">
             <a href="https://librodeingles.com">Inicio</a>
             <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
@@ -230,61 +130,24 @@
             <a href="https://librodeingles.com/contacto.html">Contacto</a>
             <a href="#" onclick="sharePage()">Compartir</a>
         </div>
-    </div>
+    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <!-- Optional Close Button -->
-        <span class="close-button" onclick="toggleMobileMenu()">&times;</span>
-        <a href="https://librodeingles.com">Inicio</a>
-        <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
-        <a href="https://librodeingles.com/audios.html">Audios</a>
-        <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
-        <a href="https://librodeingles.com/contacto.html">Contacto</a>
-        <a href="#" onclick="sharePage()">Compartir</a>
-    </div>
+    <main class="content">
+        <h1 class="main-title">No vas a aprender inglés en 30 días</h1>
+        <div class="book-container">
+            <h2 class="book-title">Mejora tu inglés con un enfoque diferente</h2>
+            <img src="images/book-cover-600.jpg" alt="Portada del libro 'No vas a aprender inglés en 30 días'" class="book-image">
+            <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="button primary-button">Comprar el Libro</a>
+            <a href="https://librodeingles.com/audios.html" class="button secondary-button">Escuchar Audios</a>
+            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7" class="button review-button">Escribir Reseña en Amazon</a>
+        </div>
+    </main>
 
-    <!-- Hamburger Menu Icon (visible on mobile at bottom right) -->
-    <div class="menu-icon" onclick="toggleMobileMenu()" aria-label="Menú" role="button" aria-expanded="false">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    <footer class="footer">
+        &copy; 2024 Todos los derechos reservados.
+    </footer>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h1>No vas a aprender inglés en 30 días</h1>
-        <picture>
-            <img src="images/book-cover-600.jpg"
-                 srcset="images/book-cover-300.jpg 300w,
-                         images/book-cover-600.jpg 600w,
-                         images/book-cover-1200.jpg 1200w"
-                 sizes="(max-width: 600px) 80vw, 600px"
-                 alt="Portada del libro 'No vas a aprender inglés en 30 días'"
-                 class="book-image"
-                 loading="lazy">
-        </picture>
-        <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="buy-button">Comprar el Libro</a>
-        <p>Mejora tu inglés con un enfoque diferente.</p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        &copy; Todos los derechos reservados.
-    </div>
-
-    <!-- Scripts -->
     <script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('open');
-            menuIcon.classList.toggle('open');
-            const isOpen = mobileMenu.classList.contains('open');
-            menuIcon.setAttribute('aria-expanded', isOpen);
-        }
-
         function sharePage() {
             if (navigator.share) {
                 navigator.share({
@@ -298,26 +161,6 @@
                 alert('Tu navegador no soporta la funcionalidad de compartir.');
             }
         }
-
-        // Close mobile menu when a link is clicked
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                menuIcon.classList.remove('open');
-                menuIcon.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Close mobile menu when clicking outside of it
-        document.addEventListener('click', function(event) {
-            if (mobileMenu.classList.contains('open') && !mobileMenu.contains(event.target) && !menuIcon.contains(event.target)) {
-                mobileMenu.classList.remove('open');
-                menuIcon.classList.remove('open');
-                menuIcon.setAttribute('aria-expanded', 'false');
-            }
-        });
     </script>
-
 </body>
 </html>
