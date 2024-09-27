@@ -9,96 +9,106 @@
     <!-- Apple Touch Icon (for iOS devices) -->
     <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Libro inglés - Prompt para IA</title>
+    <title>No vas a aprender inglés en 30 días</title>
     <style>
-        /* General Reset and Basic Styling */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        html, body {
-            height: 100%; /* Full viewport height */
-        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to bottom, #ffffff, #d1e2ff);
             color: #3d405b;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            min-height: 100vh;
-            overflow: hidden; /* No scrolling on desktop */
         }
         .container {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            border: 2px solid #b22234;
-            margin-bottom: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-y: auto;
         }
         h1 {
             color: #b22234;
             font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 30px; /* Adjusted margin for spacing */
             text-transform: uppercase;
-            margin-bottom: 20px;
         }
-        h2 {
-            color: #3d405b;
-            font-size: 1.5em;
-            margin-bottom: 25px;
-        }
-        p {
-            text-align: left;
-            color: #3d405b;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        .button-container {
+        .book-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+        .book-cover {
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+        }
+        .cta-container {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
-            margin-top: 20px;
+            width: 100%;
+            max-width: 300px;
         }
         .button {
             font-size: 1em;
             color: #ffffff;
             border-radius: 8px;
             cursor: pointer;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
+            transition: all 0.3s ease;
             padding: 12px 20px;
+            text-decoration: none; /* Removed underline */
             text-align: center;
-            border: none;
         }
-        .share-button {
+        .primary-cta {
+            background-color: #b23a48;
+        }
+        .primary-cta:hover {
+            background-color: #8b2a35;
+        }
+        .secondary-cta {
             background-color: #3d405b;
         }
-        .share-button:hover {
-            background-color: #2c304a;
+        .secondary-cta:hover {
+            background-color: #363a59;
         }
-        .buy-button {
-            background-color: #b22234;
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
         }
-        .buy-button:hover {
-            background-color: #9b1c2e;
+        .feature {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
         }
-        /* Footer */
+        .feature-icon {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #464970;
+        }
         footer {
             background-color: #3d405b;
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: auto;
             width: 100%;
         }
         .footer-content {
@@ -108,7 +118,7 @@
             gap: 10px;
         }
         .contact-button {
-            background-color: #b22234;
+            background-color: #b23a48;
             color: white;
             padding: 8px 15px;
             border-radius: 5px;
@@ -116,25 +126,30 @@
             transition: background-color 0.3s ease;
         }
         .contact-button:hover {
-            background-color: #9b1c2e;
+            background-color: #8b2a35;
         }
-        /* Responsive for Mobile */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
+        @media (min-width: 768px) {
             h1 {
-                font-size: 1.2em;
+                font-size: 1.8em;
             }
-            h2 {
-                font-size: 1.3em;
+            .features {
+                flex-direction: row;
+                justify-content: space-around;
             }
-            p {
-                font-size: 0.8em;
+            .feature {
+                flex: 1;
+                max-width: 30%;
             }
-            .button {
-                font-size: 0.9em;
-                padding: 10px 15px;
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .footer-content p {
+                margin-left: auto; /* Align copyright message to the left */
+            }
+            .contact-button {
+                margin-left: auto; /* Align contact button to the right */
             }
         }
     </style>
@@ -171,9 +186,9 @@
         <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
         <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
         
-        <div class="button-container">
-            <button class="button share-button" onclick="shareContent()">Compartir</button>
-            <a class="button buy-button" href="https://www.amazon.com/dp/B08KH3ZQQ7" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
+        <div class="cta-container">
+            <button class="button secondary-cta" onclick="shareContent()">Compartir</button>
+            <a class="button primary-cta" href="https://www.amazon.com/dp/B08KH3ZQQ7" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
         </div>
     </div>
 
