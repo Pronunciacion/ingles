@@ -129,10 +129,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>NO VAS A APRENDER INGLÉS EN 30 DÍAS</h1>
-
-        <div class="content-box" id="content-box">
-            <h2>Prompt para practicar inglés con IA</h2>
+        <h2>Prompt para practicar inglés con IA</h2>
+        <div class="content-box">
+            <!-- Copy Icon -->
+            <i class="copy-icon" onclick="copyToClipboard()">📋</i>
+            <div id="copied-popup" class="copied-popup">Copiado</div>
             <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
             <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
             <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
@@ -142,11 +143,8 @@
             <p>6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.</p>
             <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
             <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
-            <!-- Clipboard Icon -->
-            <img src="path_to_your_clipboard_icon.png" class="clipboard-icon" id="copy-icon" alt="Copy to Clipboard" title="Copy to Clipboard">
-            <div class="copied-popup" id="copied-popup">Copiado</div>
         </div>
-
+        
         <div class="cta-container">
             <button class="button secondary-cta" onclick="shareContent()">Compartir</button>
             <a class="button primary-cta" href="https://www.amazon.com/dp/B08KH3ZQQ7" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
