@@ -61,11 +61,37 @@
             margin-bottom: 30px;
             width: 100%;
             max-width: 600px;
+            position: relative;
         }
         p {
             font-size: 1em;
             line-height: 1.6;
             margin-bottom: 15px;
+        }
+        /* Copy Icon */
+        .copy-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #b22234;
+            cursor: pointer;
+        }
+        .copy-icon:hover {
+            color: #8b2a35;
+        }
+        /* Copied Message */
+        .copied-popup {
+            position: absolute;
+            top: 50px;
+            right: 15px;
+            background-color: #3d405b;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .cta-container {
             display: flex;
@@ -160,6 +186,29 @@
                 prompt('Copia y pega este link:', url);
             }
         }
+
+        function copyToClipboard() {
+            // Get the text to copy
+            const text = `"I'd like to have a conversation to help improve my English. Please follow these guidelines:\n\n` +
+            `1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.\n` +
+            `2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.\n` +
+            `3. If I use very simple language, please introduce more advanced vocabulary or idioms that could elevate my expression, and explain their meanings.\n` +
+            `4. Occasionally ask me questions to encourage me to expand on my thoughts or to use specific grammatical structures.\n` +
+            `5. At the end of our conversation, summarize 2-3 key areas for improvement and provide brief tips for each.\n` +
+            `6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.\n` +
+            `7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.\n` +
+            `8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."`;
+            
+            // Copy the text to the clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                // Show "copied" popup
+                const popup = document.getElementById("copied-popup");
+                popup.style.opacity = 1;
+                setTimeout(() => {
+                    popup.style.opacity = 0;
+                }, 2000); // Hide after 2 seconds
+            });
+        }
     </script>
     <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
@@ -169,6 +218,9 @@
     <div class="container">
         <h2>Prompt para practicar inglés con IA</h2>
         <div class="content-box">
+            <!-- Copy Icon -->
+            <i class="copy-icon" onclick="copyToClipboard()">📋</i>
+            <div id="copied-popup" class="copied-popup">Copiado</div>
             <p>"I'd like to have a conversation to help improve my English. Please follow these guidelines:</p>
             <p>1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.</p>
             <p>2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.</p>
