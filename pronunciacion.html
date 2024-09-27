@@ -7,167 +7,201 @@
     <title>Pronunciación de Palabras</title>
     <style>
         /* Reset and basic styles */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f1de;
-            color: #3d405b;
-            margin: 0;
-            padding-bottom: 100px;
-            overflow: hidden; /* Prevent scrolling */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Ensure the body takes up the full viewport height */
-        }
-        /* Book title */
-        h1 {
-            margin: 0;
-            padding: 20px;
-            color: #e07a5f;
-            font-size: 1.5em;
-            text-align: center;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 400px;
-            text-align: center;
-        }
-        h2 {
-            margin-bottom: 25px;
-            color: #3d405b;
-            font-size: 2em;
-        }
-        .audio-container {
-            margin-top: 25px;
-        }
-        .custom-audio-player {
-            width: 100%;
-            background-color: #f2cc8f;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .player-controls {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-        }
-        .play-button {
-            width: 60px;
-            height: 60px;
-            background-color: #e07a5f;
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 32px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            padding: 0;
-            flex-shrink: 0;
-        }
-        .play-button:hover {
-            background-color: #c85a3f;
-        }
-        .play-pause-icon {
-            width: 32px;
-            height: 32px;
-            fill: #ffffff;
-        }
-        .progress-container {
-            flex-grow: 1;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #e9c46a;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #e07a5f;
-            transition: width 0.1s linear;
-        }
-        .time-display {
-            font-size: 14px;
-            color: #3d405b;
-            margin-top: 5px;
-            text-align: right;
-        }
-        .button-container {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .button {
-            font-size: 1em;
-            color: #ffffff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
-            padding: 12px 20px;
-            text-decoration: none; /* Remove underline for anchor elements */
-            display: block;
-            text-align: center;
-        }
-        .share-button {
-            background-color: #81b29a;
-        }
-        .share-button:hover {
-            background-color: #61927a;
-        }
-        .buy-button {
-            background-color: #e07a5f;
-        }
-        .buy-button:hover {
-            background-color: #c85a3f;
-        }
-        .review-button {
-            background-color: #3d405b;
-        }
-        .review-button:hover {
-            background-color: #2d303b;
-        }
-        /* Adjustments for small screens */
-        @media (max-height: 600px) {
-            .container {
-                padding: 15px;
-            }
-            .player-controls {
-                padding: 10px;
-            }
-            .play-button {
-                width: 50px;
-                height: 50px;
-                margin-right: 15px;
-            }
-            .play-pause-icon {
-                width: 24px;
-                height: 24px;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .button {
-                padding: 10px 15px;
-            }
-        }
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #3d405b;
+    margin: 0;
+    padding-bottom: 100px;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+    background-image: linear-gradient(to bottom, #ffffff, #d1e2ff); /* Subtle blue gradient for American feel */
+}
+
+/* Book title with American color theme */
+h1 {
+    margin: 0;
+    padding: 20px;
+    color: #b22234; /* Dark red, similar to the red on the American flag */
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: uppercase; /* For strong visual impact */
+}
+
+/* Container with a subtle border representing American colors */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    border: 2px solid #b22234; /* Red border */
+}
+
+/* Subtitle */
+h2 {
+    margin-bottom: 25px;
+    color: #3d405b;
+    font-size: 2em;
+}
+
+/* Audio player container */
+.audio-container {
+    margin-top: 25px;
+}
+
+/* Custom audio player with American color accents */
+.custom-audio-player {
+    width: 100%;
+    background-color: #f2cc8f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.play-button {
+    width: 60px;
+    height: 60px;
+    background-color: #3d405b; /* Navy blue */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.play-button:hover {
+    background-color: #b22234; /* Red on hover */
+}
+
+.play-pause-icon {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff; /* White play/pause icon */
+}
+
+.progress-container {
+    flex-grow: 1;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e9c46a; /* Subtle color to indicate progress */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #3d405b; /* Navy blue progress bar */
+    transition: width 0.1s linear;
+}
+
+.time-display {
+    font-size: 14px;
+    color: #3d405b;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Button container */
+.button-container {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Buttons with American color palette */
+.button {
+    font-size: 1em;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1 0 calc(50% - 10px);
+    max-width: 180px;
+    padding: 12px 20px;
+    text-decoration: none; /* Remove underline for anchor elements */
+    display: block;
+    text-align: center;
+}
+
+.share-button {
+    background-color: #3d405b; /* Navy blue */
+}
+
+.share-button:hover {
+    background-color: #b22234; /* Red on hover */
+}
+
+.buy-button {
+    background-color: #b22234; /* Red button */
+}
+
+.buy-button:hover {
+    background-color: #3d405b; /* Blue on hover */
+}
+
+.review-button {
+    background-color: #ffffff;
+    color: #3d405b;
+    border: 2px solid #3d405b; /* Navy blue outline */
+}
+
+.review-button:hover {
+    background-color: #3d405b;
+    color: #ffffff;
+}
+
+/* Adjustments for small screens */
+@media (max-height: 600px) {
+    .container {
+        padding: 15px;
+    }
+    .player-controls {
+        padding: 10px;
+    }
+    .play-button {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+    .play-pause-icon {
+        width: 24px;
+        height: 24px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .button {
+        padding: 10px 15px;
+    }
+}
     </style>
     <script>
         // Extract the "word" query parameter from the URL
