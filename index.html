@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <!-- Viewport meta tag for responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro de Inglés - No vas a aprender inglés en 30 días</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
@@ -19,8 +20,6 @@
     <meta name="twitter:title" content="No vas a aprender inglés en 30 días">
     <meta name="twitter:description" content="'No vas a aprender inglés en 30 días'. Mejora tu inglés con un enfoque diferente.">
     <meta name="twitter:image" content="path_to_your_book_image.jpg">
-    
-    <!-- Styles with updated American-themed palette -->
     <style>
         /* Reset and basic styles */
         * {
@@ -33,14 +32,11 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
+            background-color: #f4f1de;
             color: #3d405b;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-
         /* Navbar */
         .navbar {
             width: 100%;
@@ -67,17 +63,16 @@
         .navbar .menu a:hover {
             background-color: #81b29a;
         }
-
         /* Hamburger Menu Icon */
         .menu-icon {
             display: none; /* Hidden on desktop */
             flex-direction: column;
             justify-content: space-around;
-            width: 50px;
-            height: 50px;
+            width: 50px; /* Increased size */
+            height: 50px; /* Increased size */
             cursor: pointer;
             position: fixed;
-            bottom: 80px;
+            bottom: 80px; /* Adjusted position */
             right: 20px;
             z-index: 1001;
             background-color: #e07a5f;
@@ -88,10 +83,11 @@
         .menu-icon div {
             width: 100%;
             height: 5px;
-            background-color: #ffffff;
-            border-radius: 2px;
+            background-color: #ffffff; /* Contrasting color for visibility */
+            border-radius: 2px; /* Rounded edges */
             transition: all 0.3s ease;
         }
+        /* Animation for menu icon when open */
         .menu-icon.open div:nth-child(1) {
             transform: rotate(45deg) translate(7px, 7px);
         }
@@ -101,9 +97,9 @@
         .menu-icon.open div:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
-
         /* Mobile Menu */
         .mobile-menu {
+            /* display: none; */ /* Removed this line */
             position: fixed;
             top: 0;
             right: 0;
@@ -128,9 +124,9 @@
         .mobile-menu a:hover {
             background-color: #81b29a;
         }
-
         /* Main Content */
         .content {
+            flex: 1;
             text-align: center;
             padding: 20px;
             display: flex;
@@ -139,18 +135,18 @@
             align-items: center;
         }
         .book-image {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
-            display: block;
-            margin: 0 auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Adjust this value as needed */
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
         h1 {
             font-size: 2em;
-            color: #b22234; /* Red similar to the American flag */
+            color: #e07a5f;
             margin-bottom: 20px;
         }
         p {
@@ -174,7 +170,6 @@
         .buy-button:hover {
             background-color: #c85a3f;
         }
-
         /* Footer */
         .footer {
             background-color: #3d405b;
@@ -183,7 +178,6 @@
             padding: 10px;
             font-size: 0.9em;
         }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             /* Hide desktop navbar on mobile */
@@ -194,9 +188,11 @@
             .menu-icon {
                 display: flex;
             }
+            /* Adjust content padding */
             .content {
                 padding: 20px;
             }
+            /* Adjust image size */
             .book-image {
                 max-width: 200px;
             }
@@ -211,7 +207,6 @@
                 padding: 8px 16px;
             }
         }
-
         /* Optional: Close button for mobile menu */
         .mobile-menu .close-button {
             position: absolute;
@@ -222,9 +217,7 @@
             cursor: pointer;
         }
     </style>
-
-    <!-- Plausible Analytics Script -->
-    <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.outbound-links.pageview-props.tagged-events.js"></script>
+    <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 </head>
 <body>
 
@@ -263,15 +256,14 @@
     <div class="content">
         <h1>No vas a aprender inglés en 30 días</h1>
         <picture>
-            <img src="images/book-cover-600.jpg"
-                srcset="images/book-cover-300.jpg 300w,
-                        images/book-cover-600.jpg 600w,
-                        images/book-cover-1200.jpg 1200w"
-                sizes="(max-width: 600px) 80vw, 600px"
-                alt="Portada del libro 'No vas a aprender inglés en 30 días'"
-                class="book-image"
-                loading="lazy">
-        </picture>
+      <img src="images/book-cover-600.jpg"
+     srcset="images/book-cover-300.jpg 300w,
+             images/book-cover-600.jpg 600w,
+             images/book-cover-1200.jpg 1200w"
+     sizes="(max-width: 600px) 80vw, 600px"
+     alt="Portada del libro 'No vas a aprender inglés en 30 días'"
+     class="book-image"
+     loading="lazy">
         <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="buy-button">Comprar el Libro</a>
         <p>Mejora tu inglés con un enfoque diferente.</p>
     </div>
@@ -288,7 +280,7 @@
 
         function toggleMobileMenu() {
             mobileMenu.classList.toggle('open');
-            menuIcon.classList.toggle('open');
+            menuIcon.classList.toggle('open'); // Add this line to toggle the 'open' class
             const isOpen = mobileMenu.classList.contains('open');
             menuIcon.setAttribute('aria-expanded', isOpen);
         }
@@ -312,7 +304,7 @@
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
-                menuIcon.classList.remove('open');
+                menuIcon.classList.remove('open'); // Remove 'open' class
                 menuIcon.setAttribute('aria-expanded', 'false');
             });
         });
@@ -321,7 +313,7 @@
         document.addEventListener('click', function(event) {
             if (mobileMenu.classList.contains('open') && !mobileMenu.contains(event.target) && !menuIcon.contains(event.target)) {
                 mobileMenu.classList.remove('open');
-                menuIcon.classList.remove('open');
+                menuIcon.classList.remove('open'); // Remove 'open' class
                 menuIcon.setAttribute('aria-expanded', 'false');
             }
         });
