@@ -2,149 +2,118 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>No vas a aprender inglés en 30 días</title>
-    <!-- Keep your existing meta tags here -->
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+            background-color: #f0f4f8; /* Light blue background */
             color: #3d405b;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .navbar {
-            background-color: #3d405b;
-            padding: 10px 20px;
-        }
-        .navbar .menu {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        .navbar .menu a {
-            color: #f4f1de;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .navbar .menu a:hover {
-            background-color: #e07a5f;
-        }
-        .content {
-            flex: 1;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            margin: 0 0 20px 0;
             padding: 20px;
-            text-align: center;
-        }
-        .main-title {
-            font-size: 2em;
-            color: #b23a48;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        .book-container {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        .book-title {
+            color: #b23a48; /* Darker red for the title */
             font-size: 1.5em;
-            color: #3d405b;
-            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+            background-color: #ffffff;
         }
-        .book-image {
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            border: 2px solid #b23a48; /* Darker red border */
+        }
+        .book-cover {
             width: 100%;
             max-width: 300px;
             height: auto;
+            border-radius: 10px;
             margin-bottom: 20px;
-            border-radius: 5px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            border-radius: 5px;
+            font-size: 1em;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 12px 20px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            display: block;
+            text-align: center;
         }
-        .primary-button {
-            background-color: #e07a5f;
-            color: white;
+        .primary-cta {
+            background-color: #b23a48; /* Darker red button */
         }
-        .secondary-button {
-            background-color: #81b29a;
-            color: white;
+        .primary-cta:hover {
+            background-color: #464970; /* Darker blue on hover */
+        }
+        .secondary-cta {
+            background-color: #464970; /* Darker blue */
+        }
+        .secondary-cta:hover {
+            background-color: #b23a48; /* Darker red on hover */
         }
         .review-button {
-            background-color: #f2cc8f;
-            color: #3d405b;
+            background-color: #ffffff;
+            color: #464970;
+            border: 2px solid #464970; /* Darker blue outline */
         }
-        .footer {
-            background-color: #3d405b;
-            color: #f4f1de;
+        .review-button:hover {
+            background-color: #464970;
+            color: #ffffff;
+        }
+        footer {
+            margin-top: 20px;
             text-align: center;
+            width: 100%;
             padding: 10px;
-            margin-top: auto;
+            background-color: #ffffff;
         }
-        @media (max-width: 768px) {
-            .navbar .menu {
-                flex-direction: column;
-                align-items: center;
-            }
-            .main-title {
-                font-size: 1.5em;
-            }
-            .book-title {
-                font-size: 1.2em;
-            }
-            .button {
-                width: 100%;
-                margin: 5px 0;
-            }
+        .contact-link {
+            color: #464970;
+            text-decoration: none;
+        }
+        .contact-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="menu">
-            <a href="https://librodeingles.com">Inicio</a>
-            <a href="https://www.amazon.com/dp/B08KH3ZQQ7">Comprar el Libro</a>
-            <a href="https://librodeingles.com/audios.html">Audios</a>
-            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7">Escribir Reseña</a>
-            <a href="https://librodeingles.com/contacto.html">Contacto</a>
-            <a href="#" onclick="sharePage()">Compartir</a>
-        </div>
-    </nav>
+    <h1>No vas a aprender inglés en 30 días</h1>
 
-    <main class="content">
-        <h1 class="main-title">No vas a aprender inglés en 30 días</h1>
-        <div class="book-container">
-            <h2 class="book-title">Mejora tu inglés con un enfoque diferente</h2>
-            <img src="images/book-cover-600.jpg" alt="Portada del libro 'No vas a aprender inglés en 30 días'" class="book-image">
-            <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="button primary-button">Comprar el Libro</a>
-            <a href="https://librodeingles.com/audios.html" class="button secondary-button">Escuchar Audios</a>
-            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7" class="button review-button">Escribir Reseña en Amazon</a>
+    <div class="container">
+        <img src="images/book-cover-600.jpg" alt="Portada del libro 'No vas a aprender inglés en 30 días'" class="book-cover">
+        <div class="button-container">
+            <a href="https://www.amazon.com/dp/B08KH3ZQQ7" class="button primary-cta" target="_blank">Comprar el Libro</a>
+            <a href="https://librodeingles.com/audios.html" class="button secondary-cta">Escuchar Audios Gratis</a>
+            <a href="https://www.amazon.com/review/create-review?&asin=B08KH3ZQQ7" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
         </div>
-    </main>
+    </div>
 
-    <footer class="footer">
-        &copy; 2024 Todos los derechos reservados.
+    <footer>
+        <a href="https://librodeingles.com/contacto.html" class="contact-link">Contacto</a>
     </footer>
 
     <script>
