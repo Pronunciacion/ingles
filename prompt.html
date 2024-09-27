@@ -1,9 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt para practicar inglés con IA</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
+    
+    <!-- Apple Touch Icon (for iOS devices) -->
+    <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>No vas a aprender inglés en 30 días</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,6 +24,9 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         .container {
             flex: 1;
@@ -24,35 +34,73 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            max-width: 1200px;
+            max-width: 900px; /* Limit width */
             margin: 0 auto;
             overflow-y: auto;
         }
         h1 {
             color: #b22234;
-            font-size: 1.5em;
+            font-size: 1.8em;
             text-align: center;
-            margin-bottom: 40px;
+            margin-top: 40px; /* Added margin above title */
+            margin-bottom: 30px; /* Adjusted spacing */
             text-transform: uppercase;
         }
+        h2 {
+            color: #3d405b;
+            font-size: 1.4em;
+            text-align: center;
+            margin-bottom: 25px;
+        }
         .content-box {
-            background-color: #ffffff;
             padding: 20px;
+            background-color: #fff;
+            border: 2px solid #b22234; /* Add red border */
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 30px;
             width: 100%;
             max-width: 600px;
-            text-align: left;
-            border: 2px solid #b22234;
             position: relative;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        /* Copy Icon */
+        .copy-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #b22234;
+            cursor: pointer;
+        }
+        .copy-icon:hover {
+            color: #8b2a35;
+        }
+        /* Copied Message */
+        .copied-popup {
+            position: absolute;
+            top: 50px;
+            right: 15px;
+            background-color: #3d405b;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         .cta-container {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px; /* Increased spacing above buttons */
+            margin-bottom: 40px; /* Added margin below buttons */
             width: 100%;
-            max-width: 300px;
         }
         .button {
             font-size: 1em;
@@ -63,9 +111,11 @@
             padding: 12px 20px;
             text-decoration: none;
             text-align: center;
+            flex: 1;
+            max-width: 180px;
         }
         .primary-cta {
-            background-color: #b22234;
+            background-color: #b23a48;
         }
         .primary-cta:hover {
             background-color: #8b2a35;
@@ -81,13 +131,18 @@
             color: white;
             text-align: center;
             padding: 10px;
-            margin-top: auto;
+            width: 100%;
+            margin-top: auto; /* Keep footer at the bottom */
         }
         .footer-content {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-content p {
+            margin: 0;
         }
         .contact-button {
             background-color: #b23a48;
@@ -100,34 +155,67 @@
         .contact-button:hover {
             background-color: #8b2a35;
         }
-        /* Clipboard Icon */
-        .clipboard-icon {
-            width: 24px;
-            height: 24px;
-            position: absolute;
-            bottom: -40px;
-            right: 0;
-            cursor: pointer;
-        }
-        /* Copiado Popup */
-        .copied-popup {
-            position: absolute;
-            bottom: -60px;
-            right: 0;
-            background-color: #b22234;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8em;
-            display: none;
-        }
-        @keyframes fadeOut {
-            0% { opacity: 1; }
-            100% { opacity: 0; }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            .cta-container {
+                flex-direction: column;
+            }
+            .button {
+                max-width: 100%;
+                width: 100%;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
+    <script>
+        function shareContent() {
+            var url = window.location.href;
+            if (navigator.share) {
+                navigator.share({
+                    title: 'No aprenderás inglés en 30 días',
+                    text: 'Mira este prompt para tener conversaciones en inglés con una IA',
+                    url: url
+                }).then(() => {
+                    console.log('¡Gracias por compartirlo!');
+                }).catch(console.error);
+            } else {
+                prompt('Copia y pega este link:', url);
+            }
+        }
+
+        function copyToClipboard() {
+            // Get the text to copy
+            const text = `"I'd like to have a conversation to help improve my English. Please follow these guidelines:\n\n` +
+            `1. If I make any grammatical errors, use incorrect vocabulary, or express something unclearly, kindly point it out and explain the correct usage.\n` +
+            `2. Suggest alternative phrasings or more natural ways to express my ideas when appropriate.\n` +
+            `3. If I use very simple language, please introduce more advanced vocabulary or idioms that could elevate my expression, and explain their meanings.\n` +
+            `4. Occasionally ask me questions to encourage me to expand on my thoughts or to use specific grammatical structures.\n` +
+            `5. At the end of our conversation, summarize 2-3 key areas for improvement and provide brief tips for each.\n` +
+            `6. Throughout our chat, maintain a natural conversation flow. Provide feedback seamlessly without interrupting the discussion too much.\n` +
+            `7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.\n` +
+            `8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."`;
+            
+            // Copy the text to the clipboard
+            navigator.clipboard.writeText(text).then(() => {
+                // Show "copied" popup
+                const popup = document.getElementById("copied-popup");
+                popup.style.opacity = 1;
+                setTimeout(() => {
+                    popup.style.opacity = 0;
+                }, 2000); // Hide after 2 seconds
+            });
+        }
+    </script>
+    <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
+    <h1>NO VAS A APRENDER INGLÉS EN 30 DÍAS</h1>
+
     <div class="container">
         <h2>Prompt para practicar inglés con IA</h2>
         <div class="content-box">
@@ -157,45 +245,5 @@
             <a href="https://librodeingles.com/contacto.html" class="contact-button">Contacto</a>
         </div>
     </footer>
-
-    <script>
-        const copyIcon = document.getElementById('copy-icon');
-        const copiedPopup = document.getElementById('copied-popup');
-        const contentBox = document.getElementById('content-box');
-
-        // Copy content to clipboard
-        copyIcon.addEventListener('click', () => {
-            const text = contentBox.innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                // Show "Copiado" popup
-                copiedPopup.style.display = 'block';
-                // Hide after 1 second
-                setTimeout(() => {
-                    copiedPopup.style.animation = 'fadeOut 1s forwards';
-                }, 800); // Change this time to adjust how long it shows up
-                // Hide completely after fade-out animation
-                setTimeout(() => {
-                    copiedPopup.style.display = 'none';
-                    copiedPopup.style.animation = ''; // Reset animation
-                }, 1800);
-            });
-        });
-
-        // Share Content Function (adjust according to your needs)
-        function shareContent() {
-            const text = "Check this out: " + window.location.href;
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Prompt para practicar inglés con IA',
-                    text: text,
-                    url: window.location.href
-                }).then(() => {
-                    console.log('Shared successfully');
-                }).catch(console.error);
-            } else {
-                alert("Sharing is not supported in your browser.");
-            }
-        }
-    </script>
 </body>
 </html>
