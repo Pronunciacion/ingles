@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -70,21 +71,20 @@
         }
         /* Copy Icon */
         .copy-icon {
-            position: absolute;
+            
             bottom: -30px;
             right: -30px;
             font-size: 24px;
             color: #b22234;
             cursor: pointer;
-            display: flex;
-            align-items: center;
         }
         .copy-icon:hover {
             color: #8b2a35;
         }
         /* Copied Message */
         .copied-popup {
-            margin-left: 10px; /* Adjust to position to the right of the icon */
+            position: relative;
+            bottom: -60px;
             background-color: #3d405b;
             color: #ffffff;
             padding: 5px 10px;
@@ -229,9 +229,8 @@
             <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
             <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
             
-            <div class="copy-icon" onclick="copyToClipboard()">📋
-                <div id="copied-popup" class="copied-popup">Copiado</div>
-            </div>
+            <div class="copy-icon" onclick="copyToClipboard()">📋</div>
+            <div id="copied-popup" class="copied-popup">Copiado</div>
         </div>
         
         <div class="cta-container">
