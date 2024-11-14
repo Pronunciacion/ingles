@@ -18,7 +18,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to bottom, #ffffff, #d1e2ff);
-            color: #3d405b;
+            color: #1a4d86;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -32,14 +32,41 @@
             max-width: 1200px;
             margin: 0 auto;
             overflow-y: auto;
+            padding-top: 1px;
         }
+        
+        .logo {
+            width: 90%;        /* Takes up 90% of container width */
+            max-width: 200px;  /* Maximum width of 400px */
+            height: auto;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                width: 95%;    /* Slightly wider on mobile */
+                max-width: 300px;  /* Smaller on mobile devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 250px;  /* Even smaller on very small devices */
+            }
+        }
+
         h1 {
-            color: #b22234;
-            font-size: 1.8em;
-            text-align: center;
-            margin-bottom: 20px;
-            
+            display: none;
         }
+        .book-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+        
         .audio-list {
             list-style-type: none;
             padding: 0;
@@ -53,7 +80,7 @@
         .audio-list a {
             display: block;
             text-decoration: none;
-            color: #3d405b;
+            color: #1a4d86;
             font-size: 1.2em;
             padding: 15px;
             background-color: #ffffff;
@@ -81,7 +108,7 @@
         .play-button {
             width: 40px;
             height: 40px;
-            background-color: #3d405b;
+            background-color: #1a4d86;
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -114,12 +141,12 @@
         .progress {
             width: 0;
             height: 100%;
-            background-color: #3d405b;
+            background-color: #1a4d86;
             transition: width 0.1s linear;
         }
         .time-display {
             font-size: 14px;
-            color: #3d405b;
+            color: #1a4d86;
             margin-top: 5px;
             text-align: right;
         }
@@ -128,15 +155,15 @@
             margin-top: 10px;
             margin-bottom: 10px;
             font-size: 1.1em;
-            color: #3d405b;
+            color: #1a4d86;
         }
         .current-audio-title {
             margin-bottom: 15px;
-            color: #3d405b;
+            color: #1a4d86;
             font-size: 1.2em;
         }
         footer {
-            background-color: #3d405b;
+            background-color: #1a4d86;
             color: white;
             text-align: center;
             padding: 10px;
@@ -177,7 +204,7 @@
             background-color: #8b2a35;
         }
         .volver-button {
-            background-color: #3d405b;
+            background-color: #1a4d86;
             color: white;
             padding: 10px 20px;
             border-radius: 8px;
@@ -202,7 +229,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>De FAK a Fluent</h1>
+        <h1 class="sr-only">De FAK a Fluent</h1>
+        <img src="images/small-transparent.png" alt="De FAK a Fluent" class="logo">
         <div id="current-audio-title" class="current-audio-title">Selecciona un audio:</div>
         <ul id="audio-list" class="audio-list">
             <!-- The list of audios will be dynamically generated here -->
