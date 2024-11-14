@@ -32,14 +32,30 @@ body {
 }
 
 /* Book title with American color theme */
-h1 {
-    
-    padding: 20px;
-    color: #b22234; /* Dark red, similar to the red on the American flag */
-    font-size: 1.8em;
-    text-align: center;
-    
-}
+.logo {
+            width: 90%;        /* Takes up 90% of container width */
+            max-width: 200px;  /* Maximum width of 400px */
+            height: auto;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                width: 95%;    /* Slightly wider on mobile */
+                max-width: 300px;  /* Smaller on mobile devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 250px;  /* Even smaller on very small devices */
+            }
+        }
+
+        h1 {
+            display: none;
+        }
 
 /* Container with a subtle border representing American colors */
 .container {
@@ -51,6 +67,7 @@ h1 {
     width: 400px;
     text-align: center;
     border: 2px solid #b22234; /* Red border */
+    padding-top: 1px;
 }
 
 /* Subtitle */
@@ -345,7 +362,8 @@ h2 {
 </head>
 <body>
     <!-- Book Title Moved Outside of Container -->
-    <h1>De FAK a Fluent</h1>
+    <h1 class="sr-only">De FAK a Fluent</h1>
+    <img src="images/small-transparent.png" alt="De FAK a Fluent" class="logo">
 
     <div class="container">
         <h2 id="word-display"> </h2>
