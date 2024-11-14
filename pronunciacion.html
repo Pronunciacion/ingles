@@ -172,6 +172,8 @@ h2 {
     text-decoration: none; /* Remove underline for anchor elements */
     display: block;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .share-button {
@@ -181,6 +183,11 @@ h2 {
 .share-button:hover {
     background-color: #b22234; /* Red on hover */
 }
+        
+.share-button:active {
+            background-color: #b22234;
+            transform: scale(0.98); /* Slight scale effect when pressed */
+        }
 
 .buy-button {
     background-color: #b22234; /* Red button */
@@ -189,6 +196,11 @@ h2 {
 .buy-button:hover {
     background-color: #3d405b; /* Blue on hover */
 }
+        
+.buy-button:active {
+            background-color: #3d405b;
+            transform: scale(0.98); /* Slight scale effect when pressed */
+        }
 
 .review-button {
     background-color: #ffffff;
@@ -200,6 +212,10 @@ h2 {
     background-color: #3d405b;
     color: #ffffff;
 }
+.review-button:active {
+            background-color: #3d405b;
+            transform: scale(0.98); /* Slight scale effect when pressed */
+        }
 
 /* Adjustments for small screens */
 @media (max-height: 600px) {
