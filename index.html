@@ -43,12 +43,15 @@
             margin: 0 auto;
             overflow-y: auto;
         }
-        h1 {
-            color: #b22234;
-            font-size: 1.8em;
-            text-align: center;
+        .logo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
             margin-bottom: 40px;
-            
+        }
+
+        h1 {
+            display: none;
         }
         .book-container {
             display: flex;
@@ -155,7 +158,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>De FAK a Fluent</h1>
+        <h1 class="sr-only">De FAK a Fluent</h1>
+        <img src="images/title-svg.svg" alt="De FAK a Fluent" class="logo">
         <div class="book-container">
             <img src="images/book-cover-600.jpg" alt="Portada del libro 'No vas a aprender inglés en 30 días'" class="book-cover">
         </div>
