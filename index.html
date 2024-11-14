@@ -43,11 +43,27 @@
             margin: 0 auto;
             overflow-y: auto;
         }
+        
         .logo {
-            width: 100%;
-            max-width: 600px;
+            width: 90%;        /* Takes up 90% of container width */
+            max-width: 400px;  /* Maximum width of 400px */
             height: auto;
-            margin-bottom: 40px;
+            margin: 0 auto 40px;
+            display: block;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                width: 95%;    /* Slightly wider on mobile */
+                max-width: 300px;  /* Smaller on mobile devices */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 250px;  /* Even smaller on very small devices */
+            }
         }
 
         h1 {
@@ -137,6 +153,18 @@
         .contact-button:hover {
             background-color: #8b2a35;
         }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        
         @media (min-width: 768px) {
             h1 {
                 font-size: 1.8em;
