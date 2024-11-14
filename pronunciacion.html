@@ -178,6 +178,7 @@ h2 {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
+    touch-action: manipulation;
 }
 
 .share-button {
@@ -191,6 +192,7 @@ h2 {
 .share-button:active {
             background-color: #b22234;
             transform: scale(0.98); /* Slight scale effect when pressed */
+            transition: none;
         }
         
 .share-button:focus-visible {
@@ -208,6 +210,7 @@ h2 {
 .buy-button:active {
             background-color: #3d405b;
             transform: scale(0.98); /* Slight scale effect when pressed */
+            transition: none;
         }
 .buy-button:focus-visible {
     box-shadow: 0 0 0 3px rgba(178, 34, 52, 0.5);
@@ -226,6 +229,7 @@ h2 {
 .review-button:active {
             background-color: #3d405b;
             transform: scale(0.98); /* Slight scale effect when pressed */
+            transition: none;
         }
         
 .review-button:focus-visible {
@@ -257,6 +261,21 @@ h2 {
     .button {
         padding: 10px 15px;
     }
+    
+    @media (hover: none) {
+    .share-button:hover {
+        background-color: #3d405b;
+    }
+    
+    .buy-button:hover {
+        background-color: #b22234;
+    }
+    
+    .review-button:hover {
+        background-color: #ffffff;
+        color: #3d405b;
+    }
+}
 }
     </style>
     <script>
