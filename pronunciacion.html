@@ -386,7 +386,8 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 150; // Back to 100 as requested
+        const scanZoneSize = 150; // Kept at 150
+        const zoomFactor = 0.5; // Digital zoom-out (0.5x)
 
         function startQRScan() {
             if (scanning) return;
@@ -409,8 +410,8 @@
             navigator.mediaDevices.getUserMedia({
                 video: { 
                     facingMode: 'environment',
-                    width: { ideal: 2560 }, // Increased to 2560x1440
-                    height: { ideal: 1440 }
+                    width: { ideal: 1920 },
+                    height: { ideal: 1080 }
                 }
             }).then(stream => {
                 video.srcObject = stream;
@@ -435,9 +436,14 @@
                 return;
             }
 
+            // Apply digital zoom-out
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const scaledWidth = video.videoWidth * zoomFactor;
+            const scaledHeight = video.videoHeight * zoomFactor;
+            const offsetX = (canvas.width - scaledWidth) / 2;
+            const offsetY = (canvas.height - scaledHeight) / 2;
+            ctx.drawImage(video, offsetX, offsetY, scaledWidth, scaledHeight);
 
             try {
                 const x = Math.floor((canvas.width - scanZoneSize) / 2);
@@ -449,13 +455,13 @@
 
                 if (code) {
                     console.log('QR code detected in scan zone:', code.data);
-                    console.log('Scan zone position:', x, y, scanZoneSize, 'at resolution:', canvas.width, 'x', canvas.height);
+                    console.log('Scan zone position:', x, y, scanZoneSize, 'at resolution:', canvas.width, 'x', canvas.height, 'with zoom:', zoomFactor);
                     const scanZone = document.getElementById('scan-zone');
-                    scanZone.classList.add('detected'); // Turn border green
+                    scanZone.classList.add('detected');
                     setTimeout(() => {
                         stopQRScan();
                         window.location.href = code.data;
-                    }, 500); // Delay redirect for visibility
+                    }, 500);
                 } else {
                     console.log('No QR code found in', scanZoneSize, 'x', scanZoneSize, 'scan zone at', canvas.width, 'x', canvas.height);
                     requestAnimationFrame(scanQRCode);
@@ -474,7 +480,7 @@
             document.getElementById('close-qr').style.display = 'none';
             const scanZone = document.getElementById('scan-zone');
             scanZone.style.display = 'none';
-            scanZone.classList.remove('detected'); // Reset to red
+            scanZone.classList.remove('detected');
             document.getElementById('zoom-message').style.display = 'none';
             scanning = false;
         }
