@@ -258,7 +258,7 @@
             z-index: 1001;
             pointer-events: none;
             background: rgba(255, 255, 255, 0.1);
-            transition: border-color 0.3s ease; /* Smooth color change */
+            transition: border-color 0.3s ease;
         }
         #scan-zone.detected {
             border-color: #00FF00; /* Green when detected */
@@ -386,7 +386,7 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 300; // Temporarily 300 for testing
+        const scanZoneSize = 150; // Adjusted to 150
 
         function startQRScan() {
             if (scanning) return;
