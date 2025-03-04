@@ -251,6 +251,14 @@
         #close-qr:hover {
             background-color: #3d405b;
         }
+        /* New scan zone overlay */
+        #scan-zone {
+            display: none;
+            position: fixed;
+            border: 2px dashed #b22234;
+            z-index: 1001;
+            pointer-events: none; /* Allows taps to pass through */
+        }
         @media (max-height: 600px) {
             .container {
                 padding: 15px;
@@ -361,6 +369,7 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
+        const scanZoneSize = 300; // Size of the centered scan zone (pixels)
 
         function startQRScan() {
             if (scanning) return;
@@ -372,6 +381,13 @@
 
             video.style.display = 'block';
             document.getElementById('close-qr').style.display = 'block';
+            const scanZone = document.getElementById('scan-zone');
+            scanZone.style.display = 'block';
+            // Center the scan zone
+            scanZone.style.width = `${scanZoneSize}px`;
+            scanZone.style.height = `${scanZoneSize}px`;
+            scanZone.style.left = `calc(50% - ${scanZoneSize / 2}px)`;
+            scanZone.style.top = `calc(50% - ${scanZoneSize / 2}px)`;
 
             navigator.mediaDevices.getUserMedia({
                 video: { 
@@ -407,17 +423,20 @@
             ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
             try {
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                // Calculate the center region to scan
+                const x = Math.floor((canvas.width - scanZoneSize) / 2);
+                const y = Math.floor((canvas.height - scanZoneSize) / 2);
+                const imageData = ctx.getImageData(x, y, scanZoneSize, scanZoneSize);
                 const code = jsQR(imageData.data, imageData.width, imageData.height, {
-                    inversionAttempts: 'dontInvert' // Optimize for speed
+                    inversionAttempts: 'dontInvert'
                 });
 
                 if (code) {
-                    console.log('QR code detected:', code.data);
+                    console.log('QR code detected in scan zone:', code.data);
                     stopQRScan();
                     window.location.href = code.data;
                 } else {
-                    console.log('No QR code found in frame');
+                    console.log('No QR code found in scan zone');
                     requestAnimationFrame(scanQRCode);
                 }
             } catch (err) {
@@ -432,6 +451,7 @@
                 video.style.display = 'none';
             }
             document.getElementById('close-qr').style.display = 'none';
+            document.getElementById('scan-zone').style.display = 'none';
             scanning = false;
         }
 
@@ -463,7 +483,6 @@
             loadAudio();
 
             document.getElementById('qr-button').addEventListener('click', startQRScan);
-            document.getElementById('qr-video').addEventListener('click', scanQRCode); // Tap to force scan
             document.getElementById('close-qr').addEventListener('click', stopQRScan);
             window.addEventListener('beforeunload', stopQRScan);
         }
@@ -524,5 +543,6 @@
     <video id="qr-video" autoplay playsinline></video>
     <canvas id="qr-canvas"></canvas>
     <button id="close-qr">Cerrar</button>
+    <div id="scan-zone"></div>
 </body>
 </html>
