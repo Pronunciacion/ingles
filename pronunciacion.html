@@ -387,8 +387,8 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 150; // Kept at 150
-        const zoomFactor = 0.5; // Digital zoom-out (0.5x)
+        const scanZoneSize = 150;
+        const zoomFactor = 0.5;
 
         function startQRScan() {
             if (scanning) return;
@@ -400,13 +400,6 @@
 
             video.style.display = 'block';
             document.getElementById('close-qr').style.display = 'block';
-            const scanZone = document.getElementById('scan-zone');
-            scanZone.style.display = 'block';
-            scanZone.style.width = `${scanZoneSize}px`;
-            scanZone.style.height = `${scanZoneSize}px`;
-            scanZone.style.left = `calc(50% - ${scanZoneSize / 2}px)`;
-            scanZone.style.top = `calc(50% - ${scanZoneSize / 2}px)`;
-            document.getElementById('zoom-message').style.display = 'block';
 
             navigator.mediaDevices.getUserMedia({
                 video: { 
@@ -419,6 +412,14 @@
                 video.onloadedmetadata = () => {
                     console.log('Video metadata loaded:', video.videoWidth, video.videoHeight);
                     video.play();
+                    // Show scan zone and message only when camera is live
+                    const scanZone = document.getElementById('scan-zone');
+                    scanZone.style.display = 'block';
+                    scanZone.style.width = `${scanZoneSize}px`;
+                    scanZone.style.height = `${scanZoneSize}px`;
+                    scanZone.style.left = `calc(50% - ${scanZoneSize / 2}px)`;
+                    scanZone.style.top = `calc(50% - ${scanZoneSize / 2}px)`;
+                    document.getElementById('zoom-message').style.display = 'block';
                     requestAnimationFrame(scanQRCode);
                 };
             }).catch(err => {
@@ -437,7 +438,6 @@
                 return;
             }
 
-            // Apply digital zoom-out
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             const scaledWidth = video.videoWidth * zoomFactor;
@@ -568,7 +568,7 @@
             <a href="#" class="button share-button" onclick="shareAudio(); return false;">Compartir Audio</a>
             <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button buy-button" target="_blank">Comprar el Libro</a>
             <a href="https://www.amazon.com/review/create-review?&asin=B0DN6V5VDW" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
-            <button id="qr-button" class="button qr-button">Escanear QR</button>
+            <button id="qr-button" class="button qr-button">Escanear otro QR</button>
         </div>
     </div>
     <video id="qr-video" autoplay playsinline></video>
