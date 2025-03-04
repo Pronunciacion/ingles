@@ -13,26 +13,26 @@
     <title>Pronunciación de Palabras</title>
     <style>
         /* Reset and basic styles */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff; /* White background */
-            color: #3d405b;
-            margin: 0;
-            padding-bottom: 100px;
-            overflow: hidden; /* Prevent scrolling */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Ensure the body takes up the full viewport height */
-            background-image: linear-gradient(to bottom, #ffffff, #d1e2ff); /* Subtle blue gradient for American feel */
-        }
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #3d405b;
+    margin: 0;
+    padding-bottom: 100px;
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+    background-image: linear-gradient(to bottom, #ffffff, #d1e2ff); /* Subtle blue gradient for American feel */
+}
 
-        /* Book title with American color theme */
-        .logo {
+/* Book title with American color theme */
+.logo {
             width: 90%;        /* Takes up 90% of container width */
             max-width: 600px;  /* Maximum width of 400px */
             height: auto;
@@ -57,272 +57,227 @@
             display: none;
         }
 
-        /* Container with a subtle border representing American colors */
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 400px;
-            text-align: center;
-            border: 2px solid #b22234; /* Red border */
-            padding-top: 1px;
-        }
+/* Container with a subtle border representing American colors */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+    border: 2px solid #b22234; /* Red border */
+    padding-top: 1px;
+}
 
-        /* Subtitle */
-        h2 {
-            margin-bottom: 25px;
-            color: #3d405b;
-            font-size: 2em;
-        }
+/* Subtitle */
+h2 {
+    margin-bottom: 25px;
+    color: #3d405b;
+    font-size: 2em;
+}
 
-        /* Audio player container */
-        .audio-container {
-            margin-top: 25px;
-        }
+/* Audio player container */
+.audio-container {
+    margin-top: 25px;
+}
 
-        /* Custom audio player with American color accents */
-        .custom-audio-player {
-            width: 100%;
-            background-color: #f2cc8f;
-            border-radius: 8px;
-            overflow: hidden;
-        }
+/* Custom audio player with American color accents */
+.custom-audio-player {
+    width: 100%;
+    background-color: #f2cc8f;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        .player-controls {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-        }
+.player-controls {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
 
-        .play-button {
-            width: 60px;
-            height: 60px;
-            background-color: #3d405b; /* Navy blue */
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 32px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            padding: 0;
-            flex-shrink: 0;
-        }
+.play-button {
+    width: 60px;
+    height: 60px;
+    background-color: #3d405b; /* Navy blue */
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    padding: 0;
+    flex-shrink: 0;
+}
 
-        .play-button:hover {
-            background-color: #b22234; /* Red on hover */
-        }
+.play-button:hover {
+    background-color: #b22234; /* Red on hover */
+}
 
-        .play-pause-icon {
-            width: 32px;
-            height: 32px;
-            fill: #ffffff; /* White play/pause icon */
-        }
+.play-pause-icon {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff; /* White play/pause icon */
+}
 
-        .progress-container {
-            flex-grow: 1;
-        }
+.progress-container {
+    flex-grow: 1;
+}
 
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #e9c46a; /* Subtle color to indicate progress */
-            border-radius: 5px;
-            overflow: hidden;
-        }
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #e9c46a; /* Subtle color to indicate progress */
+    border-radius: 5px;
+    overflow: hidden;
+}
 
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #3d405b; /* Navy blue progress bar */
-            transition: width 0.1s linear;
-        }
+.progress {
+    width: 0;
+    height: 100%;
+    background-color: #3d405b; /* Navy blue progress bar */
+    transition: width 0.1s linear;
+}
 
-        .time-display {
-            font-size: 14px;
-            color: #3d405b;
-            margin-top: 5px;
-            text-align: right;
-        }
+.time-display {
+    font-size: 14px;
+    color: #3d405b;
+    margin-top: 5px;
+    text-align: right;
+}
 
-        /* Button container */
-        .button-container {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
+/* Button container */
+.button-container {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
 
-        /* Buttons with American color palette */
-        .button {
-            font-size: 1em;
-            color: #ffffff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
-            padding: 12px 20px;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            outline: none;
-            border: none; /* Add this to ensure consistent styling */
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-            touch-action: manipulation;
-        }
+/* Buttons with American color palette */
+.button {
+    font-size: 1em;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1 0 calc(50% - 10px);
+    max-width: 180px;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    outline: none;
+    border: none; /* Add this to ensure consistent styling */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+}
 
-        .share-button {
-            background-color: #3d405b; /* Navy blue */
-        }
+.share-button {
+    background-color: #3d405b; /* Navy blue */
+}
 
-        .share-button:hover {
-            background-color: #b22234; /* Red on hover */
-        }
+.share-button:hover {
+    background-color: #b22234; /* Red on hover */
+}
         
-        .share-button:active {
+.share-button:active {
             background-color: #b22234;
             transform: scale(0.98); /* Slight scale effect when pressed */
             transition: none;
         }
         
-        .share-button:focus-visible {
-            box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.5);
-        }
+.share-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.5);
+}
 
-        .buy-button {
-            background-color: #b22234; /* Red button */
-        }
+.buy-button {
+    background-color: #b22234; /* Red button */
+}
 
-        .buy-button:hover {
-            background-color: #3d405b; /* Blue on hover */
-        }
+.buy-button:hover {
+    background-color: #3d405b; /* Blue on hover */
+}
         
-        .buy-button:active {
+.buy-button:active {
             background-color: #3d405b;
             transform: scale(0.98); /* Slight scale effect when pressed */
             transition: none;
         }
-        .buy-button:focus-visible {
-            box-shadow: 0 0 0 3px rgba(178, 34, 52, 0.5);
-        }
+.buy-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(178, 34, 52, 0.5);
+}
 
-        .review-button {
-            background-color: #ffffff;
-            color: #3d405b;
-            border: 2px solid #3d405b; /* Navy blue outline */
-        }
+.review-button {
+    background-color: #ffffff;
+    color: #3d405b;
+    border: 2px solid #3d405b; /* Navy blue outline */
+}
 
-        .review-button:hover {
-            background-color: #3d405b;
-            color: #ffffff;
-        }
-        .review-button:active {
+.review-button:hover {
+    background-color: #3d405b;
+    color: #ffffff;
+}
+.review-button:active {
             background-color: #3d405b;
             transform: scale(0.98); /* Slight scale effect when pressed */
             transition: none;
         }
         
-        .review-button:focus-visible {
-            box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.5);
-        }
+.review-button:focus-visible {
+    box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.5);
+}
 
-        /* New QR button styles */
-        .qr-button {
-            background-color: #3d405b;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
-            text-align: center;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            user-select: none;
-            touch-action: manipulation;
-        }
-        .qr-button:hover {
-            background-color: #b22234;
-        }
-        .qr-button:active {
-            background-color: #b22234;
-            transform: scale(0.98);
-            transition: none;
-        }
-        .qr-button:focus-visible {
-            box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.5);
-        }
 
-        /* Video overlay for QR scanning */
-        #qr-video {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1000;
-        }
-        #qr-canvas {
-            display: none; /* Hidden canvas for processing */
-        }
 
-        /* Adjustments for small screens */
-        @media (max-height: 600px) {
-            .container {
-                padding: 15px;
-            }
-            .player-controls {
-                padding: 10px;
-            }
-            .play-button {
-                width: 50px;
-                height: 50px;
-                margin-right: 15px;
-            }
-            .play-pause-icon {
-                width: 24px;
-                height: 24px;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .button {
-                padding: 10px 15px;
-            }
-            
-            @media (hover: none) {
-                .share-button:hover {
-                    background-color: #3d405b;
-                }
-                
-                .buy-button:hover {
-                    background-color: #b22234;
-                }
-                
-                .review-button:hover {
-                    background-color: #ffffff;
-                    color: #3d405b;
-                }
-            }
-        }
+/* Adjustments for small screens */
+@media (max-height: 600px) {
+    .container {
+        padding: 15px;
+    }
+    .player-controls {
+        padding: 10px;
+    }
+    .play-button {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+    }
+    .play-pause-icon {
+        width: 24px;
+        height: 24px;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    .button {
+        padding: 10px 15px;
+    }
+    
+    @media (hover: none) {
+    .share-button:hover {
+        background-color: #3d405b;
+    }
+    
+    .buy-button:hover {
+        background-color: #b22234;
+    }
+    
+    .review-button:hover {
+        background-color: #ffffff;
+        color: #3d405b;
+    }
+}
+}
     </style>
-    <!-- Include jsQR library from CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
     <script>
         // Extract the "word" query parameter from the URL
         function getAudioFileFromQuery() {
@@ -403,63 +358,6 @@
             }
         }
 
-        // WebRTC QR Scanning Functions
-        let video, canvas, ctx, scanning = false;
-
-        function startQRScan() {
-            if (scanning) return; // Prevent multiple activations
-            scanning = true;
-
-            video = document.getElementById('qr-video');
-            canvas = document.getElementById('qr-canvas');
-            ctx = canvas.getContext('2d');
-
-            // Show video feed
-            video.style.display = 'block';
-
-            // Request camera access
-            navigator.mediaDevices.getUserMedia({
-                video: { facingMode: 'environment' } // Use rear camera
-            }).then(stream => {
-                video.srcObject = stream;
-                video.play();
-                requestAnimationFrame(scanQRCode);
-            }).catch(err => {
-                alert('No se pudo acceder a la cámara: ' + err.message);
-                stopQRScan();
-            });
-        }
-
-        function scanQRCode() {
-            if (!scanning) return;
-
-            // Set canvas size to match video
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Analyze frame for QR code
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const code = jsQR(imageData.data, imageData.width, imageData.height);
-
-            if (code) {
-                // QR code detected, redirect to URL
-                stopQRScan();
-                window.location.href = code.data;
-            } else {
-                // Continue scanning
-                requestAnimationFrame(scanQRCode);
-            }
-        }
-
-        function stopQRScan() {
-            if (video && video.srcObject) {
-                video.srcObject.getTracks().forEach(track => track.stop());
-                video.style.display = 'none';
-            }
-            scanning = false;
-        }
-
         window.onload = function() {
             audioPlayer = document.getElementById('audio-player');
             playButton = document.getElementById('play-button');
@@ -486,37 +384,33 @@
             });
 
             loadAudio();  // Load the correct audio file on page load
-
-            // QR scan button event
-            document.getElementById('qr-button').addEventListener('click', startQRScan);
-            // Stop scanning if user navigates away
-            window.addEventListener('beforeunload', stopQRScan);
         }
     </script>
     <!-- Plausible Analytics Script -->
-    <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
+<script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 
-    <!-- Define the `plausible` function to manually trigger events -->
-    <script>
-        window.plausible = window.plausible || function() {
-            (window.plausible.q = window.plausible.q || []).push(arguments)
-        }
-    </script>
+<!-- Define the `plausible` function to manually trigger events -->
+<script>
+  window.plausible = window.plausible || function() {
+    (window.plausible.q = window.plausible.q || []).push(arguments)
+  }
+</script>
 
-    <!-- Trigger pageview with custom URL including the 'word' parameter -->
-    <script>
-        function prepareUrl(params) {
-            const url = new URL(location.href);
-            const queryParams = new URLSearchParams(location.search);
-            let customUrl = url.protocol + "//" + url.hostname + url.pathname.replace(/\/$/, '');
-            for (const paramName of params) {
-                const paramValue = queryParams.get(paramName);
-                if (paramValue) customUrl = customUrl + '/' + paramValue;
-            }
-            return customUrl;
-        }
-        plausible('pageview', { u: prepareUrl(["word"]) });
-    </script>
+<!-- Trigger pageview with custom URL including the 'word' parameter -->
+<script>
+  function prepareUrl(params) {
+    const url = new URL(location.href);
+    const queryParams = new URLSearchParams(location.search);
+    let customUrl = url.protocol + "//" + url.hostname + url.pathname.replace(/\/$/, '');
+    for (const paramName of params) {
+      const paramValue = queryParams.get(paramName);
+      if (paramValue) customUrl = customUrl + '/' + paramValue;
+    }
+    return customUrl;
+  }
+  plausible('pageview', { u: prepareUrl(["word"]) });
+</script>
+
 </head>
 <body>
     <!-- Book Title Moved Outside of Container -->
@@ -551,11 +445,7 @@
             <a href="#" class="button share-button" onclick="shareAudio(); return false;">Compartir Audio</a>
             <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button buy-button" target="_blank">Comprar el Libro</a>
             <a href="https://www.amazon.com/review/create-review?&asin=B0DN6V5VDW" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
-            <button id="qr-button" class="button qr-button">Escanear QR</button>
         </div>
     </div>
-    <!-- Video and canvas for WebRTC QR scanning -->
-    <video id="qr-video" autoplay playsinline></video>
-    <canvas id="qr-canvas"></canvas>
 </body>
 </html>
