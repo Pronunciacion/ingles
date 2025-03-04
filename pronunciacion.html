@@ -381,7 +381,7 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 125; // Set to 100 as requested
+        const scanZoneSize = 100;
 
         function startQRScan() {
             if (scanning) return;
@@ -404,8 +404,8 @@
             navigator.mediaDevices.getUserMedia({
                 video: { 
                     facingMode: 'environment',
-                    width: { ideal: 1280 },
-                    height: { ideal: 720 }
+                    width: { ideal: 1920 }, // Updated to 1920x1080
+                    height: { ideal: 1080 }
                 }
             }).then(stream => {
                 video.srcObject = stream;
@@ -448,7 +448,7 @@
                     stopQRScan();
                     window.location.href = code.data;
                 } else {
-                    console.log('No QR code found in 100x100 scan zone');
+                    console.log('No QR code found in 100x100 scan zone at', video.videoWidth, 'x', video.videoHeight);
                     requestAnimationFrame(scanQRCode);
                 }
             } catch (err) {
