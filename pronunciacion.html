@@ -254,9 +254,14 @@
         #scan-zone {
             display: none;
             position: fixed;
-            border: 2px dashed #b22234;
+            border: 2px dashed #b22234; /* Default red */
             z-index: 1001;
             pointer-events: none;
+            background: rgba(255, 255, 255, 0.1);
+            transition: border-color 0.3s ease; /* Smooth color change */
+        }
+        #scan-zone.detected {
+            border-color: #00FF00; /* Green when detected */
         }
         #zoom-message {
             display: none;
@@ -381,7 +386,7 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 200;
+        const scanZoneSize = 120; // Temporarily 300 for testing
 
         function startQRScan() {
             if (scanning) return;
@@ -404,7 +409,7 @@
             navigator.mediaDevices.getUserMedia({
                 video: { 
                     facingMode: 'environment',
-                    width: { ideal: 1920 }, // Updated to 1920x1080
+                    width: { ideal: 1920 },
                     height: { ideal: 1080 }
                 }
             }).then(stream => {
@@ -444,11 +449,15 @@
 
                 if (code) {
                     console.log('QR code detected in scan zone:', code.data);
-                    console.log('Scan zone position:', x, y, scanZoneSize);
-                    stopQRScan();
-                    window.location.href = code.data;
+                    console.log('Scan zone position:', x, y, scanZoneSize, 'at resolution:', canvas.width, 'x', canvas.height);
+                    const scanZone = document.getElementById('scan-zone');
+                    scanZone.classList.add('detected'); // Turn border green
+                    setTimeout(() => {
+                        stopQRScan();
+                        window.location.href = code.data;
+                    }, 500); // Delay redirect for visibility
                 } else {
-                    console.log('No QR code found in 100x100 scan zone at', video.videoWidth, 'x', video.videoHeight);
+                    console.log('No QR code found in', scanZoneSize, 'x', scanZoneSize, 'scan zone at', canvas.width, 'x', canvas.height);
                     requestAnimationFrame(scanQRCode);
                 }
             } catch (err) {
@@ -463,7 +472,9 @@
                 video.style.display = 'none';
             }
             document.getElementById('close-qr').style.display = 'none';
-            document.getElementById('scan-zone').style.display = 'none';
+            const scanZone = document.getElementById('scan-zone');
+            scanZone.style.display = 'none';
+            scanZone.classList.remove('detected'); // Reset to red
             document.getElementById('zoom-message').style.display = 'none';
             scanning = false;
         }
