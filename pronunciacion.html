@@ -386,7 +386,7 @@
 
         // WebRTC QR Scanning
         let video, canvas, ctx, scanning = false;
-        const scanZoneSize = 150; // Adjusted to 150
+        const scanZoneSize = 100; // Back to 100 as requested
 
         function startQRScan() {
             if (scanning) return;
@@ -409,8 +409,8 @@
             navigator.mediaDevices.getUserMedia({
                 video: { 
                     facingMode: 'environment',
-                    width: { ideal: 1920 },
-                    height: { ideal: 1080 }
+                    width: { ideal: 2560 }, // Increased to 2560x1440
+                    height: { ideal: 1440 }
                 }
             }).then(stream => {
                 video.srcObject = stream;
