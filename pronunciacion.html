@@ -196,21 +196,6 @@
         }
         .qr-button {
             background-color: #3d405b;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            flex: 1 0 calc(50% - 10px);
-            max-width: 180px;
-            text-align: center;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            user-select: none;
-            touch-action: manipulation;
         }
         .qr-button:hover {
             background-color: #b22234;
@@ -255,14 +240,14 @@
         #scan-zone {
             display: none;
             position: fixed;
-            border: 2px dashed #b22234; /* Default red */
+            border: 2px dashed #b22234;
             z-index: 1001;
             pointer-events: none;
             background: rgba(255, 255, 255, 0.1);
             transition: border-color 0.3s ease;
         }
         #scan-zone.detected {
-            border-color: #00FF00; /* Green when detected */
+            border-color: #00FF00;
         }
         #zoom-message {
             display: none;
@@ -276,6 +261,19 @@
             padding: 10px 20px;
             border-radius: 8px;
             font-size: 1em;
+        }
+        #loading-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1001;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1.2em;
         }
         @media (max-height: 600px) {
             .container {
@@ -398,21 +396,24 @@
             canvas = document.getElementById('qr-canvas');
             ctx = canvas.getContext('2d');
 
-            video.style.display = 'block';
-            document.getElementById('close-qr').style.display = 'block';
+            // Show loading message immediately
+            document.getElementById('loading-message').style.display = 'block';
 
             navigator.mediaDevices.getUserMedia({
                 video: { 
                     facingMode: 'environment',
-                    width: { ideal: 1920 },
-                    height: { ideal: 1080 }
+                    width: { ideal: 1280 },
+                    height: { ideal: 720 }
                 }
             }).then(stream => {
                 video.srcObject = stream;
                 video.onloadedmetadata = () => {
                     console.log('Video metadata loaded:', video.videoWidth, video.videoHeight);
                     video.play();
-                    // Show scan zone and message only when camera is live
+                    // Hide loading message and show camera UI
+                    document.getElementById('loading-message').style.display = 'none';
+                    video.style.display = 'block';
+                    document.getElementById('close-qr').style.display = 'block';
                     const scanZone = document.getElementById('scan-zone');
                     scanZone.style.display = 'block';
                     scanZone.style.width = `${scanZoneSize}px`;
@@ -483,6 +484,7 @@
             scanZone.style.display = 'none';
             scanZone.classList.remove('detected');
             document.getElementById('zoom-message').style.display = 'none';
+            document.getElementById('loading-message').style.display = 'none';
             scanning = false;
         }
 
@@ -512,6 +514,16 @@
             });
 
             loadAudio();
+
+            // Auto-play audio if redirected via QR
+            const word = getAudioFileFromQuery();
+            if (word && audioPlayer.readyState >= 1) { // Ensure audio is loaded
+                audioPlayer.play().catch(error => {
+                    console.error('Auto-play failed:', error);
+                    // Fallback: Show play button if autoplay is blocked
+                    playButton.style.display = 'flex';
+                });
+            }
 
             document.getElementById('qr-button').addEventListener('click', startQRScan);
             document.getElementById('close-qr').addEventListener('click', stopQRScan);
@@ -568,7 +580,7 @@
             <a href="#" class="button share-button" onclick="shareAudio(); return false;">Compartir Audio</a>
             <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button buy-button" target="_blank">Comprar el Libro</a>
             <a href="https://www.amazon.com/review/create-review?&asin=B0DN6V5VDW" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
-            <button id="qr-button" class="button qr-button">Escanear otro QR</button>
+            <button id="qr-button" class="button qr-button">Escanear QR</button>
         </div>
     </div>
     <video id="qr-video" autoplay playsinline></video>
@@ -576,5 +588,6 @@
     <button id="close-qr">Cerrar</button>
     <div id="scan-zone"></div>
     <div id="zoom-message">Alejar cámara</div>
+    <div id="loading-message">Cargando cámara...</div>
 </body>
 </html>
