@@ -275,34 +275,6 @@
             border-radius: 8px;
             font-size: 1.2em;
         }
-        #qr-confirm {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1002;
-            background-color: #ffffff;
-            color: #3d405b;
-            padding: 20px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            font-size: 1.1em;
-        }
-        #qr-confirm button {
-            background-color: #3d405b;
-            color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            margin: 10px 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #qr-confirm button:hover {
-            background-color: #b22234;
-        }
         @media (max-height: 600px) {
             .container {
                 padding: 15px;
@@ -488,7 +460,10 @@
                     console.log('Scan zone position:', x, y, scanZoneSize, 'at resolution:', canvas.width, 'x', canvas.height, 'with zoom:', zoomFactor);
                     const scanZone = document.getElementById('scan-zone');
                     scanZone.classList.add('detected');
-                    showQRConfirm(code.data); // Show confirmation before redirect
+                    setTimeout(() => {
+                        stopQRScan();
+                        window.location.href = code.data;
+                    }, 500);
                 } else {
                     console.log('No QR code found in', scanZoneSize, 'x', scanZoneSize, 'scan zone at', canvas.width, 'x', canvas.height);
                     requestAnimationFrame(scanQRCode);
@@ -497,34 +472,6 @@
                 console.error('Error scanning QR:', err);
                 requestAnimationFrame(scanQRCode);
             }
-        }
-
-        function showQRConfirm(url) {
-            const confirmDiv = document.getElementById('qr-confirm');
-            confirmDiv.innerHTML = `
-                <p>¿Desea abrir esta pronunciación?</p>
-                <button onclick="confirmRedirect('${url}')">Sí</button>
-                <button onclick="cancelRedirect()">No</button>
-            `;
-            confirmDiv.style.display = 'block';
-        }
-
-        function confirmRedirect(url) {
-            const scanZone = document.getElementById('scan-zone');
-            scanZone.classList.remove('detected');
-            stopQRScan();
-            // Open target in a new window and send message
-            const targetWindow = window.open(url, '_blank');
-            if (targetWindow) {
-                // Send message to trigger auto-play
-                targetWindow.postMessage({ type: 'autoPlay', word: getAudioFileFromQuery() }, '*');
-            }
-        }
-
-        function cancelRedirect() {
-            const scanZone = document.getElementById('scan-zone');
-            scanZone.classList.remove('detected');
-            document.getElementById('qr-confirm').style.display = 'none';
         }
 
         function stopQRScan() {
@@ -538,7 +485,6 @@
             scanZone.classList.remove('detected');
             document.getElementById('zoom-message').style.display = 'none';
             document.getElementById('loading-message').style.display = 'none';
-            document.getElementById('qr-confirm').style.display = 'none';
             scanning = false;
         }
 
@@ -569,24 +515,15 @@
 
             loadAudio();
 
-            // Listen for postMessage to trigger auto-play
-            window.addEventListener('message', function(event) {
-                if (event.data.type === 'autoPlay' && event.data.word) {
-                    const word = getAudioFileFromQuery();
-                    if (word && audioPlayer.readyState >= 1) {
-                        audioPlayer.play().catch(error => {
-                            console.error('Auto-play failed:', error);
-                            // Fallback: Show play button with prompt if autoplay is blocked
-                            playButton.style.display = 'flex';
-                            const prompt = document.createElement('p');
-                            prompt.textContent = 'Toca el botón para reproducir el audio.';
-                            prompt.style.color = '#3d405b';
-                            prompt.style.marginTop = '10px';
-                            document.querySelector('.audio-container').appendChild(prompt);
-                        });
-                    }
-                }
-            }, false);
+            // Auto-play audio if redirected via QR
+            const word = getAudioFileFromQuery();
+            if (word && audioPlayer.readyState >= 1) { // Ensure audio is loaded
+                audioPlayer.play().catch(error => {
+                    console.error('Auto-play failed:', error);
+                    // Fallback: Show play button if autoplay is blocked
+                    playButton.style.display = 'flex';
+                });
+            }
 
             document.getElementById('qr-button').addEventListener('click', startQRScan);
             document.getElementById('close-qr').addEventListener('click', stopQRScan);
@@ -652,6 +589,5 @@
     <div id="scan-zone"></div>
     <div id="zoom-message">Alejar cámara</div>
     <div id="loading-message">Cargando cámara...</div>
-    <div id="qr-confirm"></div>
 </body>
 </html>
