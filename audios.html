@@ -2,394 +2,763 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audios de inglés | De FAK a Fluent</title>
+    <meta name="description" content="Escucha audios de pronunciación, conversación y palabras difíciles del libro De FAK a Fluent.">
+    <link rel="canonical" href="https://librodeingles.com/audios.html">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <!-- Apple Touch Icon (for iOS devices) -->
     <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <title>Audios - De FAK a Fluent</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+    <meta property="og:title" content="Audios de inglés | De FAK a Fluent">
+    <meta property="og:description" content="Escucha audios de pronunciación, conversación y palabras difíciles del libro De FAK a Fluent.">
+    <meta property="og:image" content="https://librodeingles.com/images/book-cover-600.png">
+    <meta property="og:url" content="https://librodeingles.com/audios.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Audios de inglés de De FAK a Fluent",
+        "description": "Biblioteca de audios de pronunciación y conversación para hispanohablantes.",
+        "url": "https://librodeingles.com/audios.html",
+        "inLanguage": "es",
+        "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                        {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "American, British, Australian, Irish, Spanish",
+                                "url": "https://librodeingles.com/audio/american-british-australian-irish-spanish.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Bomb, Tomb, Comb",
+                                "url": "https://librodeingles.com/audio/bomb-tomb-comb.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Book, cook, look, foot, hook, took, cookie (LOL)",
+                                "url": "https://librodeingles.com/audio/book-cook-look-foot-hook-took-cookie-lol.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Book, cook, look, foot, hook, took, cookie (correcto)",
+                                "url": "https://librodeingles.com/audio/book-cook-look-foot-hook-took-cookie-correcto.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 5,
+                                "name": "Could have, should have, would have",
+                                "url": "https://librodeingles.com/audio/could-have-should-have-would-have.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 6,
+                                "name": "Did you see that",
+                                "url": "https://librodeingles.com/audio/did-you-see-that.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 7,
+                                "name": "Education, individual, gradual, schedule, procedure, residual",
+                                "url": "https://librodeingles.com/audio/education-individual-gradual-schedule-procedure-residual.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 8,
+                                "name": "Give me that",
+                                "url": "https://librodeingles.com/audio/give-me-that.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 9,
+                                "name": "Going to",
+                                "url": "https://librodeingles.com/audio/going-to.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 10,
+                                "name": "Hello, hard",
+                                "url": "https://librodeingles.com/audio/hello-hard.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 11,
+                                "name": "How's everything",
+                                "url": "https://librodeingles.com/audio/hows-everything.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 12,
+                                "name": "How's it going",
+                                "url": "https://librodeingles.com/audio/hows-it-going.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 13,
+                                "name": "How's your day going",
+                                "url": "https://librodeingles.com/audio/hows-your-day-going.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 14,
+                                "name": "I am Spanish",
+                                "url": "https://librodeingles.com/audio/i-am-spanish.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 15,
+                                "name": "I am from Spain and I am 33",
+                                "url": "https://librodeingles.com/audio/i-am-from-spain-and-i-am-33.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 16,
+                                "name": "I gotta go",
+                                "url": "https://librodeingles.com/audio/i-gotta-go.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 17,
+                                "name": "I want to go to London",
+                                "url": "https://librodeingles.com/audio/i-want-to-go-to-london.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 18,
+                                "name": "Let me see",
+                                "url": "https://librodeingles.com/audio/let-me-see.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 19,
+                                "name": "Light, love, listen, like, late, learn, laugh",
+                                "url": "https://librodeingles.com/audio/light-love-listen-like-late-learn-laugh.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 20,
+                                "name": "Live, leave, leaf",
+                                "url": "https://librodeingles.com/audio/live-leave-leaf.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 21,
+                                "name": "McDonald's",
+                                "url": "https://librodeingles.com/audio/mcdonalds.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 22,
+                                "name": "Microsoft, up, us, uncle, umbrella",
+                                "url": "https://librodeingles.com/audio/microsoft-up-us-uncle-umbrella.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 23,
+                                "name": "Moon, food, room, school, tool, noodle, cool",
+                                "url": "https://librodeingles.com/audio/moon-food-room-school-tool-noodle-cool.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 24,
+                                "name": "Out of, kind of, sort of",
+                                "url": "https://librodeingles.com/audio/out-of-kind-of-sort-of.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 25,
+                                "name": "Skill, goal, ball, full, world, call, feel, school",
+                                "url": "https://librodeingles.com/audio/skill-goal-ball-full-world-call-feel-school.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 26,
+                                "name": "Tell them to come back home",
+                                "url": "https://librodeingles.com/audio/tell-them-to-come-back-home.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 27,
+                                "name": "Though, Through, Tough, Cough, Enough, Bough, Thought, Plough",
+                                "url": "https://librodeingles.com/audio/though-through-tough-cough-enough-bough-thought-plough.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 28,
+                                "name": "Walk, talk, half, calm, salmon, would, should, yolk, palm, chalk, walkie-talkie",
+                                "url": "https://librodeingles.com/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 29,
+                                "name": "What's going on",
+                                "url": "https://librodeingles.com/audio/whats-going-on.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 30,
+                                "name": "Bird, bear, beer, beard",
+                                "url": "https://librodeingles.com/audio/bird-bear-beer-beard.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 31,
+                                "name": "Bit, big, win, lip, clip",
+                                "url": "https://librodeingles.com/audio/bit-big-win-lip-clip.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 32,
+                                "name": "Doing well",
+                                "url": "https://librodeingles.com/audio/doing-well.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 33,
+                                "name": "Doing well yourself",
+                                "url": "https://librodeingles.com/audio/doing-well-yourself.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 34,
+                                "name": "Door, floor, score, shore, roar, soar",
+                                "url": "https://librodeingles.com/audio/door-floor-score-shore-roar-soar.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 35,
+                                "name": "Either American, either British",
+                                "url": "https://librodeingles.com/audio/either-american-either-british.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 36,
+                                "name": "Fak, fuck",
+                                "url": "https://librodeingles.com/audio/fak-fuck.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 37,
+                                "name": "Focus",
+                                "url": "https://librodeingles.com/audio/focus.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 38,
+                                "name": "Hanging",
+                                "url": "https://librodeingles.com/audio/hanging.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 39,
+                                "name": "Hit",
+                                "url": "https://librodeingles.com/audio/hit.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 40,
+                                "name": "How's it been",
+                                "url": "https://librodeingles.com/audio/hows-it-been.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 41,
+                                "name": "How've you been",
+                                "url": "https://librodeingles.com/audio/howve-you-been.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 42,
+                                "name": "How are you",
+                                "url": "https://librodeingles.com/audio/how-are-you.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 43,
+                                "name": "Jump, John, job, jungle, enjoy",
+                                "url": "https://librodeingles.com/audio/jump-john-job-jungle-enjoy.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 44,
+                                "name": "Lack, lock, look, luke",
+                                "url": "https://librodeingles.com/audio/lack-lock-look-luke.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 45,
+                                "name": "Love, clove, move",
+                                "url": "https://librodeingles.com/audio/love-clove-move.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 46,
+                                "name": "Mountain, button, cotton, manhattan",
+                                "url": "https://librodeingles.com/audio/mountain-button-cotton-manhattan.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 47,
+                                "name": "Pick it up",
+                                "url": "https://librodeingles.com/audio/pick-it-up.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 48,
+                                "name": "Pretty good",
+                                "url": "https://librodeingles.com/audio/pretty-good.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 49,
+                                "name": "Red, car, around, right, sorry",
+                                "url": "https://librodeingles.com/audio/red-car-around-right-sorry.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 50,
+                                "name": "Rocket science",
+                                "url": "https://librodeingles.com/audio/rocket-science.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 51,
+                                "name": "Sonido 'th' Entre Dientes",
+                                "url": "https://librodeingles.com/audio/sonido-th-entre-dientes.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 52,
+                                "name": "Sonido 'th' Paladar",
+                                "url": "https://librodeingles.com/audio/sonido-th-paladar.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 53,
+                                "name": "Stop",
+                                "url": "https://librodeingles.com/audio/stop.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 54,
+                                "name": "Take it off",
+                                "url": "https://librodeingles.com/audio/take-it-off.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 55,
+                                "name": "Texts, guests, desks, costs",
+                                "url": "https://librodeingles.com/audio/texts-guests-desks-costs.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 56,
+                                "name": "Though, tough, thought, taught",
+                                "url": "https://librodeingles.com/audio/though-tough-thought-taught.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 57,
+                                "name": "Time",
+                                "url": "https://librodeingles.com/audio/time.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 58,
+                                "name": "Very good",
+                                "url": "https://librodeingles.com/audio/very-good.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 59,
+                                "name": "What's up",
+                                "url": "https://librodeingles.com/audio/whats-up.html"
+                        },
+                        {
+                                "@type": "ListItem",
+                                "position": 60,
+                                "name": "Yellow, young, you, yes",
+                                "url": "https://librodeingles.com/audio/yellow-young-you-yes.html"
+                        }
+                ]
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #d1e2ff);
-            color: #1a4d86;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-y: auto;
-            padding-top: 1px;
-        }
-        
-        .logo {
-            width: 90%;        /* Takes up 90% of container width */
-            max-width: 200px;  /* Maximum width of 400px */
-            height: auto;
-            display: block;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .logo {
-                width: 95%;    /* Slightly wider on mobile */
-                max-width: 300px;  /* Smaller on mobile devices */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                max-width: 250px;  /* Even smaller on very small devices */
-            }
-        }
-
-        h1 {
-            display: none;
-        }
-        .book-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            max-width: 100%;
-        }
-        
-        .audio-list {
-            list-style-type: none;
-            padding: 0;
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 15px;
-        }
-        .audio-list li {
-            margin: 10px 0;
-        }
-        .audio-list a {
-            display: block;
-            text-decoration: none;
-            color: #1a4d86;
-            font-size: 1.2em;
-            padding: 15px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .audio-list a:hover {
-            background-color: #f0f0f0;
-            color: #b22234;
-        }
-        .custom-audio-player {
-            width: 100%;
-            max-width: 400px;
-            background-color: #f2cc8f;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        .player-controls {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-        }
-        .play-button {
-            width: 40px;
-            height: 40px;
-            background-color: #1a4d86;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            padding: 0;
-            flex-shrink: 0;
-        }
-        .play-button:hover {
-            background-color: #b22234;
-        }
-        .play-button svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-        .progress-container {
-            flex-grow: 1;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background-color: #e9c46a;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .progress {
-            width: 0;
-            height: 100%;
-            background-color: #1a4d86;
-            transition: width 0.1s linear;
-        }
-        .time-display {
-            font-size: 14px;
-            color: #1a4d86;
-            margin-top: 5px;
-            text-align: right;
-        }
-        .message {
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-            color: #1a4d86;
-        }
-        .current-audio-title {
-            margin-bottom: 15px;
-            color: #1a4d86;
-            font-size: 1.2em;
-        }
-        footer {
-            background-color: #1a4d86;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-        }
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .primary-cta {
-            background-color: #b23a48;
-        }
-        .primary-cta:hover {
-            background-color: #8b2a35;
-        }
-        .button {
-            font-size: 1em;
-            color: #ffffff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 12px 20px;
-            text-decoration: none;
-            text-align: center;
-            margin-top: 10px;
-        }
-        .contact-button {
-            background-color: #b22234;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .contact-button:hover {
-            background-color: #8b2a35;
-        }
-        .volver-button {
-            background-color: #1a4d86;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-        }
-        .volver-button:hover {
-            background-color: #2a2b3d;
-        }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-    </style>
+}
+    </script>
     <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="sr-only">De FAK a Fluent</h1>
-        <img src="images/small-transparent.png" alt="De FAK a Fluent" class="logo">
-        <div id="current-audio-title" class="current-audio-title">Selecciona un audio:</div>
-        <ul id="audio-list" class="audio-list">
-            <!-- The list of audios will be dynamically generated here -->
-        </ul>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="/">
+                <img src="/images/flag_ukus_64px.png" alt="">
+                <span>De FAK a Fluent</span>
+            </a>
+            <nav class="site-nav" aria-label="Principal">
+                <a href="/">Inicio</a>
+                <a href="/audios.html" aria-current="page">Audios</a>
+                <a href="/articulos.html">Artículos</a>
+                <a href="/contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-        
-        <div class="custom-audio-player">
-            <div class="player-controls">
-                <button id="play-button" class="play-button">
-                    <svg class="play-pause-icon" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                </button>
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div id="progress" class="progress"></div>
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">Biblioteca de audios</p>
+                    <h1>Audios de pronunciación y conversación en inglés.</h1>
+                    <p class="lede">Cada audio tiene su propia página para que puedas practicar, compartirlo y volver a él fácilmente desde el móvil.</p>
+                    <div class="button-row">
+                        <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
+                        <a class="button secondary" href="/articulos.html">Leer artículos</a>
                     </div>
-                    <div id="time-display" class="time-display">0:00 / 0:00</div>
                 </div>
+                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de De FAK a Fluent">
             </div>
-        </div>
-        <audio id="audio-player">
-            <source id="audio-source" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        </section>
 
-        <div class="message">
-            <p>Hay muchos más audios disponibles en el libro para que puedas dominar tu pronunciación.</p>
+        <div class="page-shell audio-list-page">
+            <section id="pronunciacion" class="audio-section">
+                <h2>Pronunciación</h2>
+                <div class="audio-grid">
+                    <a class="audio-card" href="/audio/education-individual-gradual-schedule-procedure-residual.html">
+                        <span>Pronunciación</span>
+                        <strong>Education, individual, gradual, schedule, procedure, residual</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hello-hard.html">
+                        <span>Pronunciación</span>
+                        <strong>Hello, hard</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/i-am-from-spain-and-i-am-33.html">
+                        <span>Pronunciación</span>
+                        <strong>I am from Spain and I am 33</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/mcdonalds.html">
+                        <span>Pronunciación</span>
+                        <strong>McDonald&#x27;s</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/microsoft-up-us-uncle-umbrella.html">
+                        <span>Pronunciación</span>
+                        <strong>Microsoft, up, us, uncle, umbrella</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/moon-food-room-school-tool-noodle-cool.html">
+                        <span>Pronunciación</span>
+                        <strong>Moon, food, room, school, tool, noodle, cool</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/skill-goal-ball-full-world-call-feel-school.html">
+                        <span>Pronunciación</span>
+                        <strong>Skill, goal, ball, full, world, call, feel, school</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html">
+                        <span>Pronunciación</span>
+                        <strong>Walk, talk, half, calm, salmon, would, should, yolk, palm, chalk, walkie-talkie</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/bird-bear-beer-beard.html">
+                        <span>Pronunciación</span>
+                        <strong>Bird, bear, beer, beard</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/bit-big-win-lip-clip.html">
+                        <span>Pronunciación</span>
+                        <strong>Bit, big, win, lip, clip</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/door-floor-score-shore-roar-soar.html">
+                        <span>Pronunciación</span>
+                        <strong>Door, floor, score, shore, roar, soar</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/fak-fuck.html">
+                        <span>Pronunciación</span>
+                        <strong>Fak, fuck</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/focus.html">
+                        <span>Pronunciación</span>
+                        <strong>Focus</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hit.html">
+                        <span>Pronunciación</span>
+                        <strong>Hit</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/jump-john-job-jungle-enjoy.html">
+                        <span>Pronunciación</span>
+                        <strong>Jump, John, job, jungle, enjoy</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/lack-lock-look-luke.html">
+                        <span>Pronunciación</span>
+                        <strong>Lack, lock, look, luke</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/mountain-button-cotton-manhattan.html">
+                        <span>Pronunciación</span>
+                        <strong>Mountain, button, cotton, manhattan</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/red-car-around-right-sorry.html">
+                        <span>Pronunciación</span>
+                        <strong>Red, car, around, right, sorry</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/rocket-science.html">
+                        <span>Pronunciación</span>
+                        <strong>Rocket science</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/sonido-th-entre-dientes.html">
+                        <span>Pronunciación</span>
+                        <strong>Sonido &#x27;th&#x27; Entre Dientes</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/sonido-th-paladar.html">
+                        <span>Pronunciación</span>
+                        <strong>Sonido &#x27;th&#x27; Paladar</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/stop.html">
+                        <span>Pronunciación</span>
+                        <strong>Stop</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/texts-guests-desks-costs.html">
+                        <span>Pronunciación</span>
+                        <strong>Texts, guests, desks, costs</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/time.html">
+                        <span>Pronunciación</span>
+                        <strong>Time</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/yellow-young-you-yes.html">
+                        <span>Pronunciación</span>
+                        <strong>Yellow, young, you, yes</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                </div>
+            </section>
+            <section id="palabras-dificiles" class="audio-section">
+                <h2>Palabras difíciles</h2>
+                <div class="audio-grid">
+                    <a class="audio-card" href="/audio/bomb-tomb-comb.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Bomb, Tomb, Comb</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/book-cook-look-foot-hook-took-cookie-lol.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Book, cook, look, foot, hook, took, cookie (LOL)</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/book-cook-look-foot-hook-took-cookie-correcto.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Book, cook, look, foot, hook, took, cookie (correcto)</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/light-love-listen-like-late-learn-laugh.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Light, love, listen, like, late, learn, laugh</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/live-leave-leaf.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Live, leave, leaf</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Though, Through, Tough, Cough, Enough, Bough, Thought, Plough</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/either-american-either-british.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Either American, either British</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/love-clove-move.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Love, clove, move</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/though-tough-thought-taught.html">
+                        <span>Palabras difíciles</span>
+                        <strong>Though, tough, thought, taught</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                </div>
+            </section>
+            <section id="ligar-palabras" class="audio-section">
+                <h2>Ligar palabras</h2>
+                <div class="audio-grid">
+                    <a class="audio-card" href="/audio/could-have-should-have-would-have.html">
+                        <span>Ligar palabras</span>
+                        <strong>Could have, should have, would have</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/did-you-see-that.html">
+                        <span>Ligar palabras</span>
+                        <strong>Did you see that</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/give-me-that.html">
+                        <span>Ligar palabras</span>
+                        <strong>Give me that</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/going-to.html">
+                        <span>Ligar palabras</span>
+                        <strong>Going to</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/i-gotta-go.html">
+                        <span>Ligar palabras</span>
+                        <strong>I gotta go</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/i-want-to-go-to-london.html">
+                        <span>Ligar palabras</span>
+                        <strong>I want to go to London</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/let-me-see.html">
+                        <span>Ligar palabras</span>
+                        <strong>Let me see</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/out-of-kind-of-sort-of.html">
+                        <span>Ligar palabras</span>
+                        <strong>Out of, kind of, sort of</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/tell-them-to-come-back-home.html">
+                        <span>Ligar palabras</span>
+                        <strong>Tell them to come back home</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/pick-it-up.html">
+                        <span>Ligar palabras</span>
+                        <strong>Pick it up</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/take-it-off.html">
+                        <span>Ligar palabras</span>
+                        <strong>Take it off</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                </div>
+            </section>
+            <section id="conversacion" class="audio-section">
+                <h2>Conversación</h2>
+                <div class="audio-grid">
+                    <a class="audio-card" href="/audio/hows-everything.html">
+                        <span>Conversación</span>
+                        <strong>How&#x27;s everything</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hows-it-going.html">
+                        <span>Conversación</span>
+                        <strong>How&#x27;s it going</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hows-your-day-going.html">
+                        <span>Conversación</span>
+                        <strong>How&#x27;s your day going</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/whats-going-on.html">
+                        <span>Conversación</span>
+                        <strong>What&#x27;s going on</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/doing-well.html">
+                        <span>Conversación</span>
+                        <strong>Doing well</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/doing-well-yourself.html">
+                        <span>Conversación</span>
+                        <strong>Doing well yourself</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hanging.html">
+                        <span>Conversación</span>
+                        <strong>Hanging</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/hows-it-been.html">
+                        <span>Conversación</span>
+                        <strong>How&#x27;s it been</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/howve-you-been.html">
+                        <span>Conversación</span>
+                        <strong>How&#x27;ve you been</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/how-are-you.html">
+                        <span>Conversación</span>
+                        <strong>How are you</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/pretty-good.html">
+                        <span>Conversación</span>
+                        <strong>Pretty good</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/very-good.html">
+                        <span>Conversación</span>
+                        <strong>Very good</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/whats-up.html">
+                        <span>Conversación</span>
+                        <strong>What&#x27;s up</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                </div>
+            </section>
+            <section id="acentos" class="audio-section">
+                <h2>Acentos</h2>
+                <div class="audio-grid">
+                    <a class="audio-card" href="/audio/american-british-australian-irish-spanish.html">
+                        <span>Acentos</span>
+                        <strong>American, British, Australian, Irish, Spanish</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                    <a class="audio-card" href="/audio/i-am-spanish.html">
+                        <span>Acentos</span>
+                        <strong>I am Spanish</strong>
+                        <small>Escuchar audio</small>
+                    </a>
+                </div>
+            </section>
         </div>
-        <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button primary-cta" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
-        <a href="index.html" class="volver-button">Volver</a>
-    </div>
+    </main>
 
-    <footer>
-        <div class="footer-content">
+    <footer class="site-footer">
+        <div class="footer-shell">
             <p>© Todos los derechos reservados</p>
-            <a href="contacto.html" class="contact-button">Contacto</a>
+            <a href="/contacto.html">Contacto</a>
         </div>
     </footer>
-
-    <script>
-        // Keep your existing JavaScript here, but remove any references to navbar elements
-        // List of the 3 example audio filenames with corresponding display names
-        const exampleAudios = [
-            { 
-                name: 'focus', 
-                displayName: 'Focus (español vs inglés)', 
-                url: 'https://librodeingles.com/audios/focus.mp3' 
-            },
-            { 
-                name: 'pick.it.up', 
-                displayName: 'Pick it up (español vs inglés)', 
-                url: 'https://librodeingles.com/audios/pick.it.up.mp3' 
-            },
-            { 
-                name: 'American_British_Australian_Irish_Spanish', 
-                displayName: 'Acentos: americano, británico, australiano, irlandés y español', 
-                url: 'https://librodeingles.com/audios/American_British_Australian_Irish_Spanish.mp3' 
-            }
-        ];
-
-        let audioPlayer, playButton, progressBar, timeDisplay;
-        let isPlaying = false;
-
-        // Function to load and play the selected audio
-        function loadAudio(audioUrl, displayName) {
-            const currentAudioTitle = document.getElementById('current-audio-title');
-            
-            // Update the audio source and play
-            document.getElementById('audio-source').src = audioUrl;
-            audioPlayer.load();
-            audioPlayer.play();
-
-            // Update the title of the current audio
-            currentAudioTitle.innerText = displayName;
-        }
-
-        // Function to create the list of example audios
-        function loadAudioList() {
-            const audioListElement = document.getElementById('audio-list');
-            exampleAudios.forEach(function(audio) {
-                const listItem = document.createElement('li');
-                const audioLink = document.createElement('a');
-
-                // Set the link text and add an event listener to play the audio
-                audioLink.href = "#";  // Prevent page navigation
-                audioLink.innerText = audio.displayName;
-                audioLink.onclick = function() {
-                    loadAudio(audio.url, audio.displayName);
-                    return false;  // Prevent default link behavior
-                };
-
-                listItem.appendChild(audioLink);
-                audioListElement.appendChild(listItem);
-            });
-        }
-
-        // Function to update the play button and manage progress
-        function updatePlayButton() {
-            playButton.innerHTML = isPlaying
-                ? '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>'
-                : '<svg class="play-pause-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-        }
-
-        function updateProgress() {
-            const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-            progressBar.style.width = `${progress}%`;
-            updateTimeDisplay();
-        }
-
-        function updateTimeDisplay() {
-            const currentTime = formatTime(audioPlayer.currentTime);
-            const duration = formatTime(audioPlayer.duration);
-            timeDisplay.textContent = `${currentTime} / ${duration}`;
-        }
-
-        function formatTime(time) {
-            const minutes = Math.floor(time / 60);
-            const seconds = Math.floor(time % 60);
-            return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-        }
-
-        window.onload = function() {
-            audioPlayer = document.getElementById('audio-player');
-            playButton = document.getElementById('play-button');
-            progressBar = document.getElementById('progress');
-            timeDisplay = document.getElementById('time-display');
-            updatePlayButton();
-
-            playButton.addEventListener('click', function() {
-                togglePlay();
-            });
-            audioPlayer.addEventListener('play', function() {
-                isPlaying = true;
-                updatePlayButton();
-            });
-            audioPlayer.addEventListener('pause', function() {
-                isPlaying = false;
-                updatePlayButton();
-            });
-            audioPlayer.addEventListener('timeupdate', updateProgress);
-            audioPlayer.addEventListener('loadedmetadata', updateTimeDisplay);
-            audioPlayer.addEventListener('ended', function() {
-                isPlaying = false;
-                updatePlayButton();
-                progressBar.style.width = '0%';
-                updateTimeDisplay();
-            });
-
-            loadAudioList();  // Generate the audio list on page load
-        };
-
-        function togglePlay() {
-            if (isPlaying) {
-                audioPlayer.pause();
-            } else {
-                audioPlayer.play();
-            }
-        }
-    </script>
 </body>
 </html>

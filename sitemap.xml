@@ -1,55 +1,441 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://librodeingles.com/</loc>
-  <lastmod>2024-09-27T05:55:20+00:00</lastmod>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>daily</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/audios.html</loc>
-  <lastmod>2024-09-27T05:55:20+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://librodeingles.com/contacto.html</loc>
-  <lastmod>2024-09-27T05:55:20+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/articulos.html</loc>
   <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/contacto.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/prompt.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.55</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/articulos/pronunciacion-ingles-para-espanoles.html</loc>
   <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/articulos/palabras-ough-pronunciacion-ingles.html</loc>
   <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/articulos/how-are-you-respuestas-ingles.html</loc>
   <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
   <loc>https://librodeingles.com/articulos/make-vs-do.html</loc>
   <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
 <url>
-  <loc>https://librodeingles.com/index.html</loc>
-  <lastmod>2024-09-27T05:55:20+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://librodeingles.com/articulos/preposiciones-in-on-at.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
 </url>
-
-
+<url>
+  <loc>https://librodeingles.com/articulos/preposiciones-to-for-by-from-with.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/articulos/actual-vs-actually.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/articulos/ligar-palabras-ingles.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/american-british-australian-irish-spanish.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/bomb-tomb-comb.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/book-cook-look-foot-hook-took-cookie-lol.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/book-cook-look-foot-hook-took-cookie-correcto.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/could-have-should-have-would-have.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/did-you-see-that.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/education-individual-gradual-schedule-procedure-residual.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/give-me-that.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/going-to.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hello-hard.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hows-everything.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hows-it-going.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hows-your-day-going.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/i-am-spanish.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/i-am-from-spain-and-i-am-33.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/i-gotta-go.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/i-want-to-go-to-london.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/let-me-see.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/light-love-listen-like-late-learn-laugh.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/live-leave-leaf.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/mcdonalds.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/microsoft-up-us-uncle-umbrella.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/moon-food-room-school-tool-noodle-cool.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/out-of-kind-of-sort-of.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/skill-goal-ball-full-world-call-feel-school.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/tell-them-to-come-back-home.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/though-through-tough-cough-enough-bough-thought-plough.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/whats-going-on.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/bird-bear-beer-beard.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/bit-big-win-lip-clip.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/doing-well.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/doing-well-yourself.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/door-floor-score-shore-roar-soar.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/either-american-either-british.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/fak-fuck.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/focus.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hanging.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hit.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/hows-it-been.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/howve-you-been.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/how-are-you.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/jump-john-job-jungle-enjoy.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/lack-lock-look-luke.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/love-clove-move.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/mountain-button-cotton-manhattan.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/pick-it-up.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/pretty-good.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/red-car-around-right-sorry.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/rocket-science.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/sonido-th-entre-dientes.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/sonido-th-paladar.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/stop.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/take-it-off.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/texts-guests-desks-costs.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/though-tough-thought-taught.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/time.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/very-good.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/whats-up.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+<url>
+  <loc>https://librodeingles.com/audio/yellow-young-you-yes.html</loc>
+  <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
 </urlset>
