@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://librodeingles.com/sitemap.xml
