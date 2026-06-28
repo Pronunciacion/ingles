@@ -404,12 +404,12 @@ ARTICLES: list[dict] = [
                 <p>Las preposiciones son pequeñas, pero sostienen buena parte de la frase. El problema es que una misma preposición española puede convertirse en varias opciones inglesas según la función que cumpla.</p>
                 <p>Por eso es mejor aprender <strong>to</strong>, <strong>for</strong>, <strong>by</strong>, <strong>from</strong> y <strong>with</strong> con situaciones típicas.</p>
 
-                <h2 id="to">To: dirección, receptor e intención</h2>
-                <p><em>To</em> suele apuntar hacia un destino: físico, personal o mental.</p>
+                <h2 id="to">To: dirección, receptor y límite</h2>
+                <p><em>To</em> suele apuntar hacia un destino, un receptor o el final de un rango.</p>
                 <div class="example-grid">
                     <div class="mini-card"><strong>Go to the store</strong><span>Dirección o destino físico.</span></div>
                     <div class="mini-card"><strong>Give it to me</strong><span>El receptor de algo.</span></div>
-                    <div class="mini-card"><strong>To become a doctor</strong><span>Intención u objetivo.</span></div>
+                    <div class="mini-card"><strong>From Monday to Friday</strong><span>El final de un rango de tiempo.</span></div>
                 </div>
 
                 <h2 id="for">For: beneficiario, duración y propósito</h2>
