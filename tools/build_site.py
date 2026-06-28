@@ -92,7 +92,7 @@ def site_header(active: str) -> str:
     return f"""<header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
-                <img src="/images/flag_ukus_64px.png" alt="">
+                <img src="/images/flag_ukus_64px.png" alt="" aria-hidden="true">
                 <span>{BOOK_TITLE}</span>
             </a>
             <nav class="site-nav" aria-label="Principal">
@@ -118,7 +118,7 @@ ARTICLES: list[dict] = [
         "title": "Pronunciación en inglés para españoles: los errores que más bloquean",
         "seo_title": "Pronunciación en inglés para españoles | De FAK a Fluent",
         "description": "Errores de pronunciación en inglés frecuentes en españoles: vocales, H, TH y acento. Aprende qué practicar primero para que te entiendan.",
-        "lede": "Si tu gramática es suficiente pero no te entienden, el problema casi nunca es una regla más: es sonido, ritmo y confianza al imitar.",
+        "lede": "Si tu gramática es suficiente, pero no te entienden, el problema casi nunca es una regla más: es sonido, ritmo y confianza al imitar.",
         "reading": "5 minutos",
         "toc": [
             ("por-que", "Por qué cuesta"),
@@ -236,7 +236,7 @@ ARTICLES: list[dict] = [
             "make-vs-do",
         ],
         "body": """
-                <p>Muchos españoles aprendieron una única respuesta para <em>How are you?</em>: <em>I am fine, thank you, and you?</em>. La frase existe y es correcta, pero en conversaciones reales puede sonar demasiado formal, automática o poco natural.</p>
+                <p>Muchos españoles aprendieron una única respuesta para <em>How are you?</em> <em>I am fine, thank you, and you?</em> La frase existe y es correcta, pero en conversaciones reales puede sonar demasiado formal, automática o poco natural.</p>
                 <p>En inglés, igual que en español, preguntar qué tal estás no siempre busca una respuesta profunda. A veces es un saludo, a veces abre una conversación y a veces solo mantiene la cortesía.</p>
 
                 <h2 id="respuestas">Respuestas naturales a How are you</h2>
@@ -267,7 +267,7 @@ ARTICLES: list[dict] = [
                     <p><strong>Contexto informal:</strong> Pretty good. How about you?</p>
                     <p><strong>Hace tiempo que no os veis:</strong> I've been good, thanks. What about you?</p>
                 </div>
-                <p>Practica la pronunciación con <a href="/audio/hows-it-going.html">How is it going?</a>, <a href="/audio/howve-you-been.html">How have you been?</a> y <a href="/audio/pretty-good.html">Pretty good</a>.</p>
+                <p>Practica la pronunciación con <a href="/audio/hows-it-going.html">How's it going?</a>, <a href="/audio/howve-you-been.html">How've you been?</a> y <a href="/audio/pretty-good.html">Pretty good</a>.</p>
         """,
     },
     {
@@ -779,7 +779,7 @@ ARTICLES: list[dict] = [
                 <p>Por eso conviene escuchar la palabra dentro de frases reales. El significado literal te da una parte; la entonación te da la otra.</p>
 
                 <h2 id="errores">Errores típicos</h2>
-                <p>El primer error es traducir <em>sure</em> siempre como “seguro”. En muchas conversaciones solo equivale a un “sí” relajado. El segundo es usarlo en contextos demasiado formales donde quedaría mejor una respuesta completa, como <em>certainly</em> o <em>of course</em>.</p>
+                <p>El primer error es traducir <em>sure</em> siempre como “seguro”. En muchas conversaciones solo equivale a un “sí” relajado. El segundo es usarlo en contextos demasiado formales donde quedaría mejor una respuesta completa, como <em>certainly</em> u <em>of course</em>.</p>
                 <div class="lesson-box">
                     <strong>Regla práctica:</strong> si alguien te ofrece algo informalmente, <em>sure</em> puede servir. Si estás escribiendo un email formal, normalmente conviene una frase más explícita.
                 </div>
@@ -1210,6 +1210,26 @@ AUDIO_DISPLAY_OVERRIDES = {
     "hanging.mp3": "Hanging in there",
     "lack_lock_look_luke.mp3": "Lack, lock, look, Luke",
     "mountain_button_cotton_manhattan.mp3": "Mountain, button, cotton, Manhattan",
+    "sonido.'th'.Entre.Dientes.mp3": "TH entre dientes",
+    "sonido.'th'.Paladar.mp3": "TH frente a D: lengua en paladar",
+}
+
+
+AUDIO_SEO_LABEL_OVERRIDES = {
+    "American_British_Australian_Irish_Spanish.mp3": "Acentos: American, British...",
+    "Book_cook_look_foot_hook_took_cookie.(LOL).mp3": "Book/cook/look: error común",
+    "Book_cook_look_foot_hook_took_cookie.(correcto).mp3": "Book/cook/look: correcto",
+    "Could.have_should.have_would.have.mp3": "Could've, should've, would've",
+    "Education_individual_gradual_schedule_procedure_residual.mp3": "Sonido J: education, schedule...",
+    "Light_love_listen_like_late_learn_laugh.mp3": "L inicial: light, love, listen...",
+    "Moon_food_room_school_tool_noodle_cool.mp3": "OO larga: moon, food, school...",
+    "Out.of_kind.of_sort.of.mp3": "Outta, kinda, sorta",
+    "Skill_goal_ball_full_world_call_feel_school.mp3": "L final: skill, goal, ball...",
+    "Though_Through_Tough_Cough_Enough_Bough_Thought_Plough.mp3": "OUGH: though, through, tough...",
+    "Walk_talk_half_calm_salmon_would_should_yolk_palm_chalk_walkie-talkie.mp3": "L muda: walk, talk, would...",
+    "bit_big_win_lip_clip.mp3": "I corta: bit, big, win...",
+    "door_floor_score_shore_roar_soar.mp3": "O larga: door, floor, score...",
+    "texts_guests_desks_costs.mp3": "S final: texts, guests, desks...",
 }
 
 
@@ -1221,6 +1241,19 @@ def audio_display_name(filename: str) -> str:
     text = text.replace("(correcto)", "(correcto)").replace("(LOL)", "(LOL)")
     text = re.sub(r"\s+", " ", text).strip()
     return text[:1].upper() + text[1:]
+
+
+def audio_seo_label(filename: str) -> str:
+    if filename in AUDIO_SEO_LABEL_OVERRIDES:
+        return AUDIO_SEO_LABEL_OVERRIDES[filename]
+    name = audio_display_name(filename)
+    if len(name) <= 42:
+        return name
+    return name[:39].rstrip(" ,") + "..."
+
+
+def audio_seo_title(filename: str) -> str:
+    return f"{audio_seo_label(filename)} | Audio inglés"
 
 
 def audio_category(filename: str) -> str:
@@ -1237,15 +1270,15 @@ def audio_category(filename: str) -> str:
 
 
 def audio_description(filename: str) -> str:
-    name = audio_display_name(filename)
+    name = audio_seo_label(filename)
     category = audio_category(filename)
     if category == "Ligar palabras":
-        return f"Escucha y practica cómo se liga en inglés hablado: {name}. Audio del libro De FAK a Fluent."
+        return f"Practica cómo se liga en inglés hablado: {name}. Mini-transcript y práctica rápida para hispanohablantes."
     if category == "Conversación":
-        return f"Escucha la pronunciación natural de {name}, una expresión frecuente en conversaciones reales en inglés."
+        return f"Practica una expresión real en inglés: {name}. Audio con mini-transcript y notas para hispanohablantes."
     if category == "Palabras difíciles":
-        return f"Compara la pronunciación de {name} y entrena el oído para palabras inglesas que se escriben de forma engañosa."
-    return f"Escucha el audio de pronunciación de {name}, creado para hispanohablantes que quieren sonar más claros en inglés."
+        return f"Compara la pronunciación de {name}. Audio con mini-transcript, errores típicos y práctica rápida."
+    return f"Practica pronunciación en inglés: {name}. Audio con mini-transcript, errores típicos y notas para españoles."
 
 
 def audio_mini_transcript(filename: str) -> str:
@@ -1257,8 +1290,10 @@ def audio_mini_transcript(filename: str) -> str:
 def audio_focus_note(filename: str) -> str:
     low = filename.lower()
     category = audio_category(filename)
-    if "sonido.'th'.entre" in low or "sonido.'th'.paladar" in low:
+    if "sonido.'th'.entre" in low:
         return "Trabaja la posición de la lengua para que el TH no se convierta en una D, T, S o Z española."
+    if "sonido.'th'.paladar" in low:
+        return "Compara la D de day, con la lengua en el paladar, frente al TH de they, donde la lengua se acerca a los dientes."
     if "though" in low:
         return "Compara palabras con grafía parecida pero sonidos distintos; aquí la ortografía no es una guía fiable."
     if any(key in low for key in ["bit_big", "hit"]):
@@ -1293,8 +1328,10 @@ def audio_focus_note(filename: str) -> str:
 def audio_mistake_note(filename: str) -> str:
     low = filename.lower()
     category = audio_category(filename)
-    if "sonido.'th'" in low:
+    if "sonido.'th'.entre" in low:
         return "El error más común es esconder la lengua y decir una D o T española. Si la lengua no participa, el sonido no sale."
+    if "sonido.'th'.paladar" in low:
+        return "El error típico es usar la D de day cuando quieres decir they, this o that. La diferencia está en mover la lengua del paladar hacia los dientes."
     if "though" in low:
         return "El error típico es hacer rimar todas las palabras con OUGH. Though, through, tough y thought no comparten una pronunciación única."
     if any(key in low for key in ["bit_big", "hit"]):
@@ -1315,12 +1352,19 @@ def audio_mistake_note(filename: str) -> str:
 def audio_practice_steps(filename: str) -> list[str]:
     low = filename.lower()
     category = audio_category(filename)
-    if "sonido.'th'" in low:
+    if "sonido.'th'.entre" in low:
         return [
             "Coloca la lengua entre los dientes antes de reproducir el audio.",
             "Escucha una vez sin repetir y nota si hay vibración de garganta.",
             "Repite despacio exagerando la lengua, luego reduce la exageración.",
             "Termina con una frase corta usando el mismo sonido.",
+        ]
+    if "sonido.'th'.paladar" in low:
+        return [
+            "Di day con la lengua tocando el paladar, justo detrás de los dientes.",
+            "Escucha el contraste con they y fíjate en cómo cambia la posición de la lengua.",
+            "Alterna day y they sin dejar que los dos sonidos se mezclen.",
+            "Termina con una frase corta como they do it, manteniendo el TH separado de la D.",
         ]
     if any(key in low for key in ["bit_big", "book_cook", "moon_food", "door_floor", "lack_lock", "love_clove", "live_leave"]):
         return [
@@ -1432,7 +1476,7 @@ def render_audio_page(filename: str) -> str:
     }
     return f"""<!DOCTYPE html>
 <html lang="es">
-{page_head(title=f"{name} | Audio de pronunciación en inglés", description=description, canonical=canonical, og_type="website", schema=schema)}
+{page_head(title=audio_seo_title(filename), description=description, canonical=canonical, og_type="website", schema=schema)}
 <body>
     {site_header("audios")}
 
