@@ -2,23 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="De FAK a Fluent es un libro de inglés para españoles con audios gratis, guías de pronunciación y práctica para entender conversaciones reales.">
+    <link rel="canonical" href="https://librodeingles.com/">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <link rel="canonical" href="https://librodeingles.com/">
-    
-    <!-- Apple Touch Icon (for iOS devices) -->
     <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="De FAK a Fluent es el libro que te enseña inglés de una forma sincera, con tips basados en la experiencia de alguien que vive y trabaja en inglés.">
     <meta property="og:title" content="De FAK a Fluent">
-    <meta property="og:description" content="El libro que te enseña inglés de una forma sincera.">
+    <meta property="og:description" content="Libro de inglés para españoles con audios gratis, pronunciación clara y práctica de conversación real.">
     <meta property="og:image" content="https://librodeingles.com/images/book-cover-600.png">
     <meta property="og:url" content="https://librodeingles.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="De FAK a Fluent">
-    <title>De FAK a Fluent</title>
+    <meta name="twitter:description" content="Libro de inglés para españoles con audios gratis y guías prácticas.">
+    <title>De FAK a Fluent | Libro de inglés para españoles</title>
+    <link rel="stylesheet" href="/homepage.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -49,6 +48,7 @@
                 "@id": "https://librodeingles.com/#book",
                 "name": "De FAK a Fluent",
                 "alternateName": "The Fak a Fluent",
+                "description": "Libro de inglés para españoles con consejos de pronunciación, conversación real y audios de práctica.",
                 "inLanguage": "es",
                 "isbn": "979-8-9918812-0-3",
                 "datePublished": "2024-11",
@@ -66,228 +66,148 @@
         ]
     }
     </script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #fcfcfc;
-            color: #1a4d86;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-y: auto;
-            padding-top: 1px;
-        }
-        
-        
-        
-        h1 {
-            display: none;
-        }
-        .book-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            max-width: 100%;
-            background-color: transparent;
-        }
-        .book-cover {
-            max-width: 60%;
-            max-height: 500px;
-            object-fit: contain;
-            background-color: transparent;
-            
-        }
-        .cta-container {
-            
-            gap: 20px;
-            display: flex;
-            margin-bottom: 1em;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .button {
-            font-size: 1em;
-            color: #ffffff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 12px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-        .primary-cta {
-            background-color: #b23a48;
-        }
-        .primary-cta:hover {
-            background-color: #8b2a35;
-        }
-        .secondary-cta {
-            background-color: #1a4d86;
-        }
-        .secondary-cta:hover {
-            background-color: #363a59;
-        }
-        .article-cta {
-            background-color: #f3c15f;
-            color: #1a4d86;
-        }
-        .article-cta:hover {
-            background-color: #e4ad3b;
-        }
-        .features {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-            width: 100%;
-        }
-        .feature {
-            background-color: white;
-            padding: 2px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .feature-icon {
-            font-size: 1.5em;
-            margin-bottom: 5px;
-            color: #464970;
-        }
-        footer {
-            background-color: #1a4d86;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-        }
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        .contact-button {
-            background-color: #b23a48;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .contact-button:hover {
-            background-color: #8b2a35;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-        
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .features {
-                flex-direction: row;
-                justify-content: space-around;
-                gap: 10px;
-            }
-            .feature {
-                flex: 1;
-                max-width: 30%;
-                padding: 10px;
-                font-size: 0.9em;
-            }
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-                }
-            .feature-icon {
-                font-size: 1.2em;
-            }
-            .book-cover{
-                max-width: 90%;
-               
-            }
-            h3 {
-                font-size: 0.9em;
-            }
-            p {
-                font-size: 0.9em;
-            }
-        }
-        @media (max-width: 480px) {
-            h3 {
-                font-size: 0.9em;
-            }
-            p {
-                font-size: 0.9em;
-            }
-            .book-cover {
-            max-width: 90%;
-            max-height: 500px;
-            object-fit: contain;
-            background-color: transparent;
-            
-        }
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
-        <h1 class="sr-only">De FAK a Fluent</h1>
-        
-        <div class="book-container">
-            <img src="images/book-cover-600.png" alt="Portada del libro 'De FAK a Fluent'" class="book-cover">
+<body class="home-page">
+    <header class="home-header">
+        <div class="home-nav">
+            <a class="brand" href="/" aria-label="De FAK a Fluent">
+                <img src="/images/flag_ukus_64px.png" alt="" aria-hidden="true">
+                <span>De FAK a Fluent</span>
+            </a>
+            <nav class="nav-links" aria-label="Principal">
+                <a href="/audios.html">Audios</a>
+                <a href="/articulos.html"><span class="desktop-label">Artículos</span><span class="mobile-label">Guías</span></a>
+                <a class="nav-optional" href="/contacto.html">Contacto</a>
+            </nav>
         </div>
-        <div class="cta-container">
-            <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button primary-cta" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
-            <a href="https://librodeingles.com/audios.html" class="button secondary-cta">Escuchar Audios Gratis</a>
-            <a href="https://librodeingles.com/articulos.html" class="button article-cta">Leer Artículos</a>
-        </div>
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">👍</div>
-                <h3>Confianza al Hablar</h3>
-                <p>Gana seguridad y consigue mejores trabajos</p>
+    </header>
+
+    <main>
+        <section class="hero" aria-label="Libro De FAK a Fluent">
+            <div class="hero-shell">
+                <div class="hero-copy">
+                    <p class="eyebrow">Libro + audios gratis</p>
+                    <h1>De FAK a Fluent</h1>
+                    <p class="lead">El libro de inglés para españoles que quieren sonar más claros, entender conversaciones reales y practicar con audios directos desde cada lección.</p>
+                    <div class="button-row" aria-label="Acciones principales">
+                        <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar en Amazon</a>
+                        <a class="button secondary" href="/audios.html">Escuchar audios gratis</a>
+                        <a class="button tertiary" href="/articulos.html">Leer artículos</a>
+                    </div>
+                    <div class="trust-line" aria-label="Contenido disponible">
+                        <div class="trust-item">
+                            <strong>60</strong>
+                            <span>audios de práctica</span>
+                        </div>
+                        <div class="trust-item">
+                            <strong>17</strong>
+                            <span>artículos para empezar</span>
+                        </div>
+                        <div class="trust-item">
+                            <strong>100%</strong>
+                            <span>pensado para hispanohablantes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cover-area" aria-label="Portada del libro">
+                    <div class="cover-frame">
+                        <img class="book-cover" src="/images/book-cover-600.png" alt="Portada del libro De FAK a Fluent">
+                    </div>
+                </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🎧</div>
-                <h3>Audios Prácticos</h3>
-                <p>Mejora tu pronunciación y comprensión auditiva</p>
+        </section>
+
+        <section class="section" aria-labelledby="start-title">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <h2 id="start-title">Empieza por lo que más se nota al hablar.</h2>
+                    <p>Elige una ruta de práctica: pronunciación, conversación real o gramática útil. Cada guía conecta con audios y ejemplos pensados para hispanohablantes.</p>
+                </div>
+                <div class="path-grid">
+                    <a class="path-card" href="/articulos/pronunciacion-ingles-para-espanoles.html">
+                        <span>Pronunciación</span>
+                        <h3>Los errores que más bloquean a un español</h3>
+                        <p>Vocales, H, TH y acento: qué practicar primero para que tu inglés se entienda mejor.</p>
+                        <b>Leer guía</b>
+                    </a>
+                    <a class="path-card" href="/articulos/how-are-you-respuestas-ingles.html">
+                        <span>Conversación</span>
+                        <h3>Respuestas naturales a How are you?</h3>
+                        <p>Opciones reales para no sonar automático: pretty good, doing well, hanging in there y más.</p>
+                        <b>Ver ejemplos</b>
+                    </a>
+                    <a class="path-card" href="/articulos/preposiciones-in-on-at.html">
+                        <span>Gramática útil</span>
+                        <h3>In, on y at sin traducir palabra por palabra</h3>
+                        <p>Aprende las preposiciones por función: espacio, tiempo, transporte y situaciones comunes.</p>
+                        <b>Practicar preposiciones</b>
+                    </a>
+                </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🧠</div>
-                <h3>Método Cognitivo</h3>
-                <p>Análisis del inglés para entenderlo mejor</p>
+        </section>
+
+        <section class="section alt" aria-labelledby="audio-title">
+            <div class="section-shell">
+                <div class="audio-grid">
+                    <div class="audio-note">
+                        <p class="eyebrow">Del libro al oído</p>
+                        <h2 id="audio-title">Practica con audios conectados a las lecciones.</h2>
+                        <p>La web funciona como complemento del libro: escucha sonidos difíciles, frases frecuentes y palabras que en inglés no se pronuncian como parecen.</p>
+                        <ol>
+                            <li>Lee una explicación corta.</li>
+                            <li>Escucha el audio relacionado.</li>
+                            <li>Repite con una frase que usarías de verdad.</li>
+                        </ol>
+                    </div>
+                    <div class="audio-links" aria-label="Audios destacados">
+                        <a class="audio-link" href="/audio/sonido-th-entre-dientes.html">TH entre dientes <span>Pronunciación</span></a>
+                        <a class="audio-link" href="/audio/hows-it-going.html">How's it going <span>Conversación</span></a>
+                        <a class="audio-link" href="/audio/going-to.html">Going to <span>Inglés real</span></a>
+                        <a class="audio-link" href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">OUGH words <span>Palabras difíciles</span></a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <footer>
-        <div class="footer-content">
-            <p>© Todos los derechos reservados</p>
-            <a href="https://librodeingles.com/contacto.html" class="contact-button">Contacto</a>
+        </section>
+
+        <section class="section" aria-labelledby="practice-title">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <h2 id="practice-title">Qué vas a practicar con el libro.</h2>
+                    <p>No se trata de memorizar listas. La idea es entender por qué el inglés se siente raro desde el español y practicar justo donde suele fallar.</p>
+                </div>
+                <div class="quote-grid">
+                    <div class="quote-card">
+                        <h3><strong>Pronunciación que se entiende</strong></h3>
+                        <p>Sonidos como TH, H, vocales cortas y palabras con OUGH explicados desde los errores típicos de un español.</p>
+                    </div>
+                    <div class="quote-card">
+                        <h3><strong>Inglés de conversación</strong></h3>
+                        <p>Frases reales para saludar, responder, sonar más natural y entender cómo se juntan las palabras al hablar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section purchase-band" aria-labelledby="buy-title">
+            <div class="section-shell">
+                <div>
+                    <h2 id="buy-title">Compra el libro y usa la web como práctica diaria.</h2>
+                    <p>El libro da el método; la web pone el audio y las guías a un clic.</p>
+                </div>
+                <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Ver en Amazon</a>
+            </div>
+        </section>
+    </main>
+
+    <nav class="mobile-cta-bar" aria-label="Acciones fijas">
+        <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar</a>
+        <a class="button secondary" href="/audios.html">Audios</a>
+    </nav>
+
+    <footer class="home-footer">
+        <div class="section-shell">
+            <span>© De FAK a Fluent. Todos los derechos reservados.</span>
+            <a href="/contacto.html">Contacto</a>
         </div>
     </footer>
 </body>
