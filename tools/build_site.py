@@ -83,12 +83,13 @@ def site_header(active: str) -> str:
         ("/", "Inicio", "inicio"),
         ("/audios.html", "Audios", "audios"),
         ("/articulos.html", "Artículos", "articulos"),
-        ("/contacto.html", "Contacto", "contacto"),
+        ("/contacto.html", "Autor", "contacto"),
     ]
-    links = "\n".join(
-        f'                <a href="{href}"{" aria-current=\"page\"" if key == active else ""}>{label}</a>'
-        for href, label, key in items
-    )
+    link_lines = []
+    for href, label, key in items:
+        current = ' aria-current="page"' if key == active else ""
+        link_lines.append(f'                <a href="{href}"{current}>{label}</a>')
+    links = "\n".join(link_lines)
     return f"""<header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -106,12 +107,97 @@ def site_footer() -> str:
     return """<footer class="site-footer">
         <div class="footer-shell">
             <p>© Todos los derechos reservados</p>
-            <a href="/contacto.html">Contacto</a>
+            <a href="/contacto.html">Autor</a>
         </div>
     </footer>"""
 
 
 ARTICLES: list[dict] = [
+    {
+        "slug": "guia-pronunciacion-ingles-espanoles",
+        "category": "Pronunciación",
+        "title": "Guía gratis de pronunciación en inglés para españoles: 25 tips prácticos",
+        "seo_title": "Guía gratis de pronunciación en inglés para españoles",
+        "description": "Guía gratis con 25 consejos de pronunciación en inglés para españoles: vocales, H, TH, letras mudas, ritmo, linking y audios para practicar.",
+        "lede": "Una guía rápida para compartir y guardar: 25 consejos concretos para que tu inglés suene más claro sin intentar borrar tu acento.",
+        "reading": "8 minutos",
+        "toc": [
+            ("como-usarla", "Cómo usarla"),
+            ("sonidos", "Sonidos clave"),
+            ("ritmo", "Ritmo y linking"),
+            ("plan", "Plan de práctica"),
+        ],
+        "related": [
+            "pronunciacion-ingles-para-espanoles",
+            "vocales-ingles-cortas-largas",
+            "sonido-th-ingles",
+        ],
+        "body": """
+                <p>Esta guía está pensada para españoles que ya estudian inglés, pero sienten que al hablar todavía suenan demasiado planos, demasiado españoles o poco claros. No necesitas sonar nativo. Necesitas que las palabras importantes se reconozcan rápido.</p>
+                <p>Guárdala, pásasela a alguien que esté aprendiendo inglés y úsala como checklist. Cada punto es pequeño a propósito: si intentas corregir todo a la vez, no corriges nada.</p>
+                <div class="lesson-box">
+                    <strong>Idea central:</strong> la pronunciación no mejora leyendo reglas. Mejora escuchando, repitiendo, exagerando un poco y llevando el sonido a frases reales.
+                </div>
+
+                <h2 id="como-usarla">Cómo usar esta guía</h2>
+                <p>No leas los 25 consejos como teoría. Elige tres, practícalos durante una semana y vuelve. La pronunciación se entrena más como un gesto físico que como una lista de vocabulario.</p>
+                <ol>
+                    <li>Escoge un sonido o hábito que te cueste.</li>
+                    <li>Abre el audio relacionado.</li>
+                    <li>Repite en voz alta tres veces: lento, normal y dentro de una frase.</li>
+                    <li>Grábate durante diez segundos y compara.</li>
+                </ol>
+
+                <h2 id="sonidos">25 tips de pronunciación para españoles</h2>
+                <div class="example-grid">
+                    <div class="mini-card"><strong>1. La H no es una jota</strong><span>En <em>hello</em> o <em>hard</em>, expulsa aire suave. Practica con <a href="/audio/hello-hard.html">hello y hard</a>.</span></div>
+                    <div class="mini-card"><strong>2. No conviertas la V en B</strong><span>En inglés, <em>very</em> necesita labio inferior y dientes superiores. No debe sonar como <em>bery</em>.</span></div>
+                    <div class="mini-card"><strong>3. La I corta no es una i española</strong><span><em>Bit</em>, <em>win</em> y <em>lip</em> se acercan más a una e relajada. Escucha <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</span></div>
+                    <div class="mini-card"><strong>4. Book y moon no comparten vocal</strong><span><em>Book</em> tiene una vocal corta; <em>moon</em> es más larga. Evita pronunciar todas las dobles O igual.</span></div>
+                    <div class="mini-card"><strong>5. Love no se lee con o española</strong><span>La vocal de <em>love</em> no es la de <em>lobo</em>. Practica con <a href="/audio/love-clove-move.html">love, clove, move</a>.</span></div>
+                    <div class="mini-card"><strong>6. TH puede vibrar o no</strong><span><em>Think</em> no vibra; <em>they</em> sí. Empieza separando <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a> y <a href="/audio/sonido-th-paladar.html">TH frente a D</a>.</span></div>
+                    <div class="mini-card"><strong>7. No metas una e antes de S</strong><span><em>Spain</em> no es <em>espain</em>. Empieza el sonido directamente en la S.</span></div>
+                    <div class="mini-card"><strong>8. La R inglesa no se enrolla</strong><span>No vibres la lengua como en español. En <em>red</em> o <em>right</em>, la lengua se recoge sin tocar fuerte.</span></div>
+                    <div class="mini-card"><strong>9. La L final pesa más</strong><span>En <em>feel</em>, <em>school</em> o <em>full</em>, la L final no desaparece. Dale presencia sin añadir una vocal extra.</span></div>
+                    <div class="mini-card"><strong>10. La J inglesa no es nuestra Y</strong><span><em>Job</em>, <em>John</em> y <em>enjoy</em> empiezan con un sonido más fuerte que una y española.</span></div>
+                    <div class="mini-card"><strong>11. No pronuncies letras mudas</strong><span><em>Walk</em>, <em>talk</em>, <em>would</em> y <em>should</em> esconden letras. Practica con <a href="/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html">letras mudas</a>.</span></div>
+                    <div class="mini-card"><strong>12. OUGH no tiene una sola regla</strong><span><em>Though</em>, <em>through</em>, <em>tough</em> y <em>thought</em> cambian mucho. Escucha <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">palabras con OUGH</a>.</span></div>
+                </div>
+
+                <h2 id="ritmo">Ritmo, acento y palabras que se juntan</h2>
+                <p>Muchos españoles pronuncian las palabras una por una, con el mismo peso. El inglés real no funciona así: algunas palabras se comen, otras se estiran y muchas se unen.</p>
+                <div class="example-grid">
+                    <div class="mini-card"><strong>13. No todas las sílabas valen igual</strong><span>En inglés, las palabras importantes suelen recibir más fuerza: nombres, verbos, adjetivos y adverbios.</span></div>
+                    <div class="mini-card"><strong>14. Reduce palabras pequeñas</strong><span><em>To</em>, <em>of</em>, <em>and</em> y <em>for</em> suelen sonar más débiles dentro de una frase.</span></div>
+                    <div class="mini-card"><strong>15. Going to se junta</strong><span>En conversación rápida, <em>going to</em> puede sonar como <em>gonna</em>. Practica con <a href="/audio/going-to.html">going to</a>.</span></div>
+                    <div class="mini-card"><strong>16. Want to también cambia</strong><span><em>I want to go</em> no suele sonar palabra por palabra. El ritmo importa tanto como cada sonido.</span></div>
+                    <div class="mini-card"><strong>17. Give me puede sonar gimme</strong><span>Esto no significa hablar mal. Significa reconocer cómo se habla en conversaciones reales.</span></div>
+                    <div class="mini-card"><strong>18. Could have no suena como tres bloques</strong><span><em>Could've</em>, <em>should've</em> y <em>would've</em> se comprimen mucho al hablar.</span></div>
+                    <div class="mini-card"><strong>19. Practica frases, no solo palabras</strong><span>Una palabra aislada puede salir bien; la prueba real es decirla dentro de una frase completa.</span></div>
+                    <div class="mini-card"><strong>20. Usa respuestas reales</strong><span><em>Pretty good</em> o <em>doing well</em> suenan más naturales que repetir siempre la misma frase de manual.</span></div>
+                    <div class="mini-card"><strong>21. Grábate poco, pero a menudo</strong><span>Diez segundos al día bastan para detectar si estás añadiendo vocales españolas o perdiendo sonidos finales.</span></div>
+                    <div class="mini-card"><strong>22. Exagera primero, suaviza después</strong><span>Para aprender un sonido nuevo, exagerarlo un poco al principio ayuda a que la boca encuentre la posición.</span></div>
+                    <div class="mini-card"><strong>23. Imita el tono, no solo el sonido</strong><span>Copiar la melodía de una frase puede mejorar tu claridad más que repetir una palabra veinte veces.</span></div>
+                    <div class="mini-card"><strong>24. No tengas vergüenza de sonar inglés</strong><span>Pronunciar mejor no es postureo. Es facilitar que te entiendan.</span></div>
+                    <div class="mini-card"><strong>25. Repite menos cosas, mejor</strong><span>Elige cinco audios útiles y repítelos muchos días. La constancia gana a la acumulación.</span></div>
+                </div>
+
+                <h2 id="plan">Plan de práctica de 7 días</h2>
+                <p>Si no sabes por dónde empezar, usa este plan rápido:</p>
+                <ol>
+                    <li><strong>Día 1:</strong> H inicial con <a href="/audio/hello-hard.html">hello y hard</a>.</li>
+                    <li><strong>Día 2:</strong> I corta con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</li>
+                    <li><strong>Día 3:</strong> TH con <a href="/articulos/sonido-th-ingles.html">la guía del sonido TH</a>.</li>
+                    <li><strong>Día 4:</strong> letras mudas con <a href="/articulos/letras-mudas-ingles.html">walk, talk, would y should</a>.</li>
+                    <li><strong>Día 5:</strong> OUGH con <a href="/articulos/palabras-ough-pronunciacion-ingles.html">though, through, tough y thought</a>.</li>
+                    <li><strong>Día 6:</strong> linking con <a href="/articulos/ligar-palabras-ingles.html">gonna, wanna, gotta y lemme</a>.</li>
+                    <li><strong>Día 7:</strong> una mini conversación con <a href="/audio/hows-it-going.html">How's it going?</a> y <a href="/audio/pretty-good.html">Pretty good</a>.</li>
+                </ol>
+                <div class="lesson-box">
+                    <strong>Para compartir:</strong> si alguien te dice “entiendo inglés, pero me da vergüenza hablar”, mándale esta guía. Empieza por claridad, no por perfección.
+                </div>
+        """,
+    },
     {
         "slug": "pronunciacion-ingles-para-espanoles",
         "category": "Pronunciación",
@@ -127,6 +213,7 @@ ARTICLES: list[dict] = [
             ("practica", "Práctica"),
         ],
         "related": [
+            "guia-pronunciacion-ingles-espanoles",
             "palabras-ough-pronunciacion-ingles",
             "ligar-palabras-ingles",
             "how-are-you-respuestas-ingles",
@@ -178,6 +265,7 @@ ARTICLES: list[dict] = [
             ("contexto", "Contexto"),
         ],
         "related": [
+            "guia-pronunciacion-ingles-espanoles",
             "pronunciacion-ingles-para-espanoles",
             "actual-vs-actually",
             "ligar-palabras-ingles",

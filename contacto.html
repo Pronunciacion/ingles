@@ -2,181 +2,123 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
-    
-    <!-- Apple Touch Icon (for iOS devices) -->
-    <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Contacto - De FAK a Fluent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre el autor | Javier Sanz | De FAK a Fluent</title>
     <meta name="description" content="Conoce a Javier Sanz, autor de De FAK a Fluent, y su experiencia viviendo y trabajando en inglés en Irlanda, Reino Unido y Estados Unidos.">
     <link rel="canonical" href="https://librodeingles.com/contacto.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
+    <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
     <meta property="og:title" content="Javier Sanz | Autor de De FAK a Fluent">
     <meta property="og:description" content="Autor de De FAK a Fluent, un libro de inglés para hispanohablantes con enfoque realista en pronunciación y uso real.">
     <meta property="og:image" content="https://librodeingles.com/images/book-cover-600.png">
     <meta property="og:url" content="https://librodeingles.com/contacto.html">
     <meta property="og:type" content="profile">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="/styles.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://librodeingles.com/#javier-sanz",
-        "name": "Javier Sanz",
-        "url": "https://librodeingles.com/contacto.html",
-        "sameAs": [
-            "https://www.linkedin.com/in/javiersz/"
-        ],
-        "description": "Autor de De FAK a Fluent, un libro de inglés para hispanohablantes basado en experiencia real viviendo y trabajando en inglés.",
-        "knowsAbout": [
-            "inglés para hispanohablantes",
-            "pronunciación inglesa",
-            "aprendizaje de idiomas",
-            "inglés profesional"
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "De FAK a Fluent"
-        }
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "https://librodeingles.com/#javier-sanz",
+                "name": "Javier Sanz",
+                "url": "https://librodeingles.com/contacto.html",
+                "sameAs": [
+                    "https://www.linkedin.com/in/javiersz/"
+                ],
+                "description": "Autor de De FAK a Fluent, un libro de inglés para hispanohablantes basado en experiencia real viviendo y trabajando en inglés.",
+                "knowsAbout": [
+                    "inglés para hispanohablantes",
+                    "pronunciación inglesa",
+                    "aprendizaje de idiomas",
+                    "inglés profesional"
+                ]
+            },
+            {
+                "@type": "Book",
+                "@id": "https://librodeingles.com/#book",
+                "name": "De FAK a Fluent",
+                "author": {
+                    "@id": "https://librodeingles.com/#javier-sanz"
+                },
+                "inLanguage": "es",
+                "url": "https://librodeingles.com/",
+                "image": "https://librodeingles.com/images/book-cover-600.png"
+            }
+        ]
     }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #d1e2ff);
-            color: #3d405b;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow-y: auto;
-        }
-        h1 {
-            color: #b22234;
-            font-size: 1.5em;
-            text-align: center;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-        
-        h2 {
-            margin-bottom: 1em;
-        }
-        
-        .contact-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 800px;
-            width: 100%;
-            margin-bottom: 20px;
-            margin-top: 40px;
-        }
-        .contact-content p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .linkedin-button, .volver-button {
-            display: inline-block;
-            color: #ffffff;
-            font-size: 1em;
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .linkedin-button {
-            background-color: #0077b5;
-        }
-        .linkedin-button:hover {
-            background-color: #005582;
-        }
-        .linkedin-button i {
-            margin-right: 8px;
-        }
-        .volver-button {
-            background-color: #3d405b;
-            margin-top: 20px;
-        }
-        .volver-button:hover {
-            background-color: #2a2b3d;
-        }
-        footer {
-            background-color: #3d405b;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-        }
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 1.8em;
-            }
-            .footer-content {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-    </style>
     <script defer data-domain="librodeingles.com" src="https://plausible.io/js/script.manual.outbound-links.js"></script>
 </head>
 <body>
-    <div class="container">
-        
-        <div class="contact-content">
-            <h2>Javier Sanz</h2>
-            <p>
-                ¡Hola! Los últimos once años de mi vida han sido un viaje cultural a través del mundo anglófono que me gustaría compartir contigo. Actualmente, llevo siete años residiendo en Estados Unidos, pero mi travesía también me ha llevado por Irlanda y el Reino Unido. Escribí 'De FAK a Fluent' para ofrecer un enfoque realista y efectivo en el dominio del inglés.
-            </p>
-            <a href="https://www.linkedin.com/in/javiersz/" class="linkedin-button" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i> Contáctame en LinkedIn
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="/">
+                <img src="/images/flag_ukus_64px.png" alt="" aria-hidden="true">
+                <span>De FAK a Fluent</span>
             </a>
+            <nav class="site-nav" aria-label="Principal">
+                <a href="/">Inicio</a>
+                <a href="/audios.html">Audios</a>
+                <a href="/articulos.html">Artículos</a>
+                <a href="/contacto.html" aria-current="page">Autor</a>
+            </nav>
         </div>
-        <a href="index.html" class="volver-button">Volver</a>
-    </div>
-    <footer>
-        <div class="footer-content">
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">Sobre el autor</p>
+                    <h1>Javier Sanz, autor de De FAK a Fluent.</h1>
+                    <p class="lede">Un español que aprendió inglés viviendo, trabajando y equivocándose en países anglófonos, y convirtió esa experiencia en una guía práctica para otros hispanohablantes.</p>
+                </div>
+                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de De FAK a Fluent">
+            </div>
+        </section>
+
+        <div class="page-shell article-layout">
+            <article class="article-body">
+                <p>Javier Sanz escribió <strong>De FAK a Fluent</strong> para explicar el inglés desde un ángulo que muchos estudiantes españoles reconocen: años de gramática, vocabulario y ejercicios, pero bloqueo cuando toca hablar, entender acentos reales o sonar natural.</p>
+                <p>Durante los últimos años ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos. Esa exposición diaria le permitió detectar errores que no siempre aparecen en los libros tradicionales: pronunciación influida por el español, miedo a imitar sonidos, traducciones literales y frases que son correctas pero no naturales.</p>
+
+                <h2>Por qué existe el libro</h2>
+                <p>El objetivo del libro no es prometer fluidez mágica. Es ayudar a que un hispanohablante entienda mejor cómo funciona el inglés real: cómo se pronuncian las palabras, cómo se juntan en conversación y qué expresiones conviene usar para sonar menos robótico.</p>
+                <div class="lesson-box">
+                    <strong>Enfoque:</strong> menos teoría decorativa, más ejemplos útiles, audios y explicaciones desde los errores típicos de un español.
+                </div>
+
+                <h2>Contacto profesional</h2>
+                <p>Para contactar con Javier, colaboraciones o consultas relacionadas con el libro, puedes escribirle por LinkedIn.</p>
+                <p><a class="button primary" href="https://www.linkedin.com/in/javiersz/" target="_blank" rel="noopener noreferrer">Contactar en LinkedIn</a></p>
+            </article>
+
+            <aside class="sidebar" aria-label="Recursos relacionados">
+                <div class="panel">
+                    <img src="/images/book-cover-300.png" alt="Portada de De FAK a Fluent">
+                    <p>Compra el libro y usa esta web como biblioteca de audios y guías de práctica.</p>
+                    <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
+                </div>
+                <div class="toc">
+                    <p><strong>También puedes visitar</strong></p>
+                    <ol>
+                        <li><a href="/articulos.html">Artículos de inglés</a></li>
+                        <li><a href="/audios.html">Audios del libro</a></li>
+                        <li><a href="/articulos/guia-pronunciacion-ingles-espanoles.html">Guía gratis de pronunciación</a></li>
+                    </ol>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
             <p>© Todos los derechos reservados</p>
+            <a href="/contacto.html">Autor</a>
         </div>
     </footer>
-
-    <script>
-        function sharePage() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Contacto - De FAK a Fluent',
-                    text: 'Conoce al autor de "De FAK a Fluent" y descubre su historia.',
-                    url: window.location.href
-                }).then(() => {
-                    console.log('¡Gracias por compartir!');
-                }).catch(console.error);
-            } else {
-                alert('Tu navegador no soporta la funcionalidad de compartir.');
-            }
-        }
-    </script>
 </body>
 </html>
