@@ -283,6 +283,29 @@ h3 {
     color: var(--blue);
 }
 
+.download-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: center;
+    margin: 0 0 28px;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    background: var(--surface-soft);
+}
+
+.download-card h2 {
+    font-size: 1.45rem;
+    margin: 0 0 8px;
+}
+
+.download-card p:not(.eyebrow) {
+    margin: 0;
+    color: var(--muted);
+}
+
 .example-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -530,7 +553,8 @@ h3 {
     .hero-inner,
     .article-layout,
     .hub-grid,
-    .audio-grid {
+    .audio-grid,
+    .download-card {
         grid-template-columns: 1fr;
     }
 

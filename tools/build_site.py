@@ -18,6 +18,7 @@ AMAZON_URL = "https://www.amazon.es/dp/B0DN6V5VDW"
 TODAY = "2026-06-28"
 BOOK_TITLE = "De FAK a Fluent"
 AUTHOR = "Javier Sanz"
+PRONUNCIATION_GUIDE_PDF = "/downloads/guia-pronunciacion-ingles-espanoles.pdf"
 
 
 def slugify(value: str) -> str:
@@ -121,6 +122,7 @@ ARTICLES: list[dict] = [
         "description": "Guía gratis con 25 consejos de pronunciación en inglés para españoles: vocales, H, TH, letras mudas, ritmo, linking y audios para practicar.",
         "lede": "Una guía rápida para compartir y guardar: 25 consejos concretos para que tu inglés suene más claro sin intentar borrar tu acento.",
         "reading": "8 minutos",
+        "download_pdf": PRONUNCIATION_GUIDE_PDF,
         "toc": [
             ("como-usarla", "Cómo usarla"),
             ("sonidos", "Sonidos clave"),
@@ -1149,9 +1151,26 @@ def render_toc(article: dict) -> str:
                 </div>"""
 
 
+def render_article_download(article: dict) -> str:
+    pdf_path = article.get("download_pdf")
+    if not pdf_path:
+        return ""
+    return f"""
+                <div class="download-card">
+                    <div>
+                        <p class="eyebrow">PDF gratis</p>
+                        <h2>Descarga la guía para compartir o imprimir.</h2>
+                        <p>La versión PDF resume los 25 tips, incluye enlaces a los audios y un QR para abrir la guía online.</p>
+                    </div>
+                    <a class="button secondary" href="{esc(pdf_path)}" download>Descargar PDF</a>
+                </div>
+"""
+
+
 def render_article(article: dict) -> str:
     slug = article["slug"]
     canonical = f"{BASE_URL}/articulos/{slug}.html"
+    body_html = f"{render_article_download(article)}{article['body'].rstrip()}"
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -1186,7 +1205,7 @@ def render_article(article: dict) -> str:
         <div class="page-shell article-layout">
             <article class="article-body">
                 <p class="article-meta">Adaptado de ideas del libro <strong>{BOOK_TITLE}</strong>. Lectura: {esc(article["reading"])}.</p>
-{article["body"].rstrip()}
+{body_html}
 
                 <div class="related">
                     <h2>También te interesa</h2>
@@ -1707,6 +1726,7 @@ def render_sitemap(files: list[str]) -> str:
         ("/prompt.html", "0.55", "yearly"),
     ]
     urls.extend((f"/articulos/{article['slug']}.html", "0.85", "monthly") for article in ARTICLES)
+    urls.extend((article["download_pdf"], "0.55", "monthly") for article in ARTICLES if article.get("download_pdf"))
     urls.extend((f"/audio/{audio_slug(filename)}.html", "0.65", "monthly") for filename in files)
     entries = []
     for path, priority, changefreq in urls:

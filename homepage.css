@@ -223,6 +223,17 @@ h1 {
     background: var(--blue-dark);
 }
 
+.button.ghost-light {
+    border-color: rgba(255, 255, 255, 0.58);
+    background: transparent;
+    color: #ffffff;
+}
+
+.button.ghost-light:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
 .button.tertiary {
     background: #ffffff;
     border-color: var(--line);
@@ -323,6 +334,13 @@ h1 {
 
 .resource-shell .eyebrow {
     color: var(--gold);
+}
+
+.resource-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .path-grid {
@@ -652,8 +670,14 @@ h1 {
         width: 100%;
     }
 
+    .resource-actions,
     .resource-shell .button {
         width: 100%;
+    }
+
+    .resource-actions {
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
     .mobile-cta-bar {
