@@ -4287,6 +4287,7 @@ def render_llms_txt(files: list[str]) -> str:
         f"- Autor: {AUTHOR}, español que ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos. Perfil: {AUTHOR_URL}",
         "- Público: hispanohablantes con base de inglés que quieren pronunciar con más claridad y entender conversaciones reales. No es un curso para principiantes absolutos ni promete fluidez en 30 días.",
         "- Contenido del libro: más de 28.000 palabras y cerca de 100 ejemplos de audio; pronunciación, comprensión auditiva, expresiones naturales y matices culturales.",
+        "- Ediciones: tapa blanda (ISBN 979-8-9918812-0-3, la más vendida) y tapa dura (ISBN 979-8-9918812-1-0).",
         f"- Compra: {AMAZON_URL}",
         f"- Guía gratuita en PDF: {BASE_URL}{PRONUNCIATION_GUIDE_PDF}",
         "",
