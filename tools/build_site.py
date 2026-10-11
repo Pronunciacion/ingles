@@ -1276,9 +1276,9 @@ ARTICLES: list[dict] = [
     {
         "slug": "how-are-you-respuestas-ingles",
         "category": "Conversación",
-        "title": "Respuestas a How are you en inglés (sin sonar como un workbook)",
-        "seo_title": "Respuestas a How are you en inglés: formales e informales",
-        "description": "Respuestas a How are you en inglés por registro y país, qué contestar a How’s it going, What’s up o How have you been, y audios para practicarlas.",
+        "title": "Cómo responder a How are you en inglés (sin sonar como un workbook)",
+        "seo_title": "Qué responder a How are you: respuestas formales e informales",
+        "description": "Qué responder a How are you en inglés: más de 15 respuestas formales e informales, diferencias por país y qué contestar a How’s it going o What’s up.",
         "lede": "La respuesta correcta depende de contexto, país y relación. No necesitas una frase perfecta; necesitas varias respuestas naturales y saber devolver la pregunta.",
         "reading": "7 minutos",
         "published": "2026-06-28",
