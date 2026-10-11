@@ -540,6 +540,82 @@ h1 {
     font-weight: 700;
 }
 
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.lead a {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.path-grid + .path-grid {
+    margin-top: 16px;
+}
+
+.book-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 28px;
+}
+
+.book-facts div {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.book-facts dt {
+    color: var(--red);
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.book-facts dd {
+    margin: 4px 0 0;
+    color: var(--ink);
+    font-weight: 650;
+}
+
+.book-facts a {
+    color: var(--blue);
+}
+
+.faq-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.faq-item {
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.faq-item h3 {
+    margin: 0 0 8px;
+    color: var(--blue-dark);
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.faq-item p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.faq-item a {
+    color: var(--blue);
+    font-weight: 700;
+}
+
 @media (max-width: 900px) {
     .hero-shell,
     .audio-grid,
@@ -561,7 +637,9 @@ h1 {
     .path-grid,
     .social-grid,
     .quote-grid,
-    .trust-line {
+    .trust-line,
+    .faq-list,
+    .book-facts {
         grid-template-columns: 1fr;
     }
 

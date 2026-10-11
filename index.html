@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="De FAK a Fluent es un libro de inglés para españoles con audios gratis, guías de pronunciación y práctica para entender conversaciones reales.">
+    <meta name="description" content="De FAK a Fluent es un libro de inglés para españoles con 60 audios gratis, guías de pronunciación con IPA y práctica para entender conversaciones reales.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="Javier Sanz">
     <link rel="canonical" href="https://librodeingles.com/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <meta property="og:title" content="De FAK a Fluent">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon-96.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="De FAK a Fluent">
+    <meta property="og:title" content="De FAK a Fluent: libro de inglés para españoles con audios gratis">
     <meta property="og:description" content="Libro de inglés para españoles con audios gratis, pronunciación clara y práctica de conversación real.">
-    <meta property="og:image" content="https://librodeingles.com/images/book-cover-600.png">
+    <meta property="og:image" content="https://librodeingles.com/images/og-default.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Libro De FAK a Fluent, de Javier Sanz">
     <meta property="og:url" content="https://librodeingles.com/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="De FAK a Fluent">
+    <meta name="twitter:title" content="De FAK a Fluent: libro de inglés para españoles">
     <meta name="twitter:description" content="Libro de inglés para españoles con audios gratis y guías prácticas.">
-    <title>De FAK a Fluent | Libro de inglés para españoles</title>
+    <meta name="twitter:image" content="https://librodeingles.com/images/og-default.jpg">
+    <title>Libro de inglés para españoles con audios | De FAK a Fluent</title>
+    <link rel="preload" as="image" href="/images/book-cover-970.webp" imagesrcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" imagesizes="(max-width: 900px) 90vw, 420px" fetchpriority="high">
     <link rel="stylesheet" href="/homepage.css">
     <script type="application/ld+json">
     {
@@ -26,14 +35,34 @@
                 "@type": "WebSite",
                 "@id": "https://librodeingles.com/#website",
                 "name": "De FAK a Fluent",
+                "alternateName": "Libro de inglés",
                 "url": "https://librodeingles.com/",
-                "inLanguage": "es"
+                "inLanguage": "es",
+                "publisher": {
+                    "@id": "https://librodeingles.com/#organization"
+                }
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://librodeingles.com/#organization",
+                "name": "De FAK a Fluent",
+                "url": "https://librodeingles.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://librodeingles.com/images/icon-192.png",
+                    "width": 192,
+                    "height": 192
+                },
+                "founder": {
+                    "@id": "https://librodeingles.com/#javier-sanz"
+                }
             },
             {
                 "@type": "Person",
                 "@id": "https://librodeingles.com/#javier-sanz",
                 "name": "Javier Sanz",
                 "url": "https://librodeingles.com/contacto.html",
+                "description": "Autor de De FAK a Fluent. Español que ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos.",
                 "sameAs": [
                     "https://www.linkedin.com/in/javiersz/"
                 ],
@@ -47,8 +76,20 @@
                 "@type": "Book",
                 "@id": "https://librodeingles.com/#book",
                 "name": "De FAK a Fluent",
-                "alternateName": "The Fak a Fluent",
-                "description": "Libro de inglés para españoles con consejos de pronunciación, conversación real y audios de práctica.",
+                "alternateName": [
+                    "De FAK a Fluent: Cómo hablar inglés de verdad",
+                    "The Fak a Fluent"
+                ],
+                "description": "Libro de inglés para hispanohablantes con base de inglés: pronunciación, comprensión auditiva, expresiones naturales y matices culturales, con más de 28.000 palabras y cerca de 100 ejemplos de audio.",
+                "about": [
+                    "Pronunciación inglesa",
+                    "Inglés conversacional",
+                    "Inglés para hispanohablantes"
+                ],
+                "audience": {
+                    "@type": "PeopleAudience",
+                    "audienceType": "Hispanohablantes con base de inglés que quieren sonar más claros y entender conversaciones reales"
+                },
                 "inLanguage": "es",
                 "isbn": "979-8-9918812-0-3",
                 "datePublished": "2024-11",
@@ -62,6 +103,60 @@
                     "url": "https://www.amazon.es/dp/B0DN6V5VDW",
                     "availability": "https://schema.org/InStock"
                 }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://librodeingles.com/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Para qué nivel es De FAK a Fluent?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Para hispanohablantes que ya tienen una base de inglés y quieren pronunciar con más claridad y entender conversaciones reales. No es un curso para empezar desde cero."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué incluye el libro?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Más de 28.000 palabras y cerca de 100 ejemplos de audio sobre pronunciación, comprensión auditiva, expresiones naturales y matices culturales, explicados desde los errores típicos de un español."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Los audios de la web son gratis?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí. Los 60 audios de esta web se escuchan gratis y sin registrarse, cada uno con transcripción fonética (IPA), significado y el error típico de un español."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Quién es el autor?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Javier Sanz, un español que ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos, y que escribió el libro a partir de los errores que él mismo cometió."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Promete aprender inglés en 30 días?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. La propia portada lo dice: no vas a aprender inglés en 30 días. El libro se centra en corregir lo que más se nota al hablar y escuchar, con práctica constante."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Dónde se puede comprar De FAK a Fluent?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "En Amazon España: https://www.amazon.es/dp/B0DN6V5VDW"
+                        }
+                    }
+                ]
             }
         ]
     }
@@ -77,7 +172,7 @@
     <header class="home-header">
         <div class="home-nav">
             <a class="brand" href="/" aria-label="De FAK a Fluent">
-                <img src="/images/flag_ukus_64px.png" alt="" aria-hidden="true">
+                <img src="/images/icon-96.png" width="40" height="40" alt="" aria-hidden="true">
                 <span>De FAK a Fluent</span>
             </a>
             <nav class="nav-links" aria-label="Principal">
@@ -94,7 +189,7 @@
                 <div class="hero-copy">
                     <p class="eyebrow">Libro + audios gratis</p>
                     <h1>De FAK a Fluent</h1>
-                    <p class="lead">El libro de inglés para españoles que quieren sonar más claros, entender conversaciones reales y practicar con audios directos desde cada lección.</p>
+                    <p class="lead">El libro de inglés para españoles que quieren sonar más claros, entender conversaciones reales y practicar con audios directos desde cada lección. Escrito por <a href="/contacto.html">Javier Sanz</a>, un español que también confundió <em>beach</em> con otra cosa.</p>
                     <div class="button-row" aria-label="Acciones principales">
                         <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar en Amazon</a>
                         <a class="button secondary" href="/audios.html">Escuchar audios gratis</a>
@@ -106,8 +201,8 @@
                             <span>audios de práctica</span>
                         </div>
                         <div class="trust-item">
-                            <strong>18</strong>
-                            <span>artículos para empezar</span>
+                            <strong>24</strong>
+                            <span>guías gratis para practicar</span>
                         </div>
                         <div class="trust-item">
                             <strong>100%</strong>
@@ -117,7 +212,7 @@
                 </div>
                 <div class="cover-area" aria-label="Portada del libro">
                     <div class="cover-frame">
-                        <img class="book-cover" src="/images/book-cover-600.png" alt="Portada del libro De FAK a Fluent">
+                        <img class="book-cover" src="/images/book-cover-970.webp" srcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" sizes="(max-width: 900px) 90vw, 420px" width="970" height="600" fetchpriority="high" decoding="async" alt="Portada del libro De FAK a Fluent, de Javier Sanz">
                     </div>
                 </div>
             </div>
@@ -167,6 +262,66 @@
                         <h3>In, on y at sin traducir palabra por palabra</h3>
                         <p>Aprende las preposiciones por función: espacio, tiempo, transporte y situaciones comunes.</p>
                         <b>Practicar preposiciones</b>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="popular-title">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Lo más buscado</p>
+                    <h2 id="popular-title">Guías que resuelven las dudas más típicas.</h2>
+                    <p>Respuestas claras, con tablas, símbolos fonéticos y audios, a lo que más se pregunta un hispanohablante cuando estudia inglés.</p>
+                </div>
+                <div class="path-grid">
+                    <a class="path-card" href="/articulos/alfabeto-fonetico-ingles.html">
+                        <span>Fonética</span>
+                        <h3>Alfabeto fonético inglés (IPA) para españoles</h3>
+                        <p>Todos los símbolos, con ejemplos y qué sonidos no existen en español.</p>
+                        <b>Ver la tabla</b>
+                    </a>
+                    <a class="path-card" href="/articulos/pronunciacion-ed-ingles.html">
+                        <span>Pronunciación</span>
+                        <h3>Cómo se pronuncia la -ed: /t/, /d/ o /ɪd/</h3>
+                        <p>La regla de los verbos regulares en pasado, con listas y ejercicio.</p>
+                        <b>Aprender la regla</b>
+                    </a>
+                    <a class="path-card" href="/articulos/palabras-ingles-mal-pronunciadas.html">
+                        <span>Errores típicos</span>
+                        <h3>Palabras en inglés que pronunciamos mal en España</h3>
+                        <p>Marcas, palabras del día a día y falsos anglicismos, con su pronunciación real.</p>
+                        <b>Ver la lista</b>
+                    </a>
+                    <a class="path-card" href="/articulos/libros-para-aprender-ingles.html">
+                        <span>Recursos</span>
+                        <h3>Libros para aprender inglés según tu nivel</h3>
+                        <p>Gramática, vocabulario, pronunciación y lectura: qué libro elegir y para qué.</p>
+                        <b>Elegir libro</b>
+                    </a>
+                    <a class="path-card" href="/articulos/como-se-pronuncia-the.html">
+                        <span>Pronunciación</span>
+                        <h3>Cómo se pronuncia THE: /ðə/ o /ði/</h3>
+                        <p>Cuándo cambia, cómo colocar la lengua y las palabras con TH más frecuentes.</p>
+                        <b>Practicar THE</b>
+                    </a>
+                    <a class="path-card" href="/articulos/prompts-aprender-ingles-ia.html">
+                        <span>Inteligencia artificial</span>
+                        <h3>Prompts para practicar inglés con ChatGPT, Claude o Gemini</h3>
+                        <p>Conversación, entrevistas, writing y pronunciación: prompts listos para copiar.</p>
+                        <b>Copiar prompts</b>
+                    </a>
+                    <a class="path-card" href="/articulos/ligar-palabras-ingles.html">
+                        <span>Inglés hablado</span>
+                        <h3>Gonna, wanna, gotta: qué significan y cómo suenan</h3>
+                        <p>Las reducciones del inglés real para entender a los nativos.</p>
+                        <b>Escuchar ejemplos</b>
+                    </a>
+                    <a class="path-card" href="/articulos/make-vs-do.html">
+                        <span>Gramática útil</span>
+                        <h3>Make vs do: la diferencia, con ejercicios</h3>
+                        <p>Colocaciones frecuentes para dejar de traducir «hacer» a ciegas.</p>
+                        <b>Practicar</b>
                     </a>
                 </div>
             </div>
@@ -244,6 +399,49 @@
             </div>
         </section>
 
+        <section class="section alt" aria-labelledby="faq-title">
+            <div class="section-shell">
+                <div class="section-heading">
+                    <p class="eyebrow">Sobre el libro</p>
+                    <h2 id="faq-title">Preguntas frecuentes sobre De FAK a Fluent.</h2>
+                </div>
+                <dl class="book-facts">
+                    <div><dt>Autor</dt><dd><a href="/contacto.html">Javier Sanz</a></dd></div>
+                    <div><dt>Publicación</dt><dd>Noviembre de 2024</dd></div>
+                    <div><dt>Para quién</dt><dd>Hispanohablantes con base de inglés</dd></div>
+                    <div><dt>Contenido</dt><dd>+28.000 palabras y cerca de 100 ejemplos de audio</dd></div>
+                    <div><dt>ISBN</dt><dd>979-8-9918812-0-3</dd></div>
+                    <div><dt>Dónde comprarlo</dt><dd><a href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Amazon</a></dd></div>
+                </dl>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>¿Para qué nivel es De FAK a Fluent?</h3>
+                        <p>Para hispanohablantes que ya tienen una base de inglés y quieren pronunciar con más claridad y entender conversaciones reales. No es un curso para empezar desde cero.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Qué incluye el libro?</h3>
+                        <p>Más de 28.000 palabras y cerca de 100 ejemplos de audio sobre pronunciación, comprensión auditiva, expresiones naturales y matices culturales, explicados desde los errores típicos de un español.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Los audios de la web son gratis?</h3>
+                        <p>Sí. Los 60 audios de esta web se escuchan gratis y sin registrarse, cada uno con transcripción fonética (IPA), significado y el error típico de un español. <a href="/audios.html">Ver los audios</a>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Quién es el autor?</h3>
+                        <p>Javier Sanz, un español que ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos, y que escribió el libro a partir de los errores que él mismo cometió.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Promete aprender inglés en 30 días?</h3>
+                        <p>No. La propia portada lo dice: no vas a aprender inglés en 30 días. El libro se centra en corregir lo que más se nota al hablar y escuchar, con práctica constante.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Dónde se puede comprar De FAK a Fluent?</h3>
+                        <p>En <a href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Amazon</a>. Mientras tanto, puedes empezar gratis con la <a href="/articulos/guia-pronunciacion-ingles-espanoles.html">guía de 25 tips de pronunciación</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section purchase-band" aria-labelledby="buy-title">
             <div class="section-shell">
                 <div>
@@ -263,7 +461,12 @@
     <footer class="home-footer">
         <div class="section-shell">
             <span>© De FAK a Fluent. Todos los derechos reservados.</span>
-            <a href="/contacto.html">Autor</a>
+            <nav class="footer-links" aria-label="Pie de página">
+                <a href="/articulos.html">Artículos</a>
+                <a href="/audios.html">Audios</a>
+                <a href="/prompt.html">Prompt para IA</a>
+                <a href="/contacto.html">Autor</a>
+            </nav>
         </div>
     </footer>
 </body>

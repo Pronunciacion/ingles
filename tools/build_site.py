@@ -15,10 +15,23 @@ from xml.sax.saxutils import escape as xml_escape
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://librodeingles.com"
 AMAZON_URL = "https://www.amazon.es/dp/B0DN6V5VDW"
-TODAY = "2026-06-28"
+FIRST_PUBLISHED = "2026-06-28"
+TODAY = "2026-10-11"
 BOOK_TITLE = "De FAK a Fluent"
 AUTHOR = "Javier Sanz"
+AUTHOR_URL = f"{BASE_URL}/contacto.html"
+AUTHOR_ID = f"{BASE_URL}/#javier-sanz"
+WEBSITE_ID = f"{BASE_URL}/#website"
+ORGANIZATION_ID = f"{BASE_URL}/#organization"
+BOOK_ID = f"{BASE_URL}/#book"
 PRONUNCIATION_GUIDE_PDF = "/downloads/guia-pronunciacion-ingles-espanoles.pdf"
+COVER_IMAGE = "/images/book-cover-520.webp"
+COVER_WIDTH, COVER_HEIGHT = 520, 322
+OG_IMAGE = f"{BASE_URL}/images/og-default.jpg"
+LOGO_IMAGE = f"{BASE_URL}/images/icon-192.png"
+INDEXNOW_KEY = "6f1d3c9a8b2e4f7a9c0d5e1b3a7f2c64"
+MONTHS_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+             "septiembre", "octubre", "noviembre", "diciembre"]
 PLAUSIBLE_SNIPPET = """    <!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/pa-4T40IxASAXWTjmNAWDMvd.js"></script>
     <script>
@@ -54,35 +67,157 @@ def write(path: str, content: str) -> None:
     target.write_text(content.strip() + "\n", encoding="utf-8", newline="\n")
 
 
+def human_date(iso_date: str) -> str:
+    year, month, day = (int(part) for part in iso_date.split("-"))
+    return f"{day} de {MONTHS_ES[month - 1]} de {year}"
+
+
 def page_head(
     *,
     title: str,
     description: str,
-    canonical: str,
+    canonical: str | None,
     og_type: str,
     schema: dict,
+    robots: str = "index, follow, max-image-preview:large, max-snippet:-1",
+    published: str | None = None,
+    modified: str | None = None,
 ) -> str:
+    article_meta = ""
+    if published:
+        article_meta += f'\n    <meta property="article:published_time" content="{published}T00:00:00+00:00">'
+    if modified:
+        article_meta += f'\n    <meta property="article:modified_time" content="{modified}T00:00:00+00:00">'
+    if published or modified:
+        article_meta += f'\n    <meta property="article:author" content="{AUTHOR_URL}">'
+    canonical_tag = f'\n    <link rel="canonical" href="{esc(canonical)}">' if canonical else ""
+    og_url = f'\n    <meta property="og:url" content="{esc(canonical)}">' if canonical else ""
     return f"""<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{esc(title)}</title>
     <meta name="description" content="{esc(description)}">
-    <link rel="canonical" href="{esc(canonical)}">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/flag_ukus_32px.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/flag_ukus_64px.png">
-    <link rel="apple-touch-icon" sizes="64x64" href="/images/flag_ukus_64px.png">
+    <meta name="robots" content="{esc(robots)}">
+    <meta name="author" content="{AUTHOR}">{canonical_tag}
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon-96.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="{BOOK_TITLE}">
     <meta property="og:title" content="{esc(title)}">
     <meta property="og:description" content="{esc(description)}">
-    <meta property="og:image" content="{BASE_URL}/images/book-cover-600.png">
-    <meta property="og:url" content="{esc(canonical)}">
-    <meta property="og:type" content="{esc(og_type)}">
+    <meta property="og:image" content="{OG_IMAGE}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Libro {BOOK_TITLE}, de {AUTHOR}">
+    <meta property="og:type" content="{esc(og_type)}">{og_url}{article_meta}
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{esc(title)}">
+    <meta name="twitter:description" content="{esc(description)}">
+    <meta name="twitter:image" content="{OG_IMAGE}">
     <link rel="stylesheet" href="/styles.css">
     <script type="application/ld+json">
     {json_ld(schema)}
     </script>
 {PLAUSIBLE_SNIPPET}
 </head>"""
+
+
+def cover_img(css_class: str, *, eager: bool = False) -> str:
+    loading = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    class_attr = f' class="{css_class}"' if css_class else ""
+    return (
+        f'<img{class_attr} src="{COVER_IMAGE}" width="{COVER_WIDTH}" height="{COVER_HEIGHT}" '
+        f'{loading} decoding="async" alt="Portada de {BOOK_TITLE}">'
+    )
+
+
+def schema_author() -> dict:
+    return {"@type": "Person", "@id": AUTHOR_ID, "name": AUTHOR, "url": AUTHOR_URL}
+
+
+def schema_publisher() -> dict:
+    return {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        "name": BOOK_TITLE,
+        "url": f"{BASE_URL}/",
+        "logo": {"@type": "ImageObject", "url": LOGO_IMAGE, "width": 192, "height": 192},
+    }
+
+
+def schema_breadcrumbs(trail: list[tuple[str, str]]) -> dict:
+    return {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": index + 1, "name": name, "item": f"{BASE_URL}{path}"}
+            for index, (name, path) in enumerate(trail)
+        ],
+    }
+
+
+def schema_faq(faq: list) -> dict:
+    return {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": question,
+                "acceptedAnswer": {"@type": "Answer", "text": strip_tags(answer)},
+            }
+            for question, answer in faq
+        ],
+    }
+
+
+def strip_tags(value: str) -> str:
+    text = re.sub(r"<[^>]+>", "", value)
+    return re.sub(r"\s+", " ", html.unescape(text)).strip()
+
+
+def render_breadcrumbs(trail: list[tuple[str, str]]) -> str:
+    parts = []
+    for index, (name, path) in enumerate(trail):
+        if index == len(trail) - 1:
+            parts.append(f'<span aria-current="page">{esc(name)}</span>')
+        else:
+            parts.append(f'<a href="{esc(path)}">{esc(name)}</a>')
+    separator = ' <span aria-hidden="true">›</span> '
+    return f'<nav class="breadcrumbs" aria-label="Migas de pan">{separator.join(parts)}</nav>'
+
+
+def wrap_tables(fragment: str) -> str:
+    fragment = fragment.replace('<table class="data-table">', '<div class="table-wrap"><table class="data-table">')
+    return fragment.replace("</table>", "</table></div>")
+
+
+def render_quick_answer(answer: str | None) -> str:
+    if not answer:
+        return ""
+    return f"""
+                <div class="quick-answer">
+                    <p class="quick-answer-label">Respuesta rápida</p>
+                    <p>{answer}</p>
+                </div>
+"""
+
+
+def render_faq(faq: list | None) -> str:
+    if not faq:
+        return ""
+    items = "\n".join(
+        f"""                    <div class="faq-item">
+                        <h3>{esc(question)}</h3>
+                        <p>{answer}</p>
+                    </div>"""
+        for question, answer in faq
+    )
+    return f"""
+                <section class="faq" aria-labelledby="preguntas-frecuentes">
+                    <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+{items}
+                </section>
+"""
 
 
 def site_header(active: str) -> str:
@@ -100,7 +235,7 @@ def site_header(active: str) -> str:
     return f"""<header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
-                <img src="/images/flag_ukus_64px.png" alt="" aria-hidden="true">
+                <img src="/images/icon-96.png" width="42" height="42" alt="" aria-hidden="true">
                 <span>{BOOK_TITLE}</span>
             </a>
             <nav class="site-nav" aria-label="Principal">
@@ -113,8 +248,13 @@ def site_header(active: str) -> str:
 def site_footer() -> str:
     return """<footer class="site-footer">
         <div class="footer-shell">
-            <p>© Todos los derechos reservados</p>
-            <a href="/contacto.html">Autor</a>
+            <p>© De FAK a Fluent. Todos los derechos reservados</p>
+            <nav class="footer-links" aria-label="Pie de página">
+                <a href="/articulos.html">Artículos</a>
+                <a href="/audios.html">Audios</a>
+                <a href="/articulos/guia-pronunciacion-ingles-espanoles.html">Guía gratis</a>
+                <a href="/contacto.html">Autor</a>
+            </nav>
         </div>
     </footer>"""
 
@@ -1118,6 +1258,12 @@ ARTICLE_CLUSTERS = [
         "categories": {"Preposiciones"},
     },
     {
+        "key": "recursos",
+        "title": "Recursos para estudiar",
+        "description": "Libros, prompts de IA y métodos para practicar inglés por tu cuenta con cabeza.",
+        "categories": {"Recursos"},
+    },
+    {
         "key": "vocabulario",
         "title": "Vocabulario y falsos amigos",
         "description": "Palabras que parecen fáciles, pero cambian mucho por matiz, uso o traducción falsa.",
@@ -1145,9 +1291,12 @@ def render_related(slug: str) -> str:
 
 
 def render_toc(article: dict) -> str:
+    entries = list(article["toc"])
+    if article.get("faq"):
+        entries.append(("preguntas-frecuentes", "Preguntas frecuentes"))
     items = "\n".join(
         f'                        <li><a href="#{esc(anchor)}">{esc(label)}</a></li>'
-        for anchor, label in article["toc"]
+        for anchor, label in entries
     )
     return f"""<div class="toc">
                     <p><strong>En esta guía</strong></p>
@@ -1173,26 +1322,57 @@ def render_article_download(article: dict) -> str:
 """
 
 
+def article_dates(article: dict) -> tuple[str, str]:
+    published = article.get("published", FIRST_PUBLISHED)
+    return published, article.get("updated", TODAY)
+
+
 def render_article(article: dict) -> str:
     slug = article["slug"]
-    canonical = f"{BASE_URL}/articulos/{slug}.html"
-    body_html = f"{render_article_download(article)}{article['body'].rstrip()}"
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": article["title"],
-        "description": article["description"],
-        "image": f"{BASE_URL}/images/book-cover-600.png",
-        "author": {"@type": "Person", "name": AUTHOR},
-        "publisher": {"@type": "Organization", "name": BOOK_TITLE},
-        "datePublished": TODAY,
-        "dateModified": TODAY,
-        "mainEntityOfPage": canonical,
-        "inLanguage": "es",
-    }
+    path = f"/articulos/{slug}.html"
+    canonical = f"{BASE_URL}{path}"
+    published, updated = article_dates(article)
+    body_html = wrap_tables(
+        f"{render_quick_answer(article.get('quick_answer'))}{render_article_download(article)}"
+        f"{article['body'].rstrip()}\n{render_faq(article.get('faq'))}"
+    )
+    trail = [("Inicio", "/"), ("Artículos", "/articulos.html"), (article["title"], path)]
+    graph = [
+        {
+            "@type": "Article",
+            "@id": f"{canonical}#article",
+            "headline": article["title"],
+            "description": article["description"],
+            "image": {"@type": "ImageObject", "url": OG_IMAGE, "width": 1200, "height": 630},
+            "author": schema_author(),
+            "publisher": schema_publisher(),
+            "datePublished": published,
+            "dateModified": updated,
+            "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
+            "isPartOf": {"@id": WEBSITE_ID},
+            "articleSection": article["category"],
+            "inLanguage": "es",
+            "isAccessibleForFree": True,
+        },
+        schema_breadcrumbs(trail),
+    ]
+    if article.get("faq"):
+        graph.append(schema_faq(article["faq"]))
+    schema = {"@context": "https://schema.org", "@graph": graph}
+    if article.get("from_book", True):
+        origin = f"Adaptado de ideas del libro <strong>{BOOK_TITLE}</strong>. "
+    else:
+        origin = ""
+    if published == updated:
+        dates = f'Publicado el <time datetime="{published}">{human_date(published)}</time>'
+    else:
+        dates = (
+            f'Actualizado el <time datetime="{updated}">{human_date(updated)}</time> '
+            f'(publicado el {human_date(published)})'
+        )
     return f"""<!DOCTYPE html>
 <html lang="es">
-{page_head(title=article["seo_title"], description=article["description"], canonical=canonical, og_type="article", schema=schema)}
+{page_head(title=article["seo_title"], description=article["description"], canonical=canonical, og_type="article", schema=schema, published=published, modified=updated)}
 <body>
     {site_header("articulos")}
 
@@ -1200,17 +1380,18 @@ def render_article(article: dict) -> str:
         <section class="hero">
             <div class="hero-inner">
                 <div>
+                    {render_breadcrumbs(trail)}
                     <p class="eyebrow">{esc(article["category"])}</p>
                     <h1>{esc(article["title"])}</h1>
                     <p class="lede">{esc(article["lede"])}</p>
                 </div>
-                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de {BOOK_TITLE}">
+                {cover_img("hero-cover", eager=True)}
             </div>
         </section>
 
         <div class="page-shell article-layout">
             <article class="article-body">
-                <p class="article-meta">Adaptado de ideas del libro <strong>{BOOK_TITLE}</strong>. Lectura: {esc(article["reading"])}.</p>
+                <p class="article-meta byline">Por <a href="/contacto.html" rel="author">{AUTHOR}</a>, autor de <em>{BOOK_TITLE}</em>. {dates}. {origin}Lectura: {esc(article["reading"])}.</p>
 {body_html}
 
                 <div class="related">
@@ -1225,8 +1406,8 @@ def render_article(article: dict) -> str:
             <aside class="sidebar" aria-label="Recursos relacionados">
                 {render_toc(article)}
                 <div class="panel">
-                    <img src="/images/book-cover-300.png" alt="Portada de {BOOK_TITLE}">
-                    <p>El libro desarrolla este tema con más ejemplos, audios y contexto para hispanohablantes.</p>
+                    {cover_img("")}
+                    <p>{"El libro desarrolla este tema con más ejemplos, audios y contexto para hispanohablantes." if article.get("from_book", True) else "De FAK a Fluent: pronunciación y conversación real para hispanohablantes, con audios gratis."}</p>
                     <a class="button primary" href="{AMAZON_URL}" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
                 </div>
             </aside>
@@ -1269,18 +1450,41 @@ def render_article_hub() -> str:
                 </div>
             </section>"""
         )
+    description = (
+        f"{len(ARTICLES)} guías de inglés para hispanohablantes: pronunciación, conversación real, "
+        "gramática, falsos amigos y recursos, con audios y ejemplos."
+    )
+    trail = [("Inicio", "/"), ("Artículos", "/articulos.html")]
     schema = {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Artículos para aprender inglés",
-        "description": "Guías de inglés para hispanohablantes basadas en De FAK a Fluent.",
-        "url": f"{BASE_URL}/articulos.html",
-        "inLanguage": "es",
-        "isPartOf": {"@type": "WebSite", "name": BOOK_TITLE, "url": f"{BASE_URL}/"},
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{BASE_URL}/articulos.html",
+                "name": "Artículos para aprender inglés",
+                "description": description,
+                "url": f"{BASE_URL}/articulos.html",
+                "inLanguage": "es",
+                "isPartOf": {"@id": WEBSITE_ID},
+                "mainEntity": {
+                    "@type": "ItemList",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": index + 1,
+                            "name": article["title"],
+                            "url": f"{BASE_URL}/articulos/{article['slug']}.html",
+                        }
+                        for index, article in enumerate(ARTICLES)
+                    ],
+                },
+            },
+            schema_breadcrumbs(trail),
+        ],
     }
     return f"""<!DOCTYPE html>
 <html lang="es">
-{page_head(title="Artículos para aprender inglés | De FAK a Fluent", description="Guías de inglés para hispanohablantes basadas en De FAK a Fluent: pronunciación, conversación real, gramática y palabras difíciles.", canonical=f"{BASE_URL}/articulos.html", og_type="website", schema=schema)}
+{page_head(title="Artículos para aprender inglés | De FAK a Fluent", description=description, canonical=f"{BASE_URL}/articulos.html", og_type="website", schema=schema)}
 <body>
     {site_header("articulos")}
 
@@ -1288,15 +1492,16 @@ def render_article_hub() -> str:
         <section class="hero">
             <div class="hero-inner">
                 <div>
+                    {render_breadcrumbs(trail)}
                     <p class="eyebrow">Guías prácticas para hispanohablantes</p>
                     <h1>Inglés real explicado desde los errores que más cometemos en español.</h1>
-                    <p class="lede">Estos artículos convierten ideas clave del libro en guías rápidas, enlazadas con audios y ejemplos para practicar pronunciación, conversación, gramática y vocabulario útil.</p>
+                    <p class="lede">Estos artículos convierten ideas clave del libro en guías prácticas, enlazadas con audios y ejemplos para practicar pronunciación, conversación, gramática y vocabulario útil.</p>
                     <div class="button-row">
                         <a class="button primary" href="{AMAZON_URL}" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
                         <a class="button secondary" href="/audios.html">Escuchar audios</a>
                     </div>
                 </div>
-                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de {BOOK_TITLE}">
+                {cover_img("hero-cover", eager=True)}
             </div>
         </section>
 
@@ -1315,6 +1520,15 @@ def render_article_hub() -> str:
 
 def audio_files() -> list[str]:
     return sorted(path.name for path in (ROOT / "audios").glob("*.mp3"))
+
+
+AUDIO_DATA_FILE = ROOT / "tools" / "audio_pronunciation.json"
+AUDIO_DATA: dict = json.loads(AUDIO_DATA_FILE.read_text(encoding="utf-8")) if AUDIO_DATA_FILE.exists() else {}
+
+
+def audio_entry(filename: str) -> dict:
+    """Hand-written pronunciation notes (IPA, meaning, examples) for one recording."""
+    return AUDIO_DATA.get(filename, {})
 
 
 AUDIO_DISPLAY_OVERRIDES = {
@@ -1366,6 +1580,8 @@ def audio_seo_label(filename: str) -> str:
 
 
 def audio_seo_title(filename: str) -> str:
+    if audio_entry(filename).get("seo_title"):
+        return audio_entry(filename)["seo_title"]
     return f"{audio_seo_label(filename)} | Audio inglés"
 
 
@@ -1383,6 +1599,8 @@ def audio_category(filename: str) -> str:
 
 
 def audio_description(filename: str) -> str:
+    if audio_entry(filename).get("description"):
+        return audio_entry(filename)["description"]
     name = audio_seo_label(filename)
     category = audio_category(filename)
     if category == "Ligar palabras":
@@ -1401,6 +1619,8 @@ def audio_mini_transcript(filename: str) -> str:
 
 
 def audio_focus_note(filename: str) -> str:
+    if audio_entry(filename).get("focus"):
+        return audio_entry(filename)["focus"]
     low = filename.lower()
     category = audio_category(filename)
     if "sonido.'th'.entre" in low:
@@ -1439,6 +1659,8 @@ def audio_focus_note(filename: str) -> str:
 
 
 def audio_mistake_note(filename: str) -> str:
+    if audio_entry(filename).get("mistake"):
+        return audio_entry(filename)["mistake"]
     low = filename.lower()
     category = audio_category(filename)
     if "sonido.'th'.entre" in low:
@@ -1539,54 +1761,123 @@ def render_audio_notes(filename: str) -> str:
                 </section>"""
 
 
+def render_audio_pronunciation(filename: str) -> str:
+    items = audio_entry(filename).get("items") or []
+    if not items:
+        return ""
+    rows = "\n".join(
+        f"""                        <tr>
+                            <th scope="row" lang="en">{esc(item["en"])}</th>
+                            <td><span class="ipa">{esc(item["us"])}</span></td>
+                            <td><span class="ipa">{esc(item["uk"])}</span></td>
+                            <td>{esc(item["es"])}</td>
+                        </tr>"""
+        for item in items
+    )
+    tips = "\n".join(
+        f"""                    <li><strong lang="en">{esc(item["en"])}</strong>: {esc(item["pista"])}<br><em lang="en">{esc(item["ejemplo"])}</em> — {esc(item["ejemplo_es"])}</li>"""
+        for item in items
+    )
+    return f"""                <h2 id="pronunciacion">Pronunciación (IPA) y significado</h2>
+                <div class="table-wrap"><table class="data-table ipa-table">
+                    <thead>
+                        <tr><th scope="col">Inglés</th><th scope="col">EE. UU.</th><th scope="col">Reino Unido</th><th scope="col">Significado</th></tr>
+                    </thead>
+                    <tbody>
+{rows}
+                    </tbody>
+                </table></div>
+                <p class="table-note">¿No te suenan los símbolos? Tienes la tabla completa en el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés para españoles</a>.</p>
+                <h2 id="como-decirlo">Cómo decirlo bien</h2>
+                <ul class="tip-list">
+{tips}
+                </ul>
+"""
+
+
 def related_articles_for_audio(filename: str) -> list[str]:
     category = audio_category(filename)
     low = filename.lower()
     if "sonido.'th'" in low:
-        return ["sonido-th-ingles", "pronunciacion-ingles-para-espanoles", "palabras-ough-pronunciacion-ingles"]
-    if any(key in low for key in ["bit_big", "hit", "book_cook", "moon_food", "door_floor", "lack_lock", "love_clove", "live_leave"]):
-        return ["vocales-ingles-cortas-largas", "pronunciacion-ingles-para-espanoles", "palabras-ough-pronunciacion-ingles"]
-    if any(key in low for key in ["walk_talk", "bomb_tomb"]):
-        return ["letras-mudas-ingles", "pronunciacion-ingles-para-espanoles", "palabras-ough-pronunciacion-ingles"]
-    if category == "Ligar palabras":
-        return ["ligar-palabras-ingles", "i-mean-en-ingles", "pronunciacion-ingles-para-espanoles"]
-    if category == "Conversación":
-        return ["how-are-you-respuestas-ingles", "como-decir-de-nada-en-ingles", "sure-en-ingles"]
-    if "ough" in low:
-        return ["palabras-ough-pronunciacion-ingles", "sonido-th-ingles", "pronunciacion-ingles-para-espanoles"]
-    if category == "Palabras difíciles":
-        return ["pronunciacion-ingles-para-espanoles", "vocales-ingles-cortas-largas", "palabras-ough-pronunciacion-ingles"]
-    return ["pronunciacion-ingles-para-espanoles", "vocales-ingles-cortas-largas", "ligar-palabras-ingles"]
+        picks = ["sonido-th-ingles", "como-se-pronuncia-the", "pronunciacion-ingles-para-espanoles"]
+    elif "33" in low:
+        picks = ["sonido-th-ingles", "como-se-pronuncia-the", "palabras-ingles-mal-pronunciadas"]
+    elif any(key in low for key in ["bit_big", "hit", "book_cook", "moon_food", "door_floor", "lack_lock", "love_clove", "live_leave", "bird_bear", "microsoft"]):
+        picks = ["vocales-ingles-cortas-largas", "alfabeto-fonetico-ingles", "palabras-ingles-mal-pronunciadas"]
+    elif any(key in low for key in ["walk_talk", "bomb_tomb", "light_love"]):
+        picks = ["letras-mudas-ingles", "palabras-ingles-mal-pronunciadas", "pronunciacion-ingles-para-espanoles"]
+    elif "texts_guests" in low:
+        picks = ["pronunciacion-ed-ingles", "pronunciacion-ingles-para-espanoles", "ligar-palabras-ingles"]
+    elif any(key in low for key in ["mcdonald", "focus", "fak_fuck", "stop", "spanish", "spain", "either", "education"]):
+        picks = ["palabras-ingles-mal-pronunciadas", "pronunciacion-ingles-para-espanoles", "alfabeto-fonetico-ingles"]
+    elif category == "Ligar palabras":
+        picks = ["ligar-palabras-ingles", "i-mean-en-ingles", "pronunciacion-ingles-para-espanoles"]
+    elif category == "Conversación":
+        picks = ["how-are-you-respuestas-ingles", "como-decir-de-nada-en-ingles", "sure-en-ingles"]
+    elif "ough" in low:
+        picks = ["palabras-ough-pronunciacion-ingles", "sonido-th-ingles", "pronunciacion-ingles-para-espanoles"]
+    elif category == "Palabras difíciles":
+        picks = ["pronunciacion-ingles-para-espanoles", "vocales-ingles-cortas-largas", "palabras-ough-pronunciacion-ingles"]
+    else:
+        picks = ["pronunciacion-ingles-para-espanoles", "alfabeto-fonetico-ingles", "vocales-ingles-cortas-largas"]
+    fallback = ["pronunciacion-ingles-para-espanoles", "vocales-ingles-cortas-largas", "ligar-palabras-ingles"]
+    chosen = [slug for slug in picks if slug in ARTICLE_BY_SLUG]
+    for slug in fallback:
+        if len(chosen) >= 3:
+            break
+        if slug not in chosen:
+            chosen.append(slug)
+    return chosen
 
 
 def render_audio_page(filename: str) -> str:
     slug = audio_slug(filename)
+    path = f"/audio/{slug}.html"
+    entry = audio_entry(filename)
     name = audio_display_name(filename)
-    canonical = f"{BASE_URL}/audio/{slug}.html"
+    heading = entry.get("h1") or name
+    canonical = f"{BASE_URL}{path}"
     src = f"/audios/{quote(filename)}"
     description = audio_description(filename)
+    lede = entry.get("intro") or description
     category = audio_category(filename)
     dynamic_stem = quote(Path(filename).stem)
     related = "\n".join(
         f'                        <li><a href="/articulos/{slug}.html">{esc(ARTICLE_BY_SLUG[slug]["title"])}</a></li>'
         for slug in related_articles_for_audio(filename)
     )
-    schema = {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": f"{name} | Audio de inglés",
+    trail = [("Inicio", "/"), ("Audios", "/audios.html"), (name, path)]
+    audio_object = {
+        "@type": "AudioObject",
+        "@id": f"{canonical}#audio",
+        "name": name,
         "description": description,
-        "url": canonical,
-        "inLanguage": "es",
-        "mainEntity": {
-            "@type": "AudioObject",
-            "name": name,
-            "description": description,
-            "contentUrl": f"{BASE_URL}/audios/{quote(filename)}",
-            "encodingFormat": "audio/mpeg",
-            "inLanguage": "en",
-        },
+        "contentUrl": f"{BASE_URL}/audios/{quote(filename)}",
+        "encodingFormat": "audio/mpeg",
+        "inLanguage": "en",
+        "transcript": audio_mini_transcript(filename),
+        "author": schema_author(),
+        "isAccessibleForFree": True,
     }
+    graph = [
+        {
+            "@type": "WebPage",
+            "@id": canonical,
+            "name": heading,
+            "description": description,
+            "url": canonical,
+            "inLanguage": "es",
+            "isPartOf": {"@id": WEBSITE_ID},
+            "dateModified": TODAY,
+            "mainEntity": {"@id": f"{canonical}#audio"},
+        },
+        audio_object,
+        schema_breadcrumbs(trail),
+    ]
+    if entry.get("faq"):
+        graph.append(schema_faq(entry["faq"]))
+    schema = {"@context": "https://schema.org", "@graph": graph}
+    faq_html = render_faq([(question, esc(answer)) for question, answer in entry.get("faq", [])])
     return f"""<!DOCTYPE html>
 <html lang="es">
 {page_head(title=audio_seo_title(filename), description=description, canonical=canonical, og_type="website", schema=schema)}
@@ -1597,15 +1888,16 @@ def render_audio_page(filename: str) -> str:
         <section class="hero compact-hero">
             <div class="hero-inner">
                 <div>
+                    {render_breadcrumbs(trail)}
                     <p class="eyebrow">{esc(category)}</p>
-                    <h1>{esc(name)}</h1>
-                    <p class="lede">{esc(description)}</p>
+                    <h1>{esc(heading)}</h1>
+                    <p class="lede">{esc(lede)}</p>
                     <div class="button-row">
                         <a class="button secondary" href="/audios.html">Ver todos los audios</a>
                         <a class="button primary" href="{AMAZON_URL}" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
                     </div>
                 </div>
-                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de {BOOK_TITLE}">
+                {cover_img("hero-cover", eager=True)}
             </div>
         </section>
 
@@ -1617,10 +1909,12 @@ def render_audio_page(filename: str) -> str:
                     </audio>
                 </div>
                 <p>Repite el audio varias veces en voz alta. La primera escucha debería centrarse en reconocer los sonidos; las siguientes, en imitar ritmo, acento y unión entre palabras.</p>
+{render_audio_pronunciation(filename)}
+{render_audio_notes(filename)}
                 <div class="lesson-box">
                     <strong>Consejo de práctica:</strong> reproduce el audio, pausa, repite la frase completa y vuelve a escuchar. Si una palabra se te resiste, no la practiques sola durante demasiado tiempo: vuelve pronto a la frase completa.
                 </div>
-{render_audio_notes(filename)}
+{faq_html}
                 <p>También puedes abrir este audio en el <a href="/pronunciacion.html?word={dynamic_stem}">reproductor original con enlace compatible con QR</a>.</p>
 
                 <div class="related">
@@ -1633,7 +1927,7 @@ def render_audio_page(filename: str) -> str:
 
             <aside class="sidebar" aria-label="Recursos relacionados">
                 <div class="panel">
-                    <img src="/images/book-cover-300.png" alt="Portada de {BOOK_TITLE}">
+                    {cover_img("")}
                     <p>Estos audios acompañan el método del libro para mejorar pronunciación y comprensión auditiva.</p>
                     <a class="button primary" href="{AMAZON_URL}" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
                 </div>
@@ -1657,11 +1951,13 @@ def render_audio_hub(files: list[str]) -> str:
         for filename in group:
             slug = audio_slug(filename)
             name = audio_display_name(filename)
+            items = audio_entry(filename).get("items") or []
+            hint = f'<span class="ipa">{esc(items[0]["us"])}</span> · ' if items else ""
             cards.append(
                 f"""                    <a class="audio-card" href="/audio/{slug}.html">
                         <span>{esc(category)}</span>
                         <strong>{esc(name)}</strong>
-                        <small>Escuchar audio</small>
+                        <small>{hint}Escuchar audio</small>
                     </a>"""
             )
         section_id = slugify(category)
@@ -1682,18 +1978,30 @@ def render_audio_hub(files: list[str]) -> str:
         }
         for index, filename in enumerate(files)
     ]
+    description = (
+        f"{len(files)} audios gratis de pronunciación en inglés para hispanohablantes, con transcripción fonética (IPA), "
+        "significado y errores típicos de los españoles."
+    )
+    trail = [("Inicio", "/"), ("Audios", "/audios.html")]
     schema = {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Audios de inglés de De FAK a Fluent",
-        "description": "Biblioteca de audios de pronunciación y conversación para hispanohablantes.",
-        "url": f"{BASE_URL}/audios.html",
-        "inLanguage": "es",
-        "mainEntity": {"@type": "ItemList", "itemListElement": item_list},
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{BASE_URL}/audios.html",
+                "name": "Audios de pronunciación en inglés de De FAK a Fluent",
+                "description": description,
+                "url": f"{BASE_URL}/audios.html",
+                "inLanguage": "es",
+                "isPartOf": {"@id": WEBSITE_ID},
+                "mainEntity": {"@type": "ItemList", "itemListElement": item_list},
+            },
+            schema_breadcrumbs(trail),
+        ],
     }
     return f"""<!DOCTYPE html>
 <html lang="es">
-{page_head(title="Audios de inglés | De FAK a Fluent", description="Escucha audios de pronunciación, conversación y palabras difíciles del libro De FAK a Fluent.", canonical=f"{BASE_URL}/audios.html", og_type="website", schema=schema)}
+{page_head(title="Audios de pronunciación en inglés gratis | De FAK a Fluent", description=description, canonical=f"{BASE_URL}/audios.html", og_type="website", schema=schema)}
 <body>
     {site_header("audios")}
 
@@ -1701,15 +2009,16 @@ def render_audio_hub(files: list[str]) -> str:
         <section class="hero">
             <div class="hero-inner">
                 <div>
+                    {render_breadcrumbs(trail)}
                     <p class="eyebrow">Biblioteca de audios</p>
                     <h1>Audios de pronunciación y conversación en inglés.</h1>
-                    <p class="lede">Cada audio tiene su propia página para que puedas practicar, compartirlo y volver a él fácilmente desde el móvil.</p>
+                    <p class="lede">{len(files)} audios gratis del libro, cada uno con su página: transcripción fonética (IPA) en inglés americano y británico, significado, el error típico de un español y una práctica rápida.</p>
                     <div class="button-row">
                         <a class="button primary" href="{AMAZON_URL}" target="_blank" rel="noopener noreferrer">Comprar el libro</a>
-                        <a class="button secondary" href="/articulos.html">Leer artículos</a>
+                        <a class="button secondary" href="/articulos/alfabeto-fonetico-ingles.html">Entender los símbolos IPA</a>
                     </div>
                 </div>
-                <img class="hero-cover" src="/images/book-cover-600.png" alt="Portada de {BOOK_TITLE}">
+                {cover_img("hero-cover", eager=True)}
             </div>
         </section>
 
@@ -1723,24 +2032,32 @@ def render_audio_hub(files: list[str]) -> str:
 </html>"""
 
 
-def render_sitemap(files: list[str]) -> str:
-    urls: list[tuple[str, str, str]] = [
-        ("/", "1.00", "daily"),
-        ("/audios.html", "0.90", "weekly"),
-        ("/articulos.html", "0.90", "weekly"),
-        ("/contacto.html", "0.50", "yearly"),
-        ("/prompt.html", "0.55", "yearly"),
+def sitemap_paths(files: list[str]) -> list[tuple[str, str, str, str]]:
+    urls: list[tuple[str, str, str, str]] = [
+        ("/", "1.00", "weekly", TODAY),
+        ("/audios.html", "0.90", "weekly", TODAY),
+        ("/articulos.html", "0.90", "weekly", TODAY),
+        ("/contacto.html", "0.50", "yearly", TODAY),
+        ("/prompt.html", "0.55", "yearly", TODAY),
     ]
-    urls.extend((f"/articulos/{article['slug']}.html", "0.85", "monthly") for article in ARTICLES)
-    urls.extend((article["download_pdf"], "0.55", "monthly") for article in ARTICLES if article.get("download_pdf"))
-    urls.extend((f"/audio/{audio_slug(filename)}.html", "0.65", "monthly") for filename in files)
+    urls.extend(
+        (f"/articulos/{article['slug']}.html", "0.85", "monthly", article_dates(article)[1]) for article in ARTICLES
+    )
+    urls.extend(
+        (article["download_pdf"], "0.55", "monthly", FIRST_PUBLISHED) for article in ARTICLES if article.get("download_pdf")
+    )
+    urls.extend((f"/audio/{audio_slug(filename)}.html", "0.65", "monthly", TODAY) for filename in files)
+    return urls
+
+
+def render_sitemap(files: list[str]) -> str:
     entries = []
-    for path, priority, changefreq in urls:
+    for path, priority, changefreq, lastmod in sitemap_paths(files):
         loc = f"{BASE_URL}{path}"
         entries.append(
             f"""<url>
   <loc>{xml_escape(loc)}</loc>
-  <lastmod>{TODAY}T00:00:00+00:00</lastmod>
+  <lastmod>{lastmod}T00:00:00+00:00</lastmod>
   <changefreq>{changefreq}</changefreq>
   <priority>{priority}</priority>
 </url>"""
@@ -1749,6 +2066,101 @@ def render_sitemap(files: list[str]) -> str:
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {chr(10).join(entries)}
 </urlset>"""
+
+
+def render_llms_txt(files: list[str]) -> str:
+    """Plain-text map of the site for AI assistants (https://llmstxt.org)."""
+    lines = [
+        f"# {BOOK_TITLE}",
+        "",
+        f"> {BOOK_TITLE} es un libro de inglés para hispanohablantes escrito por {AUTHOR} (noviembre de 2024). "
+        "Este sitio, librodeingles.com, es su complemento gratuito: guías en español sobre pronunciación inglesa, "
+        "inglés de conversación real, gramática útil y falsos amigos, y una biblioteca de audios con "
+        "transcripción fonética (IPA) pensada para los errores típicos de los españoles.",
+        "",
+        "Datos clave:",
+        f"- Autor: {AUTHOR}, español que ha vivido y trabajado en inglés en Irlanda, Reino Unido y Estados Unidos. Perfil: {AUTHOR_URL}",
+        "- Público: hispanohablantes con base de inglés que quieren pronunciar con más claridad y entender conversaciones reales. No es un curso para principiantes absolutos ni promete fluidez en 30 días.",
+        "- Contenido del libro: más de 28.000 palabras y cerca de 100 ejemplos de audio; pronunciación, comprensión auditiva, expresiones naturales y matices culturales.",
+        f"- Compra: {AMAZON_URL}",
+        f"- Guía gratuita en PDF: {BASE_URL}{PRONUNCIATION_GUIDE_PDF}",
+        "",
+    ]
+    for cluster in ARTICLE_CLUSTERS:
+        group = [article for article in ARTICLES if article_cluster(article)["key"] == cluster["key"]]
+        if not group:
+            continue
+        lines.append(f"## {cluster['title']}")
+        lines.append("")
+        for article in group:
+            lines.append(f"- [{article['title']}]({BASE_URL}/articulos/{article['slug']}.html): {article['description']}")
+        lines.append("")
+    lines.append("## Audios de pronunciación (con IPA)")
+    lines.append("")
+    for filename in files:
+        lines.append(f"- [{audio_entry(filename).get('h1') or audio_display_name(filename)}]({BASE_URL}/audio/{audio_slug(filename)}.html)")
+    lines += [
+        "",
+        "## Optional",
+        "",
+        f"- [Sobre el autor]({AUTHOR_URL})",
+        f"- [Prompt para practicar inglés con IA]({BASE_URL}/prompt.html)",
+        f"- [Mapa del sitio XML]({BASE_URL}/sitemap.xml)",
+    ]
+    return "\n".join(lines)
+
+
+def render_not_found() -> str:
+    schema = {"@context": "https://schema.org", "@type": "WebPage", "name": "Página no encontrada", "inLanguage": "es"}
+    popular = [
+        "guia-pronunciacion-ingles-espanoles",
+        "pronunciacion-ingles-para-espanoles",
+        "how-are-you-respuestas-ingles",
+        "preposiciones-in-on-at",
+        "make-vs-do",
+        "sonido-th-ingles",
+    ]
+    links = "\n".join(
+        f'                        <li><a href="/articulos/{slug}.html">{esc(ARTICLE_BY_SLUG[slug]["title"])}</a></li>'
+        for slug in popular
+        if slug in ARTICLE_BY_SLUG
+    )
+    return f"""<!DOCTYPE html>
+<html lang="es">
+{page_head(title="Página no encontrada | De FAK a Fluent", description="Esta página no existe. Encuentra guías de inglés y audios de pronunciación para hispanohablantes.", canonical=None, og_type="website", schema=schema, robots="noindex, follow")}
+<body>
+    {site_header("")}
+
+    <main>
+        <section class="hero compact-hero">
+            <div class="hero-inner">
+                <div>
+                    <p class="eyebrow">Error 404</p>
+                    <h1>Esta página no existe (o se ha mudado).</h1>
+                    <p class="lede">Puede que el enlace esté mal escrito. Aquí tienes lo más útil del sitio para seguir practicando.</p>
+                    <div class="button-row">
+                        <a class="button primary" href="/">Ir al inicio</a>
+                        <a class="button secondary" href="/audios.html">Audios de pronunciación</a>
+                        <a class="button secondary" href="/articulos.html">Todos los artículos</a>
+                    </div>
+                </div>
+                {cover_img("hero-cover", eager=True)}
+            </div>
+        </section>
+
+        <div class="page-shell">
+            <article class="article-body">
+                <h2>Guías más leídas</h2>
+                <ul>
+{links}
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    {site_footer()}
+</body>
+</html>"""
 
 
 def main() -> None:
@@ -1764,6 +2176,9 @@ def main() -> None:
     for filename in files:
         write(f"audio/{audio_slug(filename)}.html", render_audio_page(filename))
     write("sitemap.xml", render_sitemap(files))
+    write("llms.txt", render_llms_txt(files))
+    write("404.html", render_not_found())
+    write(f"{INDEXNOW_KEY}.txt", INDEXNOW_KEY)
 
 
 if __name__ == "__main__":

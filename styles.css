@@ -61,7 +61,7 @@ a:hover {
 
 .brand img {
     width: 42px;
-    height: auto;
+    height: 42px;
 }
 
 .site-nav {
@@ -153,6 +153,7 @@ h3 {
 .hero-cover {
     width: 100%;
     max-width: 260px;
+    height: auto;
     justify-self: end;
     filter: drop-shadow(0 18px 26px rgba(23, 43, 58, 0.18));
 }
@@ -255,7 +256,8 @@ h3 {
 
 .panel img {
     display: block;
-    width: 120px;
+    width: 180px;
+    height: auto;
     margin: 0 auto 14px;
 }
 
@@ -520,10 +522,148 @@ h3 {
     padding-left: 1.1rem;
 }
 
+.breadcrumbs {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.breadcrumbs a {
+    color: var(--muted);
+}
+
+.breadcrumbs a:hover {
+    color: var(--red);
+}
+
+.breadcrumbs [aria-current="page"] {
+    color: var(--ink);
+}
+
+.byline a {
+    font-weight: 700;
+}
+
+.quick-answer {
+    margin: 0 0 28px;
+    padding: 18px 20px;
+    border: 1px solid #bcd3ea;
+    border-left: 5px solid var(--blue);
+    border-radius: 8px;
+    background: var(--blue-soft);
+}
+
+.quick-answer p {
+    margin: 0;
+}
+
+.quick-answer .quick-answer-label {
+    margin: 0 0 6px;
+    color: var(--blue);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.table-wrap {
+    width: 100%;
+    margin: 18px 0 24px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
+.data-table th,
+.data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.data-table thead th {
+    background: var(--surface-soft);
+    color: var(--ink);
+    font-size: 0.88rem;
+    border-bottom: 2px solid var(--line);
+}
+
+.data-table tbody tr:nth-child(even) {
+    background: #fbfdff;
+}
+
+.ipa {
+    font-family: "Charis SIL", "Doulos SIL", "Gentium Plus", "Lucida Sans Unicode", "Segoe UI", "Arial Unicode MS", sans-serif;
+    white-space: nowrap;
+    color: var(--blue);
+}
+
+.table-note {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.tip-list li {
+    margin-bottom: 14px;
+}
+
+details.exercise {
+    margin: 0 0 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
+details.exercise summary {
+    cursor: pointer;
+    padding: 12px 14px;
+    font-weight: 700;
+    list-style-position: inside;
+}
+
+details.exercise[open] summary {
+    border-bottom: 1px solid var(--line);
+}
+
+details.exercise > :not(summary) {
+    margin: 0;
+    padding: 12px 14px;
+}
+
+.faq {
+    margin-top: 40px;
+}
+
+.faq-item {
+    padding: 4px 0 6px;
+    border-top: 1px solid var(--line);
+}
+
+.faq-item h3 {
+    margin: 16px 0 6px;
+}
+
+.faq-item p {
+    margin: 0 0 10px;
+}
+
 .site-footer {
     background: var(--ink);
     color: #ffffff;
     padding: 24px 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
 .footer-shell {
