@@ -115,7 +115,7 @@ def page_head(
     <meta name="twitter:title" content="{esc(title)}">
     <meta name="twitter:description" content="{esc(description)}">
     <meta name="twitter:image" content="{OG_IMAGE}">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v={TODAY}">
     <script type="application/ld+json">
     {json_ld(schema)}
     </script>
