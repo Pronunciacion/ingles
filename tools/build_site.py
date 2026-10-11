@@ -263,139 +263,213 @@ ARTICLES: list[dict] = [
     {
         "slug": "guia-pronunciacion-ingles-espanoles",
         "category": "Pronunciación",
-        "title": "Guía gratis de pronunciación en inglés para españoles: 25 tips prácticos",
-        "seo_title": "Guía gratis de pronunciación en inglés para españoles",
-        "description": "Guía gratis con 25 consejos de pronunciación en inglés para españoles: vocales, H, TH, letras mudas, ritmo, linking y audios para practicar.",
-        "lede": "Una guía rápida para compartir y guardar: 25 consejos concretos para que tu inglés suene más claro sin intentar borrar tu acento.",
+        "title": "Guía de pronunciación en inglés para españoles: 25 tips prácticos (PDF gratis)",
+        "seo_title": "Guía de pronunciación en inglés: 25 tips para españoles",
+        "description": "Guía gratis de pronunciación en inglés para españoles: 25 consejos sobre vocales, H, TH, R, ritmo y linking, con audios y un PDF para descargar.",
+        "lede": "25 consejos concretos para que tu inglés suene más claro sin intentar borrar tu acento. Para leer online, guardar en PDF y compartir.",
         "reading": "8 minutos",
+        "published": "2026-06-28",
         "download_pdf": PRONUNCIATION_GUIDE_PDF,
         "toc": [
             ("como-usarla", "Cómo usarla"),
-            ("sonidos", "Sonidos clave"),
-            ("ritmo", "Ritmo y linking"),
-            ("plan", "Plan de práctica"),
+            ("sonidos", "Sonidos clave (1-12)"),
+            ("ritmo", "Ritmo y linking (13-25)"),
+            ("por-donde-empezar", "Por dónde empezar"),
+            ("plan", "Plan de 7 días"),
         ],
         "related": [
             "pronunciacion-ingles-para-espanoles",
             "vocales-ingles-cortas-largas",
             "sonido-th-ingles",
+            "alfabeto-fonetico-ingles",
+        ],
+        "quick_answer": "Para mejorar tu pronunciación en inglés siendo español, empieza por lo que más bloquea la comprensión: la H suave (no jota), la I corta de <em>bit</em>, la TH, no decir <em>espain</em> por <em>Spain</em> y no dar el mismo peso a todas las sílabas. Practica pocos sonidos, con audio y dentro de frases.",
+        "faq": [
+            ("¿Qué consejos de pronunciación en inglés son más útiles para españoles?", "Los que más mejoran la claridad son: no añadir una e delante de S + consonante (<em>espain</em>), hacer la H con aire y no como jota, distinguir la I corta de la larga (<em>ship</em> y <em>sheep</em>), colocar la lengua entre los dientes para la TH y no dar a todas las sílabas el mismo peso."),
+            ("¿Se puede mejorar la pronunciación en inglés siendo adulto?", "Sí. Es posible que conserves algo de acento español, y no pasa nada, pero la claridad mejora mucho con práctica concreta: escuchar un modelo, repetir en voz alta, grabarte y corregir pocos sonidos cada vez."),
+            ("¿Cuánto tiempo al día hay que practicar la pronunciación?", "No hay una cifra mágica. Diez o quince minutos diarios de práctica en voz alta con audio suelen rendir más que una sesión larga a la semana, porque la pronunciación es un hábito físico que necesita repetición."),
+            ("¿Hace falta aprender el alfabeto fonético (IPA) para pronunciar bien?", "No es imprescindible, pero ayuda mucho: te permite ver en un diccionario qué sonido lleva una palabra aunque la ortografía engañe, sobre todo con sonidos que no existen en español, como <span class=\"ipa\">/ɪ/</span>, <span class=\"ipa\">/ə/</span> o <span class=\"ipa\">/ð/</span>."),
+            ("¿La guía de pronunciación en PDF es gratis?", "Sí. La versión en PDF de esta guía, con los 25 tips y los enlaces a los audios, es gratuita y puedes descargarla, imprimirla y compartirla libremente."),
         ],
         "body": """
-                <p>Esta guía está pensada para españoles que ya estudian inglés, pero sienten que al hablar todavía suenan demasiado planos, demasiado españoles o poco claros. No necesitas sonar nativo. Necesitas que las palabras importantes se reconozcan rápido.</p>
+                <p>Esta guía de pronunciación en inglés está pensada para españoles que ya estudian inglés, pero sienten que al hablar todavía suenan demasiado planos, demasiado españoles o poco claros. No necesitas sonar nativo. Necesitas que las palabras importantes se reconozcan rápido.</p>
                 <p>Guárdala, pásasela a alguien que esté aprendiendo inglés y úsala como checklist. Cada punto es pequeño a propósito: si intentas corregir todo a la vez, no corriges nada.</p>
-                <div class="lesson-box">
-                    <strong>Idea central:</strong> la pronunciación no mejora leyendo reglas. Mejora escuchando, repitiendo, exagerando un poco y llevando el sonido a frases reales.
-                </div>
-
+                <div class="lesson-box"><strong>Idea central:</strong> la pronunciación no mejora leyendo reglas. Mejora escuchando, repitiendo, exagerando un poco y llevando el sonido a frases reales.</div>
                 <h2 id="como-usarla">Cómo usar esta guía</h2>
                 <p>No leas los 25 consejos como teoría. Elige tres, practícalos durante una semana y vuelve. La pronunciación se entrena más como un gesto físico que como una lista de vocabulario.</p>
                 <ol>
-                    <li>Escoge un sonido o hábito que te cueste.</li>
-                    <li>Abre el audio relacionado.</li>
-                    <li>Repite en voz alta tres veces: lento, normal y dentro de una frase.</li>
-                    <li>Grábate durante diez segundos y compara.</li>
+                <li>Escoge un sonido o hábito que te cueste.</li>
+                <li>Abre el audio relacionado.</li>
+                <li>Repite en voz alta tres veces: lento, normal y dentro de una frase.</li>
+                <li>Grábate durante diez segundos y compara.</li>
                 </ol>
-
-                <h2 id="sonidos">25 tips de pronunciación para españoles</h2>
+                <p>Si no sabes cuáles elegir, más abajo tienes una propuesta <a href="#por-donde-empezar">según tu nivel</a> y una tabla con los errores que más se notan.</p>
+                <h2 id="sonidos">25 tips de pronunciación en inglés para españoles</h2>
+                <p>Los doce primeros consejos son sonidos concretos; los trece siguientes tienen que ver con ritmo, hábitos y actitud.</p>
                 <div class="example-grid">
-                    <div class="mini-card"><strong>1. La H no es una jota</strong><span>En <em>hello</em> o <em>hard</em>, expulsa aire suave. Practica con <a href="/audio/hello-hard.html">hello y hard</a>.</span></div>
-                    <div class="mini-card"><strong>2. No conviertas la V en B</strong><span>En inglés, <em>very</em> necesita labio inferior y dientes superiores. No debe sonar como <em>bery</em>.</span></div>
-                    <div class="mini-card"><strong>3. La I corta no es una i española</strong><span><em>Bit</em>, <em>win</em> y <em>lip</em> se acercan más a una e relajada. Escucha <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</span></div>
-                    <div class="mini-card"><strong>4. Book y moon no comparten vocal</strong><span><em>Book</em> tiene una vocal corta; <em>moon</em> es más larga. Evita pronunciar todas las dobles O igual.</span></div>
-                    <div class="mini-card"><strong>5. Love no se lee con o española</strong><span>La vocal de <em>love</em> no es la de <em>lobo</em>. Practica con <a href="/audio/love-clove-move.html">love, clove, move</a>.</span></div>
-                    <div class="mini-card"><strong>6. TH puede vibrar o no</strong><span><em>Think</em> no vibra; <em>they</em> sí. Empieza separando <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a> y <a href="/audio/sonido-th-paladar.html">TH frente a D</a>.</span></div>
-                    <div class="mini-card"><strong>7. No metas una e antes de S</strong><span><em>Spain</em> no es <em>espain</em>. Empieza el sonido directamente en la S.</span></div>
-                    <div class="mini-card"><strong>8. La R inglesa no se enrolla</strong><span>No vibres la lengua como en español. En <em>red</em> o <em>right</em>, la lengua se recoge sin tocar fuerte.</span></div>
-                    <div class="mini-card"><strong>9. La L final pesa más</strong><span>En <em>feel</em>, <em>school</em> o <em>full</em>, la L final no desaparece. Dale presencia sin añadir una vocal extra.</span></div>
-                    <div class="mini-card"><strong>10. La J inglesa no es nuestra Y</strong><span><em>Job</em>, <em>John</em> y <em>enjoy</em> empiezan con un sonido más fuerte que una y española.</span></div>
-                    <div class="mini-card"><strong>11. No pronuncies letras mudas</strong><span><em>Walk</em>, <em>talk</em>, <em>would</em> y <em>should</em> esconden letras. Practica con <a href="/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html">letras mudas</a>.</span></div>
-                    <div class="mini-card"><strong>12. OUGH no tiene una sola regla</strong><span><em>Though</em>, <em>through</em>, <em>tough</em> y <em>thought</em> cambian mucho. Escucha <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">palabras con OUGH</a>.</span></div>
+                <div class="mini-card"><strong>1. La H no es una jota</strong><span>En <em>hello</em> o <em>hard</em>, expulsa aire suave, como si echaras vaho en una ventana. No lleves el sonido a la jota española. Practica con <a href="/audio/hello-hard.html">hello y hard</a>.</span></div>
+                <div class="mini-card"><strong>2. No conviertas la V en B</strong><span><em>Very</em> necesita labio inferior y dientes superiores. Si suena como <em>bery</em>, pierdes una diferencia muy visible. Escucha <a href="/audio/very-good.html">very good</a>.</span></div>
+                <div class="mini-card"><strong>3. La I corta no es una i española</strong><span><em>Bit</em>, <em>win</em> y <em>lip</em> se acercan a una vocal relajada entre i y e. Evita que <em>sit</em> suene como <em>seat</em>. Escucha <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</span></div>
+                <div class="mini-card"><strong>4. Book y moon no comparten vocal</strong><span><em>Book</em> tiene una vocal corta; <em>moon</em>, una más larga. No pronuncies todas las dobles O como una u española. Compara <a href="/audio/book-cook-look-foot-hook-took-cookie-correcto.html">book, cook, look</a> con <a href="/audio/moon-food-room-school-tool-noodle-cool.html">moon, food, room</a>.</span></div>
+                <div class="mini-card"><strong>5. Love no se lee con o española</strong><span>La vocal de <em>love</em> no es la de <em>lobo</em>. Compararla con <em>move</em> ayuda a notar que la ortografía engaña. Practica con <a href="/audio/love-clove-move.html">love, clove, move</a>.</span></div>
+                <div class="mini-card"><strong>6. TH puede vibrar o no</strong><span><em>Think</em> no vibra; <em>they</em> sí. Primero coloca la lengua entre los dientes, luego decide si añades voz. Empieza con <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a> y <a href="/audio/sonido-th-paladar.html">TH frente a D</a>.</span></div>
+                <div class="mini-card"><strong>7. No metas una e antes de S</strong><span><em>Spain</em> no es <em>espain</em>. Empieza directamente en la S, aunque al principio te parezca brusco. Prueba con <a href="/audio/i-am-spanish.html">I am Spanish</a>.</span></div>
+                <div class="mini-card"><strong>8. La R inglesa no se enrolla</strong><span>En <em>red</em> o <em>right</em>, no vibres la lengua como en <em>perro</em>. Recógela hacia atrás y evita el golpe español. Escucha <a href="/audio/red-car-around-right-sorry.html">red, car, around, right, sorry</a>.</span></div>
+                <div class="mini-card"><strong>9. La L final pesa más</strong><span>En <em>feel</em>, <em>school</em> o <em>full</em>, la L final no desaparece. Dale presencia sin añadir una vocal al final. Practica con <a href="/audio/skill-goal-ball-full-world-call-feel-school.html">skill, goal, ball, full</a>.</span></div>
+                <div class="mini-card"><strong>10. La J inglesa no es nuestra Y</strong><span><em>Job</em>, <em>John</em> y <em>enjoy</em> empiezan con un sonido más fuerte que una y española: el del nombre de la letra G en inglés. Escucha <a href="/audio/jump-john-job-jungle-enjoy.html">jump, John, job, jungle, enjoy</a>.</span></div>
+                <div class="mini-card"><strong>11. No pronuncies letras mudas</strong><span><em>Walk</em>, <em>talk</em>, <em>would</em> y <em>should</em> esconden letras. Si lees todo lo escrito, la palabra se aleja del inglés real. Practica con <a href="/audio/walk-talk-half-calm-salmon-would-should-yolk-palm-chalk-walkie-talkie.html">letras mudas</a>.</span></div>
+                <div class="mini-card"><strong>12. OUGH no tiene una sola regla</strong><span><em>Though</em>, <em>through</em>, <em>tough</em> y <em>thought</em> cambian mucho. Apréndelas por memoria auditiva, no por intuición visual. Escucha <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">palabras con OUGH</a>.</span></div>
                 </div>
-
                 <h2 id="ritmo">Ritmo, acento y palabras que se juntan</h2>
                 <p>Muchos españoles pronuncian las palabras una por una, con el mismo peso. El inglés real no funciona así: algunas palabras se comen, otras se estiran y muchas se unen.</p>
                 <div class="example-grid">
-                    <div class="mini-card"><strong>13. No todas las sílabas valen igual</strong><span>En inglés, las palabras importantes suelen recibir más fuerza: nombres, verbos, adjetivos y adverbios.</span></div>
-                    <div class="mini-card"><strong>14. Reduce palabras pequeñas</strong><span><em>To</em>, <em>of</em>, <em>and</em> y <em>for</em> suelen sonar más débiles dentro de una frase.</span></div>
-                    <div class="mini-card"><strong>15. Going to se junta</strong><span>En conversación rápida, <em>going to</em> puede sonar como <em>gonna</em>. Practica con <a href="/audio/going-to.html">going to</a>.</span></div>
-                    <div class="mini-card"><strong>16. Want to también cambia</strong><span><em>I want to go</em> no suele sonar palabra por palabra. El ritmo importa tanto como cada sonido.</span></div>
-                    <div class="mini-card"><strong>17. Give me puede sonar gimme</strong><span>Esto no significa hablar mal. Significa reconocer cómo se habla en conversaciones reales.</span></div>
-                    <div class="mini-card"><strong>18. Could have no suena como tres bloques</strong><span><em>Could've</em>, <em>should've</em> y <em>would've</em> se comprimen mucho al hablar.</span></div>
-                    <div class="mini-card"><strong>19. Practica frases, no solo palabras</strong><span>Una palabra aislada puede salir bien; la prueba real es decirla dentro de una frase completa.</span></div>
-                    <div class="mini-card"><strong>20. Usa respuestas reales</strong><span><em>Pretty good</em> o <em>doing well</em> suenan más naturales que repetir siempre la misma frase de manual.</span></div>
-                    <div class="mini-card"><strong>21. Grábate poco, pero a menudo</strong><span>Diez segundos al día bastan para detectar si estás añadiendo vocales españolas o perdiendo sonidos finales.</span></div>
-                    <div class="mini-card"><strong>22. Exagera primero, suaviza después</strong><span>Para aprender un sonido nuevo, exagerarlo un poco al principio ayuda a que la boca encuentre la posición.</span></div>
-                    <div class="mini-card"><strong>23. Imita el tono, no solo el sonido</strong><span>Copiar la melodía de una frase puede mejorar tu claridad más que repetir una palabra veinte veces.</span></div>
-                    <div class="mini-card"><strong>24. No tengas vergüenza de sonar inglés</strong><span>Pronunciar mejor no es postureo. Es facilitar que te entiendan.</span></div>
-                    <div class="mini-card"><strong>25. Repite menos cosas, mejor</strong><span>Elige cinco audios útiles y repítelos muchos días. La constancia gana a la acumulación.</span></div>
+                <div class="mini-card"><strong>13. No todas las sílabas valen igual</strong><span>El inglés da más peso a las palabras de contenido: nombres, verbos, adjetivos y adverbios. El español tiende a ser más plano.</span></div>
+                <div class="mini-card"><strong>14. Reduce palabras pequeñas</strong><span><em>To</em>, <em>of</em>, <em>and</em> y <em>for</em> suelen sonar débiles dentro de una frase. Pronunciarlas todas con fuerza puede sonar artificial.</span></div>
+                <div class="mini-card"><strong>15. Going to se junta</strong><span>En conversación rápida, <em>going to</em> puede sonar como <em>gonna</em>. Reconocerlo mejora tu listening y tu fluidez. Practica con <a href="/audio/going-to.html">going to</a>.</span></div>
+                <div class="mini-card"><strong>16. Want to también cambia</strong><span><em>I want to go</em> no suele sonar palabra por palabra. Practica la frase completa, no solo <em>want</em> y <em>to</em> por separado. Escucha <a href="/audio/i-want-to-go-to-london.html">I want to go to London</a>.</span></div>
+                <div class="mini-card"><strong>17. Give me puede sonar gimme</strong><span>No es hablar mal: es reconocer cómo se simplifican los sonidos en conversaciones reales. Escucha <a href="/audio/give-me-that.html">Give me that</a>.</span></div>
+                <div class="mini-card"><strong>18. Could have no suena como tres bloques</strong><span><em>Could've</em>, <em>should've</em> y <em>would've</em> se comprimen mucho al hablar. Ojo: no se escriben <em>could of</em>. Escucha <a href="/audio/could-have-should-have-would-have.html">could have, should have, would have</a>.</span></div>
+                <div class="mini-card"><strong>19. Practica frases, no solo palabras</strong><span>Una palabra aislada puede salir bien; la prueba real es mantener el sonido dentro de una frase completa.</span></div>
+                <div class="mini-card"><strong>20. Usa respuestas reales</strong><span><em>Pretty good</em> o <em>doing well</em> suenan más naturales que repetir siempre <em>I am fine, thank you, and you?</em> Escucha <a href="/audio/pretty-good.html">pretty good</a> y <a href="/audio/doing-well.html">doing well</a>.</span></div>
+                <div class="mini-card"><strong>21. Grábate poco, pero a menudo</strong><span>Diez segundos al día bastan para detectar vocales españolas añadidas, sonidos finales perdidos o un ritmo demasiado plano.</span></div>
+                <div class="mini-card"><strong>22. Exagera primero, suaviza después</strong><span>Para aprender un sonido nuevo, exagerarlo un poco ayuda a que la boca encuentre la posición. Después lo haces natural.</span></div>
+                <div class="mini-card"><strong>23. Imita el tono, no solo el sonido</strong><span>Copiar la melodía de una frase puede mejorar tu claridad más que repetir una palabra veinte veces.</span></div>
+                <div class="mini-card"><strong>24. No tengas vergüenza de sonar inglés</strong><span>Pronunciar mejor no es postureo. Es facilitar que te entiendan en una reunión, una entrevista o una conversación real.</span></div>
+                <div class="mini-card"><strong>25. Repite menos cosas, mejor</strong><span>Elige cinco audios útiles y repítelos muchos días. La constancia gana a la acumulación. Tienes 60 gratis en la <a href="/audios.html">colección de audios</a>.</span></div>
                 </div>
-
+                <h2 id="por-donde-empezar">¿Por dónde empezar según tu nivel?</h2>
+                <p>Los 25 tips sirven para cualquiera, pero no todos rinden igual en cada momento. Esta es una forma razonable de priorizar:</p>
+                <div class="example-grid">
+                <div class="mini-card"><strong>Nivel básico (A2-B1)</strong><span>Tips 1, 3, 7 y 20. La H, la I corta y la S sin e delante son errores muy visibles y fáciles de corregir pronto. Aprende también un par de respuestas reales para <em>How are you?</em></span></div>
+                <div class="mini-card"><strong>Nivel intermedio (B1-B2)</strong><span>Tips 4, 5, 6, 11, 12 y 13. Vocales que engañan, TH, letras mudas, OUGH y el acento de las palabras. Añade las terminaciones en <a href="/articulos/pronunciacion-ed-ingles.html">-ed</a>, que delatan mucho.</span></div>
+                <div class="mini-card"><strong>Nivel avanzado (B2-C1)</strong><span>Tips 14 a 18 y 23. Formas débiles, palabras que se ligan y entonación: la diferencia entre “se te entiende” y “suenas natural”. Sigue con <a href="/articulos/ligar-palabras-ingles.html">cómo ligar palabras</a>.</span></div>
+                <div class="mini-card"><strong>Tienes una entrevista pronto</strong><span>Tips 13, 19, 21 y 24. Prepara las frases que vas a decir seguro, practícalas enteras, grábate y escucha si las palabras clave se reconocen. La confianza también se entrena.</span></div>
+                </div>
+                <p>Si quieres entender símbolos como <span class="ipa">/ɪ/</span> o <span class="ipa">/θ/</span>, que verás en cualquier diccionario, tienes una explicación sencilla en el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés para españoles</a>.</p>
+                <h3>Los errores que más delatan a un español (y qué tip los arregla)</h3>
+                <p>Una forma rápida de usar la guía al revés: busca el error que reconoces en ti y salta al tip correspondiente. Cuando hay una sola transcripción, vale para británico y americano.</p>
+                <table class="data-table">
+                <thead><tr><th>Lo que decimos</th><th>Lo que debería sonar</th><th>Tip</th></tr></thead>
+                <tbody>
+                <tr><td><em>espain</em>, <em>estudent</em></td><td><em>Spain</em> <span class="ipa">/speɪn/</span>, empezando en la S</td><td>7</td></tr>
+                <tr><td><em>jelou</em>, con jota</td><td><em>hello</em> <span class="ipa">/heˈləʊ/</span> (UK) · <span class="ipa">/heˈloʊ/</span> (US), con H de aire</td><td>1</td></tr>
+                <tr><td><em>bery gud</em></td><td><em>very</em> <span class="ipa">/ˈveri/</span>, con labio y dientes</td><td>2</td></tr>
+                <tr><td><em>sit</em> que suena a <em>seat</em></td><td><span class="ipa">/sɪt/</span>, con i corta y relajada</td><td>3</td></tr>
+                <tr><td><em>tink</em> o <em>sink</em> por <em>think</em></td><td><span class="ipa">/θɪŋk/</span>, lengua entre los dientes</td><td>6</td></tr>
+                <tr><td><em>walk</em> con L</td><td><span class="ipa">/wɔːk/</span> (UK) · <span class="ipa">/wɑːk/</span> (US), sin L</td><td>11</td></tr>
+                <tr><td>Todas las sílabas con la misma fuerza</td><td>Palabras clave fuertes y palabras pequeñas débiles</td><td>13 y 14</td></tr>
+                <tr><td><em>I am fine, thank you, and you?</em></td><td><em>Pretty good</em>, <em>Doing well, yourself?</em></td><td>20</td></tr>
+                </tbody>
+                </table>
                 <h2 id="plan">Plan de práctica de 7 días</h2>
                 <p>Si no sabes por dónde empezar, usa este plan rápido:</p>
                 <ol>
-                    <li><strong>Día 1:</strong> H inicial con <a href="/audio/hello-hard.html">hello y hard</a>.</li>
-                    <li><strong>Día 2:</strong> I corta con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</li>
-                    <li><strong>Día 3:</strong> TH con <a href="/articulos/sonido-th-ingles.html">la guía del sonido TH</a>.</li>
-                    <li><strong>Día 4:</strong> letras mudas con <a href="/articulos/letras-mudas-ingles.html">walk, talk, would y should</a>.</li>
-                    <li><strong>Día 5:</strong> OUGH con <a href="/articulos/palabras-ough-pronunciacion-ingles.html">though, through, tough y thought</a>.</li>
-                    <li><strong>Día 6:</strong> linking con <a href="/articulos/ligar-palabras-ingles.html">gonna, wanna, gotta y lemme</a>.</li>
-                    <li><strong>Día 7:</strong> una mini conversación con <a href="/audio/hows-it-going.html">How's it going?</a> y <a href="/audio/pretty-good.html">Pretty good</a>.</li>
+                <li><strong>Día 1:</strong> H inicial con <a href="/audio/hello-hard.html">hello y hard</a>.</li>
+                <li><strong>Día 2:</strong> I corta con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>.</li>
+                <li><strong>Día 3:</strong> TH con y sin voz con <a href="/articulos/sonido-th-ingles.html">la guía del sonido TH</a>.</li>
+                <li><strong>Día 4:</strong> letras mudas con <a href="/articulos/letras-mudas-ingles.html">walk, talk, would y should</a>.</li>
+                <li><strong>Día 5:</strong> OUGH con <a href="/articulos/palabras-ough-pronunciacion-ingles.html">though, through, tough y thought</a>.</li>
+                <li><strong>Día 6:</strong> linking con <a href="/articulos/ligar-palabras-ingles.html">gonna, wanna, gotta y lemme</a>.</li>
+                <li><strong>Día 7:</strong> una mini conversación con <a href="/audio/hows-it-going.html">How's it going?</a> y <a href="/audio/pretty-good.html">Pretty good</a>.</li>
                 </ol>
-                <div class="lesson-box">
-                    <strong>Para compartir:</strong> si alguien te dice “entiendo inglés, pero me da vergüenza hablar”, mándale esta guía. Empieza por claridad, no por perfección.
-                </div>
+                <div class="lesson-box"><strong>Para compartir:</strong> si alguien te dice “entiendo inglés, pero me da vergüenza hablar”, mándale esta guía. Empieza por claridad, no por perfección.</div>
+                <p>Si prefieres tenerla impresa o enviarla por WhatsApp, <a href="/downloads/guia-pronunciacion-ingles-espanoles.pdf">descarga la guía en PDF</a>: tiene los mismos 25 tips y los enlaces a los audios. Cuando termines la semana, elige otros tres consejos y repite el ciclo. Así, poco a poco, es como se nota.</p>
         """,
     },
     {
         "slug": "pronunciacion-ingles-para-espanoles",
         "category": "Pronunciación",
-        "title": "Pronunciación en inglés para españoles: los errores que más bloquean",
-        "seo_title": "Pronunciación en inglés para españoles | De FAK a Fluent",
-        "description": "Errores de pronunciación en inglés frecuentes en españoles: vocales, H, TH y acento. Aprende qué practicar primero para que te entiendan.",
+        "title": "Pronunciación en inglés para españoles: los 10 errores más comunes y cómo corregirlos",
+        "seo_title": "Pronunciación en inglés para españoles: 10 errores típicos",
+        "description": "Los errores de pronunciación en inglés más típicos de los españoles: vocales, schwa, H, TH, V/B, espain, -ed y acento. Con IPA, ejemplos y audios gratis.",
         "lede": "Si tu gramática es suficiente, pero no te entienden, el problema casi nunca es una regla más: es sonido, ritmo y confianza al imitar.",
-        "reading": "5 minutos",
+        "reading": "9 minutos",
+        "published": "2026-06-28",
         "toc": [
             ("por-que", "Por qué cuesta"),
-            ("sonidos", "Sonidos clave"),
+            ("sonidos", "Los 10 errores"),
+            ("resumen", "Tabla resumen"),
             ("acento", "Acento"),
-            ("practica", "Práctica"),
+            ("practica", "Cómo mejorar"),
         ],
         "related": [
             "guia-pronunciacion-ingles-espanoles",
-            "palabras-ough-pronunciacion-ingles",
-            "ligar-palabras-ingles",
-            "how-are-you-respuestas-ingles",
+            "vocales-ingles-cortas-largas",
+            "sonido-th-ingles",
+            "palabras-ingles-mal-pronunciadas",
+        ],
+        "quick_answer": "Los errores de pronunciación en inglés más típicos de los españoles son: leer las vocales como en español (sobre todo la I corta y la schwa), convertir la H en jota, cambiar la TH por T, D o S, decir <em>espain</em>, perder consonantes finales y terminaciones -s/-ed, y acentuar mal las palabras.",
+        "faq": [
+            ("¿Cuál es el error de pronunciación más común de los españoles en inglés?", "Uno de los más reconocibles es añadir una e delante de S + consonante (<em>espain</em>, <em>estudent</em>), pero el que más confusiones provoca suele ser leer las vocales como en español, por ejemplo pronunciar <em>ship</em> igual que <em>sheep</em> o <em>live</em> igual que <em>leave</em>."),
+            ("¿Se puede quitar el acento español al hablar inglés?", "Se puede reducir mucho, pero no es necesario eliminarlo. El objetivo útil es la inteligibilidad: que las palabras clave se reconozcan sin esfuerzo. Muchos hablantes con acento extranjero se comunican perfectamente porque dominan los sonidos y el ritmo que importan."),
+            ("¿Qué es la schwa en inglés?", "La schwa, <span class=\"ipa\">/ə/</span>, es una vocal neutra, corta y relajada que aparece en muchísimas sílabas sin acento, como la primera de <em>about</em> o la última de <em>doctor</em>. Los españoles tendemos a pronunciar esas vocales enteras, y eso hace que el ritmo suene muy español."),
+            ("¿Cómo puedo mejorar mi pronunciación en inglés en casa?", "Elige un sonido, escucha un modelo con audio, repite en voz alta, grábate unos segundos y compara. Practica con pares de palabras como <em>ship/sheep</em> y lleva cada sonido a frases completas. Diez minutos diarios suelen funcionar mejor que una hora a la semana."),
+            ("¿Es mejor aprender pronunciación británica o americana?", "Cualquiera de las dos es válida. Lo práctico es elegir la que más escuchas (series, trabajo, viajes) y usarla como modelo para imitar. Lo importante es ser claro y razonablemente coherente, no sonar de un sitio concreto."),
         ],
         "body": """
                 <p>La pronunciación es el filtro de entrada de una conversación. Puedes cometer errores de gramática y aun así comunicarte, pero si una palabra clave suena como otra palabra, o como algo que no existe en inglés, el interlocutor no tiene suficiente información para ayudarte.</p>
-                <p>Para un español, el reto no es sonar perfecto ni borrar su acento. El objetivo útil es que las palabras importantes sean reconocibles para un hablante nativo. Eso se consigue priorizando los sonidos que más diferencia producen.</p>
-
-                <h2 id="por-que">Por qué nos cuesta tanto</h2>
-                <p>En español tenemos cinco vocales muy estables. En inglés, esas mismas letras pueden producir muchos más sonidos. Por eso dos palabras que a un español le parecen casi idénticas pueden sonar completamente distintas para un nativo.</p>
-                <div class="lesson-box">
-                    <strong>Regla práctica:</strong> no practiques palabras aisladas solo leyendo. Escucha, repite y compárate con el audio. El ojo manda demasiado cuando la ortografía inglesa no coincide con el sonido.
-                </div>
-
-                <h2 id="sonidos">Los sonidos que conviene atacar primero</h2>
-                <div class="example-grid">
-                    <div class="mini-card"><strong>La H inicial</strong><span>No es la jota española. Es más suave, como echar vaho en una ventana.</span></div>
-                    <div class="mini-card"><strong>La I corta</strong><span>En palabras como <em>sit</em>, <em>bit</em> o <em>win</em>, se acerca más a una e española que a una i limpia.</span></div>
-                    <div class="mini-card"><strong>La O corta</strong><span>Palabras comunes como <em>love</em> o <em>money</em> no se leen como una o española.</span></div>
-                    <div class="mini-card"><strong>TH</strong><span>Puede sonar con vibración, como en <em>they</em>, o sin vibración, como en <em>think</em>.</span></div>
-                </div>
-
+                <p>Para un español, el reto de la pronunciación en inglés no es sonar perfecto ni borrar su acento. El objetivo útil es que las palabras importantes sean reconocibles para un hablante nativo. Eso se consigue priorizando los errores que más diferencia producen, y esta página los reúne con ejemplos, transcripción fonética y audios para practicar.</p>
+                <h2 id="por-que">¿Por qué a los españoles nos cuesta tanto la pronunciación inglesa?</h2>
+                <p>En español tenemos cinco vocales muy estables. En inglés, esas mismas cinco letras producen muchos más sonidos: en el inglés británico estándar se suelen contar unos veinte sonidos vocálicos entre vocales simples y diptongos. Por eso dos palabras que a un español le parecen casi idénticas pueden sonar completamente distintas para un nativo.</p>
+                <p>A eso se suman tres hábitos que traemos del español sin darnos cuenta:</p>
+                <ul>
+                <li><strong>Leemos como se escribe.</strong> En español funciona; en inglés, la ortografía avisa poco (piensa en <em>though</em>, <em>through</em> y <em>tough</em>).</li>
+                <li><strong>Damos un peso parecido a todas las sílabas.</strong> El inglés alterna sílabas fuertes y débiles, y esa música es parte de lo que el oyente reconoce.</li>
+                <li><strong>Nuestras palabras tienen otra forma.</strong> En español las palabras no empiezan por S + consonante (por eso decimos <em>España</em>, <em>escuela</em>, <em>estudiar</em>) y casi ninguna termina en grupos como <em>-sts</em> o <em>-kt</em>. El inglés está lleno de ellos.</li>
+                </ul>
+                <div class="lesson-box"><strong>Regla práctica:</strong> no practiques palabras aisladas solo leyendo. Escucha, repite y compárate con el audio. El ojo manda demasiado cuando la ortografía inglesa no coincide con el sonido.</div>
+                <h2 id="sonidos">Los 10 errores de pronunciación en inglés más comunes en españoles</h2>
+                <p>Cuando hay una sola transcripción fonética, coincide en inglés británico y americano.</p>
+                <h3>1. Leer las vocales como en español (y olvidar la schwa)</h3>
+                <p>Es el error con más consecuencias. La I corta de <em>ship</em> <span class="ipa">/ʃɪp/</span> no es la I larga de <em>sheep</em> <span class="ipa">/ʃiːp/</span>, y <em>live</em> <span class="ipa">/lɪv/</span> (vivir) no es <em>leave</em> <span class="ipa">/liːv/</span> (irse). La vocal de <em>up</em> o <em>love</em> <span class="ipa">/lʌv/</span> no es nuestra u ni nuestra o. Y casi todas las sílabas débiles se reducen a la <strong>schwa</strong> <span class="ipa">/ə/</span>, una vocal neutra y cortísima: <em>about</em> <span class="ipa">/əˈbaʊt/</span>, <em>today</em> <span class="ipa">/təˈdeɪ/</span>. Si pronuncias cada vocal entera, el ritmo se rompe. Aquí vive también el clásico error de <em>beach</em>, del que se ríe el subtítulo del libro.</p>
+                <p>Practica con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>, <a href="/audio/live-leave-leaf.html">live, leave, leaf</a> y <a href="/audio/microsoft-up-us-uncle-umbrella.html">Microsoft, up, us, uncle, umbrella</a>, y lee la guía de <a href="/articulos/vocales-ingles-cortas-largas.html">vocales cortas, largas y schwa</a>.</p>
+                <h3>2. Convertir la H en jota (o hacerla muda)</h3>
+                <p>La H de <em>hello</em> <span class="ipa">/heˈləʊ/</span> (UK) · <span class="ipa">/heˈloʊ/</span> (US) o <em>hard</em> <span class="ipa">/hɑːd/</span> (UK) · <span class="ipa">/hɑːrd/</span> (US) no rasca en la garganta como nuestra jota. Es solo aire, como cuando echas vaho en una ventana. El error contrario también existe: como en español la h es muda, a veces la borramos y decimos <em>ello</em>. Eso sí, hay unas pocas palabras con H muda también en inglés: <em>hour</em>, <em>honest</em>, <em>heir</em>. Practica con <a href="/audio/hello-hard.html">hello y hard</a>.</p>
+                <h3>3. Cambiar la TH por T, D o S</h3>
+                <p>Hay dos TH: la sorda <span class="ipa">/θ/</span> de <em>think</em> y <em>three</em>, y la sonora <span class="ipa">/ð/</span> de <em>this</em>, <em>they</em> y <em>the</em>. Las dos se hacen con la lengua entre los dientes. La buena noticia: si en tu español distingues <em>casa</em> de <em>caza</em>, la c de <em>cena</em> ya es exactamente <span class="ipa">/θ/</span>. El error típico es decir <em>tree</em> (árbol) cuando quieres decir <em>three</em>, o <em>day</em> cuando quieres decir <em>they</em>. Lo tienes todo en la guía del <a href="/articulos/sonido-th-ingles.html">sonido TH</a>, en <a href="/articulos/como-se-pronuncia-the.html">cómo se pronuncia THE</a> y en el audio de <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a>.</p>
+                <h3>4. La V y la B suenan igual</h3>
+                <p>En español, <em>vaca</em> y <em>baca</em> se pronuncian igual. En inglés no: la <span class="ipa">/v/</span> se hace apoyando los dientes de arriba en el labio inferior, con voz; la <span class="ipa">/b/</span> junta los dos labios. Si no las separas, <em>very</em> <span class="ipa">/ˈveri/</span> suena a <em>berry</em> <span class="ipa">/ˈberi/</span> (baya), <em>vest</em> (chaleco) a <em>best</em> y <em>van</em> a <em>ban</em>. Escucha <a href="/audio/very-good.html">very good</a> y exagera el contacto entre labio y dientes las primeras veces.</p>
+                <h3>5. La e fantasma: espain, estudent, espeak</h3>
+                <p>Como en español ninguna palabra empieza por S + consonante, el cerebro mete una e de apoyo: <em>espain</em>, <em>eschool</em>, <em>Estarbucks</em>. En inglés, <em>Spain</em> <span class="ipa">/speɪn/</span>, <em>speak</em> <span class="ipa">/spiːk/</span> o <em>school</em> <span class="ipa">/skuːl/</span> empiezan directamente en la S. Truco: alarga la S como un siseo (<em>sssspain</em>) y ve acortándola. Practica con <a href="/audio/i-am-spanish.html">I am Spanish</a> y <a href="/audio/i-am-from-spain-and-i-am-33.html">I am from Spain and I am 33</a>.</p>
+                <h3>6. Comerse las consonantes finales (y las terminaciones -s y -ed)</h3>
+                <p>Las palabras españolas suelen terminar en vocal o en una consonante suave. Las inglesas, no: <em>texts</em> <span class="ipa">/teksts/</span>, <em>desks</em> <span class="ipa">/desks/</span>, <em>costs</em> <span class="ipa">/kɒsts/</span> (UK) · <span class="ipa">/kɑːsts/</span> (US). Si las recortas, <em>card</em> suena a <em>car</em> y <em>he works</em> a <em>he work</em>. Con el pasado pasa lo contrario: tendemos a pronunciar la -ed como una sílaba más, cuando normalmente no lo es. <em>Worked</em> es <span class="ipa">/wɜːkt/</span> (UK) · <span class="ipa">/wɝːkt/</span> (US), una sola sílaba; en los verbos regulares, la sílaba extra <span class="ipa">/ɪd/</span> solo aparece tras T o D, como en <em>wanted</em>. Practica con <a href="/audio/texts-guests-desks-costs.html">texts, guests, desks, costs</a> y la guía de <a href="/articulos/pronunciacion-ed-ingles.html">pronunciación de -ed</a>.</p>
+                <h3>7. Poner el acento en la sílaba equivocada</h3>
+                <p>La sílaba fuerte de una palabra inglesa no siempre está donde la pondría un español, sobre todo en palabras parecidas a las nuestras. <em>Chocolate</em> lleva la fuerza al principio: <span class="ipa">/ˈtʃɒklət/</span> (UK) · <span class="ipa">/ˈtʃɑːklət/</span> (US). Y en muchos pares el acento cambia la palabra: <em>a <strong>re</strong>cord</em> (un disco, un récord) frente a <em>to re<strong>cord</strong></em> (grabar), o <em>a <strong>pre</strong>sent</em> (un regalo) frente a <em>to pre<strong>sent</strong></em> (presentar). Las palabras largas son buen entrenamiento: escucha <a href="/audio/education-individual-gradual-schedule-procedure-residual.html">education, individual, gradual, schedule, procedure, residual</a> y fíjate en dónde cae el golpe.</p>
+                <h3>8. La R española</h3>
+                <p>La R de <em>red</em> <span class="ipa">/red/</span> o <em>right</em> <span class="ipa">/raɪt/</span> no vibra ni golpea: la lengua se recoge un poco hacia atrás sin tocar el paladar. Si haces la erre de <em>perro</em> en <em>sorry</em> o <em>around</em>, se nota muchísimo. Además, en el inglés británico estándar la R después de vocal normalmente no se pronuncia (<em>car</em> <span class="ipa">/kɑː/</span>), mientras que en el americano sí (<span class="ipa">/kɑːr/</span>). Curiosidad útil: en inglés americano, la T entre vocales de <em>water</em> o <em>better</em> se parece mucho a nuestra r suave de <em>pero</em>. Escucha <a href="/audio/red-car-around-right-sorry.html">red, car, around, right, sorry</a>.</p>
+                <h3>9. Pronunciar palabra por palabra, sin ligar</h3>
+                <p>En inglés hablado las palabras se unen: <em>pick it up</em> suena casi como una sola palabra, <em>going to</em> se convierte en <em>gonna</em> y las palabras pequeñas (<em>to</em>, <em>of</em>, <em>and</em>) se debilitan. Si lo dices todo separado y con la misma fuerza, se te entiende, pero suenas a lectura en voz alta. Practica con <a href="/audio/pick-it-up.html">pick it up</a> y <a href="/audio/going-to.html">going to</a>, y lee <a href="/articulos/ligar-palabras-ingles.html">cómo ligar palabras en inglés</a>.</p>
+                <h3>10. Fiarse de la ortografía: letras mudas y palabras trampa</h3>
+                <p><em>Walk</em> y <em>talk</em> no suenan con L, <em>island</em> <span class="ipa">/ˈaɪlənd/</span> no suena con S y <em>though</em>, <em>through</em> y <em>tough</em> no riman entre sí. Este tipo de palabras se aprende de memoria, con audio y por familias. Empieza por las <a href="/articulos/letras-mudas-ingles.html">letras mudas</a>, las <a href="/articulos/palabras-ough-pronunciacion-ingles.html">palabras con OUGH</a> y la lista de <a href="/articulos/palabras-ingles-mal-pronunciadas.html">palabras que los españoles pronuncian mal</a>.</p>
+                <p>Dos más que conviene vigilar aunque no entren en el top 10: la J de <em>job</em> o <em>John</em>, más fuerte que nuestra y (<a href="/audio/jump-john-job-jungle-enjoy.html">jump, John, job, jungle, enjoy</a>), y la Y de <em>yes</em> o <em>yellow</em>, que no debe sonar a <em>Jess</em> ni a <em>jello</em> (<a href="/audio/yellow-young-you-yes.html">yellow, young, you, yes</a>).</p>
+                <h2 id="resumen">Tabla resumen: error, ejemplo y solución</h2>
+                <table class="data-table">
+                <thead><tr><th>Error</th><th>Ejemplo</th><th>Solución rápida</th></tr></thead>
+                <tbody>
+                <tr><td>Vocales españolas</td><td><em>ship</em> suena a <em>sheep</em></td><td>I corta y relajada; schwa en sílabas débiles</td></tr>
+                <tr><td>H como jota</td><td><em>jelou</em></td><td>Solo aire, sin rascar</td></tr>
+                <tr><td>TH como T, D o S</td><td><em>tree</em> por <em>three</em></td><td>Lengua entre los dientes</td></tr>
+                <tr><td>V igual que B</td><td><em>berry</em> por <em>very</em></td><td>Dientes de arriba sobre el labio inferior</td></tr>
+                <tr><td>S con e delante</td><td><em>espain</em></td><td>Empieza con un siseo: <em>sss-pain</em></td></tr>
+                <tr><td>Finales perdidos</td><td><em>car</em> por <em>card</em></td><td>Cierra cada palabra; -ed sin sílaba extra salvo tras T o D</td></tr>
+                <tr><td>Acento de palabra</td><td><em>cho-co-LA-te</em></td><td>Comprueba dónde cae el golpe y exagéralo</td></tr>
+                <tr><td>R vibrante</td><td><em>sorry</em> con la erre de <em>perro</em></td><td>Lengua recogida, sin tocar el paladar</td></tr>
+                <tr><td>Sin ligar</td><td><em>pick / it / up</em></td><td>Une la consonante final con la vocal siguiente</td></tr>
+                <tr><td>Leer como se escribe</td><td><em>walk</em> con L</td><td>Aprende familias de palabras con audio</td></tr>
+                </tbody>
+                </table>
                 <h2 id="acento">Tu acento importa, pero no por postureo</h2>
                 <p>En España muchas personas sienten vergüenza al pronunciar bien, como si imitar un acento inglés o americano fuera exagerado. Esa barrera social es cara: en una entrevista, llamada o reunión, una pronunciación clara transmite seguridad y reduce fricción.</p>
-                <p>La meta no es parecer de Londres, Boston o Dublín. La meta es que tu interlocutor no tenga que descifrarte. Puedes conservar parte de tu acento español y, a la vez, trabajar los sonidos que desbloquean la comprensión.</p>
-
-                <h2 id="practica">Cómo practicar sin perderte</h2>
+                <p>La meta no es parecer de Londres, Boston o Dublín. La meta es que tu interlocutor no tenga que descifrarte. Puedes conservar parte de tu acento español y, a la vez, trabajar los sonidos que desbloquean la comprensión. Elige un modelo, británico o americano, el que más escuches, y úsalo como referencia para imitar.</p>
+                <h2 id="practica">¿Cómo mejorar la pronunciación en inglés? Método en 5 pasos</h2>
                 <ol>
-                    <li>Elige un sonido, no veinte. Por ejemplo, la H inicial durante una semana.</li>
-                    <li>Escucha pares de palabras donde el error cambie el significado.</li>
-                    <li>Repite en voz alta, grabándote si puedes.</li>
-                    <li>Practica dentro de frases completas para añadir ritmo natural.</li>
+                <li><strong>Elige un sonido, no veinte.</strong> Por ejemplo, la H inicial o la I corta durante una semana.</li>
+                <li><strong>Escucha pares de palabras donde el error cambie el significado:</strong> <em>ship/sheep</em>, <em>three/tree</em>, <em>very/berry</em>.</li>
+                <li><strong>Repite en voz alta y grábate.</strong> Diez segundos bastan para oír lo que al hablar no notas.</li>
+                <li><strong>Llévalo a frases completas.</strong> Una palabra aislada puede salir bien; la prueba real es mantener el sonido con ritmo natural.</li>
+                <li><strong>Comprueba en un diccionario con audio.</strong> El <a href="https://dictionary.cambridge.org/es/" target="_blank" rel="noopener noreferrer">diccionario de Cambridge</a> da la pronunciación británica y americana de cada palabra; si aprendes a leer el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético</a>, dejarás de depender de la ortografía.</li>
                 </ol>
-                <p>Empieza con los audios de <a href="/audio/hello-hard.html">hello y hard</a>, <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip y clip</a>, y la colección de <a href="/audios.html">audios de pronunciación</a>.</p>
+                <p>Si solo tienes tiempo para tres cosas, empieza por las vocales cortas, la S sin e delante y las consonantes finales. Después, usa la <a href="/articulos/guia-pronunciacion-ingles-espanoles.html">guía de 25 tips de pronunciación</a> como checklist y la colección de <a href="/audios.html">audios de pronunciación</a> para practicar cada día un poco.</p>
         """,
     },
     {
@@ -801,7 +875,7 @@ ARTICLES: list[dict] = [
                     </thead>
                     <tbody>
                         <tr><td><strong>McDonald's</strong></td><td>UK <span class="ipa">/məkˈdɒnəldz/</span><br>US <span class="ipa">/məkˈdɑːnəldz/</span></td><td><em>mac-DÓ-nals</em>, con una “mac” muy abierta</td><td>La primera sílaba casi desaparece (“mek”) y la fuerza va en DON. Termina en <em>-ldz</em>. <a href="/audio/mcdonalds.html">Escúchalo</a>.</td></tr>
-                        <tr><td><strong>Microsoft</strong></td><td>UK <span class="ipa">/ˈmaɪkrəsɒft/</span><br>US <span class="ipa">/ˈmaɪkroʊsɔːft/</span></td><td><em>micro-SÓF</em> o <em>maicro-SÓF</em>, con la fuerza al final y sin T</td><td>Fuerza en la primera sílaba (MÁI-kro-soft), empieza por “mai” y la T final se oye. <a href="/audio/microsoft-up-us-uncle-umbrella.html">Escúchalo</a>.</td></tr>
+                        <tr><td><strong>Microsoft</strong></td><td>UK <span class="ipa">/ˈmaɪkrəsɒft/</span><br>US <span class="ipa">/ˈmaɪkroʊsɑːft/</span></td><td><em>micro-SÓF</em> o <em>maicro-SÓF</em>, con la fuerza al final y sin T</td><td>Fuerza en la primera sílaba (MÁI-kro-soft), empieza por “mai” y la T final se oye. <a href="/audio/microsoft-up-us-uncle-umbrella.html">Escúchalo</a>.</td></tr>
                         <tr><td><strong>Nike</strong></td><td>UK y US <span class="ipa">/ˈnaɪki/</span></td><td><em>naik</em>, en una sola sílaba</td><td>Dos sílabas: NÁI-ki. El nombre viene de Niké, la diosa griega de la victoria.</td></tr>
                         <tr><td><strong>Adidas</strong></td><td>UK <span class="ipa">/ˈædɪdæs/</span><br>US <span class="ipa">/əˈdiːdəs/</span></td><td><em>a-DÍ-das</em> con vocales españolas, que en realidad se acerca a la versión americana</td><td>En Reino Unido la fuerza va en la primera sílaba, con una /æ/ abierta: Á-di-das. Las dos versiones son correctas.</td></tr>
                         <tr><td><strong>Colgate</strong></td><td>UK <span class="ipa">/ˈkəʊlɡeɪt/</span><br>US <span class="ipa">/ˈkoʊlɡeɪt/</span></td><td><em>col-GÁ-te</em>, en tres sílabas</td><td>Dos sílabas y fuerza al principio: KÓUL-geit. La E final no suena.</td></tr>
@@ -1057,7 +1131,7 @@ ARTICLES: list[dict] = [
                         <tr><td><strong>maths</strong> (UK) / <strong>math</strong> (US)</td><td><span class="ipa">/mæθs/</span></td><td><span class="ipa">/mæθ/</span></td><td>sorda <span class="ipa">/θ/</span></td></tr>
                     </tbody>
                 </table>
-                <p>Tres detalles más. <em>This</em> lleva una i corta y <em>these</em> una i larga (tienes la diferencia explicada en <a href="/articulos/vocales-ingles-cortas-largas.html">vocales cortas y largas</a>). <em>That</em>, <em>than</em> y <em>them</em> se debilitan dentro de la frase: en <em>better than me</em>, <em>than</em> suele sonar <span class="ipa">/ðən/</span>. Y <em>though</em> (sonora) no se parece a <em>thought</em> (<span class="ipa">/θɔːt/</span> en UK y US, sorda): las palabras con OUGH tienen <a href="/articulos/palabras-ough-pronunciacion-ingles.html">su propia guía</a>. Si algún símbolo te frena, consulta el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés</a>.</p>
+                <p>Tres detalles más. <em>This</em> lleva una i corta y <em>these</em> una i larga (tienes la diferencia explicada en <a href="/articulos/vocales-ingles-cortas-largas.html">vocales cortas y largas</a>). <em>That</em>, <em>than</em> y <em>them</em> se debilitan dentro de la frase: en <em>better than me</em>, <em>than</em> suele sonar <span class="ipa">/ðən/</span>. Y <em>though</em> (sonora) no se parece a <em>thought</em> (<span class="ipa">/θɔːt/</span> en UK, <span class="ipa">/θɑːt/</span> en US; sorda): las palabras con OUGH tienen <a href="/articulos/palabras-ough-pronunciacion-ingles.html">su propia guía</a>. Si algún símbolo te frena, consulta el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés</a>.</p>
                 <h2 id="ejercicio">Ejercicio: ¿/ðə/ o /ði/?</h2>
                 <p>Decide cómo se pronuncia <em>the</em> en cada caso y abre para comprobarlo:</p>
                 <details class="exercise">
@@ -1098,55 +1172,105 @@ ARTICLES: list[dict] = [
     {
         "slug": "palabras-ough-pronunciacion-ingles",
         "category": "Pronunciación",
-        "title": "Cómo pronunciar palabras con OUGH: though, through, tough y más",
-        "seo_title": "OUGH en inglés: pronunciación de though, through y tough",
-        "description": "Aprende cómo pronunciar palabras con OUGH en inglés: though, through, tough, cough, enough, bough, thought y plough.",
-        "lede": "La ortografía inglesa no siempre avisa. OUGH puede sonar de formas muy distintas, así que estas palabras se aprenden mejor por familias y con audio.",
-        "reading": "4 minutos",
+        "title": "Cómo se pronuncia OUGH en inglés: though, through, tough, thought y más",
+        "seo_title": "Cómo se pronuncia though, through, tough y thought",
+        "description": "Cómo se pronuncia though, through, tough, enough, cough y thought: tabla de palabras con OUGH con IPA americana y británica, grupos de sonido y ejercicio.",
+        "lede": "La ortografía inglesa no siempre avisa. OUGH puede sonar de siete maneras distintas en palabras comunes, así que estas palabras se aprenden mejor por familias y con audio.",
+        "reading": "7 minutos",
+        "published": "2026-06-28",
         "toc": [
-            ("lista", "Lista rápida"),
-            ("errores", "Error típico"),
+            ("lista", "Tabla OUGH"),
+            ("grupos", "Los 7 sonidos"),
+            ("errores", "Though, through, thought"),
             ("metodo", "Método"),
-            ("contexto", "Contexto"),
+            ("ejercicio", "Ejercicio"),
+            ("contexto", "Por qué pasa"),
         ],
         "related": [
-            "guia-pronunciacion-ingles-espanoles",
-            "pronunciacion-ingles-para-espanoles",
-            "actual-vs-actually",
-            "ligar-palabras-ingles",
+            "sonido-th-ingles",
+            "letras-mudas-ingles",
+            "palabras-ingles-mal-pronunciadas",
+            "vocales-ingles-cortas-largas",
+        ],
+        "quick_answer": "<strong>Though</strong> se pronuncia /ðoʊ/ (US) o /ðəʊ/ (UK) y rima con <em>go</em>; <strong>through</strong> es /θruː/ y rima con <em>too</em>; <strong>tough</strong> es /tʌf/, como <em>stuff</em>; <strong>cough</strong> es /kɒf/ (UK) o /kɑːf/ (US); y <strong>thought</strong> es /θɔːt/ (UK) o /θɑːt/ (US). OUGH no tiene una regla única: se aprende por grupos de sonido.",
+        "faq": [
+            ("¿Cómo se pronuncia though en inglés?", "<em>Though</em> se pronuncia <span class=\"ipa\">/ðoʊ/</span> en inglés americano y <span class=\"ipa\">/ðəʊ/</span> en británico: TH sonora, con la lengua entre los dientes, y una vocal como la de <em>go</em>. La GH no suena. Significa “aunque” o, al final de la frase, “sin embargo”."),
+            ("¿Qué diferencia hay entre though, through y thought?", "<em>Though</em> (<span class=\"ipa\">/ðoʊ/</span> US, <span class=\"ipa\">/ðəʊ/</span> UK) significa “aunque” y rima con <em>go</em>; <em>through</em> (<span class=\"ipa\">/θruː/</span>) significa “a través de” y rima con <em>too</em>; <em>thought</em> (<span class=\"ipa\">/θɑːt/</span> US, <span class=\"ipa\">/θɔːt/</span> UK) es “pensamiento” o el pasado de <em>think</em>. Las dos últimas llevan TH sorda."),
+            ("¿Cómo se pronuncia enough?", "<em>Enough</em> se pronuncia <span class=\"ipa\">/ɪˈnʌf/</span> en británico y <span class=\"ipa\">/əˈnʌf/</span> en americano, con el acento en la segunda sílaba. La GH suena como una F, igual que en <em>tough</em> y <em>rough</em>."),
+            ("¿Hay alguna regla para pronunciar OUGH?", "No hay una regla única, pero sí tendencias: <em>-ought</em> suele sonar como en <em>thought</em> (<em>bought</em>, <em>brought</em>, <em>fought</em>), con la excepción de <em>drought</em>, que rima con <em>now</em>. Lo más fiable es aprender las palabras frecuentes por grupos de sonido y con audio."),
+            ("¿Through y threw se pronuncian igual?", "Sí. <em>Through</em> (a través de) y <em>threw</em> (pasado de <em>throw</em>, lanzar) son homófonos: las dos se pronuncian <span class=\"ipa\">/θruː/</span>, tanto en británico como en americano."),
         ],
         "body": """
-                <p>Si buscas una prueba rápida de que el inglés no se pronuncia como se escribe, mira la combinación <strong>ough</strong>. La misma secuencia aparece en palabras muy comunes, pero no mantiene un sonido único.</p>
-                <p>La solución no es frustrarse ni buscar una regla perfecta. La solución práctica es agrupar, escuchar y memorizar las palabras de más uso.</p>
-
-                <h2 id="lista">Lista rápida de palabras con OUGH</h2>
-                <div class="example-grid">
-                    <div class="mini-card"><strong>Though</strong><span>Aunque, sin embargo. En redes también verás <em>tho</em>.</span></div>
-                    <div class="mini-card"><strong>Through</strong><span>A través de. En usos informales aparece como <em>thru</em>.</span></div>
-                    <div class="mini-card"><strong>Tough</strong><span>Difícil, duro o resistente.</span></div>
-                    <div class="mini-card"><strong>Cough</strong><span>Tos. Aparece en expresiones como <em>cough drops</em>.</span></div>
-                    <div class="mini-card"><strong>Enough</strong><span>Suficiente. Muy frecuente en conversación.</span></div>
-                    <div class="mini-card"><strong>Thought</strong><span>Pensamiento o pasado de <em>think</em>.</span></div>
-                </div>
-
-                <h2 id="errores">El error típico: hacerlas rimar</h2>
-                <p>La tentación para un hispanohablante es leer todas estas palabras con un patrón estable. El problema es que <em>though</em>, <em>through</em>, <em>tough</em> y <em>thought</em> no funcionan como una familia fonética limpia.</p>
-                <p>Por eso conviene practicar cada palabra dentro de una frase corta. No quieres recordar solo una transcripción aproximada; quieres que la boca la encuentre cuando estés hablando.</p>
-
+                <p>Si buscas una prueba rápida de que el inglés no se pronuncia como se escribe, mira la combinación <strong>ough</strong>. Aparece en palabras muy comunes, como <em>though</em>, <em>through</em>, <em>tough</em> o <em>thought</em>, pero no mantiene un sonido único: solo en palabras de uso diario puede sonar de siete maneras distintas.</p>
+                <p>La solución no es frustrarse ni buscar una regla perfecta. La solución práctica es agrupar, escuchar y memorizar las palabras de más uso. Aquí tienes la tabla completa, los grupos de sonido y un ejercicio para comprobar si ya no caes en la trampa.</p>
+                <h2 id="lista">Tabla: cómo se pronuncian las palabras con OUGH</h2>
+                <p>La primera columna fonética es la pronunciación americana (US) y la segunda, la británica (UK).</p>
+                <table class="data-table">
+                <thead><tr><th>Palabra</th><th>IPA US</th><th>IPA UK</th><th>Significado</th><th>Grupo de sonido</th></tr></thead>
+                <tbody>
+                <tr><td><strong>though</strong></td><td><span class="ipa">/ðoʊ/</span></td><td><span class="ipa">/ðəʊ/</span></td><td>aunque; sin embargo</td><td>1 · como <em>go</em></td></tr>
+                <tr><td><strong>dough</strong></td><td><span class="ipa">/doʊ/</span></td><td><span class="ipa">/dəʊ/</span></td><td>masa (de pan, de pizza)</td><td>1 · como <em>go</em></td></tr>
+                <tr><td><strong>through</strong></td><td><span class="ipa">/θruː/</span></td><td><span class="ipa">/θruː/</span></td><td>a través de, por</td><td>2 · como <em>too</em></td></tr>
+                <tr><td><strong>tough</strong></td><td><span class="ipa">/tʌf/</span></td><td><span class="ipa">/tʌf/</span></td><td>duro, difícil</td><td>3 · como <em>stuff</em></td></tr>
+                <tr><td><strong>rough</strong></td><td><span class="ipa">/rʌf/</span></td><td><span class="ipa">/rʌf/</span></td><td>áspero; brusco; aproximado</td><td>3 · como <em>stuff</em></td></tr>
+                <tr><td><strong>enough</strong></td><td><span class="ipa">/əˈnʌf/</span></td><td><span class="ipa">/ɪˈnʌf/</span></td><td>suficiente, bastante</td><td>3 · como <em>stuff</em></td></tr>
+                <tr><td><strong>cough</strong></td><td><span class="ipa">/kɑːf/</span></td><td><span class="ipa">/kɒf/</span></td><td>tos; toser</td><td>4 · como <em>off</em></td></tr>
+                <tr><td><strong>bough</strong></td><td><span class="ipa">/baʊ/</span></td><td><span class="ipa">/baʊ/</span></td><td>rama gruesa de un árbol</td><td>5 · como <em>now</em></td></tr>
+                <tr><td><strong>plough</strong></td><td><span class="ipa">/plaʊ/</span></td><td><span class="ipa">/plaʊ/</span></td><td>arado; arar (en EE. UU. se escribe <em>plow</em>)</td><td>5 · como <em>now</em></td></tr>
+                <tr><td><strong>thought</strong></td><td><span class="ipa">/θɑːt/</span></td><td><span class="ipa">/θɔːt/</span></td><td>pensamiento; pasado de <em>think</em></td><td>6 · como <em>caught</em></td></tr>
+                <tr><td><strong>bought</strong></td><td><span class="ipa">/bɑːt/</span></td><td><span class="ipa">/bɔːt/</span></td><td>pasado de <em>buy</em> (comprar)</td><td>6 · como <em>caught</em></td></tr>
+                <tr><td><strong>brought</strong></td><td><span class="ipa">/brɑːt/</span></td><td><span class="ipa">/brɔːt/</span></td><td>pasado de <em>bring</em> (traer)</td><td>6 · como <em>caught</em></td></tr>
+                <tr><td><strong>taught</strong></td><td><span class="ipa">/tɑːt/</span></td><td><span class="ipa">/tɔːt/</span></td><td>pasado de <em>teach</em> (enseñar); se escribe con AUGH</td><td>6 · como <em>caught</em></td></tr>
+                <tr><td><strong>thorough</strong></td><td><span class="ipa">/ˈθɝːoʊ/</span></td><td><span class="ipa">/ˈθʌrə/</span></td><td>minucioso, exhaustivo</td><td>7 · final débil</td></tr>
+                <tr><td><strong>borough</strong></td><td><span class="ipa">/ˈbɝːoʊ/</span></td><td><span class="ipa">/ˈbʌrə/</span></td><td>distrito, municipio</td><td>7 · final débil</td></tr>
+                </tbody>
+                </table>
+                <p><em>Taught</em> no se escribe con OUGH sino con AUGH, pero está aquí a propósito: rima con <em>thought</em> y <em>bought</em>, y se confunde muchísimo con ellos.</p>
+                <h2 id="grupos">Los 7 sonidos de OUGH, agrupados</h2>
+                <p>Memorizar quince palabras sueltas cuesta. Memorizar siete grupos, cada uno con una palabra fácil de referencia, cuesta mucho menos.</p>
+                <ol>
+                <li><strong>Como <em>go</em>: <span class="ipa">/oʊ/</span> (US), <span class="ipa">/əʊ/</span> (UK).</strong> <em>Though</em>, <em>dough</em> y también <em>although</em>. La GH no suena. En Estados Unidos, <em>doughnut</em> se escribe a menudo <em>donut</em>, que es justo como suena.</li>
+                <li><strong>Como <em>too</em>: <span class="ipa">/uː/</span>.</strong> <em>Through</em> y <em>throughout</em>. En notas informales verás <em>thru</em>. Ojo: <em>through</em> suena igual que <em>threw</em>, el pasado de <em>throw</em> (lanzar).</li>
+                <li><strong>Como <em>stuff</em>: <span class="ipa">/ʌf/</span>.</strong> <em>Tough</em>, <em>rough</em>, <em>enough</em>. Aquí la GH suena como una F, y la vocal es la de <em>love</em> o <em>cup</em>, no una o española.</li>
+                <li><strong>Como <em>off</em>: <span class="ipa">/ɒf/</span> (UK), <span class="ipa">/ɑːf/</span> (US).</strong> <em>Cough</em> y la menos frecuente <em>trough</em> (abrevadero). También acaba en F, pero con otra vocal.</li>
+                <li><strong>Como <em>now</em>: <span class="ipa">/aʊ/</span>.</strong> <em>Bough</em>, <em>plough</em> y <em>drought</em> (sequía), que se pronuncia <span class="ipa">/draʊt/</span> aunque parezca de la familia de <em>thought</em>.</li>
+                <li><strong>Como <em>caught</em>: <span class="ipa">/ɔː/</span> (UK), <span class="ipa">/ɑː/</span> (US).</strong> <em>Thought</em>, <em>bought</em>, <em>brought</em>, <em>fought</em>, <em>ought</em>. Es el grupo más útil, porque incluye pasados muy frecuentes. En gran parte de Estados Unidos esta vocal se acerca a una a larga y abierta; por eso las transcripciones americanas usan <span class="ipa">/ɑː/</span>.</li>
+                <li><strong>Final débil: <span class="ipa">/ə/</span> (UK), <span class="ipa">/oʊ/</span> (US).</strong> <em>Thorough</em> y <em>borough</em> tienen dos sílabas. En británico, OUGH se reduce a una schwa; en americano, suena como el final de <em>go</em>. Nueva York, por ejemplo, está dividida en cinco <em>boroughs</em>.</li>
+                </ol>
+                <div class="lesson-box"><strong>Dos curiosidades:</strong> en Irlanda, <em>lough</em> (lago) se pronuncia con un sonido muy parecido a nuestra jota, que es más o menos como sonaba la GH hace siglos. Y <em>hiccough</em> es una grafía antigua de <em>hiccup</em> (hipo), y se pronuncia igual: <span class="ipa">/ˈhɪkʌp/</span>.</div>
+                <h2 id="errores">El error típico: confundir though, through, thought y tough</h2>
+                <p>La tentación para un hispanohablante es leer todas estas palabras con un patrón estable. El problema es que <em>though</em>, <em>through</em>, <em>tough</em> y <em>thought</em> no funcionan como una familia fonética limpia: cambia la vocal, cambia el final y hasta cambia la TH.</p>
+                <table class="data-table">
+                <thead><tr><th>Palabra</th><th>Empieza con</th><th>Termina en</th><th>Pista</th></tr></thead>
+                <tbody>
+                <tr><td><em>though</em></td><td>TH sonora <span class="ipa">/ð/</span></td><td><span class="ipa">/oʊ/</span> (US), <span class="ipa">/əʊ/</span> (UK)</td><td>rima con <em>go</em></td></tr>
+                <tr><td><em>through</em></td><td>TH sorda + R <span class="ipa">/θr/</span></td><td><span class="ipa">/uː/</span></td><td>rima con <em>too</em></td></tr>
+                <tr><td><em>thought</em></td><td>TH sorda <span class="ipa">/θ/</span></td><td><span class="ipa">/ɑːt/</span> (US), <span class="ipa">/ɔːt/</span> (UK)</td><td>rima con <em>caught</em></td></tr>
+                <tr><td><em>taught</em></td><td>T normal <span class="ipa">/t/</span></td><td><span class="ipa">/ɑːt/</span> (US), <span class="ipa">/ɔːt/</span> (UK)</td><td>como <em>thought</em>, pero con T</td></tr>
+                <tr><td><em>tough</em></td><td>T normal <span class="ipa">/t/</span></td><td><span class="ipa">/ʌf/</span></td><td>rima con <em>stuff</em></td></tr>
+                </tbody>
+                </table>
+                <p>Fíjate en el par <em>thought</em> / <em>taught</em>: solo cambia el primer sonido. Si no haces bien la TH, “pensé” y “enseñé” suenan igual. Por eso conviene practicar cada palabra dentro de una frase corta: no quieres recordar solo una transcripción aproximada; quieres que la boca la encuentre cuando estés hablando. Si la TH te cuesta, repasa la guía del <a href="/articulos/sonido-th-ingles.html">sonido TH en inglés</a>.</p>
                 <h2 id="metodo">Método de práctica</h2>
                 <ol>
-                    <li>Escucha la lista completa sin leer, para que el sonido llegue antes que la ortografía.</li>
-                    <li>Repite palabra por palabra, exagerando el sonido difícil.</li>
-                    <li>Añade una frase mínima: <em>That was tough</em>, <em>I have enough</em>, <em>go through it</em>.</li>
-                    <li>Vuelve al audio y comprueba si ya distingues los cambios.</li>
+                <li>Escucha la lista completa sin leer, para que el sonido llegue antes que la ortografía.</li>
+                <li>Repite palabra por palabra, exagerando el sonido difícil.</li>
+                <li>Añade una frase mínima: <em>That was tough</em>, <em>I've had enough</em>, <em>Go through the door</em>, <em>I thought so</em>, <em>She brought cake</em>.</li>
+                <li>Vuelve al audio y comprueba si ya distingues los cambios.</li>
                 </ol>
-                <div class="lesson-box">
-                    <strong>Practica ahora:</strong> escucha el audio de <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">though, through, tough, cough, enough, bough, thought y plough</a>.
-                </div>
-
-                <h2 id="contexto">Por qué hay tantas excepciones</h2>
-                <p>El inglés ha absorbido palabras y sonidos de muchos orígenes. Esa historia explica parte del caos: la ortografía conserva capas antiguas, mientras que la pronunciación cambió de manera desigual. Para aprenderlo, la memoria auditiva suele ser más fiable que la intuición visual.</p>
-                <p>La buena noticia es que no necesitas dominar todas las excepciones a la vez. Empieza por las palabras que aparecen en conversaciones, vídeos, trabajo y viajes.</p>
+                <div class="lesson-box"><strong>Practica ahora:</strong> escucha <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">though, through, tough, cough, enough, bough, thought y plough</a>, y después el contraste corto de <a href="/audio/though-tough-thought-taught.html">though, tough, thought y taught</a>.</div>
+                <h2 id="ejercicio">Ejercicio: ¿con qué rima?</h2>
+                <p>Responde en voz alta antes de abrir cada solución.</p>
+                <details class="exercise"><summary>1. ¿<em>Though</em> rima con <em>go</em>, con <em>too</em> o con <em>off</em>?</summary><p>Con <em>go</em>: <span class="ipa">/ðoʊ/</span> (US), <span class="ipa">/ðəʊ/</span> (UK). La GH no suena.</p></details>
+                <details class="exercise"><summary>2. ¿Cuál no rima con las demás: <em>tough</em>, <em>rough</em>, <em>enough</em>, <em>cough</em>?</summary><p><em>Cough</em>. Las otras tres terminan en <span class="ipa">/ʌf/</span>; <em>cough</em> es <span class="ipa">/kɒf/</span> (UK) o <span class="ipa">/kɑːf/</span> (US).</p></details>
+                <details class="exercise"><summary>3. ¿Qué otra palabra inglesa suena exactamente igual que <em>through</em>?</summary><p><em>Threw</em>, el pasado de <em>throw</em>. Las dos se pronuncian <span class="ipa">/θruː/</span>.</p></details>
+                <details class="exercise"><summary>4. ¿<em>Bough</em> rima con <em>cow</em> o con <em>cough</em>?</summary><p>Con <em>cow</em>: <span class="ipa">/baʊ/</span>. Igual que <em>plough</em>.</p></details>
+                <details class="exercise"><summary>5. <em>I ___ you were coming</em> (pensé) / <em>She ___ me to swim</em> (me enseñó).</summary><p><em>Thought</em> y <em>taught</em>. Se distinguen solo por el primer sonido: TH sorda <span class="ipa">/θ/</span> frente a T.</p></details>
+                <details class="exercise"><summary>6. <em>Brought</em>: ¿es el pasado de <em>bring</em> o de <em>buy</em>?</summary><p>De <em>bring</em> (traer). El pasado de <em>buy</em> es <em>bought</em>. Riman entre sí, así que la única pista es la R.</p></details>
+                <details class="exercise"><summary>7. ¿Cuántas sílabas tiene <em>thorough</em>? ¿Y <em>through</em>?</summary><p><em>Thorough</em> tiene dos: <span class="ipa">/ˈθʌrə/</span> (UK), <span class="ipa">/ˈθɝːoʊ/</span> (US). <em>Through</em> tiene una: <span class="ipa">/θruː/</span>.</p></details>
+                <h2 id="contexto">¿Por qué OUGH tiene tantas pronunciaciones?</h2>
+                <p>El inglés ha absorbido palabras y sonidos de muchos orígenes, y su ortografía conserva capas antiguas. En el caso de OUGH, la GH representaba hace siglos un sonido parecido a nuestra jota. Con el tiempo, ese sonido desapareció en unas palabras (<em>though</em>, <em>thought</em>) y se convirtió en F en otras (<em>tough</em>, <em>enough</em>), mientras las vocales también evolucionaban de forma desigual. La escritura, en cambio, se quedó fija. Para aprenderlo, la memoria auditiva suele ser más fiable que la intuición visual.</p>
+                <p>La buena noticia es que no necesitas dominar todas las excepciones a la vez. Empieza por las que aparecen en conversaciones, vídeos, trabajo y viajes: <em>though</em>, <em>through</em>, <em>enough</em>, <em>thought</em>, <em>bought</em> y <em>brought</em>. Si te gustan este tipo de trampas, sigue con las <a href="/articulos/letras-mudas-ingles.html">letras mudas</a> y las <a href="/articulos/palabras-ingles-mal-pronunciadas.html">palabras que los españoles pronuncian mal</a>.</p>
         """,
     },
     {
@@ -1829,155 +1953,352 @@ ARTICLES: list[dict] = [
     {
         "slug": "ligar-palabras-ingles",
         "category": "Pronunciación",
-        "title": "Cómo ligar palabras en inglés: gonna, wanna, gotta, lemme y más",
-        "seo_title": "Cómo ligar palabras en inglés | Gonna, wanna y gotta",
-        "description": "Aprende cómo se ligan palabras en inglés hablado: going to, want to, have got to, let me, give me, could have y más.",
+        "title": "Gonna, wanna, gotta y más: cómo ligar palabras en inglés (connected speech)",
+        "seo_title": "Gonna, wanna, gotta: significado y cómo ligar en inglés",
+        "description": "Qué significan gonna, wanna, gotta, lemme, kinda o dunno, cuándo se pueden escribir y cómo ligar palabras en inglés hablado. Con tabla, audios y ejercicio.",
         "lede": "El inglés real no suena como palabras separadas en fila. Si no practicas las uniones, entenderás menos y sonarás más rígido.",
-        "reading": "6 minutos",
+        "reading": "8 minutos",
+        "published": "2026-06-28",
         "toc": [
-            ("por-que", "Por qué ligar"),
-            ("formas", "Formas comunes"),
-            ("escuchar", "Escuchar mejor"),
-            ("practicar", "Práctica"),
+            ("por-que", "Qué es"),
+            ("formas", "Tabla de reducciones"),
+            ("mecanismos", "Cómo se ligan"),
+            ("escuchar", "Listening"),
+            ("practicar", "Práctica y ejercicio"),
         ],
         "related": [
             "pronunciacion-ingles-para-espanoles",
             "how-are-you-respuestas-ingles",
-            "palabras-ough-pronunciacion-ingles",
+            "como-se-pronuncia-the",
+            "guia-pronunciacion-ingles-espanoles",
+        ],
+        "quick_answer": "<strong>Gonna</strong> significa <em>going to</em> (ir a), <strong>wanna</strong> es <em>want to</em> (querer) y <strong>gotta</strong> es <em>(have) got to</em> (tener que). Son formas reducidas del inglés hablado, lo que se llama <em>connected speech</em>: al hablar rápido, las palabras se ligan y se debilitan. Son normales en conversación, pero en un texto formal se escribe la forma completa.",
+        "faq": [
+            ("¿Qué significa gonna en inglés?", "<em>Gonna</em> es la forma hablada de <em>going to</em> cuando va seguido de un verbo y significa “ir a” hacer algo: <em>I'm gonna call her</em> (voy a llamarla). No se usa cuando <em>going to</em> indica un lugar: <em>I'm going to Madrid</em> no se reduce."),
+            ("¿Qué significa gotta?", "<em>Gotta</em> es la forma reducida de <em>(have) got to</em> y significa “tener que”: <em>I gotta go</em> (me tengo que ir). Es informal y solo se usa en presente; para el pasado se dice <em>I had to go</em>."),
+            ("¿Se pueden escribir gonna, wanna y gotta?", "Sí, pero solo en contextos informales: mensajes, redes sociales, letras de canciones o diálogos. En un email de trabajo, un examen oficial o un CV escribe la forma completa: <em>going to</em>, <em>want to</em>, <em>have to</em> o <em>have got to</em>."),
+            ("¿Qué es el connected speech en inglés?", "Es la forma en que las palabras se unen, se debilitan o pierden sonidos al hablar con naturalidad: <em>pick it up</em> suena como una sola palabra, <em>to</em> se reduce a <span class=\"ipa\">/tə/</span> y <em>did you</em> se convierte en <em>didja</em>. Reconocerlo es clave para entender a los nativos."),
+            ("¿Está mal decir gonna o wanna?", "No. Son formas normales del inglés hablado que usan hablantes nativos de todos los niveles. Lo que sí conviene es usarlas solo al hablar o en textos informales, y no forzarlas si todavía te salen artificiales."),
         ],
         "body": """
-                <p>Para sonar más natural en inglés no basta con pronunciar cada palabra correctamente. También hay que aprender cómo se unen cuando la gente habla rápido. En español hacemos lo mismo, pero cuando escuchamos inglés tendemos a esperar palabras separadas.</p>
+                <p>Para sonar más natural en inglés no basta con pronunciar cada palabra correctamente. También hay que aprender a ligar palabras como lo hace la gente cuando habla rápido: <em>going to</em> se convierte en <em>gonna</em>, <em>want to</em> en <em>wanna</em> y <em>pick it up</em> suena casi como una sola palabra. En español hacemos lo mismo, pero cuando escuchamos inglés tendemos a esperar palabras separadas.</p>
                 <p>Practicar estas uniones mejora dos cosas a la vez: te entienden mejor y tú entiendes mejor a los nativos.</p>
-
-                <h2 id="por-que">Por qué ligar palabras cambia tanto</h2>
-                <p>Cuando dices una frase palabra por palabra, puedes ser correcto y aun así sonar poco natural. En conversación, muchas combinaciones se reducen porque la boca busca el camino más eficiente.</p>
-                <div class="lesson-box">
-                    <strong>Importante:</strong> muchas formas reducidas son normales al hablar, pero no siempre conviene escribirlas. Puedes decir algo parecido a <em>wanna</em>, pero en un email formal escribe <em>want to</em>.
-                </div>
-
-                <h2 id="formas">Formas comunes que debes reconocer</h2>
+                <h2 id="por-que">¿Qué es el connected speech y por qué cambia tanto?</h2>
+                <p>Al conjunto de uniones, reducciones y sonidos que desaparecen al hablar se le llama <strong>connected speech</strong> (habla encadenada). Cuando dices una frase palabra por palabra, puedes ser correcto y aun así sonar poco natural. En conversación, muchas combinaciones se reducen porque la boca busca el camino más eficiente.</p>
+                <p>No es algo exótico: en español decimos <em>pa’ casa</em> en vez de <em>para casa</em>, <em>vamo’ a ver</em>, y unimos <em>los otros</em> como si fuera <em>lo-so-tros</em>. El inglés lo hace todavía más, sobre todo con las palabras pequeñas.</p>
+                <div class="lesson-box"><strong>Importante:</strong> muchas formas reducidas son normales al hablar, pero no siempre conviene escribirlas. Puedes decir algo parecido a <em>wanna</em>, pero en un email formal escribe <em>want to</em>.</div>
+                <h2 id="formas">Tabla de reducciones: gonna, wanna, gotta y compañía</h2>
+                <table class="data-table">
+                <thead><tr><th>Forma hablada</th><th>Forma completa</th><th>Significado</th><th>Ejemplo</th><th>¿Se puede escribir?</th></tr></thead>
+                <tbody>
+                <tr><td><strong>gonna</strong></td><td>going to (+ verbo)</td><td>ir a (futuro, planes)</td><td><em>I'm gonna call her.</em></td><td>En chats, redes y diálogos informales. No en textos formales.</td></tr>
+                <tr><td><strong>wanna</strong></td><td>want to / want a</td><td>querer (hacer algo)</td><td><em>I wanna go to London.</em></td><td>Igual que <em>gonna</em>: solo informal.</td></tr>
+                <tr><td><strong>gotta</strong></td><td>(have) got to / got a</td><td>tener que</td><td><em>I gotta go.</em></td><td>Informal. En un texto neutro: <em>I've got to go</em> o <em>I have to go</em>.</td></tr>
+                <tr><td><strong>hafta / hasta</strong></td><td>have to / has to</td><td>tener que</td><td><em>She hasta work.</em></td><td>Casi nunca se escribe: se oye.</td></tr>
+                <tr><td><strong>lemme</strong></td><td>let me</td><td>déjame</td><td><em>Lemme see.</em></td><td>Solo en mensajes muy informales.</td></tr>
+                <tr><td><strong>gimme</strong></td><td>give me</td><td>dame</td><td><em>Gimme that.</em></td><td>Solo muy informal.</td></tr>
+                <tr><td><strong>kinda / sorta</strong></td><td>kind of / sort of</td><td>un poco, más o menos; tipo de</td><td><em>I'm kinda tired.</em></td><td>Informal.</td></tr>
+                <tr><td><strong>outta</strong></td><td>out of</td><td>fuera de</td><td><em>Get outta here!</em></td><td>Informal, sobre todo en frases hechas.</td></tr>
+                <tr><td><strong>shoulda / coulda / woulda</strong></td><td>should have / could have / would have</td><td>debería haber / podría haber / habría</td><td><em>You shoulda told me.</em></td><td>Informal. En texto neutro: <em>should've</em>. Nunca <em>should of</em>.</td></tr>
+                <tr><td><strong>dunno</strong></td><td>(I) don't know</td><td>no sé</td><td><em>Dunno, maybe.</em></td><td>En chats.</td></tr>
+                <tr><td><strong>didja</strong></td><td>did you</td><td>pregunta en pasado: ¿viste...?, ¿hiciste...?</td><td><em>Didja see that?</em></td><td>Casi nunca se escribe: se oye.</td></tr>
+                </tbody>
+                </table>
+                <p>Tres matices que evitan errores muy típicos:</p>
+                <ul>
+                <li><strong><em>Gonna</em> solo sustituye a <em>going to</em> cuando va seguido de un verbo.</strong> <em>I'm gonna eat</em> es correcto; <em>I'm going to Madrid</em> nunca se convierte en <em>I'm gonna Madrid</em>.</li>
+                <li><strong><em>Wanna</em> no vale para <em>wants to</em>.</strong> Se dice <em>I wanna go</em>, pero <em>he wants to go</em>, no <em>he wanna go</em>.</li>
+                <li><strong><em>Has to</em> suena casi como el “hasta” español</strong>, <span class="ipa">/ˈhæstə/</span>, y <em>have to</em> se dice <span class="ipa">/ˈhæftə/</span>, con F. La V y la S se ensordecen por la T que viene detrás.</li>
+                </ul>
+                <p>Y para escucharlas en frases reales:</p>
                 <div class="example-grid">
-                    <div class="mini-card"><strong>going to → gonna</strong><span><a href="/audio/going-to.html">Escuchar going to</a></span></div>
-                    <div class="mini-card"><strong>want to → wanna</strong><span><a href="/audio/i-want-to-go-to-london.html">Escuchar want to</a></span></div>
-                    <div class="mini-card"><strong>have got to → gotta</strong><span><a href="/audio/i-gotta-go.html">Escuchar gotta</a></span></div>
-                    <div class="mini-card"><strong>let me → lemme</strong><span><a href="/audio/let-me-see.html">Escuchar let me</a></span></div>
-                    <div class="mini-card"><strong>give me → gimme</strong><span><a href="/audio/give-me-that.html">Escuchar give me</a></span></div>
-                    <div class="mini-card"><strong>could have → could've</strong><span><a href="/audio/could-have-should-have-would-have.html">Escuchar could have</a></span></div>
+                <div class="mini-card"><strong>going to → gonna</strong><span><a href="/audio/going-to.html">Escuchar going to</a></span></div>
+                <div class="mini-card"><strong>want to → wanna</strong><span><a href="/audio/i-want-to-go-to-london.html">Escuchar I want to go to London</a></span></div>
+                <div class="mini-card"><strong>have got to → gotta</strong><span><a href="/audio/i-gotta-go.html">Escuchar I gotta go</a></span></div>
+                <div class="mini-card"><strong>let me → lemme</strong><span><a href="/audio/let-me-see.html">Escuchar Let me see</a></span></div>
+                <div class="mini-card"><strong>give me → gimme</strong><span><a href="/audio/give-me-that.html">Escuchar Give me that</a></span></div>
+                <div class="mini-card"><strong>could have → could've</strong><span><a href="/audio/could-have-should-have-would-have.html">Escuchar could have, should have, would have</a></span></div>
+                <div class="mini-card"><strong>out of, kind of, sort of</strong><span><a href="/audio/out-of-kind-of-sort-of.html">Escuchar out of, kind of, sort of</a></span></div>
+                <div class="mini-card"><strong>did you → didja</strong><span><a href="/audio/did-you-see-that.html">Escuchar Did you see that?</a></span></div>
                 </div>
-
+                <h2 id="mecanismos">¿Cómo se ligan las palabras en inglés? Los 5 mecanismos</h2>
+                <p>Las reducciones de la tabla no son caprichos: salen de unos pocos mecanismos que se repiten. Si los reconoces, entenderás también combinaciones que nadie te ha enseñado. Las transcripciones de esta sección valen para británico y americano salvo que se indique otra cosa.</p>
+                <h3>1. Consonante final + vocal inicial</h3>
+                <p>La consonante del final de una palabra se “pega” a la vocal de la siguiente. <em>Pick it up</em> se oye casi como <em>pi-ki-tup</em>, y <em>take it off</em> como <em>tei-ki-toff</em>. En inglés americano, además, la T entre vocales suele sonar como nuestra r de <em>pero</em>, así que <em>got it</em> se acerca a <em>gá-rit</em>. Practica con <a href="/audio/pick-it-up.html">pick it up</a> y <a href="/audio/take-it-off.html">take it off</a>.</p>
+                <h3>2. Vocal + vocal: aparece una W o una Y</h3>
+                <p>Cuando una palabra termina en vocal y la siguiente empieza por vocal, el inglés mete un puente suave: <em>go on</em> suena como <em>go-w-on</em>, <em>do it</em> como <em>do-w-it</em> y <em>I am</em> como <em>I-y-am</em>. Practícalo con <a href="/audio/i-am-spanish.html">I am Spanish</a>.</p>
+                <h3>3. Formas débiles: las palabras pequeñas se encogen</h3>
+                <p>Las palabras gramaticales casi nunca llevan su vocal completa dentro de la frase: <em>to</em> suena <span class="ipa">/tə/</span>, <em>of</em> <span class="ipa">/əv/</span> o incluso <span class="ipa">/ə/</span>, <em>and</em> <span class="ipa">/ən/</span> o <span class="ipa">/n/</span> (<em>fish ’n’ chips</em>), <em>can</em> <span class="ipa">/kən/</span>, <em>for</em> <span class="ipa">/fə/</span> (UK) · <span class="ipa">/fɚ/</span> (US) y <em>them</em> <span class="ipa">/ðəm/</span> o simplemente <em>’em</em> <span class="ipa">/əm/</span>. De ahí salen <em>kinda</em>, <em>outta</em> o <em>shoulda</em>. Practica con <a href="/audio/tell-them-to-come-back-home.html">Tell them to come back home</a>, donde <em>them</em> y <em>to</em> son justo ese tipo de palabras.</p>
+                <h3>4. Sonidos que desaparecen</h3>
+                <p>Una T o una D entre dos consonantes a menudo se pierde: <em>next week</em> suena como <em>nex week</em>, <em>last night</em> como <em>las night</em>, y <em>I don't know</em> puede quedar en <em>I dunno</em>. No es pereza: es la forma normal de hablar rápido.</p>
+                <h3>5. Sonidos que se fusionan</h3>
+                <p>Una D seguida de Y se convierte en el sonido de <em>John</em>: <em>did you</em> → <em>didja</em> <span class="ipa">/ˈdɪdʒə/</span>, <em>would you</em> → <em>wouldja</em>. Una T seguida de Y se convierte en el sonido de <em>church</em>: <em>got you</em> → <em>gotcha</em>, <em>don't you</em> → <em>don'tcha</em>. Practica con <a href="/audio/did-you-see-that.html">Did you see that?</a></p>
                 <h2 id="escuchar">Esto también mejora tu listening</h2>
-                <p>Si solo conoces la forma escrita, <em>I have got to go</em>, puede que no reconozcas <em>I gotta go</em>. No es que hablen mal: es que el inglés oral usa reducciones constantemente.</p>
-                <p>Lo mismo ocurre con <em>out of</em>, <em>kind of</em> y <em>sort of</em>, que en conversación pueden sonar como <em>outta</em>, <em>kinda</em> y <em>sorta</em>.</p>
-
+                <p>Si solo conoces la forma escrita, <em>I have got to go</em>, puede que no reconozcas <em>I gotta go</em>. No es que hablen mal: es que el inglés oral usa reducciones constantemente, en series, en canciones, en reuniones y en la cola del supermercado.</p>
+                <p>Lo mismo ocurre con <em>out of</em>, <em>kind of</em> y <em>sort of</em>, que en conversación pueden sonar como <em>outta</em>, <em>kinda</em> y <em>sorta</em>. Cuanto antes entrenes el oído con estas formas, antes dejarás de perderte media frase cuando alguien habla a velocidad normal. Y no hace falta que tú las uses todas: con reconocerlas ya ganas mucho. Si quieres empezar a usar alguna, las más extendidas al hablar son <em>gonna</em>, <em>wanna</em> y <em>kinda</em>.</p>
                 <h2 id="practicar">Cómo practicarlo</h2>
                 <ol>
-                    <li>Escucha primero la versión lenta y después la versión conversacional.</li>
-                    <li>Repite la frase completa, no solo la combinación aislada.</li>
-                    <li>Grábate y comprueba si sigues separando demasiado las palabras.</li>
-                    <li>Úsalo en frases que dirías de verdad: <em>I gotta go</em>, <em>lemme see</em>, <em>give me that</em>.</li>
+                <li>Di la frase primero despacio, palabra por palabra, y después a velocidad normal, ligando.</li>
+                <li>Repite la frase completa, no solo la combinación aislada.</li>
+                <li>Grábate y comprueba si sigues separando demasiado las palabras.</li>
+                <li>Úsalo en frases que dirías de verdad: <em>I gotta go</em>, <em>lemme see</em>, <em>give me that</em>.</li>
                 </ol>
-                <p>Empieza por la colección de <a href="/audios.html#ligar-palabras">audios para ligar palabras</a>.</p>
+                <p>Ahora ponte a prueba: ¿cómo sonarían estas frases en una conversación relajada?</p>
+                <details class="exercise"><summary>1. <em>I'm going to call you later.</em></summary><p><em>I'm gonna call you later.</em> <em>Going to</em> va seguido de un verbo (<em>call</em>), así que se puede reducir.</p></details>
+                <details class="exercise"><summary>2. <em>I'm going to the gym.</em></summary><p>No cambia. Aquí <em>going to</em> va seguido de un lugar, no de un verbo, así que no hay <em>gonna</em>.</p></details>
+                <details class="exercise"><summary>3. <em>What do you want to do?</em></summary><p><em>What do you wanna do?</em> En habla muy rápida, incluso algo como <em>whaddaya wanna do?</em></p></details>
+                <details class="exercise"><summary>4. <em>You should have told me.</em></summary><p><em>You shoulda told me</em> (o <em>should've</em>). Si lo escribes, nunca <em>should of</em>.</p></details>
+                <details class="exercise"><summary>5. <em>Did you eat?</em></summary><p><em>Didja eat?</em> La D y la Y se fusionan en el sonido de <em>John</em>.</p></details>
+                <details class="exercise"><summary>6. <em>Let me know.</em></summary><p><em>Lemme know.</em> Muy frecuente al final de mensajes y conversaciones.</p></details>
+                <p>Sigue con la colección de <a href="/audios.html">audios para ligar palabras</a> y con cómo se reduce una palabra tan frecuente como <a href="/articulos/como-se-pronuncia-the.html">the</a>. Cinco minutos al día repitiendo frases enteras valen más que memorizar la tabla.</p>
         """,
     },
     {
         "slug": "sonido-th-ingles",
         "category": "Pronunciación",
-        "title": "El sonido TH en inglés: cómo pronunciarlo sin convertirlo en D, T o Z",
-        "seo_title": "Sonido TH en inglés para españoles | Pronunciación y ejemplos",
-        "description": "Aprende cómo pronunciar el sonido TH en inglés con ejemplos como they, this, think y through. Guía para hispanohablantes con audios.",
-        "lede": "El TH no es una D española, ni una T, ni una Z. La diferencia está en la posición de la lengua y en si el sonido vibra o no.",
-        "reading": "5 minutos",
+        "title": "El sonido TH en inglés: cómo pronunciar la TH sorda y la sonora sin convertirlas en D, T o S",
+        "seo_title": "Sonido TH en inglés: cómo pronunciar la TH sorda y sonora",
+        "description": "Cómo pronunciar el sonido TH en inglés: TH sorda /θ/ (think, three) y sonora /ð/ (this, the), posición de la lengua, errores típicos y pares mínimos.",
+        "lede": "El TH no es una D, ni una T, ni una S: es la lengua entre los dientes, con o sin vibración. Y si en tu español distingues casa de caza, ya tienes la mitad del trabajo hecho.",
+        "reading": "8 minutos",
+        "published": "2026-06-28",
         "toc": [
             ("por-que", "Por qué importa"),
-            ("dos-sonidos", "Dos TH"),
+            ("dos-sonidos", "TH sorda y sonora"),
+            ("espanol", "Ya la tienes en español"),
             ("errores", "Errores típicos"),
+            ("pares", "Pares mínimos"),
+            ("lista", "The, this, that"),
             ("practica", "Práctica"),
         ],
         "related": [
+            "como-se-pronuncia-the",
             "pronunciacion-ingles-para-espanoles",
             "palabras-ough-pronunciacion-ingles",
             "vocales-ingles-cortas-largas",
         ],
+        "quick_answer": "El sonido TH en inglés se pronuncia con la punta de la lengua entre los dientes y dejando salir el aire. Hay dos: la <strong>TH sorda /θ/</strong>, sin vibración, de <em>think</em> o <em>three</em> (igual que la c de “cena” en casi toda España), y la <strong>TH sonora /ð/</strong>, con vibración, de <em>this</em>, <em>they</em> o <em>the</em>.",
+        "faq": [
+            ("¿Cómo se pronuncia la TH en inglés?", "Se pone la punta de la lengua entre los dientes, o justo detrás de los de arriba, y se deja salir el aire por encima. Si solo sale aire, es la TH sorda <span class=\"ipa\">/θ/</span> de <em>think</em>; si además vibran las cuerdas vocales, es la TH sonora <span class=\"ipa\">/ð/</span> de <em>this</em>."),
+            ("¿Cuál es la diferencia entre la TH sorda y la TH sonora?", "La posición de la lengua es la misma; cambia la voz. La sorda <span class=\"ipa\">/θ/</span> (<em>think</em>, <em>three</em>, <em>thanks</em>) es solo aire. La sonora <span class=\"ipa\">/ð/</span> (<em>the</em>, <em>this</em>, <em>they</em>, <em>mother</em>) hace vibrar la garganta, como puedes comprobar tocándotela."),
+            ("¿La TH inglesa es igual que la Z española?", "La TH sorda <span class=\"ipa\">/θ/</span> sí es prácticamente igual a la z o la c de <em>zapato</em> y <em>cena</em> tal como se pronuncian en la mayor parte de España. La TH sonora <span class=\"ipa\">/ð/</span> no: se parece más a la d suave de <em>nada</em>."),
+            ("¿Cómo se pronuncia the en inglés?", "Con TH sonora: normalmente <span class=\"ipa\">/ðə/</span> antes de sonido consonante (<em>the book</em>) y <span class=\"ipa\">/ði/</span> antes de sonido vocal (<em>the apple</em>). No se pronuncia como una d española ni como “de”."),
+            ("¿Por qué algunos nativos dicen fink en vez de think?", "Porque en algunos acentos, como muchos de Londres, la TH sorda se pronuncia como F (<em>fink</em>, o <em>free</em> por <em>three</em>). Es un rasgo de acento, no un error, pero para un estudiante es mejor aprender la TH estándar, que se entiende en todas partes."),
+        ],
         "body": """
-                <p>Para muchos hispanohablantes, <em>they</em>, <em>day</em>, <em>think</em> y <em>sink</em> acaban saliendo demasiado parecidas. El problema no suele ser el oído: es que intentamos producir el sonido con una posición de boca española.</p>
-                <p>En inglés, el sonido <strong>TH</strong> se hace colocando la punta de la lengua entre los dientes o justo tocándolos. Esa pequeña diferencia física cambia por completo cómo te entiende un nativo.</p>
-
+                <p>Para muchos hispanohablantes, el sonido TH en inglés es un pequeño misterio: <em>they</em>, <em>day</em>, <em>think</em> y <em>sink</em> acaban saliendo demasiado parecidas. El problema no suele ser el oído: es que intentamos producir el sonido con una posición de boca española.</p>
+                <p>En inglés, el sonido <strong>TH</strong> se hace colocando la punta de la lengua entre los dientes o justo tocándolos. Esa pequeña diferencia física cambia por completo cómo te entiende un nativo. Y hay una sorpresa: si eres de la mayor parte de España, llevas toda la vida haciendo uno de los dos sonidos TH sin saberlo.</p>
                 <h2 id="por-que">Por qué importa tanto</h2>
-                <p>El TH aparece en palabras muy frecuentes: <em>the</em>, <em>this</em>, <em>that</em>, <em>they</em>, <em>think</em>, <em>through</em>, <em>three</em>. Si lo conviertes siempre en D, T, S o Z, muchas frases siguen siendo comprensibles por contexto, pero tu pronunciación pierde claridad en justo las palabras que más repites.</p>
-                <div class="lesson-box">
-                    <strong>Idea clave:</strong> no intentes arreglar el TH pensando en letras. Arregla la posición de la lengua. Primero coloca la lengua; luego añade aire y voz.
-                </div>
-
-                <h2 id="dos-sonidos">Los dos sonidos TH</h2>
+                <p>El TH aparece en palabras muy frecuentes: <em>the</em> (la palabra más común del inglés), <em>this</em>, <em>that</em>, <em>they</em>, <em>think</em>, <em>through</em>, <em>three</em>. Si lo conviertes siempre en D, T, S o Z, muchas frases siguen siendo comprensibles por contexto, pero tu pronunciación pierde claridad justo en las palabras que más repites. Y a veces cambia el significado: <em>three</em> (tres) frente a <em>tree</em> (árbol), o <em>thank</em> (agradecer) frente a <em>tank</em> (tanque).</p>
+                <div class="lesson-box"><strong>Idea clave:</strong> no intentes arreglar el TH pensando en letras. Arregla la posición de la lengua. Primero coloca la lengua; luego añade aire y voz.</div>
+                <h2 id="dos-sonidos">TH sorda y TH sonora: cómo se pronuncian /θ/ y /ð/</h2>
+                <p>Los dos sonidos se hacen exactamente igual con la boca. Lo único que cambia es si vibran las cuerdas vocales:</p>
+                <ol>
+                <li>Apoya la punta de la lengua, relajada, entre los dientes de arriba y los de abajo, o justo detrás de los dientes de arriba. Sin morder.</li>
+                <li>Deja salir el aire por encima de la lengua, rozando los dientes.</li>
+                <li>Para la <strong>TH sorda</strong> <span class="ipa">/θ/</span>, solo aire. Para la <strong>TH sonora</strong> <span class="ipa">/ð/</span>, el mismo gesto, pero con voz, como un zumbido.</li>
+                </ol>
                 <div class="example-grid">
-                    <div class="mini-card"><strong>TH con voz</strong><span>Vibra la garganta. Aparece en <em>they</em>, <em>this</em>, <em>that</em>, <em>there</em>, <em>weather</em>.</span></div>
-                    <div class="mini-card"><strong>TH sin voz</strong><span>No vibra la garganta. Aparece en <em>think</em>, <em>three</em>, <em>thanks</em>, <em>through</em>.</span></div>
+                <div class="mini-card"><strong>TH sonora /ð/</strong><span>Vibra la garganta. Aparece en <em>they</em>, <em>this</em>, <em>that</em>, <em>there</em>, <em>weather</em>.</span></div>
+                <div class="mini-card"><strong>TH sorda /θ/</strong><span>No vibra la garganta. Aparece en <em>think</em>, <em>three</em>, <em>thanks</em>, <em>through</em>.</span></div>
                 </div>
                 <p>Una forma rápida de comprobarlo es tocarte la garganta. En <em>they</em> deberías notar vibración; en <em>think</em>, no.</p>
-
-                <h2 id="errores">Errores típicos de los españoles</h2>
-                <p>El primer error es hacer <em>they</em> como si fuera <em>day</em>. En <em>day</em>, la lengua está en el paladar; en <em>they</em>, la lengua va entre los dientes. El segundo error es sustituir <em>think</em> por un sonido parecido a nuestra Z o S. Puede funcionar a medias, pero no es el sonido inglés.</p>
+                <table class="data-table">
+                <thead><tr><th>Palabra</th><th>IPA UK</th><th>IPA US</th><th>TH</th></tr></thead>
+                <tbody>
+                <tr><td>think</td><td><span class="ipa">/θɪŋk/</span></td><td><span class="ipa">/θɪŋk/</span></td><td>sorda</td></tr>
+                <tr><td>three</td><td><span class="ipa">/θriː/</span></td><td><span class="ipa">/θriː/</span></td><td>sorda</td></tr>
+                <tr><td>thanks</td><td><span class="ipa">/θæŋks/</span></td><td><span class="ipa">/θæŋks/</span></td><td>sorda</td></tr>
+                <tr><td>Thursday</td><td><span class="ipa">/ˈθɜːzdeɪ/</span></td><td><span class="ipa">/ˈθɝːzdeɪ/</span></td><td>sorda</td></tr>
+                <tr><td>birthday</td><td><span class="ipa">/ˈbɜːθdeɪ/</span></td><td><span class="ipa">/ˈbɝːθdeɪ/</span></td><td>sorda</td></tr>
+                <tr><td>month</td><td><span class="ipa">/mʌnθ/</span></td><td><span class="ipa">/mʌnθ/</span></td><td>sorda</td></tr>
+                <tr><td>this</td><td><span class="ipa">/ðɪs/</span></td><td><span class="ipa">/ðɪs/</span></td><td>sonora</td></tr>
+                <tr><td>they</td><td><span class="ipa">/ðeɪ/</span></td><td><span class="ipa">/ðeɪ/</span></td><td>sonora</td></tr>
+                <tr><td>those</td><td><span class="ipa">/ðəʊz/</span></td><td><span class="ipa">/ðoʊz/</span></td><td>sonora</td></tr>
+                <tr><td>mother</td><td><span class="ipa">/ˈmʌðə/</span></td><td><span class="ipa">/ˈmʌðɚ/</span></td><td>sonora</td></tr>
+                <tr><td>weather</td><td><span class="ipa">/ˈweðə/</span></td><td><span class="ipa">/ˈweðɚ/</span></td><td>sonora</td></tr>
+                <tr><td>breathe</td><td><span class="ipa">/briːð/</span></td><td><span class="ipa">/briːð/</span></td><td>sonora</td></tr>
+                </tbody>
+                </table>
+                <h2 id="espanol">¿Los españoles ya tenemos el sonido TH?</h2>
+                <p>Sí, y es una ventaja enorme. Si en tu español distingues <em>casa</em> de <em>caza</em> (lo que se llama distinción, habitual en la mayor parte de España), la c de <em>cena</em> y la z de <em>zapato</em> son el mismo sonido <span class="ipa">/θ/</span> de <em>think</em>. También lo tienen quienes cecean. Haz la prueba: di <em>zinc</em> en español. Con una i un poco más relajada, acabas de decir <em>think</em> <span class="ipa">/θɪŋk/</span>.</p>
+                <p>Si eres de Canarias o de una zona seseante de Andalucía, o hablas español de América, ese sonido no existe en tu español y lo normal es sustituirlo por S. Tendrás que aprenderlo desde cero, pero la posición es la misma que acabas de ver.</p>
+                <p>¿Y la TH sonora <span class="ipa">/ð/</span>? También la tienes, aunque escondida: es la d suave que haces entre vocales en <em>nada</em>, <em>cada</em> o en la segunda d de <em>dedo</em>. La diferencia es que en español, al empezar a hablar o después de N o L, sale una d “dura”, con la lengua pegada a los dientes, y en inglés muchas frases empiezan justo así, desde el silencio: <em>They are here</em>, <em>This is it</em>. La <span class="ipa">/ð/</span> inglesa, además, suele hacerse un poco más adelante, con la lengua asomando entre los dientes y algo más de fricción.</p>
+                <p>Truco: di <em>nada</em> despacio, quédate en la segunda d y alárgala con voz. Desde ahí, salta a <em>they</em>.</p>
+                <h2 id="errores">Errores típicos de los españoles: T, D, S, F y Z</h2>
+                <p>El primer error es hacer <em>they</em> como si fuera <em>day</em>. En <em>day</em>, la punta de la lengua toca el paladar justo detrás de los dientes de arriba; en <em>they</em>, la lengua va entre los dientes. El audio de <a href="/audio/sonido-th-paladar.html">TH frente a D</a> sirve justo para notar ese contraste. Los demás sustitutos habituales son estos:</p>
+                <ul>
+                <li><strong>T:</strong> <em>think</em> sale como <em>tink</em>, <em>three</em> como <em>tree</em> (árbol) y <em>thank</em> como <em>tank</em> (tanque).</li>
+                <li><strong>D:</strong> <em>they</em> como <em>day</em> (día), <em>then</em> como <em>den</em> (guarida), <em>those</em> como <em>doze</em> (dormitar).</li>
+                <li><strong>S:</strong> <em>think</em> como <em>sink</em> (fregadero; hundirse), <em>thick</em> como <em>sick</em> (enfermo), <em>mouth</em> como <em>mouse</em> (ratón). Es el error típico de las zonas seseantes y de los hispanohablantes de América.</li>
+                <li><strong>F:</strong> <em>three</em> como <em>free</em>, <em>thought</em> como <em>fought</em>. Algunos acentos nativos, como muchos de Londres, hacen esto de forma natural, pero no es el modelo que conviene aprender.</li>
+                <li><strong>Z española en la TH sonora:</strong> decir <em>this</em> con la z de <em>zapato</em>. La posición es buena, pero falta voz: en realidad estás diciendo <span class="ipa">/θɪs/</span>. Se entiende, aunque suena un poco seco.</li>
+                </ul>
                 <p>No hace falta exagerarlo hasta escupir aire. Basta con que la lengua asome o toque los dientes y el aire salga de forma controlada.</p>
-
+                <h2 id="pares">Pares mínimos para practicar la TH</h2>
+                <p>Un par mínimo son dos palabras que solo se diferencian en un sonido. Son el mejor entrenamiento: si las dos te suenan igual cuando las dices, todavía no has encontrado la posición.</p>
+                <table class="data-table">
+                <thead><tr><th>Con TH</th><th>Si fallas, dices...</th><th>Significado de lo que dices</th></tr></thead>
+                <tbody>
+                <tr><td>think <span class="ipa">/θɪŋk/</span></td><td>sink <span class="ipa">/sɪŋk/</span> o <em>tink</em></td><td>fregadero, hundirse; <em>tink</em> no existe</td></tr>
+                <tr><td>three <span class="ipa">/θriː/</span></td><td>tree <span class="ipa">/triː/</span></td><td>árbol</td></tr>
+                <tr><td>thank <span class="ipa">/θæŋk/</span></td><td>tank <span class="ipa">/tæŋk/</span></td><td>tanque, depósito</td></tr>
+                <tr><td>thought <span class="ipa">/θɔːt/</span> (UK) · <span class="ipa">/θɑːt/</span> (US)</td><td>taught <span class="ipa">/tɔːt/</span> (UK) · <span class="ipa">/tɑːt/</span> (US)</td><td>enseñó, enseñado</td></tr>
+                <tr><td>thick <span class="ipa">/θɪk/</span></td><td>sick <span class="ipa">/sɪk/</span></td><td>enfermo</td></tr>
+                <tr><td>mouth <span class="ipa">/maʊθ/</span></td><td>mouse <span class="ipa">/maʊs/</span></td><td>ratón</td></tr>
+                <tr><td>they <span class="ipa">/ðeɪ/</span></td><td>day <span class="ipa">/deɪ/</span></td><td>día</td></tr>
+                <tr><td>then <span class="ipa">/ðen/</span></td><td>den <span class="ipa">/den/</span></td><td>guarida</td></tr>
+                <tr><td>those <span class="ipa">/ðəʊz/</span> (UK) · <span class="ipa">/ðoʊz/</span> (US)</td><td>doze <span class="ipa">/dəʊz/</span> (UK) · <span class="ipa">/doʊz/</span> (US)</td><td>dormitar</td></tr>
+                <tr><td>though <span class="ipa">/ðəʊ/</span> (UK) · <span class="ipa">/ðoʊ/</span> (US)</td><td>dough <span class="ipa">/dəʊ/</span> (UK) · <span class="ipa">/doʊ/</span> (US)</td><td>masa</td></tr>
+                </tbody>
+                </table>
+                <p>Para el cuarteto <em>though</em>, <em>tough</em>, <em>thought</em> y <em>taught</em> tienes un audio específico: <a href="/audio/though-tough-thought-taught.html">though, tough, thought, taught</a>.</p>
+                <h2 id="lista">The, this, that, they: ¿cuándo la TH es sonora?</h2>
+                <p>No hay una regla perfecta, pero estas tendencias aciertan casi siempre:</p>
+                <ul>
+                <li><strong>Palabras gramaticales que empiezan por TH: sonora.</strong> <em>the</em>, <em>this</em> <span class="ipa">/ðɪs/</span>, <em>that</em> <span class="ipa">/ðæt/</span>, <em>these</em> <span class="ipa">/ðiːz/</span>, <em>those</em>, <em>they</em>, <em>them</em> <span class="ipa">/ðem/</span>, <em>their</em> y <em>there</em> <span class="ipa">/ðeə/</span> (UK) · <span class="ipa">/ðer/</span> (US), <em>then</em>, <em>than</em> <span class="ipa">/ðæn/</span>, <em>though</em>.</li>
+                <li><strong>Palabras de contenido que empiezan por TH: sorda.</strong> <em>think</em>, <em>three</em>, <em>thing</em>, <em>thank</em>, <em>Thursday</em>, <em>theory</em>, <em>thirty</em>.</li>
+                <li><strong>Entre vocales, en palabras comunes: suele ser sonora.</strong> <em>mother</em>, <em>brother</em>, <em>father</em>, <em>other</em>, <em>weather</em>, <em>together</em>. Excepciones frecuentes con sorda: <em>nothing</em> <span class="ipa">/ˈnʌθɪŋ/</span>, <em>author</em>, <em>method</em>.</li>
+                <li><strong>Al final de palabra: normalmente sorda, pero sonora en los verbos en -the.</strong> <em>breath</em> <span class="ipa">/breθ/</span> (aliento) frente a <em>breathe</em> <span class="ipa">/briːð/</span> (respirar); <em>teeth</em> <span class="ipa">/tiːθ/</span> (dientes) frente a <em>teethe</em> <span class="ipa">/tiːð/</span> (echar los dientes).</li>
+                <li><strong>Algunas TH suenan como T:</strong> <em>Thomas</em>, <em>Thailand</em>, <em>Thames</em> <span class="ipa">/temz/</span> y <em>thyme</em> (tomillo) <span class="ipa">/taɪm/</span>.</li>
+                </ul>
+                <p><em>With</em> admite las dos: <span class="ipa">/wɪð/</span> y <span class="ipa">/wɪθ/</span>. Y <em>the</em> tiene su propia regla: normalmente <span class="ipa">/ðə/</span> antes de sonido consonante (<em>the car</em>) y <span class="ipa">/ði/</span> antes de sonido vocal (<em>the apple</em>). La tienes explicada a fondo en <a href="/articulos/como-se-pronuncia-the.html">cómo se pronuncia THE en inglés</a>.</p>
                 <h2 id="practica">Práctica rápida</h2>
                 <ol>
-                    <li>Di <em>day</em> y <em>they</em> alternando, fijándote solo en dónde está la lengua.</li>
-                    <li>Practica una serie con TH sonoro: <em>this, these, there, though, brother</em>.</li>
-                    <li>Practica una serie con TH sordo: <em>think, three, thanks, through, teeth</em>.</li>
-                    <li>Vuelve a una frase corta: <em>They think that this is good</em>.</li>
+                <li>Di <em>day</em> y <em>they</em> alternando, fijándote solo en dónde está la lengua.</li>
+                <li>Practica una serie con TH sonora: <em>this, these, there, though, brother</em>.</li>
+                <li>Practica una serie con TH sorda: <em>think, three, thanks, through, teeth</em>.</li>
+                <li>Vuelve a una frase corta: <em>They think that this is good</em>.</li>
+                <li>Prueba con números, donde más se nota: <em>thirty-three</em> lleva dos TH sordas, <span class="ipa">/ˌθɜːtiˈθriː/</span> (UK) · <span class="ipa">/ˌθɝːtiˈθriː/</span> (US). Escúchalo en <a href="/audio/i-am-from-spain-and-i-am-33.html">I am from Spain and I am 33</a>.</li>
                 </ol>
-                <p>Empieza por los audios de <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a>, <a href="/audio/sonido-th-paladar.html">TH frente a D</a> y <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">palabras con TH y OUGH</a>.</p>
+                <p>Ahora tú: ¿TH sorda o sonora?</p>
+                <details class="exercise"><summary>1. <em>thanks</em></summary><p>Sorda: <span class="ipa">/θæŋks/</span>. Es una palabra de contenido que empieza por TH.</p></details>
+                <details class="exercise"><summary>2. <em>mother</em></summary><p>Sonora: <span class="ipa">/ˈmʌðə/</span> (UK) · <span class="ipa">/ˈmʌðɚ/</span> (US). TH entre vocales en una palabra común.</p></details>
+                <details class="exercise"><summary>3. <em>those</em></summary><p>Sonora: es una palabra gramatical, de la familia de <em>this</em> y <em>that</em>.</p></details>
+                <details class="exercise"><summary>4. <em>birthday</em></summary><p>Sorda: <span class="ipa">/ˈbɜːθdeɪ/</span> (UK) · <span class="ipa">/ˈbɝːθdeɪ/</span> (US).</p></details>
+                <details class="exercise"><summary>5. <em>breath</em> y <em>breathe</em></summary><p><em>Breath</em> (sustantivo) lleva sorda, <span class="ipa">/breθ/</span>; <em>breathe</em> (verbo) lleva sonora, <span class="ipa">/briːð/</span>. Además, cambia la vocal.</p></details>
+                <details class="exercise"><summary>6. <em>nothing</em></summary><p>Sorda, <span class="ipa">/ˈnʌθɪŋ/</span>, aunque esté entre vocales: viene de <em>thing</em>.</p></details>
+                <p>Empieza por los audios de <a href="/audio/sonido-th-entre-dientes.html">TH entre dientes</a> y <a href="/audio/sonido-th-paladar.html">TH frente a D</a>, y después pasa a las <a href="/audio/though-through-tough-cough-enough-bough-thought-plough.html">palabras con TH y OUGH</a>. Con unos minutos al día, la lengua acaba yendo sola al sitio.</p>
         """,
     },
     {
         "slug": "vocales-ingles-cortas-largas",
         "category": "Pronunciación",
-        "title": "Vocales en inglés que confunden a los españoles: bit, book, love y moon",
-        "seo_title": "Vocales en inglés para españoles | Bit, book, love y moon",
-        "description": "Guía de vocales inglesas difíciles para hispanohablantes: I corta, doble O, love, book, moon y pares que cambian el significado.",
-        "lede": "El inglés tiene cinco letras vocales, pero muchos más sonidos. Por eso leer con vocales españolas puede cambiar una palabra por otra.",
-        "reading": "6 minutos",
+        "title": "Vocales en inglés para españoles: cortas, largas y la schwa (ship/sheep, book/moon, cat/cut)",
+        "seo_title": "Vocales en inglés: cortas, largas y schwa para españoles",
+        "description": "Pronunciación de las vocales en inglés para españoles: vocales cortas y largas, la schwa y pares como ship/sheep, full/fool o cat/cut, con IPA y audios.",
+        "lede": "El inglés tiene cinco letras vocales, pero muchos más sonidos. Por eso leer con vocales españolas puede cambiar una palabra por otra, y no siempre por una palabra educada.",
+        "reading": "9 minutos",
+        "published": "2026-06-28",
         "toc": [
-            ("problema", "El problema"),
-            ("i-corta", "I corta"),
+            ("problema", "El contraste"),
+            ("tabla", "Tabla de vocales"),
+            ("i-corta", "I corta y larga"),
             ("doble-o", "Doble O"),
+            ("tres-aes", "Cat, cut, cart"),
+            ("schwa", "La schwa"),
             ("practica", "Práctica"),
         ],
         "related": [
             "pronunciacion-ingles-para-espanoles",
-            "sonido-th-ingles",
+            "alfabeto-fonetico-ingles",
+            "guia-pronunciacion-ingles-espanoles",
             "palabras-ough-pronunciacion-ingles",
         ],
+        "quick_answer": "El español tiene 5 vocales; el inglés, según el acento, una docena de vocales simples más varios diptongos. Para un español, lo clave es distinguir cortas y largas (<em>ship</em> /ʃɪp/ frente a <em>sheep</em> /ʃiːp/, <em>full</em> frente a <em>fool</em>), las tres “aes” de <em>cat</em>, <em>cut</em> y <em>cart</em>, y la <strong>schwa</strong> /ə/, la vocal débil más frecuente.",
+        "faq": [
+            ("¿Cuántas vocales tiene el inglés?", "Cinco letras vocales, pero muchos más sonidos. Depende del acento y de cómo se cuenten: en el inglés británico estándar se suelen contar 12 vocales simples y 8 diptongos. El español, en cambio, tiene 5 sonidos vocálicos."),
+            ("¿Qué es la schwa en inglés?", "La schwa, <span class=\"ipa\">/ə/</span>, es una vocal neutra, corta y relajada que aparece en las sílabas sin acento, como la primera de <em>about</em> o la última de <em>banana</em>. Se considera la vocal más frecuente del inglés y es la que más cambia el ritmo de un español."),
+            ("¿Qué diferencia hay entre vocales cortas y largas en inglés?", "No es solo la duración. Las largas, como la <span class=\"ipa\">/iː/</span> de <em>sheep</em>, son más tensas; las cortas, como la <span class=\"ipa\">/ɪ/</span> de <em>ship</em>, más relajadas y abiertas. En el alfabeto fonético, las largas llevan dos puntos: <span class=\"ipa\">ː</span>."),
+            ("¿Cómo se pronuncia beach para que no suene mal?", "<em>Beach</em> se pronuncia <span class=\"ipa\">/biːtʃ/</span>, con una i larga y tensa, estirando un poco los labios. Si la i sale corta y relajada, <span class=\"ipa\">/bɪtʃ/</span>, se convierte en un insulto. Lo mismo ocurre con <em>sheet</em> <span class=\"ipa\">/ʃiːt/</span>, que con i corta es una palabrota."),
+            ("¿Por qué love no se pronuncia con o?", "Porque en <em>love</em> la O representa el sonido <span class=\"ipa\">/ʌ/</span>, una a corta y relajada que no existe en español. Pasa lo mismo en <em>money</em>, <em>come</em>, <em>mother</em> o <em>son</em>. Por eso <em>love</em> rima con <em>glove</em>, pero no con <em>move</em>."),
+        ],
         "body": """
-                <p>En español, las vocales son bastante estables. La <em>a</em>, la <em>e</em>, la <em>i</em>, la <em>o</em> y la <em>u</em> casi siempre suenan como esperas. En inglés, la letra no manda tanto: manda la palabra.</p>
-                <p>Ese es uno de los motivos por los que un español puede decir una palabra con seguridad y aun así provocar confusión. La vocal equivocada no es un detalle estético; puede cambiar el significado.</p>
-
+                <p>En español, las vocales son bastante estables. La <em>a</em>, la <em>e</em>, la <em>i</em>, la <em>o</em> y la <em>u</em> casi siempre suenan como esperas. En inglés, la letra no manda tanto: manda la palabra. Y esas cinco letras vocales se reparten muchos más sonidos.</p>
+                <p>Ese es uno de los motivos por los que un español puede decir una palabra con seguridad y aun así provocar confusión. La vocal equivocada no es un detalle estético; puede cambiar el significado. Esta guía repasa la pronunciación de las vocales en inglés que más problemas dan a los españoles, con su símbolo fonético, pares de palabras y audios. Cuando hay una sola transcripción, coincide en británico y americano.</p>
                 <h2 id="problema">El problema no es tu acento, es el contraste</h2>
                 <p>Si pronuncias <em>bit</em> con una i española demasiado limpia, el oyente puede acercarlo a <em>beat</em>. Si pronuncias <em>book</em> como una u larga española, se aleja del sonido natural. Y si lees <em>love</em> como se escribe, no sonará como una palabra inglesa reconocible.</p>
-                <div class="lesson-box">
-                    <strong>Regla útil:</strong> no busques una vocal española perfecta para cada caso. Busca contrastes: <em>bit</em> no debe sonar como <em>beat</em>; <em>book</em> no debe sonar como <em>moon</em>.
-                </div>
-
-                <h2 id="i-corta">La I corta: bit, big, win, lip, clip</h2>
-                <p>La <strong>I corta</strong> de palabras como <em>bit</em>, <em>sit</em>, <em>win</em> o <em>lip</em> es uno de los sonidos más rentables para un hispanohablante. Se parece más a una vocal relajada entre nuestra i y nuestra e que a una i española pura.</p>
-                <p>La trampa es que una i demasiado española puede acercarte a otra palabra: <em>sit</em> puede sonar como <em>seat</em>, <em>fit</em> como <em>feet</em>, y <em>dip</em> como <em>deep</em>.</p>
-
-                <h2 id="doble-o">La doble O: book no suena como moon</h2>
+                <p>Un matiz importante: aunque se hable de vocales “cortas” y “largas”, la diferencia no es solo de duración. La vocal de <em>sheep</em> <span class="ipa">/ʃiːp/</span> es más tensa, con los labios estirados; la de <em>ship</em> <span class="ipa">/ʃɪp/</span> es más relajada y abierta, a medio camino hacia la e. En el alfabeto fonético, los dos puntos <span class="ipa">ː</span> marcan las largas. En inglés americano la duración pesa algo menos y la calidad del sonido, más.</p>
+                <div class="lesson-box"><strong>Regla útil:</strong> no busques una vocal española perfecta para cada caso. Busca contrastes: <em>bit</em> no debe sonar como <em>beat</em>; <em>book</em> no debe sonar como <em>moon</em>.</div>
+                <h2 id="tabla">Tabla de vocales en inglés para españoles</h2>
+                <p>Estas son las vocales simples del inglés, con una pista para hacerlas desde el español. Si los símbolos te resultan nuevos, tienes una explicación sencilla en el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés</a>.</p>
+                <table class="data-table">
+                <thead><tr><th>Sonido</th><th>Ejemplos</th><th>Cómo hacerlo</th><th>No confundir con</th></tr></thead>
+                <tbody>
+                <tr><td><span class="ipa">/iː/</span></td><td>sheep, leave, beach</td><td>i española larga y tensa, sonriendo</td><td><span class="ipa">/ɪ/</span></td></tr>
+                <tr><td><span class="ipa">/ɪ/</span></td><td>ship, live, bit</td><td>i corta y relajada, cerca de la e</td><td><span class="ipa">/iː/</span></td></tr>
+                <tr><td><span class="ipa">/e/</span></td><td>bed, men, said</td><td>parecida a nuestra e</td><td><span class="ipa">/æ/</span></td></tr>
+                <tr><td><span class="ipa">/æ/</span></td><td>cat, bad, man</td><td>boca muy abierta, entre a y e</td><td><span class="ipa">/e/</span>, <span class="ipa">/ʌ/</span></td></tr>
+                <tr><td><span class="ipa">/ʌ/</span></td><td>cut, love, up</td><td>a corta y relajada, boca poco abierta</td><td><span class="ipa">/æ/</span>, <span class="ipa">/ɑː/</span></td></tr>
+                <tr><td><span class="ipa">/ɑː/</span></td><td>cart, father, calm</td><td>a larga y profunda</td><td><span class="ipa">/ʌ/</span></td></tr>
+                <tr><td><span class="ipa">/ɒ/</span> (UK) · <span class="ipa">/ɑː/</span> (US)</td><td>lock, hot, stop</td><td>UK: o corta y abierta; US: a abierta</td><td><span class="ipa">/ɔː/</span></td></tr>
+                <tr><td><span class="ipa">/ɔː/</span></td><td>door, floor, saw (UK)</td><td>o larga, labios redondeados</td><td><span class="ipa">/ɒ/</span></td></tr>
+                <tr><td><span class="ipa">/ʊ/</span></td><td>book, full, look</td><td>u corta, labios poco redondeados</td><td><span class="ipa">/uː/</span></td></tr>
+                <tr><td><span class="ipa">/uː/</span></td><td>moon, fool, Luke</td><td>u larga, labios redondeados</td><td><span class="ipa">/ʊ/</span></td></tr>
+                <tr><td><span class="ipa">/ɜː/</span> (UK) · <span class="ipa">/ɝː/</span> (US)</td><td>bird, world, learn</td><td>vocal neutra larga; en EE. UU., con R</td><td><span class="ipa">/ɑː/</span></td></tr>
+                <tr><td><span class="ipa">/ə/</span> (schwa)</td><td>about, banana, doctor</td><td>vocal débil, con la boca en reposo</td><td>cualquier vocal “entera”</td></tr>
+                </tbody>
+                </table>
+                <p>A estas doce se suman los diptongos, como los de <em>day</em> <span class="ipa">/eɪ/</span>, <em>my</em> <span class="ipa">/aɪ/</span>, <em>now</em> <span class="ipa">/aʊ/</span> o <em>go</em> <span class="ipa">/əʊ/</span> (UK) · <span class="ipa">/oʊ/</span> (US).</p>
+                <h2 id="i-corta">La I corta y la I larga: ship/sheep, live/leave</h2>
+                <p>La <strong>I corta</strong> <span class="ipa">/ɪ/</span> de palabras como <em>bit</em>, <em>sit</em>, <em>win</em> o <em>lip</em> es uno de los sonidos más rentables para un hispanohablante. Se parece más a una vocal relajada entre nuestra i y nuestra e que a una i española pura. La <strong>I larga</strong> <span class="ipa">/iː/</span>, en cambio, sí se parece a nuestra i, pero más tensa y algo más larga. Una i demasiado española te acerca a la larga:</p>
+                <table class="data-table">
+                <thead><tr><th>I corta <span class="ipa">/ɪ/</span></th><th>I larga <span class="ipa">/iː/</span></th></tr></thead>
+                <tbody>
+                <tr><td>ship <span class="ipa">/ʃɪp/</span> (barco)</td><td>sheep <span class="ipa">/ʃiːp/</span> (oveja)</td></tr>
+                <tr><td>live <span class="ipa">/lɪv/</span> (vivir)</td><td>leave <span class="ipa">/liːv/</span> (irse, dejar)</td></tr>
+                <tr><td>sit <span class="ipa">/sɪt/</span> (sentarse)</td><td>seat <span class="ipa">/siːt/</span> (asiento)</td></tr>
+                <tr><td>fill <span class="ipa">/fɪl/</span> (llenar)</td><td>feel <span class="ipa">/fiːl/</span> (sentir)</td></tr>
+                <tr><td>chip <span class="ipa">/tʃɪp/</span> (chip; patata frita)</td><td>cheap <span class="ipa">/tʃiːp/</span> (barato)</td></tr>
+                </tbody>
+                </table>
+                <p>Y luego están los pares que nadie quiere fallar en voz alta: <em>beach</em> <span class="ipa">/biːtʃ/</span> (playa) frente a <span class="ipa">/bɪtʃ/</span>, que es un insulto, y <em>sheet</em> <span class="ipa">/ʃiːt/</span> (hoja, sábana) frente a <span class="ipa">/ʃɪt/</span>, que es una palabrota. El subtítulo de <em>De FAK a Fluent</em> es, literalmente, “Consejos de un español que también confundió <em>beach</em> con otra cosa”. Si quieres hablar de la playa, alarga la i y estira un poco los labios. Y si un día te bloqueas, siempre te queda <em>the seaside</em>.</p>
+                <p>Practica con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip, clip</a>, con el audio de <a href="/audio/hit.html">hit</a> y con <a href="/audio/live-leave-leaf.html">live, leave, leaf</a>.</p>
+                <h2 id="doble-o">La doble O: book no suena como moon (full/fool, look/Luke)</h2>
+                <p>La OO inglesa esconde dos vocales distintas: la <span class="ipa">/ʊ/</span> corta de <em>book</em> <span class="ipa">/bʊk/</span> y la <span class="ipa">/uː/</span> larga de <em>moon</em> <span class="ipa">/muːn/</span>. La corta se hace con los labios menos redondeados y la lengua más relajada. Si le pones una u española larga, <em>full</em> <span class="ipa">/fʊl/</span> (lleno) se convierte en <em>fool</em> <span class="ipa">/fuːl/</span> (tonto), y <em>look</em> <span class="ipa">/lʊk/</span> en <em>Luke</em> <span class="ipa">/luːk/</span>.</p>
                 <div class="example-grid">
-                    <div class="mini-card"><strong>OO corta</strong><span><em>book, cook, look, foot, took</em>. Es rápida y no tan larga como nuestra u.</span></div>
-                    <div class="mini-card"><strong>OO larga</strong><span><em>moon, food, room, school, cool</em>. Aquí sí aparece una u más larga y marcada.</span></div>
-                    <div class="mini-card"><strong>O larga</strong><span><em>door, floor, score, shore</em>. No la mezcles con la doble O de <em>book</em>.</span></div>
-                    <div class="mini-card"><strong>O inesperada</strong><span><em>love</em> no se pronuncia como una o española. Compárala con <em>move</em>.</span></div>
+                <div class="mini-card"><strong>OO corta /ʊ/</strong><span><em>book, cook, look, foot, took, good</em>. Es rápida y no tan larga como nuestra u.</span></div>
+                <div class="mini-card"><strong>OO larga /uː/</strong><span><em>moon, food, room, school, cool</em>. Aquí sí aparece una u más larga y marcada (<em>room</em> también se oye con la corta).</span></div>
+                <div class="mini-card"><strong>O larga /ɔː/</strong><span><em>door, floor, score, shore</em>. No la mezcles con la doble O de <em>book</em>.</span></div>
+                <div class="mini-card"><strong>OO inesperada /ʌ/</strong><span><em>blood</em> y <em>flood</em> suenan con la vocal de <em>cut</em>: <span class="ipa">/blʌd/</span>, <span class="ipa">/flʌd/</span>.</span></div>
                 </div>
-
+                <p>Escucha la versión correcta de <a href="/audio/book-cook-look-foot-hook-took-cookie-correcto.html">book, cook, look, foot, hook, took, cookie</a> y compárala con <a href="/audio/moon-food-room-school-tool-noodle-cool.html">moon, food, room, school, tool, noodle, cool</a>. Si quieres reírte un poco, también está la <a href="/audio/book-cook-look-foot-hook-took-cookie-lol.html">versión con el error típico</a>. Y para la O larga, <a href="/audio/door-floor-score-shore-roar-soar.html">door, floor, score, shore, roar, soar</a>.</p>
+                <h2 id="tres-aes">Cat, cut y cart: tres “aes” que en español son una</h2>
+                <p>Donde el español tiene una sola a, el inglés tiene tres sonidos que cambian el significado:</p>
+                <ul>
+                <li><strong><span class="ipa">/æ/</span></strong>, con la boca muy abierta, entre a y e: <em>cat</em> <span class="ipa">/kæt/</span> (gato), <em>bad</em>, <em>man</em>, <em>lack</em>.</li>
+                <li><strong><span class="ipa">/ʌ/</span></strong>, una a corta y relajada, casi sin abrir: <em>cut</em> <span class="ipa">/kʌt/</span> (cortar), <em>love</em> <span class="ipa">/lʌv/</span>, <em>up</em>, <em>money</em>.</li>
+                <li><strong><span class="ipa">/ɑː/</span></strong>, una a larga y profunda: <em>cart</em> <span class="ipa">/kɑːt/</span> (UK) · <span class="ipa">/kɑːrt/</span> (US) (carro), <em>father</em>, <em>heart</em>.</li>
+                </ul>
+                <p>La <span class="ipa">/ʌ/</span> es la más traicionera porque se escribe con U (<em>up</em>, <em>us</em>, <em>uncle</em>, <em>umbrella</em>) y también con O (<em>love</em>, <em>money</em>, <em>come</em>, <em>mother</em>). Por eso <em>love</em>, <em>clove</em> y <em>move</em> se escriben casi igual y tienen tres vocales distintas: <span class="ipa">/lʌv/</span>, <span class="ipa">/kləʊv/</span> (UK) · <span class="ipa">/kloʊv/</span> (US) y <span class="ipa">/muːv/</span>.</p>
+                <p>Otro contraste que conviene vigilar es <em>bed</em> <span class="ipa">/bed/</span> frente a <em>bad</em> <span class="ipa">/bæd/</span>, o <em>men</em> frente a <em>man</em>: si la <span class="ipa">/æ/</span> te sale como una e española, el plural y el singular suenan igual.</p>
+                <p>Practica con <a href="/audio/love-clove-move.html">love, clove, move</a>, <a href="/audio/microsoft-up-us-uncle-umbrella.html">Microsoft, up, us, uncle, umbrella</a> y <a href="/audio/lack-lock-look-luke.html">lack, lock, look, Luke</a>: cuatro palabras con cuatro vocales distintas, <span class="ipa">/læk/</span>, <span class="ipa">/lɒk/</span> (UK) · <span class="ipa">/lɑːk/</span> (US), <span class="ipa">/lʊk/</span> y <span class="ipa">/luːk/</span>.</p>
+                <h2 id="schwa">La schwa /ə/: la vocal que nadie te enseña</h2>
+                <p>La <strong>schwa</strong> <span class="ipa">/ə/</span> es una vocal neutra, corta y sin esfuerzo: la que sale si relajas la mandíbula y dices un “eh” muy breve sin mover nada. Se considera el sonido vocálico más frecuente del inglés porque aparece en muchísimas sílabas sin acento, se escriban con la letra que se escriban:</p>
+                <ul>
+                <li><em>about</em> <span class="ipa">/əˈbaʊt/</span>: la A inicial.</li>
+                <li><em>today</em> <span class="ipa">/təˈdeɪ/</span>: la O.</li>
+                <li><em>banana</em> <span class="ipa">/bəˈnɑːnə/</span> (UK) · <span class="ipa">/bəˈnænə/</span> (US): la primera y la última A.</li>
+                <li><em>doctor</em> <span class="ipa">/ˈdɒktə/</span> (UK) · <span class="ipa">/ˈdɑːktɚ/</span> (US): la segunda O (en americano, con R).</li>
+                <li><em>focus</em> <span class="ipa">/ˈfəʊkəs/</span> (UK) · <span class="ipa">/ˈfoʊkəs/</span> (US): la U. Practícala con <a href="/audio/focus.html">focus</a>.</li>
+                </ul>
+                <p>Los españoles tendemos a pronunciar cada vocal entera, tal como se escribe: <em>ba-na-na</em> con tres aes iguales. El resultado se entiende, pero suena muy español, porque el inglés necesita ese contraste entre sílabas fuertes y débiles. La schwa también es la clave de las formas débiles: <em>to</em> <span class="ipa">/tə/</span>, <em>of</em> <span class="ipa">/əv/</span>, <em>a</em> <span class="ipa">/ə/</span>. Lo tienes desarrollado en <a href="/articulos/ligar-palabras-ingles.html">cómo ligar palabras en inglés</a>.</p>
+                <h3>Bonus: bird, bear, beer, beard</h3>
+                <p>La vocal larga de <em>bird</em> <span class="ipa">/bɜːd/</span> (UK) · <span class="ipa">/bɝːd/</span> (US) es pariente de la schwa y no existe en español. Y con R detrás aparecen combinaciones que conviene separar bien: <em>bear</em> <span class="ipa">/beə/</span> (UK) · <span class="ipa">/ber/</span> (US), <em>beer</em> <span class="ipa">/bɪə/</span> (UK) · <span class="ipa">/bɪr/</span> (US) y <em>beard</em> <span class="ipa">/bɪəd/</span> (UK) · <span class="ipa">/bɪrd/</span> (US). Practica con <a href="/audio/bird-bear-beer-beard.html">bird, bear, beer, beard</a>: pedir una cerveza y acabar hablando de un oso es un clásico.</p>
                 <h2 id="practica">Cómo practicar las vocales sin volverte loco</h2>
                 <ol>
-                    <li>Elige un contraste por sesión: <em>bit</em> frente a <em>beat</em>, o <em>book</em> frente a <em>moon</em>.</li>
-                    <li>Escucha antes de leer para que la ortografía no te arrastre.</li>
-                    <li>Repite en pares: corto, largo, corto, largo.</li>
-                    <li>Termina con frases completas para que la vocal sobreviva al ritmo real.</li>
+                <li>Elige un contraste por sesión: <em>ship</em> frente a <em>sheep</em>, o <em>book</em> frente a <em>moon</em>.</li>
+                <li>Escucha antes de leer para que la ortografía no te arrastre.</li>
+                <li>Repite en pares: corto, largo, corto, largo.</li>
+                <li>Termina con frases completas para que la vocal sobreviva al ritmo real: <em>I live here, but I leave tomorrow</em>.</li>
                 </ol>
-                <p>Practica con <a href="/audio/bit-big-win-lip-clip.html">bit, big, win, lip y clip</a>, <a href="/audio/book-cook-look-foot-hook-took-cookie-correcto.html">book, cook, look, foot, hook, took y cookie</a>, <a href="/audio/moon-food-room-school-tool-noodle-cool.html">moon, food, room, school, tool, noodle y cool</a>, y <a href="/audio/love-clove-move.html">love, clove y move</a>.</p>
+                <p>Comprueba lo que has aprendido:</p>
+                <details class="exercise"><summary>1. <em>I want to ___ in London</em> (vivir): ¿<em>live</em> o <em>leave</em>?</summary><p><em>Live</em>, con I corta: <span class="ipa">/lɪv/</span>. Con I larga, <em>leave</em> <span class="ipa">/liːv/</span>, dirías que quieres irte de Londres.</p></details>
+                <details class="exercise"><summary>2. ¿Qué palabra tiene una vocal distinta: <em>book</em>, <em>look</em>, <em>food</em>, <em>foot</em>?</summary><p><em>Food</em>, con <span class="ipa">/uː/</span> larga. Las otras tres llevan <span class="ipa">/ʊ/</span> corta.</p></details>
+                <details class="exercise"><summary>3. <em>The ___ is black</em> (el gato): ¿<em>cat</em>, <em>cut</em> o <em>cart</em>?</summary><p><em>Cat</em> <span class="ipa">/kæt/</span>, con la boca muy abierta. <em>Cut</em> <span class="ipa">/kʌt/</span> es cortar y <em>cart</em>, un carro.</p></details>
+                <details class="exercise"><summary>4. ¿<em>Love</em> rima con <em>move</em> o con <em>glove</em>?</summary><p>Con <em>glove</em> (guante): las dos llevan <span class="ipa">/ʌ/</span>. <em>Move</em> lleva <span class="ipa">/uː/</span>.</p></details>
+                <details class="exercise"><summary>5. ¿Cuántas schwas tiene <em>banana</em> en inglés británico?</summary><p>Dos, la primera y la última A: <span class="ipa">/bəˈnɑːnə/</span>. Solo la A del medio, la acentuada, suena entera.</p></details>
+                <p>Para seguir, repasa las <a href="/articulos/palabras-ingles-mal-pronunciadas.html">palabras que los españoles pronuncian mal</a> y vuelve a estos audios cada pocos días: cada contraste que fijas se nota en cómo te entienden.</p>
         """,
     },
     {

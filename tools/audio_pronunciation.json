@@ -958,9 +958,9 @@
     "items": [
       {
         "en": "Microsoft",
-        "us": "/ˈmaɪkroʊsɔːft/",
+        "us": "/ˈmaɪkroʊsɑːft/",
         "uk": "/ˈmaɪkrəsɒft/",
-        "pista": "MÁI-cro-soft: la I suena 'ai' y el acento va al principio; en EE. UU. muchos dicen /-sɑːft/.",
+        "pista": "MÁI-cro-soft: la I suena 'ai' y el acento va al principio; en EE. UU. también se oye /-sɔːft/.",
         "es": "Microsoft (la empresa)",
         "ejemplo": "He works for Microsoft.",
         "ejemplo_es": "Trabaja en Microsoft."
@@ -1011,7 +1011,7 @@
       ],
       [
         "¿Cómo se pronuncia Microsoft en inglés?",
-        "Se pronuncia /ˈmaɪkrəsɒft/ en británico y /ˈmaɪkroʊsɔːft/ en americano, con el acento en la primera sílaba y la I como 'ai': 'MÁI-cro-soft'."
+        "Se pronuncia /ˈmaɪkrəsɒft/ en británico y /ˈmaɪkroʊsɑːft/ en americano, con el acento en la primera sílaba y la I como 'ai': 'MÁI-cro-soft'."
       ]
     ]
   },
@@ -1171,9 +1171,9 @@
       },
       {
         "en": "ball",
-        "us": "/bɔːl/",
+        "us": "/bɑːl/",
         "uk": "/bɔːl/",
-        "pista": "O larga y abierta + L oscura, no 'bal' con a española; en gran parte de EE. UU. suena más abierta, /bɑːl/.",
+        "pista": "En británico, O larga /ɔː/; en gran parte de EE. UU., una vocal más abierta, /ɑː/ (también se oye /ɔː/). En los dos casos, L final oscura: no es la 'bal' española.",
         "es": "pelota; balón",
         "ejemplo": "Pass me the ball.",
         "ejemplo_es": "Pásame la pelota."
@@ -1198,9 +1198,9 @@
       },
       {
         "en": "call",
-        "us": "/kɔːl/",
+        "us": "/kɑːl/",
         "uk": "/kɔːl/",
-        "pista": "Como ball: O larga y L oscura; en EE. UU. también /kɑːl/.",
+        "pista": "Como ball: O larga en británico, /ɑː/ (o /ɔː/) en EE. UU., y L final oscura.",
         "es": "llamar; llamada",
         "ejemplo": "I'll call you later.",
         "ejemplo_es": "Te llamo luego."
@@ -1267,7 +1267,7 @@
     ]
   },
   "Though_Through_Tough_Cough_Enough_Bough_Thought_Plough.mp3": {
-    "seo_title": "Cómo se pronuncia though, through, tough y thought",
+    "seo_title": "Though, through, cough, bough, plough: audio e IPA",
     "h1": "Though, through, tough, cough, enough, bough, thought, plough: las 8 OUGH",
     "description": "Audio de though, through, tough, cough, enough, bough, thought y plough: seis pronunciaciones de OUGH con IPA, explicadas para hispanohablantes.",
     "intro": "Ocho palabras escritas con OUGH y seis pronunciaciones distintas: /əʊ/ en though, /uː/ en through, /ʌf/ en tough y enough, /ɒf/ en cough, /aʊ/ en bough y plough y /ɔː/ en thought. Es la prueba de que en inglés la ortografía no sirve para adivinar el sonido, y la trampa favorita de quien lee como en español.",
@@ -1301,9 +1301,9 @@
       },
       {
         "en": "cough",
-        "us": "/kɔːf/",
+        "us": "/kɑːf/",
         "uk": "/kɒf/",
-        "pista": "'kof': GH = F; en americano la vocal es más larga y abierta (también /kɑːf/).",
+        "pista": "'kof': GH = F; en americano la vocal es larga y abierta, /kɑːf/ (también /kɔːf/).",
         "es": "tos; toser",
         "ejemplo": "I've had a cough for a week.",
         "ejemplo_es": "Llevo una semana con tos."
@@ -1328,9 +1328,9 @@
       },
       {
         "en": "thought",
-        "us": "/θɔːt/",
+        "us": "/θɑːt/",
         "uk": "/θɔːt/",
-        "pista": "TH sorda + O larga + T; la GH es muda. Muchos americanos dicen /θɑːt/.",
+        "pista": "TH sorda + vocal larga + T; la GH es muda. En británico, O larga /ɔː/; en EE. UU. suele ser /ɑː/, más abierta (algunos dicen /ɔː/).",
         "es": "pensamiento; pensé (pasado de think)",
         "ejemplo": "I thought you were at work.",
         "ejemplo_es": "Pensaba que estabas en el trabajo."
@@ -1366,18 +1366,18 @@
     "items": [
       {
         "en": "walk",
-        "us": "/wɔːk/",
+        "us": "/wɑːk/",
         "uk": "/wɔːk/",
-        "pista": "'wook' con O larga; la L no suena.",
+        "pista": "'wook' con O larga en británico; en EE. UU., vocal más abierta (/wɑːk/). La L no suena.",
         "es": "andar; paseo",
         "ejemplo": "Let's go for a walk.",
         "ejemplo_es": "Vamos a dar un paseo."
       },
       {
         "en": "talk",
-        "us": "/tɔːk/",
+        "us": "/tɑːk/",
         "uk": "/tɔːk/",
-        "pista": "'took' con O larga y L muda; no la confundas con took /tʊk/, que es corta.",
+        "pista": "O larga en británico, /ɑː/ abierta en EE. UU., y L muda; no la confundas con took /tʊk/, que es corta.",
         "es": "hablar; charla",
         "ejemplo": "We need to talk.",
         "ejemplo_es": "Tenemos que hablar."
@@ -1447,16 +1447,16 @@
       },
       {
         "en": "chalk",
-        "us": "/tʃɔːk/",
+        "us": "/tʃɑːk/",
         "uk": "/tʃɔːk/",
-        "pista": "'chook', rima con walk y talk.",
+        "pista": "Rima con walk y talk; la L no suena.",
         "es": "tiza",
         "ejemplo": "The teacher wrote it in chalk.",
         "ejemplo_es": "La profesora lo escribió con tiza."
       },
       {
         "en": "walkie-talkie",
-        "us": "/ˌwɔːkiˈtɔːki/",
+        "us": "/ˌwɑːkiˈtɑːki/",
         "uk": "/ˌwɔːkiˈtɔːki/",
         "pista": "'woo-ki-TOO-ki': dos L mudas y el acento principal en talk.",
         "es": "walkie-talkie",
@@ -1464,12 +1464,12 @@
         "ejemplo_es": "Hablaban por walkie-talkie."
       }
     ],
-    "focus": "Piensa en la L como una letra que cambia la vocal, no como un sonido: -alk suena /ɔːk/, -alm /ɑːm/, -ould /ʊd/. Di walkie-talkie al final como resumen: dos L mudas y el acento en TALK.",
-    "mistake": "Pronunciar la L: 'gualk' o 'sal-mon'. Y, una vez quitada, leer walk igual que work: walk es /wɔːk/ y work /wɜːk/ (/wɝːk/ en americano), así que confundirlas cambia 'I walk' por 'I work'.",
+    "focus": "Piensa en la L como una letra que cambia la vocal, no como un sonido: -alk suena /ɔːk/ (en EE. UU., /ɑːk/), -alm /ɑːm/, -ould /ʊd/. Di walkie-talkie al final como resumen: dos L mudas y el acento en TALK.",
+    "mistake": "Pronunciar la L: 'gualk' o 'sal-mon'. Y, una vez quitada, leer walk igual que work: walk es /wɔːk/ (/wɑːk/ en americano) y work /wɜːk/ (/wɝːk/ en americano), así que confundirlas cambia 'I walk' por 'I work'.",
     "faq": [
       [
         "¿Se pronuncia la L en walk y talk?",
-        "No. Walk /wɔːk/ y talk /tɔːk/ tienen la L muda, igual que chalk. La combinación -alk suele sonar como una O larga + K."
+        "No. Walk (UK /wɔːk/, US /wɑːk/) y talk (UK /tɔːk/, US /tɑːk/) tienen la L muda, igual que chalk. La combinación -alk suele sonar como una O larga (una A abierta en EE. UU.) + K."
       ],
       [
         "¿Cómo se pronuncia salmon en inglés?",
@@ -2534,7 +2534,7 @@
     "items": [
       {
         "en": "take it off",
-        "us": "/ˌteɪk ɪt ˈɔːf/",
+        "us": "/ˌteɪk ɪt ˈɑːf/",
         "uk": "/ˌteɪk ɪt ˈɒf/",
         "pista": "Se encadena en 'tei-ki-TOF'; en americano la T de it suena como una R suave ('tei-ki-ROF').",
         "es": "Quítatelo; Quítalo",
@@ -2590,9 +2590,9 @@
       },
       {
         "en": "costs",
-        "us": "/kɔːsts/",
+        "us": "/kɑːsts/",
         "uk": "/kɒsts/",
-        "pista": "-sts; en habla rápida la T central se debilita, pero no añadas 'e'. En EE. UU. también /kɑːsts/.",
+        "pista": "-sts; en habla rápida la T central se debilita, pero no añadas 'e'. En EE. UU. también se oye /kɔːsts/.",
         "es": "costes; cuesta",
         "ejemplo": "It costs twenty euros.",
         "ejemplo_es": "Cuesta veinte euros."
@@ -2637,18 +2637,18 @@
       },
       {
         "en": "thought",
-        "us": "/θɔːt/",
+        "us": "/θɑːt/",
         "uk": "/θɔːt/",
-        "pista": "TH sorda + O larga: suena igual que taught salvo por la primera consonante. Muchos americanos dicen /θɑːt/.",
+        "pista": "TH sorda + vocal larga: suena igual que taught salvo por la primera consonante. En británico /θɔːt/; en EE. UU. suele ser /θɑːt/.",
         "es": "pensé; pensado (pasado de think); pensamiento",
         "ejemplo": "I thought so.",
         "ejemplo_es": "Ya me lo imaginaba."
       },
       {
         "en": "taught",
-        "us": "/tɔːt/",
+        "us": "/tɑːt/",
         "uk": "/tɔːt/",
-        "pista": "T + O larga + T; la GH es muda. Muchos americanos dicen /tɑːt/.",
+        "pista": "T + vocal larga + T; la GH es muda. En británico /tɔːt/; en EE. UU. suele ser /tɑːt/.",
         "es": "enseñé; enseñado (pasado de teach)",
         "ejemplo": "My mum taught me to cook.",
         "ejemplo_es": "Mi madre me enseñó a cocinar."
@@ -2659,7 +2659,7 @@
     "faq": [
       [
         "¿Cuál es la diferencia entre thought y taught?",
-        "Thought /θɔːt/ es el pasado de think ('pensé') y taught /tɔːt/ el de teach ('enseñé'). Solo cambia la primera consonante: TH sorda, con la lengua entre los dientes, o T."
+        "Thought (UK /θɔːt/, US /θɑːt/) es el pasado de think ('pensé') y taught (UK /tɔːt/, US /tɑːt/) el de teach ('enseñé'). Solo cambia la primera consonante: TH sorda, con la lengua entre los dientes, o T."
       ],
       [
         "¿Though y tough se pronuncian igual?",
