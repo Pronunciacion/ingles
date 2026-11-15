@@ -152,8 +152,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -169,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -256,7 +260,7 @@
                 <p>Si quieres entender símbolos como <span class="ipa">/ɪ/</span> o <span class="ipa">/θ/</span>, que verás en cualquier diccionario, tienes una explicación sencilla en el <a href="/articulos/alfabeto-fonetico-ingles.html">alfabeto fonético inglés para españoles</a>.</p>
                 <h3>Los errores que más delatan a un español (y qué tip los arregla)</h3>
                 <p>Una forma rápida de usar la guía al revés: busca el error que reconoces en ti y salta al tip correspondiente. Cuando hay una sola transcripción, vale para británico y americano.</p>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                 <thead><tr><th>Lo que decimos</th><th>Lo que debería sonar</th><th>Tip</th></tr></thead>
                 <tbody>
                 <tr><td><em>espain</em>, <em>estudent</em></td><td><em>Spain</em> <span class="ipa">/speɪn/</span>, empezando en la S</td><td>7</td></tr>

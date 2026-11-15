@@ -152,8 +152,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -169,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -226,7 +230,7 @@
 
                 <h2 id="tabla">¿Make or do? Tabla de expresiones que más dudas generan</h2>
                 <p>Estas son las combinaciones por las que más se pregunta. Algunas siguen la regla y otras son fijas sin más; léelas en voz alta como bloques completos.</p>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                 <thead><tr><th>En español</th><th>En inglés</th><th>Ojo</th></tr></thead>
                 <tbody>
                 <tr><td>Hacer la cama</td><td><strong>make</strong> the bed</td><td>Fija. Nunca <em>do the bed</em>.</td></tr>
@@ -272,7 +276,7 @@
                 <p>También se usa para quedar: <em>Can you make it on Friday?</em> (¿Puedes el viernes?) o <em>Let's make it eight</em> (Mejor a las ocho).</p>
 
                 <h2 id="phrasal">Phrasal verbs y expresiones con make y do</h2>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                 <thead><tr><th>Expresión</th><th>Significado</th><th>Ejemplo</th></tr></thead>
                 <tbody>
                 <tr><td>make sure</td><td>asegurarse</td><td><em>Make sure you lock the door.</em></td></tr>

@@ -152,8 +152,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -169,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -281,7 +285,7 @@
                 <p>Cuando las lecturas graduadas se te queden cortas, salta a novelas juveniles escritas para nativos, como <em>Wonder</em> (R. J. Palacio) o <em>Holes</em> (Louis Sachar): lenguaje real, frases asequibles y tramas que enganchan.</p>
 
                 <h2 id="comparativa">¿Cuál es el mejor libro para aprender inglés? Tabla comparativa</h2>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                 <thead><tr><th>Libro</th><th>Nivel (orientativo)</th><th>Para qué sirve</th><th>¿Con audio?</th></tr></thead>
                 <tbody>
                 <tr><td>Essential Grammar in Use</td><td>A1-B1</td><td>Gramática básica para estudiar solo</td><td>No es su enfoque</td></tr>

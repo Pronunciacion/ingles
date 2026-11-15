@@ -18,8 +18,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -41,8 +43,46 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-    outline: 3px solid var(--gold);
+    outline: 3px solid var(--blue-dark);
     outline-offset: 3px;
+}
+
+.resource-section a:focus-visible,
+.purchase-band a:focus-visible {
+    outline-color: var(--gold);
+}
+
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.skip-link:not(:focus, :active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+:target {
+    scroll-margin-top: 5rem;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
 }
 
 .home-header {
@@ -201,8 +241,10 @@ h1 {
     transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-.button:hover {
-    transform: translateY(-1px);
+@media (prefers-reduced-motion: no-preference) {
+    .button:hover {
+        transform: translateY(-1px);
+    }
 }
 
 .button.primary {

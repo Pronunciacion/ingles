@@ -40,6 +40,14 @@ PLAUSIBLE_SNIPPET = """    <!-- Privacy-friendly analytics by Plausible -->
     </script>"""
 
 
+# Prefetch the next page on hover or touch (Chromium only; other browsers ignore it).
+SPECULATION_RULES = """    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>"""
+
+SKIP_LINK = '<a class="skip-link" href="#contenido">Saltar al contenido</a>'
+
+
 def slugify(value: str) -> str:
     value = unicodedata.normalize("NFKD", value)
     value = value.encode("ascii", "ignore").decode("ascii")
@@ -120,6 +128,7 @@ def page_head(
     {json_ld(schema)}
     </script>
 {PLAUSIBLE_SNIPPET}
+{SPECULATION_RULES}
 </head>"""
 
 
@@ -186,8 +195,12 @@ def render_breadcrumbs(trail: list[tuple[str, str]]) -> str:
     return f'<nav class="breadcrumbs" aria-label="Migas de pan">{separator.join(parts)}</nav>'
 
 
+# Wide tables scroll sideways on phones: make the scroll area reachable by keyboard.
+TABLE_WRAP_ATTRS = 'tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"'
+
+
 def wrap_tables(fragment: str) -> str:
-    fragment = fragment.replace('<table class="data-table">', '<div class="table-wrap"><table class="data-table">')
+    fragment = fragment.replace('<table class="data-table">', f'<div class="table-wrap" {TABLE_WRAP_ATTRS}><table class="data-table">')
     return fragment.replace("</table>", "</table></div>")
 
 
@@ -232,7 +245,8 @@ def site_header(active: str) -> str:
         current = ' aria-current="page"' if key == active else ""
         link_lines.append(f'                <a href="{href}"{current}>{label}</a>')
     links = "\n".join(link_lines)
-    return f"""<header class="site-header">
+    return f"""{SKIP_LINK}
+    <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
                 <img src="/images/icon-96.png" width="42" height="42" alt="" aria-hidden="true">
@@ -3580,7 +3594,7 @@ def render_article(article: dict) -> str:
 <body>
     {site_header("articulos")}
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -3693,7 +3707,7 @@ def render_article_hub() -> str:
 <body>
     {site_header("articulos")}
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -3711,9 +3725,9 @@ def render_article_hub() -> str:
         </section>
 
         <section class="page-shell" aria-label="Artículos">
-            <div class="cluster-nav" aria-label="Clusters de artículos">
+            <nav class="cluster-nav" aria-label="Temas">
 {nav_links}
-            </div>
+            </nav>
 {chr(10).join(sections)}
         </section>
     </main>
@@ -3984,7 +3998,7 @@ def render_audio_pronunciation(filename: str) -> str:
         for item in items
     )
     return f"""                <h2 id="pronunciacion">Pronunciación (IPA) y significado</h2>
-                <div class="table-wrap"><table class="data-table ipa-table">
+                <div class="table-wrap" {TABLE_WRAP_ATTRS}><table class="data-table ipa-table">
                     <thead>
                         <tr><th scope="col">Inglés</th><th scope="col">EE. UU.</th><th scope="col">Reino Unido</th><th scope="col">Significado</th></tr>
                     </thead>
@@ -4089,7 +4103,7 @@ def render_audio_page(filename: str) -> str:
 <body>
     {site_header("audios")}
 
-    <main>
+    <main id="contenido">
         <section class="hero compact-hero">
             <div class="hero-inner">
                 <div>
@@ -4210,7 +4224,7 @@ def render_audio_hub(files: list[str]) -> str:
 <body>
     {site_header("audios")}
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -4337,7 +4351,7 @@ def render_not_found() -> str:
 <body>
     {site_header("")}
 
-    <main>
+    <main id="contenido">
         <section class="hero compact-hero">
             <div class="hero-inner">
                 <div>

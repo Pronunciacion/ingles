@@ -106,9 +106,14 @@
         }
         /* Copy Icon */
         .copy-icon {
-            
-            bottom: -30px;
-            right: -30px;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: none;
+            font-family: inherit;
+            line-height: inherit;
+            text-align: inherit;
             font-size: 24px;
             color: #b22234;
             cursor: pointer;
@@ -255,14 +260,18 @@
             `8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."`;
             
             // Copy the text to the clipboard
-            navigator.clipboard.writeText(text).then(() => {
-                // Show "copied" popup
-                const popup = document.getElementById("copied-popup");
+            const popup = document.getElementById("copied-popup");
+            const show = (message) => {
+                popup.textContent = message;
                 popup.style.opacity = 1;
                 setTimeout(() => {
                     popup.style.opacity = 0;
-                }, 800); // Hide after 2 seconds
-            });
+                }, 1500);
+            };
+            navigator.clipboard.writeText(text).then(
+                () => show("Copiado"),
+                () => show("No se pudo copiar")
+            );
         }
     </script>
     <!-- Privacy-friendly analytics by Plausible -->
@@ -289,8 +298,8 @@
             <p>7. If I struggle with a particular topic, feel free to gently guide the conversation to a related but easier subject.</p>
             <p>8. Please adjust your language complexity to match my apparent skill level, gradually increasing difficulty as we progress."</p>
             
-            <div class="copy-icon" onclick="copyToClipboard()">📋</div>
-            <div id="copied-popup" class="copied-popup">Copiado</div>
+            <button type="button" class="copy-icon" onclick="copyToClipboard()" aria-label="Copiar el prompt"><span aria-hidden="true">📋</span></button>
+            <div id="copied-popup" class="copied-popup" role="status"></div>
         </div>
         
         <div class="cta-container">

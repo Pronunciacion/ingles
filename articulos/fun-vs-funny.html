@@ -152,8 +152,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -169,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -217,7 +221,7 @@
                 <p>Como la palabra tiene dos caras, en inglés británico existe la pregunta <em>Funny ha-ha or funny peculiar?</em> (¿gracioso de risa o gracioso de raro?). Y ojo con el tono: <em>Very funny.</em>, dicho seco y sin sonreír, es irónico, como nuestro “qué gracioso” cuando alguien te ha gastado una broma pesada.</p>
 
                 <h2 id="comparacion">Fun vs funny: tabla comparativa</h2>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                 <thead><tr><th></th><th>Fun</th><th>Funny</th></tr></thead>
                 <tbody>
                 <tr><td>Significado</td><td>Divertido, entretenido; diversión</td><td>Gracioso; también raro</td></tr>

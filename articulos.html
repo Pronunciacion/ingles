@@ -216,8 +216,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -233,7 +237,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -251,14 +255,14 @@
         </section>
 
         <section class="page-shell" aria-label="Artículos">
-            <div class="cluster-nav" aria-label="Clusters de artículos">
+            <nav class="cluster-nav" aria-label="Temas">
                     <a href="#pronunciacion">Pronunciación clara</a>
                     <a href="#conversacion">Conversación natural</a>
                     <a href="#gramatica-real">Gramática real</a>
                     <a href="#preposiciones">Preposiciones</a>
                     <a href="#recursos">Recursos para estudiar</a>
                     <a href="#vocabulario">Vocabulario y falsos amigos</a>
-            </div>
+            </nav>
             <section id="pronunciacion" class="article-section">
                 <div class="section-heading">
                     <p class="eyebrow">Cluster</p>

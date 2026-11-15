@@ -32,6 +32,39 @@ a:hover {
     color: var(--red);
 }
 
+.skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 100;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.skip-link:not(:focus, :active) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+:target {
+    scroll-margin-top: 5.5rem;
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
 .site-header {
     border-bottom: 1px solid var(--line);
     background: rgba(255, 255, 255, 0.96);
@@ -398,7 +431,6 @@ h3 {
 .article-card:hover {
     border-color: var(--blue);
     color: var(--ink);
-    transform: translateY(-1px);
 }
 
 .article-card span {
@@ -448,7 +480,13 @@ h3 {
 .audio-card:hover {
     border-color: var(--blue);
     color: var(--ink);
-    transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .article-card:hover,
+    .audio-card:hover {
+        transform: translateY(-1px);
+    }
 }
 
 .audio-card span {
@@ -688,6 +726,11 @@ details.exercise > :not(summary) {
 }
 
 @media (max-width: 840px) {
+    :target,
+    .article-section {
+        scroll-margin-top: 8.5rem;
+    }
+
     .nav-shell {
         align-items: flex-start;
         flex-direction: column;
@@ -735,6 +778,7 @@ details.exercise > :not(summary) {
 @media (max-width: 640px) {
     .table-wrap::before {
         content: "Desliza para ver toda la tabla →";
+        content: "Desliza para ver toda la tabla →" / "";
         display: block;
         margin: 0 0 6px;
         color: var(--muted);

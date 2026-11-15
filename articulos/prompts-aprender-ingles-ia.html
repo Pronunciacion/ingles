@@ -152,8 +152,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header">
         <div class="nav-shell">
             <a class="brand" href="/">
@@ -169,7 +173,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero">
             <div class="hero-inner">
                 <div>
@@ -237,7 +241,7 @@
                 <div class="lesson-box"><strong>Si te da vergüenza hablar:</strong> empieza por respuestas cortas a saludos reales, como <a href="/audio/hows-it-going.html">How's it going?</a> y <a href="/audio/pretty-good.html">Pretty good</a>. La IA no se cansa de repetir la misma conversación diez veces, y eso es justo lo que necesitas al principio.</div>
                 <h2 id="plan-semanal">Plan semanal: unos 20 minutos al día</h2>
                 <p>Un ejemplo para combinar los prompts sin repetir siempre lo mismo:</p>
-                <div class="table-wrap"><table class="data-table">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla: desliza para ver todas las columnas"><table class="data-table">
                     <thead>
                         <tr><th>Día</th><th>Prompt</th><th>Objetivo</th></tr>
                     </thead>

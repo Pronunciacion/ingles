@@ -25,8 +25,8 @@
     <meta name="twitter:description" content="Libro de inglés para españoles con audios gratis y guías prácticas.">
     <meta name="twitter:image" content="https://librodeingles.com/images/og-default.jpg">
     <title>Libro de inglés para españoles con audios | De FAK a Fluent</title>
-    <link rel="preload" as="image" href="/images/book-cover-970.webp" imagesrcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" imagesizes="(max-width: 900px) 90vw, 420px" fetchpriority="high">
-    <link rel="stylesheet" href="/homepage.css?v=2026-10-11">
+    <link rel="preload" as="image" href="/images/book-cover-970.webp" imagesrcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" imagesizes="(max-width: 640px) 205px, 420px" fetchpriority="high">
+    <link rel="stylesheet" href="/homepage.css?v=2026-11-15">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -197,8 +197,12 @@
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>
+    <script type="speculationrules">
+    {"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/review.html"}},{"not":{"href_matches":"/downloads/*"}},{"not":{"href_matches":"/audios/*"}},{"not":{"href_matches":"/pronunciacion.html*"}}]},"eagerness":"moderate"}]}
+    </script>
 </head>
 <body class="home-page">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="home-header">
         <div class="home-nav">
             <a class="brand" href="/" aria-label="De FAK a Fluent">
@@ -213,19 +217,19 @@
         </div>
     </header>
 
-    <main>
+    <main id="contenido">
         <section class="hero" aria-label="Libro De FAK a Fluent">
             <div class="hero-shell">
                 <div class="hero-copy">
                     <p class="eyebrow">Libro + audios gratis</p>
                     <h1>De FAK a Fluent</h1>
                     <p class="lead">El libro de inglés para españoles que quieren sonar más claros, entender conversaciones reales y practicar con audios directos desde cada lección. Escrito por <a href="/contacto.html">Javier Sanz</a>, un español que también confundió <em>beach</em> con otra cosa.</p>
-                    <div class="button-row" aria-label="Acciones principales">
+                    <div class="button-row">
                         <a class="button primary" href="https://www.amazon.es/dp/B0DN6V5VDW" target="_blank" rel="noopener noreferrer">Comprar en Amazon</a>
                         <a class="button secondary" href="/audios.html">Escuchar audios gratis</a>
                         <a class="button tertiary" href="/articulos.html">Leer artículos</a>
                     </div>
-                    <div class="trust-line" aria-label="Contenido disponible">
+                    <div class="trust-line">
                         <div class="trust-item">
                             <strong>60</strong>
                             <span>audios de práctica</span>
@@ -240,9 +244,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="cover-area" aria-label="Portada del libro">
+                <div class="cover-area">
                     <div class="cover-frame">
-                        <img class="book-cover" src="/images/book-cover-970.webp" srcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" sizes="(max-width: 900px) 90vw, 420px" width="970" height="600" fetchpriority="high" decoding="async" alt="Portada del libro De FAK a Fluent, de Javier Sanz">
+                        <img class="book-cover" src="/images/book-cover-970.webp" srcset="/images/book-cover-520.webp 520w, /images/book-cover-970.webp 970w" sizes="(max-width: 640px) 205px, 420px" width="970" height="600" fetchpriority="high" decoding="async" alt="Portada del libro De FAK a Fluent, de Javier Sanz">
                     </div>
                 </div>
             </div>
@@ -370,7 +374,7 @@
                             <li>Repite con una frase que usarías de verdad.</li>
                         </ol>
                     </div>
-                    <div class="audio-links" aria-label="Audios destacados">
+                    <div class="audio-links">
                         <a class="audio-link" href="/audio/sonido-th-entre-dientes.html">TH entre dientes <span>Pronunciación</span></a>
                         <a class="audio-link" href="/audio/hows-it-going.html">How's it going <span>Conversación</span></a>
                         <a class="audio-link" href="/audio/going-to.html">Going to <span>Inglés real</span></a>

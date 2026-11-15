@@ -6,7 +6,7 @@
     <link rel="icon" href="/favicon.ico" sizes="48x48">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/icon-96.png">
     <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pronunciación de Palabras</title>
     <style>
         * {
@@ -43,8 +43,16 @@
                 max-width: 250px;
             }
         }
-        h1 {
-            display: none;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            border: 0;
+            overflow: hidden;
+            clip-path: inset(50%);
+            white-space: nowrap;
         }
         .container {
             background-color: #ffffff;
@@ -312,7 +320,7 @@
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js" integrity="sha384-b5Ya4Bq3qCyz39m2ISh+4DxjAIljdeFwK/BsXLuj9gugaNwAcj/ia15fxNZL9Nlx" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function getAudioFileFromQuery() {
             var urlParams = new URLSearchParams(window.location.search);
@@ -330,7 +338,7 @@
                 formattedWords = word.split('.').join(' ');
                 formattedWords = formattedWords.split('_').join(', ');
                 formattedWords = formattedWords.charAt(0).toUpperCase() + formattedWords.slice(1);
-                document.getElementById('audio-source').src = 'https://pronunciacion.github.io/ingles/audios/' + fileName + '.mp3';
+                document.getElementById('audio-source').src = '/audios/' + fileName + '.mp3';
                 document.getElementById('word-display').innerText = formattedWords;
                 audioPlayer.load();
             } else {
@@ -376,8 +384,6 @@
                     title: 'Pronunciación de Palabras',
                     text: 'Escucha la pronunciación de estas palabras.',
                     url: window.location.href
-                }).then(() => {
-                    console.log('¡Gracias por compartir!');
                 }).catch(console.error);
             } else {
                 alert('Tu navegador no soporta la funcionalidad de compartir.');
@@ -431,11 +437,26 @@
             });
         }
 
+        const ownHosts = ['librodeingles.com', 'www.librodeingles.com', 'pronunciacion.github.io'];
+
+        function isOwnHost(url) {
+            return ownHosts.includes(url.hostname);
+        }
+
+        // Only web addresses may be opened from a scanned code (never javascript: or data:).
+        function getSafeQRDestination(text) {
+            try {
+                const url = new URL(text);
+                return (url.protocol === 'https:' || url.protocol === 'http:') ? url : null;
+            } catch (err) {
+                return null;
+            }
+        }
+
         function scanQRCode() {
             if (!scanning) return;
 
             if (video.readyState !== video.HAVE_ENOUGH_DATA) {
-                console.log('Video not ready, waiting...');
                 requestAnimationFrame(scanQRCode);
                 return;
             }
@@ -457,16 +478,20 @@
                 });
 
                 if (code) {
-                    console.log('QR code detected in scan zone:', code.data);
-                    console.log('Scan zone position:', x, y, scanZoneSize, 'at resolution:', canvas.width, 'x', canvas.height, 'with zoom:', zoomFactor);
+                    const destination = getSafeQRDestination(code.data);
+                    if (!destination) {
+                        requestAnimationFrame(scanQRCode);
+                        return;
+                    }
                     const scanZone = document.getElementById('scan-zone');
                     scanZone.classList.add('detected');
                     setTimeout(() => {
                         stopQRScan();
-                        window.location.href = code.data;
+                        if (isOwnHost(destination) || confirm('Este código QR abre otro sitio: ' + destination.hostname + '. ¿Quieres continuar?')) {
+                            window.location.href = destination.href;
+                        }
                     }, 500);
                 } else {
-                    console.log('No QR code found in', scanZoneSize, 'x', scanZoneSize, 'scan zone at', canvas.width, 'x', canvas.height);
                     requestAnimationFrame(scanQRCode);
                 }
             } catch (err) {
@@ -540,7 +565,7 @@
 </head>
 <body>
     <h1 class="sr-only">De FAK a Fluent</h1>
-    <img src="images/small-transparent.png" alt="De FAK a Fluent" class="logo">
+    <img src="images/small-transparent.png" alt="De FAK a Fluent" class="logo" width="1350" height="300">
     <div class="container">
         <h2 id="word-display"> </h2>
         <div class="audio-container">
@@ -566,8 +591,8 @@
         </div>
         <div class="button-container">
             <a href="#" class="button share-button" onclick="shareAudio(); return false;">Compartir Audio</a>
-            <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button buy-button" target="_blank">Comprar el Libro</a>
-            <a href="https://www.amazon.com/review/create-review?&asin=B0DN6V5VDW" class="button review-button" target="_blank">Escribir reseña en Amazon</a>
+            <a href="https://www.amazon.es/dp/B0DN6V5VDW" class="button buy-button" target="_blank" rel="noopener noreferrer">Comprar el Libro</a>
+            <a href="https://www.amazon.com/review/create-review?&asin=B0DN6V5VDW" class="button review-button" target="_blank" rel="noopener noreferrer">Escribir reseña en Amazon</a>
             <button id="qr-button" class="button qr-button">Escanear QR</button>
         </div>
     </div>
