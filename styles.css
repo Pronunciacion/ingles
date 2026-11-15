@@ -726,9 +726,14 @@ details.exercise > :not(summary) {
 }
 
 @media (max-width: 840px) {
+    /* The two-row header would pin 15% of a phone screen, so it scrolls away here. */
+    .site-header {
+        position: static;
+    }
+
     :target,
     .article-section {
-        scroll-margin-top: 8.5rem;
+        scroll-margin-top: 1rem;
     }
 
     .nav-shell {
